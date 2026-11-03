@@ -39,19 +39,21 @@
 <body class="antialiased selection:bg-amber-400 selection:text-black">
 
   <!-- BANDEAU D'URGENCE DÉMO -->
-  <div id="demo-banner" class="hidden sticky top-0 z-50 bg-[#1A120A] border-b border-[#C59564]/40 px-4 py-2.5 text-white shadow-2xl">
+  <div id="demo-banner" class="hidden sticky top-0 z-50 bg-[#140D07] border-b border-[#C59564]/30 px-4 py-2 text-white shadow-xl">
     <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-3 text-sm">
       <div class="flex items-center gap-2">
-        <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-[#C59564] text-black font-bold text-xs">⚠️</span>
-        <span>Maquette haute couture pour <strong>Institut Ébène Prestige</strong> — Réservation de domaine en cours</span>
+        <span class="inline-flex items-center justify-center w-5 h-5 rounded bg-[#C59564] text-black">
+          <svg class="w-3 h-3 text-black" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9.303 3.376c.866 1.5-.217 3.374-1.948 3.374H4.645c-1.73 0-2.813-1.874-1.948-3.374L10.051 3.378c.866-1.5 3.032-1.5 3.898 0l7.354 12.748zM12 15.75h.007v.008H12v-.008z"/></svg>
+        </span>
+        <span class="text-xs font-semibold">Maquette réservée pour <strong>Institut Ébène Prestige</strong></span>
       </div>
-      <div class="flex items-center gap-4">
-        <div class="flex items-center gap-1.5 bg-black/50 px-3 py-1 rounded-full border border-[#C59564]/30 text-[#DFC6A8] font-mono text-xs">
-          <span>Temps restant :</span>
+      <div class="flex items-center gap-3">
+        <div class="flex items-center gap-1.5 bg-black/60 px-2.5 py-1 rounded text-[#DFC6A8] font-mono text-[11px] border border-[#C59564]/20">
+          <span>Expiration :</span>
           <span id="countdown" class="font-bold text-white tracking-wider">47:42:10</span>
         </div>
-        <a href="https://wa.me/2250748901234?text=Bonjour,%20je%20souhaite%20activer%20le%20site%20officiel%20de%20l'Institut%20%C3%89b%C3%A8ne%20Prestige%20(30%20000%20FCFA)" target="_blank" class="bg-[#C59564] hover:bg-[#D2AC84] text-black px-4 py-1.5 rounded-full font-bold text-xs transition-all shadow-md">
-          Activer ce site officiel (30 000 FCFA)
+        <a href="https://wa.me/2250748901234?text=Bonjour,%20je%20souhaite%20activer%20le%20site%20officiel%20de%20l'Institut%20%C3%89b%C3%A8ne%20Prestige%20(30%20000%20FCFA)" target="_blank" class="bg-[#C59564] hover:bg-[#D2AC84] text-black px-3.5 py-1 rounded font-bold text-xs transition-all">
+          Activer le site (30 000 FCFA)
         </a>
       </div>
     </div>
@@ -87,7 +89,7 @@
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
       <div class="lg:col-span-7 space-y-6">
         <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#C59564]/30 bg-[#C59564]/10 text-[#DFC6A8] text-xs font-medium">
-          <span>★ 4.9 / 5 sur Google (214 avis certifiés)</span>
+          <span>Google Maps 4.9 / 5.0 (214 avis certifiés)</span>
           <span>•</span>
           <span>Cocody Ambassades</span>
         </div>
@@ -113,8 +115,7 @@
       <div class="lg:col-span-5">
         <div class="rounded-3xl overflow-hidden border border-[#C59564]/20 shadow-2xl relative">
           <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=900&q=80" alt="Salon de coiffure de luxe à Abidjan" class="w-full h-[460px] object-cover">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-          <div class="absolute bottom-6 left-6 right-6 p-4 rounded-2xl bg-black/75 backdrop-blur-md border border-white/10 flex items-center justify-between">
+          <div class="absolute bottom-6 left-6 right-6 p-4 rounded-2xl bg-black/85 border border-white/10 flex items-center justify-between">
             <div>
               <span class="text-xs uppercase text-[#C59564] font-bold">Prestation Étoile</span>
               <span class="font-cormorant text-xl font-bold text-white block">Knotless Goddess VIP</span>
@@ -197,7 +198,7 @@
   <!-- AVIS CLIENTS -->
   <section class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center max-w-xl mx-auto mb-12">
-      <span class="text-[#DFC6A8] text-sm">★★★★★</span>
+      <span class="text-[#DFC6A8] text-xs font-mono font-bold tracking-widest uppercase">Note Google 4.9 / 5.0</span>
       <h2 class="font-cormorant text-3xl font-bold text-white mt-1">L'Avis de Nos Clientes de Cocody</h2>
     </div>
 
@@ -207,7 +208,7 @@
           <span class="font-bold text-white">Fatou Coulibaly</span>
           <span>Hier</span>
         </div>
-        <div class="text-[#DFC6A8] text-xs mb-2">★★★★★</div>
+        <div class="text-[#DFC6A8] text-xs font-mono mb-2">5.0 / 5.0 — Prestation royale</div>
         <p class="text-slate-300 text-sm">« Les meilleures coiffeuses de Cocody ! Salon chic, climatisé et musique d'ambiance très relaxante. »</p>
       </div>
 
@@ -216,7 +217,7 @@
           <span class="font-bold text-white">Nathalie K.</span>
           <span>Il y a 5 jours</span>
         </div>
-        <div class="text-[#DFC6A8] text-xs mb-2">★★★★★</div>
+        <div class="text-[#DFC6A8] text-xs font-mono mb-2">5.0 / 5.0 — Parfait</div>
         <p class="text-slate-300 text-sm">« Mes knotless tresses tiennent toujours impeccablement après un mois. Bravo à toute l'équipe. »</p>
       </div>
 
@@ -225,7 +226,7 @@
           <span class="font-bold text-white">Sarah G.</span>
           <span>Il y a 2 semaines</span>
         </div>
-        <div class="text-[#DFC6A8] text-xs mb-2">★★★★★</div>
+        <div class="text-[#DFC6A8] text-xs font-mono mb-2">5.0 / 5.0 — Recommandé</div>
         <p class="text-slate-300 text-sm">« Expérience royale du café d'accueil jusqu'au brushing final. Merci à Madame Salimata. »</p>
       </div>
     </div>

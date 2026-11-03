@@ -27,8 +27,8 @@
 
 /* Custom Scrollbars */
 ::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+  width: 5px;
+  height: 5px;
 }
 
 ::-webkit-scrollbar-track {
@@ -43,24 +43,3 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #9DB4A7;
 }
-
-/* Pulse animation for Live Telemetry */
-@keyframes live-ping-slow {
-  0% {
-    transform: scale(0.95);
-    box-shadow: 0 0 0 0 rgba(190, 250, 60, 0.7);
-  }
-  70% {
-    transform: scale(1);
-    box-shadow: 0 0 0 8px rgba(190, 250, 60, 0);
-  }
-  100% {
-    transform: scale(0.95);
-    box-shadow: 0 0 0 0 rgba(190, 250, 60, 0);
-  }
-}
-
-.animate-live-pulse {
-  animation: live-ping-slow 2s infinite cubic-bezier(0.4, 0, 0.6, 1);
-}
-

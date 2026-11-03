@@ -130,21 +130,18 @@ export function buildWhatsAppPitch(biz: BusinessItem, origin: string = ""): {
   const cleanPhone = biz.phone.replace(/[^0-9]/g, "");
   const demoFullUrl = origin
     ? `${origin}${biz.demoUrl}?demo=true`
-    : `https://agency-os-production.vercel.app${biz.demoUrl}?demo=true`;
+    : `https://agency-os-iota-eight.vercel.app${biz.demoUrl}?demo=true`;
 
-  const messageText = `Bonjour ${biz.name} 👋,
+  const messageText = `Bonjour ${biz.name},
 
-J'ai remarqué votre excellente note Google de ${biz.googleRating}/5 (${biz.reviewCount} avis clients) à ${biz.neighborhood}, ${biz.city} ! 🌟
+Suite aux retours clients très positifs sur votre fiche Google Maps (${biz.googleRating}/5 sur ${biz.reviewCount} avis) à ${biz.neighborhood}, nous avons préparé une maquette fonctionnelle de votre site web officiel.
 
-Pour vous permettre d'accueillir encore plus de clients et recevoir des réservations directes sur WhatsApp, notre agence a conçu une maquette complète et interactive de votre futur site web officiel :
+Lien de consultation : ${demoFullUrl}
 
-👉 Voir votre maquette en direct : ${demoFullUrl}
+Activation complète, nom de domaine et commandes WhatsApp directes : 30 000 FCFA net (règlement Mobile Money).
 
-💡 L'activation officielle de votre site avec nom de domaine dédié, affichage de votre menu/prestations en FCFA et support technique est à seulement 30 000 FCFA (paiement Mobile Money possible après validation).
-
-Souhaitez-vous que je vous active le site officiel aujourd'hui ?`;
+Souhaitez-vous valider la mise en ligne aujourd'hui ?`;
 
   const url = `https://wa.me/${cleanPhone}?text=${encodeURIComponent(messageText)}`;
   return { url, messageText };
 }
-

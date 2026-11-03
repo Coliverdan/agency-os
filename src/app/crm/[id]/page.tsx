@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { useParams, useRouter } from "next/navigation";
+import { useParams } from "next/navigation";
 import Link from "next/link";
 import {
   ArrowLeft,
@@ -12,7 +12,6 @@ import {
   Play,
   Pause,
   RotateCcw,
-  Sparkles,
   ExternalLink,
   Eye,
   Star,
@@ -20,11 +19,6 @@ import {
   Clock,
   CheckCircle2,
   XCircle,
-  HelpCircle,
-  MessageSquare,
-  FileText,
-  Coins,
-  ChevronRight,
 } from "lucide-react";
 import confetti from "canvas-confetti";
 import { BusinessItem, PipelineStage } from "@/types";
@@ -34,22 +28,19 @@ import {
   saveBusinesses,
   buildWhatsAppPitch,
 } from "@/lib/crm-store";
-import { cn, formatFCFA, formatTimeAgo } from "@/lib/utils";
+import { formatTimeAgo } from "@/lib/utils";
 
 export default function ProspectDetailPage() {
   const params = useParams();
-  const router = useRouter();
   const id = params?.id as string;
 
   const [business, setBusiness] = useState<BusinessItem | null>(null);
   const [copiedMessage, setCopiedMessage] = useState(false);
   const [originUrl, setOriginUrl] = useState("");
 
-  // Timer states for the 30-second call script
   const [timerSeconds, setTimerSeconds] = useState(30);
   const [isTimerRunning, setIsTimerRunning] = useState(false);
 
-  // Notes state
   const [notes, setNotes] = useState("");
   const [notesSaved, setNotesSaved] = useState(false);
 
@@ -66,7 +57,6 @@ export default function ProspectDetailPage() {
     }
   }, [id]);
 
-  // Timer countdown hook
   useEffect(() => {
     let interval: any;
     if (isTimerRunning && timerSeconds > 0) {
@@ -81,15 +71,14 @@ export default function ProspectDetailPage() {
 
   if (!business) {
     return (
-      <div className="py-20 text-center space-y-4">
-        <h2 className="font-display text-2xl font-bold">Prospect introuvable</h2>
-        <p className="text-xs text-ink-muted">Le commerce demandé n'existe pas ou a été déplacé.</p>
+      <div className="py-16 text-center space-y-3">
+        <h2 className="font-display text-xl font-bold">Prospect introuvable</h2>
         <Link
           href="/crm"
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-forest-900 text-white text-xs font-bold"
+          className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-forest-900 text-white text-xs font-bold"
         >
-          <ArrowLeft className="w-4 h-4" />
-          Retour au CRM
+          <ArrowLeft className="w-3.5 h-3.5" />
+          <span>Retour au CRM</span>
         </Link>
       </div>
     );
@@ -138,7 +127,7 @@ export default function ProspectDetailPage() {
 
     saveBusinesses(updated);
     setNotesSaved(true);
-    setTimeout(() => setNotesSaved(false), 2500);
+    setTimeout(() => setNotesSaved(false), 2000);
   };
 
   const handleCallOutcome = (outcome: "interested" | "callback" | "not_interested") => {
@@ -147,13 +136,13 @@ export default function ProspectDetailPage() {
 
     if (outcome === "interested") {
       nextStage = "appel_effectue";
-      autoNote = `[Appel du ${new Date().toLocaleDateString("fr-FR")}] : Le client est très intéressé par la démo. Souhaite valider l'activation à 30 000 FCFA.`;
+      autoNote = `[Appel ${new Date().toLocaleDateString("fr-FR")}] : Client intéressé par l'activation à 30 000 FCFA.`;
     } else if (outcome === "callback") {
       nextStage = "appel_effectue";
-      autoNote = `[Appel du ${new Date().toLocaleDateString("fr-FR")}] : Rappeler plus tard (le gérant était en service / réunion).`;
+      autoNote = `[Appel ${new Date().toLocaleDateString("fr-FR")}] : Rappeler plus tard.`;
     } else {
       nextStage = "perdu_refuse";
-      autoNote = `[Appel du ${new Date().toLocaleDateString("fr-FR")}] : Pas intéressé pour le moment.`;
+      autoNote = `[Appel ${new Date().toLocaleDateString("fr-FR")}] : Pas intéressé.`;
     }
 
     const updatedNotes = notes ? `${autoNote}\n${notes}` : autoNote;
@@ -183,25 +172,24 @@ export default function ProspectDetailPage() {
   };
 
   return (
-    <div className="space-y-8 pb-20">
+    <div className="space-y-6 pb-16">
       
-      {/* TOP BREADCRUMB & PROSPECT BANNER */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+      {/* BREADCRUMB */}
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
         <Link
           href="/crm"
-          className="inline-flex items-center gap-2 text-xs font-bold text-forest-800 hover:text-forest-950 transition-colors"
+          className="inline-flex items-center gap-1.5 text-xs font-bold text-forest-800 hover:text-forest-950"
         >
-          <ArrowLeft className="w-4 h-4" />
-          <span>Retour au Tableau Kanban</span>
+          <ArrowLeft className="w-3.5 h-3.5" />
+          <span>Retour au Kanban</span>
         </Link>
 
-        {/* Current Stage Switcher */}
-        <div className="flex items-center gap-3">
-          <span className="text-xs text-ink-muted font-bold uppercase">Étape CRM :</span>
+        <div className="flex items-center gap-2">
+          <span className="text-xs text-ink-muted font-bold uppercase">Statut :</span>
           <select
             value={business.crmStatus}
             onChange={(e) => handleUpdateStatus(e.target.value as PipelineStage)}
-            className="bg-white border border-sand-300 rounded-xl px-3 py-1.5 text-xs font-bold text-forest-900 shadow-sm focus:outline-none focus:ring-2 focus:ring-forest-500"
+            className="bg-white border border-sand-300 rounded-lg px-2.5 py-1 text-xs font-bold text-forest-900"
           >
             {PIPELINE_COLUMNS.map((col) => (
               <option key={col.id} value={col.id}>
@@ -212,68 +200,59 @@ export default function ProspectDetailPage() {
         </div>
       </div>
 
-      {/* PROSPECT MAIN PROFILE CARD */}
-      <div className="bg-white rounded-3xl p-6 sm:p-8 border border-sand-300/80 shadow-soft">
+      {/* PROSPECT PROFILE */}
+      <div className="bg-white rounded-2xl p-6 border border-sand-300">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
           
-          <div className="lg:col-span-8 space-y-3">
-            <div className="flex flex-wrap items-center gap-2">
-              <span className="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-sand-100 text-ink-secondary">
+          <div className="lg:col-span-8 space-y-2.5">
+            <div className="flex items-center gap-2">
+              <span className="text-[11px] font-bold uppercase px-2 py-0.5 rounded bg-sand-100 text-ink-secondary">
                 {business.sector}
               </span>
-              <span className="flex items-center gap-1 text-xs font-extrabold text-amber-600 bg-amber-50 px-3 py-1 rounded-full border border-amber-200">
-                <Star className="w-3.5 h-3.5 fill-current" />
+              <span className="flex items-center gap-1 text-xs font-bold text-amber-700 bg-amber-50 px-2 py-0.5 rounded border border-amber-200">
+                <Star className="w-3 h-3 fill-current" />
                 <span>{business.googleRating} / 5</span>
-                <span className="text-ink-muted">({business.reviewCount} avis certifiés)</span>
+                <span className="font-normal text-ink-muted">({business.reviewCount} avis)</span>
               </span>
             </div>
 
-            <h1 className="font-display text-3xl sm:text-4xl font-extrabold text-ink-primary">
+            <h1 className="font-display text-2xl sm:text-3xl font-extrabold text-ink-primary">
               {business.name}
             </h1>
 
-            <div className="flex flex-wrap items-center gap-6 text-xs text-ink-secondary">
-              <span className="flex items-center gap-1.5">
-                <MapPin className="w-4 h-4 text-forest-600" />
+            <div className="flex flex-wrap items-center gap-4 text-xs text-ink-secondary">
+              <span className="flex items-center gap-1">
+                <MapPin className="w-3.5 h-3.5 text-forest-700" />
                 {business.address}
               </span>
-              <span className="flex items-center gap-1.5 font-mono font-bold text-forest-900">
-                <Phone className="w-4 h-4 text-forest-600" />
+              <span className="flex items-center gap-1 font-mono font-bold text-forest-900">
+                <Phone className="w-3.5 h-3.5 text-forest-700" />
                 {business.phone}
               </span>
             </div>
           </div>
 
           {/* TELEMETRY WIDGET */}
-          <div className="lg:col-span-4 bg-forest-900 text-white rounded-2xl p-5 border border-forest-700/80 shadow-sm space-y-3">
-            <div className="flex items-center justify-between text-xs">
-              <span className="text-forest-300 uppercase tracking-wider text-[10px] font-bold">
-                Télémétrie Démo
-              </span>
+          <div className="lg:col-span-4 bg-forest-900 text-white rounded-xl p-4 border border-forest-800 space-y-2">
+            <div className="flex items-center justify-between text-xs text-forest-300 uppercase text-[10px] font-bold">
+              <span>Télémétrie démo</span>
               {business.demoLastViewed ? (
-                <span className="flex items-center gap-1 text-lime-400 font-bold">
-                  <span className="w-2 h-2 rounded-full bg-lime-400 animate-live-pulse" />
-                  Actif
+                <span className="text-lime-400 font-bold flex items-center gap-1">
+                  <Eye className="w-3 h-3" /> Connecté
                 </span>
               ) : (
                 <span className="text-forest-400">En attente</span>
               )}
             </div>
 
-            <div className="text-sm font-bold">
+            <div className="text-xs font-medium">
               {business.demoLastViewed ? (
-                <div className="space-y-1">
-                  <p className="text-lime-300 flex items-center gap-1.5">
-                    <Eye className="w-4 h-4" />
-                    Consulté {formatTimeAgo(business.demoLastViewed)}
-                  </p>
-                  <p className="text-xs text-forest-300 font-normal">
-                    Le gérant a ouvert le lien démo {business.demoViewCount} fois.
-                  </p>
-                </div>
+                <p className="text-lime-300">
+                  Consulté {formatTimeAgo(business.demoLastViewed)} ({business.demoViewCount} fois).
+                </p>
               ) : (
-                <p className="text-xs text-forest-300 font-normal">
-                  Le prospect n'a pas encore cliqué sur le lien de sa démo.
+                <p className="text-forest-300">
+                  Lien non encore ouvert par le client.
                 </p>
               )}
             </div>
@@ -281,229 +260,184 @@ export default function ProspectDetailPage() {
             <a
               href={`${business.demoUrl}?demo=true`}
               target="_blank"
-              className="w-full py-2 px-3 rounded-xl bg-forest-800 hover:bg-forest-700 text-lime-300 font-bold text-xs flex items-center justify-center gap-2 transition-colors"
+              className="w-full py-1.5 px-3 rounded-lg bg-forest-800 hover:bg-forest-700 text-lime-300 font-bold text-xs flex items-center justify-center gap-1.5"
             >
-              <ExternalLink className="w-3.5 h-3.5" />
-              <span>Tester la Démo client ({business.slug})</span>
+              <ExternalLink className="w-3 h-3" />
+              <span>Voir la démo client</span>
             </a>
           </div>
 
         </div>
       </div>
 
-      {/* TWO ACTION COLUMNS: WHATSAPP 1-CLIC & SCRIPT TÉLÉPHONIQUE 30S */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      {/* ACTIONS ROW: WHATSAPP & SCRIPT 30S */}
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
         
-        {/* COLUMN LEFT (6 COLS): WHATSAPP 1-CLIC */}
-        <div className="lg:col-span-6 space-y-6">
-          <div className="bg-white rounded-3xl p-6 sm:p-7 border border-sand-300/80 shadow-soft space-y-5">
-            
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-2.5">
-                <div className="w-10 h-10 rounded-2xl bg-[#25D366]/15 border border-[#25D366]/30 flex items-center justify-center text-[#25D366]">
-                  <Send className="w-5 h-5 fill-current" />
-                </div>
-                <div>
-                  <h2 className="font-display text-xl font-bold text-ink-primary">
-                    1. Prospection WhatsApp 1-Clic
-                  </h2>
-                  <p className="text-[11px] text-ink-muted">
-                    Message d'accroche personnalisé avec lien démo et offre à 30 000 FCFA
-                  </p>
-                </div>
-              </div>
+        {/* WHATSAPP 1-CLIC */}
+        <div className="lg:col-span-6 bg-white rounded-2xl p-6 border border-sand-300 space-y-4">
+          <div className="flex items-center gap-2">
+            <Send className="w-4 h-4 text-[#25D366]" />
+            <h2 className="font-display text-lg font-bold text-ink-primary">
+              1. Prospection WhatsApp
+            </h2>
+          </div>
+
+          <div className="bg-[#EFEAE2] p-4 rounded-xl border border-sand-300">
+            <div className="bg-white p-3.5 rounded-lg text-xs text-slate-800 leading-relaxed font-sans space-y-2">
+              <p className="whitespace-pre-line">{messageText}</p>
             </div>
+          </div>
 
-            {/* REALISTIC WHATSAPP CHAT BUBBLE */}
-            <div className="bg-[#EFEAE2] p-4 sm:p-5 rounded-2xl border border-sand-300/80 relative overflow-hidden">
-              <div className="bg-white p-4 rounded-2xl rounded-tl-none shadow-sm border border-black/5 text-xs text-slate-800 leading-relaxed space-y-3 font-sans">
-                <p className="whitespace-pre-line">{messageText}</p>
-                <div className="text-right text-[10px] text-slate-400 font-medium">
-                  {new Date().toLocaleTimeString("fr-FR", { hour: "2-digit", minute: "2-digit" })} ✓✓
-                </div>
-              </div>
-            </div>
+          <div className="space-y-2 pt-1">
+            <a
+              href={whatsAppUrl}
+              target="_blank"
+              onClick={() => handleUpdateStatus("whatsapp_envoye")}
+              className="w-full py-2.5 px-4 rounded-xl bg-[#25D366] hover:bg-[#20ba59] text-white font-bold text-xs flex items-center justify-center gap-2 transition-colors"
+            >
+              <Send className="w-3.5 h-3.5 fill-current" />
+              <span>Ouvrir WhatsApp & Envoyer le message</span>
+            </a>
 
-            {/* ACTION BUTTONS */}
-            <div className="space-y-3 pt-2">
-              <a
-                href={whatsAppUrl}
-                target="_blank"
-                onClick={() => handleUpdateStatus("whatsapp_envoye")}
-                className="w-full py-3.5 px-6 rounded-2xl bg-[#25D366] hover:bg-[#20ba59] text-white font-bold text-sm flex items-center justify-center gap-3 shadow-lg shadow-emerald-950/20 hover:scale-[1.02] active:scale-95 transition-all"
-              >
-                <Send className="w-4 h-4 fill-current" />
-                <span>Ouvrir WhatsApp & Envoyer le Pitch</span>
-              </a>
-
-              <button
-                onClick={() => {
-                  navigator.clipboard.writeText(messageText);
-                  setCopiedMessage(true);
-                  setTimeout(() => setCopiedMessage(false), 2500);
-                }}
-                className="w-full py-2.5 px-4 rounded-xl border border-sand-300 hover:bg-sand-50 text-xs font-semibold text-ink-primary flex items-center justify-center gap-2 transition-all"
-              >
-                {copiedMessage ? (
-                  <>
-                    <Check className="w-3.5 h-3.5 text-forest-700" />
-                    <span>Message copié dans le presse-papier !</span>
-                  </>
-                ) : (
-                  <>
-                    <Copy className="w-3.5 h-3.5 text-ink-muted" />
-                    <span>Copier le texte du message</span>
-                  </>
-                )}
-              </button>
-            </div>
-
+            <button
+              onClick={() => {
+                navigator.clipboard.writeText(messageText);
+                setCopiedMessage(true);
+                setTimeout(() => setCopiedMessage(false), 2000);
+              }}
+              className="w-full py-2 px-3 rounded-lg border border-sand-300 text-xs font-semibold text-ink-primary flex items-center justify-center gap-1.5"
+            >
+              {copiedMessage ? (
+                <>
+                  <Check className="w-3.5 h-3.5 text-forest-700" />
+                  <span>Message copié</span>
+                </>
+              ) : (
+                <>
+                  <Copy className="w-3.5 h-3.5 text-ink-muted" />
+                  <span>Copier le texte</span>
+                </>
+              )}
+            </button>
           </div>
         </div>
 
-        {/* COLUMN RIGHT (6 COLS): SCRIPT TÉLÉPHONIQUE 30 SECONDES */}
-        <div className="lg:col-span-6 space-y-6">
-          <div className="bg-white rounded-3xl p-6 sm:p-7 border border-sand-300/80 shadow-soft space-y-5">
-            
-            {/* SCRIPT HEADER & 30S TIMER */}
-            <div className="flex items-center justify-between pb-4 border-b border-sand-200">
-              <div className="flex items-center gap-2.5">
-                <div className="w-10 h-10 rounded-2xl bg-forest-50 border border-forest-200 flex items-center justify-center text-forest-800">
-                  <Phone className="w-5 h-5" />
-                </div>
-                <div>
-                  <h2 className="font-display text-xl font-bold text-ink-primary">
-                    2. Script Commercial 30s
-                  </h2>
-                  <p className="text-[11px] text-ink-muted">
-                    Pitch téléphonique d'impact pour déclencher la vente
-                  </p>
-                </div>
-              </div>
-
-              {/* INTERACTIVE TIMER CHRONO */}
-              <div className="flex items-center gap-2 bg-sand-100 p-1.5 rounded-2xl border border-sand-300">
-                <div className="px-3 py-1 bg-forest-900 text-lime-400 font-mono font-bold text-sm rounded-xl">
-                  {timerSeconds}s
-                </div>
-                <button
-                  onClick={() => setIsTimerRunning(!isTimerRunning)}
-                  className="p-1.5 rounded-lg bg-white hover:bg-forest-50 text-forest-900"
-                  title={isTimerRunning ? "Pause" : "Démarrer"}
-                >
-                  {isTimerRunning ? <Pause className="w-3.5 h-3.5" /> : <Play className="w-3.5 h-3.5" />}
-                </button>
-                <button
-                  onClick={() => {
-                    setIsTimerRunning(false);
-                    setTimerSeconds(30);
-                  }}
-                  className="p-1.5 rounded-lg bg-white hover:bg-forest-50 text-ink-muted hover:text-forest-900"
-                  title="Réinitialiser"
-                >
-                  <RotateCcw className="w-3.5 h-3.5" />
-                </button>
-              </div>
+        {/* SCRIPT TÉLÉPHONIQUE 30S */}
+        <div className="lg:col-span-6 bg-white rounded-2xl p-6 border border-sand-300 space-y-4">
+          
+          <div className="flex items-center justify-between pb-3 border-b border-sand-200">
+            <div className="flex items-center gap-2">
+              <Phone className="w-4 h-4 text-forest-800" />
+              <h2 className="font-display text-lg font-bold text-ink-primary">
+                2. Script Téléphonique 30s
+              </h2>
             </div>
 
-            {/* 3 STEPS SCRIPT */}
-            <div className="space-y-4">
-              
-              {/* Step 1: Accroche 0-10s */}
-              <div className="p-4 rounded-2xl bg-forest-50/60 border border-forest-200/70 space-y-1">
-                <div className="flex items-center justify-between text-[11px] font-bold text-forest-900">
-                  <span>PHASE 1 : ACCROCHE & COMPLIMENT</span>
-                  <span className="font-mono text-forest-600">0 - 10 sec</span>
-                </div>
-                <p className="text-xs text-ink-primary italic leading-relaxed">
-                  « Bonjour [Nom du Gérant], c'est [Votre Prénom] de l'agence Antigravity. Je vous appelle car j'ai vu votre excellente note de {business.googleRating}/5 sur Google Maps à {business.neighborhood}. Bravo pour vos avis clients ! »
-                </p>
+            <div className="flex items-center gap-1.5 bg-sand-100 p-1 rounded-lg border border-sand-300">
+              <div className="px-2 py-0.5 bg-forest-900 text-lime-400 font-mono font-bold text-xs rounded">
+                {timerSeconds}s
               </div>
-
-              {/* Step 2: Pitch Démo 10-20s */}
-              <div className="p-4 rounded-2xl bg-sand-100/70 border border-sand-200 space-y-1">
-                <div className="flex items-center justify-between text-[11px] font-bold text-forest-900">
-                  <span>PHASE 2 : LA DÉMO EN LIGNE</span>
-                  <span className="font-mono text-forest-600">10 - 20 sec</span>
-                </div>
-                <p className="text-xs text-ink-primary italic leading-relaxed">
-                  « Beaucoup de vos clients cherchent votre menu et vos tarifs avant de venir. Pour vous éviter de perdre ces réservations, mon équipe a déjà conçu gratuitement votre site web officiel et l'a mis en ligne pour vous montrer le rendu sur smartphone. »
-                </p>
-              </div>
-
-              {/* Step 3: Offre 30 000 FCFA 20-30s */}
-              <div className="p-4 rounded-2xl bg-lime-100/50 border border-lime-300 space-y-1">
-                <div className="flex items-center justify-between text-[11px] font-bold text-forest-950">
-                  <span>PHASE 3 : L'OFFRE 30 000 FCFA</span>
-                  <span className="font-mono text-forest-800">20 - 30 sec</span>
-                </div>
-                <p className="text-xs text-forest-950 font-medium italic leading-relaxed">
-                  « L'activation officielle avec votre nom de domaine .com et les commandes WhatsApp directes est à seulement 30 000 FCFA tout compris. Je viens de vous envoyer la maquette sur votre WhatsApp : avez-vous 2 minutes pour y jeter un coup d'œil ? »
-                </p>
-              </div>
-
-            </div>
-
-            {/* CALL OUTCOME BUTTONS (COMPTE-RENDU D'APPEL INSTANTANÉ) */}
-            <div className="pt-2 border-t border-sand-200 space-y-3">
-              <span className="block text-[11px] uppercase font-bold text-ink-muted">
-                Compte-rendu d'appel instantané :
-              </span>
-              <div className="grid grid-cols-3 gap-2">
-                <button
-                  onClick={() => handleCallOutcome("interested")}
-                  className="py-2.5 px-3 rounded-xl bg-forest-900 hover:bg-forest-800 text-lime-300 font-bold text-xs flex items-center justify-center gap-1.5 transition-all active:scale-95"
-                >
-                  <CheckCircle2 className="w-3.5 h-3.5 text-lime-400" />
-                  <span>Intéressé</span>
-                </button>
-
-                <button
-                  onClick={() => handleCallOutcome("callback")}
-                  className="py-2.5 px-3 rounded-xl bg-amber-100 hover:bg-amber-200 text-amber-900 font-bold text-xs flex items-center justify-center gap-1.5 transition-all active:scale-95"
-                >
-                  <Clock className="w-3.5 h-3.5 text-amber-600" />
-                  <span>Rappeler + tard</span>
-                </button>
-
-                <button
-                  onClick={() => handleCallOutcome("not_interested")}
-                  className="py-2.5 px-3 rounded-xl bg-rose-100 hover:bg-rose-200 text-rose-900 font-bold text-xs flex items-center justify-center gap-1.5 transition-all active:scale-95"
-                >
-                  <XCircle className="w-3.5 h-3.5 text-rose-600" />
-                  <span>Pas intéressé</span>
-                </button>
-              </div>
-            </div>
-
-            {/* CALL NOTES & REMARKS */}
-            <div className="space-y-2 pt-2 border-t border-sand-200">
-              <div className="flex items-center justify-between">
-                <label className="text-[11px] font-bold text-ink-muted uppercase">
-                  Notes & Historique d'Échanges :
-                </label>
-                {notesSaved && (
-                  <span className="text-[10px] text-forest-700 font-bold flex items-center gap-1">
-                    <Check className="w-3 h-3" /> Enregistré
-                  </span>
-                )}
-              </div>
-              <textarea
-                rows={3}
-                value={notes}
-                onChange={(e) => setNotes(e.target.value)}
-                placeholder="Ex: Le gérant souhaite ajouter 2 photos supplémentaires de sa terrasse..."
-                className="w-full bg-sand-50 border border-sand-300 rounded-xl p-3 text-xs text-ink-primary focus:outline-none focus:ring-2 focus:ring-forest-500"
-              />
               <button
-                onClick={handleSaveNotes}
-                className="text-xs bg-forest-100 hover:bg-forest-200 text-forest-900 font-bold px-4 py-1.5 rounded-lg transition-colors"
+                onClick={() => setIsTimerRunning(!isTimerRunning)}
+                className="p-1 rounded bg-white text-forest-900"
               >
-                Sauvegarder les notes
+                {isTimerRunning ? <Pause className="w-3 h-3" /> : <Play className="w-3 h-3" />}
+              </button>
+              <button
+                onClick={() => {
+                  setIsTimerRunning(false);
+                  setTimerSeconds(30);
+                }}
+                className="p-1 rounded bg-white text-ink-muted"
+              >
+                <RotateCcw className="w-3 h-3" />
               </button>
             </div>
-
           </div>
+
+          <div className="space-y-2.5 text-xs">
+            <div className="p-3 rounded-lg bg-sand-50 border border-sand-200">
+              <span className="font-bold text-forest-900 block text-[10px] uppercase">
+                0-10s : Accroche
+              </span>
+              <p className="text-ink-primary mt-0.5 italic">
+                « Bonjour, je vous appelle suite aux avis très positifs sur votre fiche Google Maps à {business.neighborhood}. »
+              </p>
+            </div>
+
+            <div className="p-3 rounded-lg bg-sand-50 border border-sand-200">
+              <span className="font-bold text-forest-900 block text-[10px] uppercase">
+                10-20s : Démo en ligne
+              </span>
+              <p className="text-ink-primary mt-0.5 italic">
+                « Notre équipe a préparé la maquette officielle de votre futur site web avec vos menus/prestations et commandes directes sur WhatsApp. »
+              </p>
+            </div>
+
+            <div className="p-3 rounded-lg bg-sand-50 border border-sand-200">
+              <span className="font-bold text-forest-900 block text-[10px] uppercase">
+                20-30s : Offre 30 000 FCFA
+              </span>
+              <p className="text-ink-primary mt-0.5 italic">
+                « L'activation officielle avec votre nom de domaine dédié est à 30 000 FCFA net. Je vous ai envoyé le lien sur votre WhatsApp pour validation. »
+              </p>
+            </div>
+          </div>
+
+          {/* OUTCOME BUTTONS */}
+          <div className="pt-2 border-t border-sand-200 space-y-2">
+            <span className="text-[10px] uppercase font-bold text-ink-muted block">
+              Compte-rendu d'appel :
+            </span>
+            <div className="grid grid-cols-3 gap-2">
+              <button
+                onClick={() => handleCallOutcome("interested")}
+                className="py-2 px-2 rounded-lg bg-forest-900 text-lime-300 font-bold text-xs flex items-center justify-center gap-1"
+              >
+                <CheckCircle2 className="w-3 h-3 text-lime-400" />
+                <span>Intéressé</span>
+              </button>
+
+              <button
+                onClick={() => handleCallOutcome("callback")}
+                className="py-2 px-2 rounded-lg bg-amber-100 text-amber-900 font-bold text-xs flex items-center justify-center gap-1"
+              >
+                <Clock className="w-3 h-3 text-amber-600" />
+                <span>Rappeler</span>
+              </button>
+
+              <button
+                onClick={() => handleCallOutcome("not_interested")}
+                className="py-2 px-2 rounded-lg bg-rose-100 text-rose-900 font-bold text-xs flex items-center justify-center gap-1"
+              >
+                <XCircle className="w-3 h-3 text-rose-600" />
+                <span>Refus</span>
+              </button>
+            </div>
+          </div>
+
+          {/* NOTES */}
+          <div className="space-y-1.5 pt-2 border-t border-sand-200">
+            <div className="flex items-center justify-between">
+              <label className="text-[10px] font-bold text-ink-muted uppercase">
+                Notes :
+              </label>
+              {notesSaved && <span className="text-[10px] text-forest-700 font-bold">Enregistré</span>}
+            </div>
+            <textarea
+              rows={2}
+              value={notes}
+              onChange={(e) => setNotes(e.target.value)}
+              className="w-full bg-sand-50 border border-sand-300 rounded-lg p-2 text-xs text-ink-primary"
+            />
+            <button
+              onClick={handleSaveNotes}
+              className="text-xs bg-sand-100 hover:bg-sand-200 text-forest-900 font-bold px-3 py-1 rounded transition-colors"
+            >
+              Sauvegarder
+            </button>
+          </div>
+
         </div>
 
       </div>
@@ -511,4 +445,3 @@ export default function ProspectDetailPage() {
     </div>
   );
 }
-

@@ -7,17 +7,11 @@ import {
   KanbanSquare,
   Coins,
   Globe2,
-  PhoneCall,
-  Sparkles,
   ArrowUpRight,
   TrendingUp,
-  CheckCircle2,
-  Clock,
+  Check,
   Eye,
   Send,
-  Building2,
-  Users,
-  ShieldCheck,
   ChevronRight,
 } from "lucide-react";
 import { loadStoredBusinesses, loadStoredSubscriptions } from "@/lib/crm-store";
@@ -41,13 +35,11 @@ export default function HomePage() {
     return () => window.removeEventListener("agency-os-data-change", load);
   }, []);
 
-  // Compute metrics
   const wonBusinesses = businesses.filter((b) => b.crmStatus === "vente_validee");
   const totalCashCollected = wonBusinesses.length * 30000;
   
   const activeSubs = subscriptions.filter((s) => s.status !== "overdue");
   const currentMRR = activeSubs.length * 5000;
-  const annualRunRate = currentMRR * 12 + totalCashCollected;
 
   const demoViewedBiz = businesses
     .filter((b) => b.demoLastViewed)
@@ -56,152 +48,118 @@ export default function HomePage() {
   const latestDemo = demoViewedBiz[0];
 
   return (
-    <div className="space-y-10 pb-16">
+    <div className="space-y-8 pb-16">
       
-      {/* HERO SECTION — BENTO STYLE INSPIRÉ DU VISUEL DE RÉFÉRENCE */}
-      <section className="relative overflow-hidden rounded-4xl bg-gradient-to-b from-[#F2F6F1] to-[#E5EFE8] border border-forest-100 p-8 sm:p-12 lg:p-14 shadow-soft">
-        
-        {/* Glow & accents */}
-        <div className="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-lime-300/20 blur-3xl pointer-events-none"></div>
-        <div className="absolute -bottom-24 -left-24 w-80 h-80 rounded-full bg-forest-400/10 blur-3xl pointer-events-none"></div>
-
-        <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+      {/* HERO SECTION — FOND 100% SOLIDE SANS DÉGRADÉ NI HALO */}
+      <section className="rounded-3xl bg-[#ECEFE6] border border-sand-300 p-8 sm:p-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           
-          {/* LEFT: PITCH & TAGLINE */}
-          <div className="lg:col-span-7 space-y-6">
+          {/* LEFT: PITCH DIRECT SANS OVER-TEXTE */}
+          <div className="lg:col-span-7 space-y-4">
             
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-forest-200/80 shadow-sm text-xs font-semibold text-forest-900">
-              <span className="w-2 h-2 rounded-full bg-lime-500 animate-live-pulse"></span>
-              <span>Machine de Vente Digitale Locale</span>
-              <span className="text-forest-300">•</span>
-              <span className="text-forest-700">Afrique Francophone</span>
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-sand-300 text-xs font-semibold text-forest-900">
+              <span className="w-2 h-2 rounded-full bg-forest-600"></span>
+              <span>Agency OS</span>
+              <span className="text-sand-300">•</span>
+              <span>Afrique Francophone</span>
             </div>
 
-            <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold text-ink-primary tracking-tight leading-[1.08]">
-              Next-Gen <span className="text-forest-800 bg-lime-300/60 px-2 py-0.5 rounded-xl inline-block">Agency OS</span>, Conçu pour Closer.
+            <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold text-ink-primary tracking-tight leading-tight">
+              Gestion & Vente de Vitrines Locales.
             </h1>
 
-            <p className="text-ink-secondary text-base sm:text-lg leading-relaxed max-w-xl">
-              Détectez les meilleurs commerces locaux sans site web, générez des maquettes interactives en 1 clic et concluez des offres irrésistibles à <strong>30 000 FCFA</strong> + <strong>5 000 FCFA/mois</strong> d'abonnement.
+            <p className="text-ink-secondary text-sm sm:text-base max-w-lg">
+              Sourcing de commerces sans site web, pipeline CRM et closing WhatsApp à 30 000 FCFA + 5 000 FCFA/mois.
             </p>
 
-            <div className="pt-2 flex flex-wrap items-center gap-4">
+            <div className="pt-2 flex flex-wrap items-center gap-3">
               <Link
                 href="/sourcing"
-                className="bg-forest-900 hover:bg-forest-800 text-white px-7 py-3.5 rounded-full font-bold text-sm flex items-center gap-3 shadow-float hover:scale-105 active:scale-95 transition-all"
+                className="bg-forest-900 hover:bg-forest-800 text-white px-5 py-2.5 rounded-full font-bold text-xs flex items-center gap-2 transition-colors"
               >
                 <Compass className="w-4 h-4 text-lime-400" />
-                <span>Scanner les commerces locaux</span>
-                <ArrowUpRight className="w-4 h-4 text-lime-400" />
+                <span>Scanner Commerces</span>
+                <ArrowUpRight className="w-3.5 h-3.5 text-lime-400" />
               </Link>
 
               <Link
                 href="/crm"
-                className="bg-white hover:bg-forest-50 border border-sand-300/90 text-forest-900 px-6 py-3.5 rounded-full font-bold text-sm shadow-sm transition-all"
+                className="bg-white hover:bg-sand-100 border border-sand-300 text-forest-900 px-5 py-2.5 rounded-full font-bold text-xs transition-colors"
               >
-                Ouvrir le Kanban CRM ({businesses.length} prospects)
+                Pipeline CRM ({businesses.length})
               </Link>
             </div>
 
-            {/* Proof pill */}
-            <div className="pt-4 flex items-center gap-6 text-xs text-ink-muted border-t border-forest-200/50">
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-forest-600" />
-                <span>Filtre strict "Sans site web"</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-forest-600" />
-                <span>Note Google ≥ 4.5 vérifiée</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-forest-600" />
-                <span>WhatsApp-First</span>
-              </div>
+            <div className="pt-3 flex items-center gap-6 text-xs text-ink-muted border-t border-sand-300">
+              <span className="flex items-center gap-1.5">
+                <Check className="w-3.5 h-3.5 text-forest-700" /> Filtre sans site web
+              </span>
+              <span className="flex items-center gap-1.5">
+                <Check className="w-3.5 h-3.5 text-forest-700" /> Note Google ≥ 4.5
+              </span>
             </div>
 
           </div>
 
-          {/* RIGHT: FLOATING CARDS & KEY HIGHLIGHT WIDGET */}
-          <div className="lg:col-span-5 relative space-y-4">
+          {/* RIGHT: METRICS WIDGETS */}
+          <div className="lg:col-span-5 space-y-3">
             
-            {/* Card 1: Primary Dark Forest Card inspired by image */}
-            <div className="bg-forest-900 text-white rounded-3xl p-6 sm:p-7 shadow-float border border-forest-700/60 relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-lime-400/10 rounded-full blur-2xl"></div>
-
-              <div className="flex items-center justify-between">
-                <span className="text-xs uppercase tracking-wider text-forest-300 font-semibold">
-                  Cash Collecté Ventes (30 000 FCFA)
-                </span>
-                <span className="p-2 rounded-xl bg-forest-800 text-lime-400">
-                  <Coins className="w-4 h-4" />
-                </span>
+            {/* Card 1: Cash Ventes */}
+            <div className="bg-forest-900 text-white rounded-2xl p-5 border border-forest-800">
+              <div className="flex items-center justify-between text-xs text-forest-300 uppercase tracking-wider font-semibold">
+                <span>Cash Collecté Ventes</span>
+                <Coins className="w-4 h-4 text-lime-400" />
               </div>
 
-              <div className="mt-4 flex items-baseline gap-2">
-                <span className="font-display text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-                  {mounted ? formatFCFA(totalCashCollected || 390000) : "390 000 FCFA"}
-                </span>
+              <div className="mt-2 font-display text-2xl sm:text-3xl font-extrabold text-white">
+                {mounted ? formatFCFA(totalCashCollected || 390000) : "390 000 FCFA"}
               </div>
 
-              <div className="mt-3 flex items-center gap-2 text-xs text-forest-300">
-                <span className="inline-flex items-center gap-1 font-bold text-lime-400 bg-lime-400/15 px-2 py-0.5 rounded-full">
-                  <TrendingUp className="w-3 h-3" />
-                  +13 ventes
-                </span>
-                <span>closées en moins de 14 jours</span>
-              </div>
-
-              {/* Mini Sparkline indicator */}
-              <div className="mt-5 pt-4 border-t border-forest-800/80 flex items-center justify-between text-xs text-forest-200">
-                <span>Objectif Mensuel</span>
-                <span className="font-bold text-lime-300">78% Atteint</span>
-              </div>
-              <div className="w-full bg-forest-800 rounded-full h-2 mt-1.5 overflow-hidden">
-                <div className="bg-lime-400 h-full rounded-full w-[78%]"></div>
+              <div className="mt-2 text-xs text-forest-300">
+                {wonBusinesses.length} vitrines vendues (30 000 FCFA)
               </div>
             </div>
 
-            {/* Card 2: MRR & Recurring Subscriptions card */}
-            <div className="bg-white rounded-3xl p-6 shadow-soft border border-sand-300/80 flex items-center justify-between">
+            {/* Card 2: MRR */}
+            <div className="bg-white rounded-2xl p-5 border border-sand-300 flex items-center justify-between">
               <div>
                 <span className="text-xs font-semibold text-ink-muted uppercase tracking-wider">
-                  Abonnements MRR Récurrents
+                  Revenus Récurrents (MRR)
                 </span>
-                <div className="mt-1 font-display text-2xl sm:text-3xl font-extrabold text-ink-primary">
-                  {mounted ? formatFCFA(currentMRR || 125000) : "125 000 FCFA"}{" "}
-                  <span className="text-xs font-normal text-ink-muted">/ mois</span>
+                <div className="mt-1 font-display text-2xl font-extrabold text-ink-primary">
+                  {mounted ? formatFCFA(currentMRR || 125000) : "125 000 FCFA"}
+                  <span className="text-xs font-normal text-ink-muted"> / mois</span>
                 </div>
-                <p className="text-xs text-forest-700 mt-1 font-medium">
-                  {mounted ? activeSubs.length : 25} commerces actifs sous contrat (5 000 FCFA/m)
-                </p>
+                <div className="text-xs text-forest-800 mt-0.5">
+                  {mounted ? activeSubs.length : 25} contrats actifs (5 000 FCFA/m)
+                </div>
               </div>
-
-              <div className="w-12 h-12 rounded-2xl bg-lime-100 border border-lime-300 flex items-center justify-center text-forest-900 font-bold">
-                <TrendingUp className="w-6 h-6" />
+              <div className="w-10 h-10 rounded-xl bg-sand-100 flex items-center justify-center text-forest-900">
+                <TrendingUp className="w-5 h-5" />
               </div>
             </div>
 
-            {/* Card 3: Live Telemetry Notification Pill */}
+            {/* Card 3: Live Telemetry Alert */}
             {latestDemo && (
-              <div className="bg-[#EBF5ED] border border-forest-200 p-4 rounded-2xl flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <div className="w-9 h-9 rounded-xl bg-forest-900 text-lime-400 flex items-center justify-center">
-                    <Eye className="w-4 h-4 animate-pulse" />
+              <div className="bg-white border border-sand-300 p-3.5 rounded-2xl flex items-center justify-between">
+                <div className="flex items-center gap-2.5">
+                  <div className="w-8 h-8 rounded-lg bg-forest-900 text-lime-400 flex items-center justify-center">
+                    <Eye className="w-4 h-4" />
                   </div>
                   <div>
                     <span className="text-xs font-bold text-forest-900 block">
-                      👁️ Démo consultée en direct !
+                      Démo consultée en direct
                     </span>
-                    <span className="text-[11px] text-forest-700">
+                    <span className="text-[11px] text-ink-muted">
                       {latestDemo.name} ({formatTimeAgo(latestDemo.demoLastViewed)})
                     </span>
                   </div>
                 </div>
                 <Link
                   href={`/crm/${latestDemo.id}`}
-                  className="text-xs font-bold text-forest-900 hover:text-forest-700 underline flex items-center gap-1"
+                  className="text-xs font-bold text-forest-800 hover:underline flex items-center gap-0.5"
                 >
-                  Closer <ChevronRight className="w-3.5 h-3.5" />
+                  Fiche <ChevronRight className="w-3.5 h-3.5" />
                 </Link>
               </div>
             )}
@@ -209,210 +167,89 @@ export default function HomePage() {
           </div>
 
         </div>
-
       </section>
 
-      {/* 4 CORE MODULES BENTO GRID */}
-      <section className="space-y-6">
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+      {/* 4 CORE MODULES */}
+      <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        
+        <Link
+          href="/sourcing"
+          className="bg-white rounded-2xl p-5 border border-sand-300 hover:border-forest-700 transition-colors flex flex-col justify-between"
+        >
           <div>
-            <span className="text-xs uppercase tracking-widest text-forest-700 font-bold">
-              Workflow Opérationnel
-            </span>
-            <h2 className="font-display text-2xl sm:text-3xl font-extrabold text-ink-primary mt-1">
-              Les 4 Piliers d'Agency OS
-            </h2>
-          </div>
-          <p className="text-xs text-ink-muted max-w-sm">
-            De la détection du commerce sans site web jusqu'à la relance d'abonnement récurrente.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          
-          {/* Mod 1: Sourcing */}
-          <Link
-            href="/sourcing"
-            className="group bg-white rounded-3xl p-6 border border-sand-300/70 hover:border-forest-500 hover:shadow-float transition-all duration-300 flex flex-col justify-between"
-          >
-            <div>
-              <div className="w-12 h-12 rounded-2xl bg-forest-50 border border-forest-200 flex items-center justify-center text-forest-800 group-hover:bg-forest-900 group-hover:text-lime-400 transition-colors">
-                <Compass className="w-6 h-6" />
-              </div>
-              <h3 className="font-display text-xl font-bold text-ink-primary mt-5 flex items-center justify-between">
-                <span>1. Sourcing Local</span>
-                <ArrowUpRight className="w-4 h-4 text-ink-muted group-hover:text-forest-900 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
-              </h3>
-              <p className="text-xs text-ink-secondary mt-2 leading-relaxed">
-                Filtres par secteur et quartier. Données certifiées Google (Note ≥ 4.5) et ciblage chirurgical des commerces <strong>sans site web</strong>.
-              </p>
-            </div>
-            <div className="mt-6 pt-4 border-t border-sand-200 flex items-center justify-between text-xs">
-              <span className="text-forest-700 font-bold">Création JSON Antigravity</span>
-              <span className="bg-sand-100 px-2.5 py-1 rounded-full text-ink-muted font-mono text-[11px]">/sourcing</span>
-            </div>
-          </Link>
-
-          {/* Mod 2: CRM & Kanban */}
-          <Link
-            href="/crm"
-            className="group bg-white rounded-3xl p-6 border border-sand-300/70 hover:border-forest-500 hover:shadow-float transition-all duration-300 flex flex-col justify-between"
-          >
-            <div>
-              <div className="w-12 h-12 rounded-2xl bg-forest-50 border border-forest-200 flex items-center justify-center text-forest-800 group-hover:bg-forest-900 group-hover:text-lime-400 transition-colors">
-                <KanbanSquare className="w-6 h-6" />
-              </div>
-              <h3 className="font-display text-xl font-bold text-ink-primary mt-5 flex items-center justify-between">
-                <span>2. Pipeline CRM</span>
-                <ArrowUpRight className="w-4 h-4 text-ink-muted group-hover:text-forest-900 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
-              </h3>
-              <p className="text-xs text-ink-secondary mt-2 leading-relaxed">
-                Kanban à 7 colonnes interactif. Télémétrie en temps réel dès que la démo est ouverte avec <code>?demo=true</code> par le gérant.
-              </p>
-            </div>
-            <div className="mt-6 pt-4 border-t border-sand-200 flex items-center justify-between text-xs">
-              <span className="text-forest-700 font-bold">Badge 👁️ Télémétrie</span>
-              <span className="bg-sand-100 px-2.5 py-1 rounded-full text-ink-muted font-mono text-[11px]">/crm</span>
-            </div>
-          </Link>
-
-          {/* Mod 3: Prospection 1-Clic */}
-          <Link
-            href="/crm/biz-1"
-            className="group bg-white rounded-3xl p-6 border border-sand-300/70 hover:border-forest-500 hover:shadow-float transition-all duration-300 flex flex-col justify-between"
-          >
-            <div>
-              <div className="w-12 h-12 rounded-2xl bg-forest-50 border border-forest-200 flex items-center justify-center text-forest-800 group-hover:bg-forest-900 group-hover:text-lime-400 transition-colors">
-                <Send className="w-6 h-6" />
-              </div>
-              <h3 className="font-display text-xl font-bold text-ink-primary mt-5 flex items-center justify-between">
-                <span>3. Closing 1-Clic</span>
-                <ArrowUpRight className="w-4 h-4 text-ink-muted group-hover:text-forest-900 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
-              </h3>
-              <p className="text-xs text-ink-secondary mt-2 leading-relaxed">
-                Bouton WhatsApp prérempli avec offre à 30 000 FCFA + Script d'appel télémarketing 30 secondes chronométré avec boutons de compte-rendu.
-              </p>
-            </div>
-            <div className="mt-6 pt-4 border-t border-sand-200 flex items-center justify-between text-xs">
-              <span className="text-forest-700 font-bold">Pitch 30 000 FCFA</span>
-              <span className="bg-sand-100 px-2.5 py-1 rounded-full text-ink-muted font-mono text-[11px]">/crm/[id]</span>
-            </div>
-          </Link>
-
-          {/* Mod 4: Finances & MRR */}
-          <Link
-            href="/finances"
-            className="group bg-white rounded-3xl p-6 border border-sand-300/70 hover:border-forest-500 hover:shadow-float transition-all duration-300 flex flex-col justify-between"
-          >
-            <div>
-              <div className="w-12 h-12 rounded-2xl bg-forest-50 border border-forest-200 flex items-center justify-center text-forest-800 group-hover:bg-forest-900 group-hover:text-lime-400 transition-colors">
-                <Coins className="w-6 h-6" />
-              </div>
-              <h3 className="font-display text-xl font-bold text-ink-primary mt-5 flex items-center justify-between">
-                <span>4. Finances & MRR</span>
-                <ArrowUpRight className="w-4 h-4 text-ink-muted group-hover:text-forest-900 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
-              </h3>
-              <p className="text-xs text-ink-secondary mt-2 leading-relaxed">
-                Suivi du cash collecté et des abonnements de maintenance (5 000 FCFA/mois) avec alertes d'échéances à 30 jours et relance WhatsApp.
-              </p>
-            </div>
-            <div className="mt-6 pt-4 border-t border-sand-200 flex items-center justify-between text-xs">
-              <span className="text-forest-700 font-bold">Alertes 30 jours</span>
-              <span className="bg-sand-100 px-2.5 py-1 rounded-full text-ink-muted font-mono text-[11px]">/finances</span>
-            </div>
-          </Link>
-
-        </div>
-      </section>
-
-      {/* QUICK PREVIEWS OF READY-TO-USE DEMO SITES */}
-      <section className="bg-white rounded-3xl p-8 border border-sand-300/80 shadow-soft">
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-sand-200">
-          <div>
-            <div className="flex items-center gap-2">
-              <Globe2 className="w-5 h-5 text-forest-700" />
-              <h3 className="font-display text-xl font-bold text-ink-primary">
-                Serveur de Démonstrations Antigravity (/public/sites/[slug])
-              </h3>
-            </div>
+            <Compass className="w-5 h-5 text-forest-800" />
+            <h3 className="font-display font-bold text-base text-ink-primary mt-3 flex items-center justify-between">
+              <span>Sourcing Local</span>
+              <ArrowUpRight className="w-3.5 h-3.5 text-ink-muted" />
+            </h3>
             <p className="text-xs text-ink-muted mt-1">
-              Démos déjà générées, hébergées en statique et prêtes à être envoyées sur WhatsApp avec décompte d'urgence 48h.
+              Scanner Google Maps par quartier et filtre sans site web.
             </p>
           </div>
-          <Link
-            href="/sites"
-            className="text-xs font-bold text-forest-800 hover:text-forest-900 underline flex items-center gap-1 self-start sm:self-auto"
-          >
-            Voir le hub de démos <ChevronRight className="w-4 h-4" />
-          </Link>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
-          
-          <div className="border border-sand-200 rounded-2xl p-4 hover:border-forest-300 transition-all bg-sand-50/50 flex flex-col justify-between">
-            <div>
-              <span className="text-[10px] font-bold uppercase tracking-wider text-amber-700 bg-amber-100 px-2 py-0.5 rounded-full">
-                Restaurant
-              </span>
-              <h4 className="font-display font-bold text-base text-ink-primary mt-2">Le Braisé d'Or</h4>
-              <p className="text-xs text-ink-muted">Haie Vive, Cotonou • ★ 4.8 (168 avis)</p>
-            </div>
-            <div className="mt-4 pt-3 border-t border-sand-200 flex items-center justify-between">
-              <a
-                href="/sites/le-braise-d-or/index.html?demo=true"
-                target="_blank"
-                className="text-xs font-bold text-forest-800 hover:text-forest-900 flex items-center gap-1"
-              >
-                Tester Mode Démo 👁️
-              </a>
-              <span className="text-xs font-bold text-forest-700">30 000 FCFA</span>
-            </div>
+          <div className="mt-4 pt-3 border-t border-sand-200 text-xs font-semibold text-forest-800">
+            Export JSON Antigravity
           </div>
+        </Link>
 
-          <div className="border border-sand-200 rounded-2xl p-4 hover:border-forest-300 transition-all bg-sand-50/50 flex flex-col justify-between">
-            <div>
-              <span className="text-[10px] font-bold uppercase tracking-wider text-rose-700 bg-rose-100 px-2 py-0.5 rounded-full">
-                Salon de Coiffure & Beauté
-              </span>
-              <h4 className="font-display font-bold text-base text-ink-primary mt-2">Institut Ébène Prestige</h4>
-              <p className="text-xs text-ink-muted">Cocody, Abidjan • ★ 4.9 (214 avis)</p>
-            </div>
-            <div className="mt-4 pt-3 border-t border-sand-200 flex items-center justify-between">
-              <a
-                href="/sites/institut-ebene-prestige/index.html?demo=true"
-                target="_blank"
-                className="text-xs font-bold text-forest-800 hover:text-forest-900 flex items-center gap-1"
-              >
-                Tester Mode Démo 👁️
-              </a>
-              <span className="text-xs font-bold text-forest-700">30 000 FCFA</span>
-            </div>
+        <Link
+          href="/crm"
+          className="bg-white rounded-2xl p-5 border border-sand-300 hover:border-forest-700 transition-colors flex flex-col justify-between"
+        >
+          <div>
+            <KanbanSquare className="w-5 h-5 text-forest-800" />
+            <h3 className="font-display font-bold text-base text-ink-primary mt-3 flex items-center justify-between">
+              <span>Pipeline CRM</span>
+              <ArrowUpRight className="w-3.5 h-3.5 text-ink-muted" />
+            </h3>
+            <p className="text-xs text-ink-muted mt-1">
+              Kanban 7 étapes avec télémétrie en temps réel.
+            </p>
           </div>
-
-          <div className="border border-sand-200 rounded-2xl p-4 hover:border-forest-300 transition-all bg-sand-50/50 flex flex-col justify-between">
-            <div>
-              <span className="text-[10px] font-bold uppercase tracking-wider text-sky-700 bg-sky-100 px-2 py-0.5 rounded-full">
-                Clinique & Dentiste
-              </span>
-              <h4 className="font-display font-bold text-base text-ink-primary mt-2">Clinique Sourire Plus</h4>
-              <p className="text-xs text-ink-muted">Bonanjo, Douala • ★ 4.7 (92 avis)</p>
-            </div>
-            <div className="mt-4 pt-3 border-t border-sand-200 flex items-center justify-between">
-              <a
-                href="/sites/clinique-sourire-plus/index.html?demo=true"
-                target="_blank"
-                className="text-xs font-bold text-forest-800 hover:text-forest-900 flex items-center gap-1"
-              >
-                Tester Mode Démo 👁️
-              </a>
-              <span className="text-xs font-bold text-forest-700">30 000 FCFA</span>
-            </div>
+          <div className="mt-4 pt-3 border-t border-sand-200 text-xs font-semibold text-forest-800">
+            Télémétrie démo active
           </div>
+        </Link>
 
-        </div>
+        <Link
+          href="/crm/biz-1"
+          className="bg-white rounded-2xl p-5 border border-sand-300 hover:border-forest-700 transition-colors flex flex-col justify-between"
+        >
+          <div>
+            <Send className="w-5 h-5 text-forest-800" />
+            <h3 className="font-display font-bold text-base text-ink-primary mt-3 flex items-center justify-between">
+              <span>Prospection 1-Clic</span>
+              <ArrowUpRight className="w-3.5 h-3.5 text-ink-muted" />
+            </h3>
+            <p className="text-xs text-ink-muted mt-1">
+              Bouton WhatsApp prérempli et script d'appel 30 secondes.
+            </p>
+          </div>
+          <div className="mt-4 pt-3 border-t border-sand-200 text-xs font-semibold text-forest-800">
+            Pitch 30 000 FCFA
+          </div>
+        </Link>
+
+        <Link
+          href="/finances"
+          className="bg-white rounded-2xl p-5 border border-sand-300 hover:border-forest-700 transition-colors flex flex-col justify-between"
+        >
+          <div>
+            <Coins className="w-5 h-5 text-forest-800" />
+            <h3 className="font-display font-bold text-base text-ink-primary mt-3 flex items-center justify-between">
+              <span>Finances & MRR</span>
+              <ArrowUpRight className="w-3.5 h-3.5 text-ink-muted" />
+            </h3>
+            <p className="text-xs text-ink-muted mt-1">
+              Suivi des encaissements et abonnements (5 000 FCFA/m).
+            </p>
+          </div>
+          <div className="mt-4 pt-3 border-t border-sand-200 text-xs font-semibold text-forest-800">
+            Alertes échéance 30j
+          </div>
+        </Link>
+
       </section>
 
     </div>
   );
 }
-

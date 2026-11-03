@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: #F8F9F5;
+    --surface: #FFFFFF;
+    --forest-900: #08291A;
+    --forest-800: #0C3623;
+    --forest-700: #12442C;
+    --lime-500: #BEFA3C;
+    --lime-400: #D4FF32;
+    --ink-primary: #0E241D;
+    --ink-secondary: #475D54;
+    --ink-muted: #7E948B;
+    --border-subtle: #E2EAE4;
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--ink-primary);
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CBDAD1;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #9DB4A7;
+}
+
+/* Pulse animation for Live Telemetry */
+@keyframes live-ping-slow {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(190, 250, 60, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 8px rgba(190, 250, 60, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(190, 250, 60, 0);
+  }
+}
+
+.animate-live-pulse {
+  animation: live-ping-slow 2s infinite cubic-bezier(0.4, 0, 0.6, 1);
+}

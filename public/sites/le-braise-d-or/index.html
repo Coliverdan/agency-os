@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Le Braisé d'Or — Restaurant Gastronomique Africain | Cotonou</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['"Playfair Display"', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            gold: {
+              400: '#E5C058',
+              500: '#D4AF37',
+              600: '#B89223',
+            },
+            amberBrand: '#F59E0B',
+            darkBase: '#0F1319',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #0F1319; color: #F1F5F9; }
+    .font-serif-luxury { font-family: 'Playfair Display', serif; }
+  </style>
+</head>
+<body class="antialiased selection:bg-amber-500 selection:text-black">
+
+  <!-- BANDEAU D'URGENCE DÉMO (Conditionnel via ?demo=true) -->
+  <div id="demo-banner" class="hidden sticky top-0 z-50 bg-gradient-to-r from-amber-950 via-amber-900 to-amber-950 border-b border-amber-500/40 px-4 py-2.5 text-white shadow-xl">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-3 text-sm">
+      <div class="flex items-center gap-2">
+        <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-amber-500 text-black font-bold text-xs">⚠️</span>
+        <span class="font-medium">Maquette officielle conçue pour <strong>Le Braisé d'Or</strong> — Disponibilité prioritaire</span>
+      </div>
+      <div class="flex items-center gap-4">
+        <div class="flex items-center gap-1.5 bg-black/40 px-3 py-1 rounded-full border border-amber-500/30 text-amber-300 font-mono text-xs">
+          <span>Expire dans :</span>
+          <span id="countdown" class="font-bold text-white tracking-wider">47:58:24</span>
+        </div>
+        <a id="btn-activate-top" href="https://wa.me/22997224510?text=Bonjour,%20je%20souhaite%20activer%20le%20site%20officiel%20de%20Le%20Brais%C3%A9%20d'Or%20(30%20000%20FCFA)" target="_blank" class="bg-amber-400 hover:bg-amber-300 text-black px-4 py-1.5 rounded-full font-bold text-xs transition-all shadow-md active:scale-95">
+          Activer ce site officiel (30 000 FCFA)
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVIGATION -->
+  <header class="border-b border-white/10 bg-black/40 backdrop-blur-md sticky top-0 z-40 transition-all" id="main-nav">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-full border border-amber-500/40 bg-amber-500/10 flex items-center justify-center text-amber-400">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" /></svg>
+        </div>
+        <div>
+          <span class="font-serif-luxury text-xl font-bold tracking-tight text-white block">Le Braisé d'Or</span>
+          <span class="text-xs text-emerald-400 flex items-center gap-1.5 font-medium">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            Ouvert actuellement • 11h30 - 23h00
+          </span>
+        </div>
+      </div>
+
+      <nav class="hidden md:flex items-center gap-8 text-sm text-slate-300 font-medium">
+        <a href="#specialites" class="hover:text-amber-400 transition-colors">Nos Spécialités</a>
+        <a href="#carte" class="hover:text-amber-400 transition-colors">La Carte & Tarifs</a>
+        <a href="#galerie" class="hover:text-amber-400 transition-colors">Cadre & Ambiance</a>
+        <a href="#avis" class="hover:text-amber-400 transition-colors">Avis Google</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <a href="tel:+22997224510" class="hidden sm:inline-flex items-center gap-2 border border-white/20 text-white hover:border-amber-400/50 hover:bg-white/5 px-4 py-2 rounded-full text-xs font-semibold transition-all">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H3.75A2.25 2.25 0 001.5 4.5v2.25z" /></svg>
+          Appeler le restaurant
+        </a>
+        <a href="https://wa.me/22997224510?text=Bonjour%20Le%20Brais%C3%A9%20d'Or,%20je%20souhaite%20r%C3%A9server%20une%20table%20pour%20ce%20midi" target="_blank" class="bg-[#25D366] hover:bg-[#20ba59] text-white px-5 py-2.5 rounded-full text-xs font-bold flex items-center gap-2 shadow-lg shadow-emerald-950/40 transition-all hover:scale-105 active:scale-95">
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.592 2.654-.696c1.001.572 1.944.875 2.806.875 3.18 0 5.767-2.587 5.767-5.766.001-3.18-2.585-5.758-5.767-5.758zm3.374 8.213c-.14.394-.807.75-1.126.79-.319.04-.632.062-1.921-.476-1.554-.648-2.548-2.227-2.627-2.332-.078-.105-.632-.841-.632-1.602 0-.761.399-1.136.541-1.289.143-.153.313-.191.417-.191.104 0 .209.002.3.007.096.006.223-.037.348.263.13.313.444 1.082.483 1.161.039.079.065.171.013.275-.052.105-.078.17-.156.262-.078.092-.164.205-.235.275-.078.079-.16.165-.069.321.091.157.406.67 871 1.084.598.533 1.101.698 1.258.777.157.078.248.069.339-.035.092-.105.392-.457.497-.614.105-.157.209-.13.348-.078.14.052.887.418 1.04.494.153.076.255.114.292.179.037.065.037.378-.103.772z"/></svg>
+          Commander sur WhatsApp
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION ASYMÉTRIQUE 60/40 -->
+  <section class="relative pt-12 pb-24 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-amber-500/30 bg-amber-500/10 text-amber-300 text-xs font-semibold">
+            <span>★ 4.8 / 5 sur Google (168 avis certifiés)</span>
+            <span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
+            <span>Haie Vive, Cotonou</span>
+          </div>
+
+          <h1 class="font-serif-luxury text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-tight">
+            L'excellence du braisé africain, <span class="text-amber-400 italic">sublimée</span> au cœur de Cotonou.
+          </h1>
+
+          <p class="text-slate-300 text-base sm:text-lg leading-relaxed max-w-2xl">
+            Poulets bicyclettes marinés aux 12 épices secrètes, capitaines sauvages grillés minute et méchoui d'agneau fondant. Savourez une gastronomie authentique dans un cadre feutré et chaleureux.
+          </p>
+
+          <div class="pt-2 flex flex-wrap items-center gap-4">
+            <a href="https://wa.me/22997224510?text=Bonjour%20Le%20Brais%C3%A9%20d'Or,%20je%20souhaite%20r%C3%A9server%20une%20table%20pour%20ce%20soir" target="_blank" class="bg-[#25D366] hover:bg-[#20ba59] text-white px-7 py-3.5 rounded-xl font-bold text-sm flex items-center gap-3 shadow-xl shadow-emerald-950/50 transition-all hover:scale-105 active:scale-95">
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.592 2.654-.696c1.001.572 1.944.875 2.806.875 3.18 0 5.767-2.587 5.767-5.766.001-3.18-2.585-5.758-5.767-5.758zm3.374 8.213c-.14.394-.807.75-1.126.79-.319.04-.632.062-1.921-.476-1.554-.648-2.548-2.227-2.627-2.332-.078-.105-.632-.841-.632-1.602 0-.761.399-1.136.541-1.289.143-.153.313-.191.417-.191.104 0 .209.002.3.007.096.006.223-.037.348.263.13.313.444 1.082.483 1.161.039.079.065.171.013.275-.052.105-.078.17-.156.262-.078.092-.164.205-.235.275-.078.079-.16.165-.069.321.091.157.406.67 871 1.084.598.533 1.101.698 1.258.777.157.078.248.069.339-.035.092-.105.392-.457.497-.614.105-.157.209-.13.348-.078.14.052.887.418 1.04.494.153.076.255.114.292.179.037.065.037.378-.103.772z"/></svg>
+              <span>Réserver une table par WhatsApp</span>
+            </a>
+            <a href="#carte" class="border border-white/20 hover:border-amber-400/60 hover:bg-white/5 text-white px-6 py-3.5 rounded-xl font-semibold text-sm transition-all">
+              Consulter la carte & tarifs
+            </a>
+          </div>
+
+          <div class="pt-4 flex items-center gap-8 text-xs text-slate-400 border-t border-white/10">
+            <div>
+              <span class="block text-white font-bold text-sm">Rue 340, Haie Vive</span>
+              <span>Face Pharmacie Haie Vive</span>
+            </div>
+            <div class="w-px h-8 bg-white/10"></div>
+            <div>
+              <span class="block text-white font-bold text-sm">+229 97 22 45 10</span>
+              <span>Ligne directe & commandes à emporter</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5 relative">
+          <div class="relative rounded-3xl overflow-hidden border border-white/10 shadow-2xl group">
+            <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=900&q=80" alt="Viande braisée au feu de bois" class="w-full h-[460px] object-cover transition-transform duration-700 group-hover:scale-105">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+            
+            <!-- Badge flottant -->
+            <div class="absolute bottom-6 left-6 right-6 bg-black/70 backdrop-blur-md p-4 rounded-2xl border border-white/15">
+              <div class="flex items-center justify-between">
+                <div>
+                  <span class="text-xs uppercase tracking-wider text-amber-400 font-bold block">Spécialité du Chef</span>
+                  <span class="font-serif-luxury text-lg font-bold text-white">Capitaine Braisé Royal</span>
+                </div>
+                <span class="font-bold text-amber-400 bg-amber-400/10 border border-amber-400/30 px-3 py-1 rounded-lg text-sm">8 500 FCFA</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- LA CARTE AVEC TARIFS EN FCFA SANS TIROIR -->
+  <section id="carte" class="py-20 bg-slate-950/60 border-y border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-2xl">
+        <span class="text-xs uppercase tracking-widest text-amber-400 font-bold">Gastronomie & Authenticité</span>
+        <h2 class="font-serif-luxury text-3xl sm:text-4xl font-bold text-white mt-1">Nos Créations Braisées au Charbon</h2>
+        <p class="text-slate-400 text-sm mt-2">Tous nos plats sont accompagnés au choix d'alloco doré, d'attiéké fin de Grand-Bassam ou d'igname frite croustillante.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
+        
+        <div class="bg-white/[0.03] border border-white/10 rounded-2xl p-5 hover:border-amber-500/40 transition-all flex flex-col justify-between group">
+          <div>
+            <div class="h-44 rounded-xl overflow-hidden mb-4">
+              <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80" alt="Poulet bicyclette braisé" class="w-full h-full object-cover group-hover:scale-105 transition-all">
+            </div>
+            <h3 class="font-serif-luxury text-lg font-bold text-white">Poulet Bicyclette Braisé</h3>
+            <p class="text-slate-400 text-xs mt-1.5 leading-relaxed">Mariné pendant 12h aux épices sauvages locales, braisé lentement au charbon naturel.</p>
+          </div>
+          <div class="mt-4 pt-4 border-t border-white/10 flex items-center justify-between">
+            <span class="text-amber-400 font-bold text-base">6 500 FCFA</span>
+            <a href="https://wa.me/22997224510?text=Je%20souhaite%20commander%20un%20Poulet%20Bicyclette%20Brais%C3%A9" class="text-xs bg-white/10 hover:bg-amber-400 hover:text-black text-white px-3 py-1.5 rounded-lg font-semibold transition-all">Commander</a>
+          </div>
+        </div>
+
+        <div class="bg-white/[0.03] border border-white/10 rounded-2xl p-5 hover:border-amber-500/40 transition-all flex flex-col justify-between group">
+          <div>
+            <div class="h-44 rounded-xl overflow-hidden mb-4">
+              <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=600&q=80" alt="Capitaine grillé" class="w-full h-full object-cover group-hover:scale-105 transition-all">
+            </div>
+            <h3 class="font-serif-luxury text-lg font-bold text-white">Capitaine Frais du Nokoué</h3>
+            <p class="text-slate-400 text-xs mt-1.5 leading-relaxed">Poisson entier sauvage grillé aux aromates, servi avec alloco et purée de piment vert.</p>
+          </div>
+          <div class="mt-4 pt-4 border-t border-white/10 flex items-center justify-between">
+            <span class="text-amber-400 font-bold text-base">8 500 FCFA</span>
+            <a href="https://wa.me/22997224510?text=Je%20souhaite%20commander%20un%20Capitaine%20Frais" class="text-xs bg-white/10 hover:bg-amber-400 hover:text-black text-white px-3 py-1.5 rounded-lg font-semibold transition-all">Commander</a>
+          </div>
+        </div>
+
+        <div class="bg-white/[0.03] border border-white/10 rounded-2xl p-5 hover:border-amber-500/40 transition-all flex flex-col justify-between group">
+          <div>
+            <div class="h-44 rounded-xl overflow-hidden mb-4">
+              <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=600&q=80" alt="Méchoui d'agneau" class="w-full h-full object-cover group-hover:scale-105 transition-all">
+            </div>
+            <h3 class="font-serif-luxury text-lg font-bold text-white">Méchoui d'Agneau Prémium</h3>
+            <p class="text-slate-400 text-xs mt-1.5 leading-relaxed">Cuisson douce 6 heures à l'étouffée. Viande ultra tendre qui se détache à la cuillère.</p>
+          </div>
+          <div class="mt-4 pt-4 border-t border-white/10 flex items-center justify-between">
+            <span class="text-amber-400 font-bold text-base">12 000 FCFA</span>
+            <a href="https://wa.me/22997224510?text=Je%20souhaite%20commander%20un%20M%C3%A9choui%20d'Agneau" class="text-xs bg-white/10 hover:bg-amber-400 hover:text-black text-white px-3 py-1.5 rounded-lg font-semibold transition-all">Commander</a>
+          </div>
+        </div>
+
+        <div class="bg-white/[0.03] border border-white/10 rounded-2xl p-5 hover:border-amber-500/40 transition-all flex flex-col justify-between group">
+          <div>
+            <div class="h-44 rounded-xl overflow-hidden mb-4">
+              <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=600&q=80" alt="Jus de baobab frais" class="w-full h-full object-cover group-hover:scale-105 transition-all">
+            </div>
+            <h3 class="font-serif-luxury text-lg font-bold text-white">Jus Baobab & Gingembre</h3>
+            <p class="text-slate-400 text-xs mt-1.5 leading-relaxed">Pressé à froid sans sucre raffiné, parfumé à la menthe fraîche du jardin.</p>
+          </div>
+          <div class="mt-4 pt-4 border-t border-white/10 flex items-center justify-between">
+            <span class="text-amber-400 font-bold text-base">1 500 FCFA</span>
+            <a href="https://wa.me/22997224510?text=Je%20souhaite%20commander%20du%20Jus%20de%20Baobab" class="text-xs bg-white/10 hover:bg-amber-400 hover:text-black text-white px-3 py-1.5 rounded-lg font-semibold transition-all">Commander</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERIE BENTO 4 PHOTOS SANS ASYMETRIE CASSEE -->
+  <section id="galerie" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-10">
+      <div>
+        <span class="text-xs uppercase tracking-widest text-amber-400 font-bold">Immersion</span>
+        <h2 class="font-serif-luxury text-3xl font-bold text-white mt-1">L'Ambiance de la Maison</h2>
+      </div>
+      <p class="text-slate-400 text-xs md:text-sm max-w-md mt-2 md:mt-0">Un cadre soigné pensé pour vos déjeuners d'affaires comme pour vos dîners intimes sous les étoiles.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div class="md:col-span-2 h-72 rounded-2xl overflow-hidden border border-white/10">
+        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80" alt="Salle du restaurant" class="w-full h-full object-cover hover:scale-105 transition-all duration-500">
+      </div>
+      <div class="h-72 rounded-2xl overflow-hidden border border-white/10">
+        <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=80" alt="Terrasse privative" class="w-full h-full object-cover hover:scale-105 transition-all duration-500">
+      </div>
+      <div class="h-72 rounded-2xl overflow-hidden border border-white/10">
+        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80" alt="Cuisson au barbecue traditionnel" class="w-full h-full object-cover hover:scale-105 transition-all duration-500">
+      </div>
+      <div class="md:col-span-2 h-72 rounded-2xl overflow-hidden border border-white/10">
+        <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1200&q=80" alt="Plat signature servi à table" class="w-full h-full object-cover hover:scale-105 transition-all duration-500">
+      </div>
+    </div>
+  </section>
+
+  <!-- AVIS CLIENTS GOOGLE AUTHENTIQUES -->
+  <section id="avis" class="py-20 bg-slate-950/70 border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-xl mx-auto mb-12">
+        <div class="inline-flex items-center gap-1 text-amber-400 mb-2">
+          ★★★★★
+        </div>
+        <h2 class="font-serif-luxury text-3xl font-bold text-white">Ce que disent nos convives</h2>
+        <p class="text-slate-400 text-xs mt-1">Extraits vérifiés des avis récents sur notre fiche Google Maps</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-white/[0.02] border border-white/10 p-6 rounded-2xl">
+          <div class="flex items-center justify-between text-xs text-slate-400 mb-3">
+            <span class="font-bold text-white">Marc Dossou</span>
+            <span>Il y a 3 jours</span>
+          </div>
+          <div class="text-amber-400 text-xs mb-2">★★★★★</div>
+          <p class="text-slate-300 text-sm leading-relaxed">« Le meilleur braisé de toute la Haie Vive. Portions généreuses, service impeccable et cuisson parfaite ! »</p>
+        </div>
+
+        <div class="bg-white/[0.02] border border-white/10 p-6 rounded-2xl">
+          <div class="flex items-center justify-between text-xs text-slate-400 mb-3">
+            <span class="font-bold text-white">Aïcha B.</span>
+            <span>Il y a 1 semaine</span>
+          </div>
+          <div class="text-amber-400 text-xs mb-2">★★★★★</div>
+          <p class="text-slate-300 text-sm leading-relaxed">« Ambiance feutrée très agréable, poisson d'une fraîcheur absolue. Je commande chaque week-end pour la famille. »</p>
+        </div>
+
+        <div class="bg-white/[0.02] border border-white/10 p-6 rounded-2xl">
+          <div class="flex items-center justify-between text-xs text-slate-400 mb-3">
+            <span class="font-bold text-white">Stéphane V.</span>
+            <span>Il y a 2 semaines</span>
+          </div>
+          <div class="text-amber-400 text-xs mb-2">★★★★☆</div>
+          <p class="text-slate-300 text-sm leading-relaxed">« Très bon cadre pour un déjeuner d'affaires à Cotonou. Accueil chaleureux et cuisson minute au top. »</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-12 border-t border-white/10 bg-black text-slate-400 text-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div>
+        <span class="font-serif-luxury text-base font-bold text-white block">Le Braisé d'Or</span>
+        <span>Rue 340, Face Pharmacie Haie Vive, Cotonou, Bénin</span>
+      </div>
+      <div class="flex items-center gap-6">
+        <span>Mardi - Dimanche : 11h30 - 23h00</span>
+        <a href="tel:+22997224510" class="text-white hover:text-amber-400 font-semibold">+229 97 22 45 10</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPT TÉLÉMÉTRIE & MODE DÉMO DYNAMIQUE -->
+  <script>
+    (function() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const isDemo = urlParams.get('demo') === 'true';
+
+      if (isDemo) {
+        // Afficher le bandeau d'urgence
+        const banner = document.getElementById('demo-banner');
+        if (banner) banner.classList.remove('hidden');
+
+        // Décompte 48h dynamique
+        let totalSeconds = 48 * 3600 - (1 * 3600 + 36);
+        const countdownEl = document.getElementById('countdown');
+        function updateTimer() {
+          if (!countdownEl) return;
+          const h = Math.floor(totalSeconds / 3600);
+          const m = Math.floor((totalSeconds % 3600) / 60);
+          const s = totalSeconds % 60;
+          countdownEl.textContent = 
+            String(h).padStart(2, '0') + ':' + 
+            String(m).padStart(2, '0') + ':' + 
+            String(s).padStart(2, '0');
+          if (totalSeconds > 0) totalSeconds--;
+        }
+        setInterval(updateTimer, 1000);
+        updateTimer();
+
+        // Envoi silencieux de la télémétrie vers le CRM Agency OS
+        try {
+          fetch('/api/track-view?site=le-braise-d-or', { method: 'POST' }).catch(function() {
+            // mode silencieux
+          });
+        } catch (e) {}
+      }
+    })();
+  </script>
+</body>
+</html>

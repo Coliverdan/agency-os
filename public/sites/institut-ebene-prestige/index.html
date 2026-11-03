@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Institut Ébène Prestige — Salon de Coiffure & Spa Privé | Cocody Abidjan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['"Cormorant Garamond"', 'serif'],
+            sans: ['"DM Sans"', 'sans-serif'],
+          },
+          colors: {
+            luxe: {
+              50: '#FBF9F5',
+              100: '#F5EFE6',
+              200: '#EBDDCA',
+              300: '#DFC6A8',
+              400: '#D2AC84',
+              500: '#C59564',
+            },
+            noirProfond: '#0D0E12',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family: 'DM Sans', sans-serif; background-color: #0D0E12; color: #F8FAFC; }
+    .font-cormorant { font-family: 'Cormorant Garamond', serif; }
+  </style>
+</head>
+<body class="antialiased selection:bg-amber-400 selection:text-black">
+
+  <!-- BANDEAU D'URGENCE DÉMO -->
+  <div id="demo-banner" class="hidden sticky top-0 z-50 bg-[#1A120A] border-b border-[#C59564]/40 px-4 py-2.5 text-white shadow-2xl">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-3 text-sm">
+      <div class="flex items-center gap-2">
+        <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-[#C59564] text-black font-bold text-xs">⚠️</span>
+        <span>Maquette haute couture pour <strong>Institut Ébène Prestige</strong> — Réservation de domaine en cours</span>
+      </div>
+      <div class="flex items-center gap-4">
+        <div class="flex items-center gap-1.5 bg-black/50 px-3 py-1 rounded-full border border-[#C59564]/30 text-[#DFC6A8] font-mono text-xs">
+          <span>Temps restant :</span>
+          <span id="countdown" class="font-bold text-white tracking-wider">47:42:10</span>
+        </div>
+        <a href="https://wa.me/2250748901234?text=Bonjour,%20je%20souhaite%20activer%20le%20site%20officiel%20de%20l'Institut%20%C3%89b%C3%A8ne%20Prestige%20(30%20000%20FCFA)" target="_blank" class="bg-[#C59564] hover:bg-[#D2AC84] text-black px-4 py-1.5 rounded-full font-bold text-xs transition-all shadow-md">
+          Activer ce site officiel (30 000 FCFA)
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="border-b border-white/10 bg-black/50 backdrop-blur-md sticky top-0 z-40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-full border border-[#C59564]/40 flex items-center justify-center text-[#C59564]">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z" /></svg>
+        </div>
+        <div>
+          <span class="font-cormorant text-2xl font-bold tracking-tight text-white block">Ébène Prestige</span>
+          <span class="text-xs text-[#DFC6A8] flex items-center gap-1.5 font-medium">
+            <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+            Cocody Ambassades • Lundi - Samedi 09h - 20h
+          </span>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <a href="https://wa.me/2250748901234?text=Bonjour%20Institut%20%C3%89b%C3%A8ne%20Prestige,%20je%20souhaite%20r%C3%A9server%20un%20cr%C3%A9neau%20coiffure" target="_blank" class="bg-[#25D366] hover:bg-[#20ba59] text-white px-5 py-2.5 rounded-full text-xs font-bold flex items-center gap-2 shadow-lg transition-all hover:scale-105">
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.592 2.654-.696c1.001.572 1.944.875 2.806.875 3.18 0 5.767-2.587 5.767-5.766.001-3.18-2.585-5.758-5.767-5.758zm3.374 8.213c-.14.394-.807.75-1.126.79-.319.04-.632.062-1.921-.476-1.554-.648-2.548-2.227-2.627-2.332-.078-.105-.632-.841-.632-1.602 0-.761.399-1.136.541-1.289.143-.153.313-.191.417-.191.104 0 .209.002.3.007.096.006.223-.037.348.263.13.313.444 1.082.483 1.161.039.079.065.171.013.275-.052.105-.078.17-.156.262-.078.092-.164.205-.235.275-.078.079-.16.165-.069.321.091.157.406.67 871 1.084.598.533 1.101.698 1.258.777.157.078.248.069.339-.035.092-.105.392-.457.497-.614.105-.157.209-.13.348-.078.14.052.887.418 1.04.494.153.076.255.114.292.179.037.065.037.378-.103.772z"/></svg>
+          Réserver sur WhatsApp
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="py-16 md:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <div class="lg:col-span-7 space-y-6">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#C59564]/30 bg-[#C59564]/10 text-[#DFC6A8] text-xs font-medium">
+          <span>★ 4.9 / 5 sur Google (214 avis certifiés)</span>
+          <span>•</span>
+          <span>Cocody Ambassades</span>
+        </div>
+
+        <h1 class="font-cormorant text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-none">
+          L'art de la coiffure <span class="italic text-[#DFC6A8]">afro-chic</span> et du bien-être absolu.
+        </h1>
+
+        <p class="text-slate-300 text-base sm:text-lg leading-relaxed max-w-xl">
+          Tresses Knotless Goddess d'une finesse incomparable, soins profonds à la kératine pure et pose de perruques invisibles. Accordez-vous un moment de volupté dans les mains d'expertes réputées d'Abidjan.
+        </p>
+
+        <div class="pt-2 flex flex-wrap items-center gap-4">
+          <a href="https://wa.me/2250748901234?text=Bonjour%20Institut%20%C3%89b%C3%A8ne%20Prestige,%20je%20souhaite%20prendre%20rendez-vous" target="_blank" class="bg-[#25D366] hover:bg-[#20ba59] text-white px-7 py-3.5 rounded-xl font-bold text-sm flex items-center gap-2 shadow-xl hover:scale-105 transition-all">
+            <span>Prendre Rendez-vous par WhatsApp</span>
+          </a>
+          <a href="#prestations" class="border border-[#C59564]/40 hover:bg-[#C59564]/10 text-white px-6 py-3.5 rounded-xl text-sm font-medium transition-all">
+            Voir le menu des prestations
+          </a>
+        </div>
+      </div>
+
+      <div class="lg:col-span-5">
+        <div class="rounded-3xl overflow-hidden border border-[#C59564]/20 shadow-2xl relative">
+          <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=900&q=80" alt="Salon de coiffure de luxe à Abidjan" class="w-full h-[460px] object-cover">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+          <div class="absolute bottom-6 left-6 right-6 p-4 rounded-2xl bg-black/75 backdrop-blur-md border border-white/10 flex items-center justify-between">
+            <div>
+              <span class="text-xs uppercase text-[#C59564] font-bold">Prestation Étoile</span>
+              <span class="font-cormorant text-xl font-bold text-white block">Knotless Goddess VIP</span>
+            </div>
+            <span class="font-bold text-[#DFC6A8] text-sm bg-white/10 px-3 py-1 rounded-lg">25 000 FCFA</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRESTATIONS AVEC PRIX EN FCFA -->
+  <section id="prestations" class="py-20 bg-black/60 border-y border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-xl">
+        <span class="text-xs uppercase tracking-widest text-[#C59564] font-bold">Haute Coiffure & Esthétique</span>
+        <h2 class="font-cormorant text-4xl font-bold text-white mt-1">Nos Prestations Signatures</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
+        <div class="bg-white/[0.02] border border-white/10 p-5 rounded-2xl hover:border-[#C59564]/40 transition-all flex flex-col justify-between">
+          <div>
+            <div class="h-44 rounded-xl overflow-hidden mb-4">
+              <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=600&q=80" alt="Tresses" class="w-full h-full object-cover">
+            </div>
+            <h3 class="font-cormorant text-2xl font-bold text-white">Tresses Knotless Goddess</h3>
+            <p class="text-slate-400 text-xs mt-2 leading-relaxed">Finition soyeuse ultralégère avec soin hydratant profond inclus.</p>
+          </div>
+          <div class="mt-4 pt-4 border-t border-white/10 flex items-center justify-between">
+            <span class="text-[#DFC6A8] font-bold">25 000 FCFA</span>
+            <a href="https://wa.me/2250748901234?text=Je%20veux%20r%C3%A9server%20des%20Knotless%20Goddess" class="text-xs bg-[#C59564] text-black px-3 py-1.5 rounded-lg font-bold">Réserver</a>
+          </div>
+        </div>
+
+        <div class="bg-white/[0.02] border border-white/10 p-5 rounded-2xl hover:border-[#C59564]/40 transition-all flex flex-col justify-between">
+          <div>
+            <div class="h-44 rounded-xl overflow-hidden mb-4">
+              <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=600&q=80" alt="Soin Kératine" class="w-full h-full object-cover">
+            </div>
+            <h3 class="font-cormorant text-2xl font-bold text-white">Soin Kératine Pure</h3>
+            <p class="text-slate-400 text-xs mt-2 leading-relaxed">Nutrition intensive pour cheveux afro naturels ou lissés. Brillance miroir.</p>
+          </div>
+          <div class="mt-4 pt-4 border-t border-white/10 flex items-center justify-between">
+            <span class="text-[#DFC6A8] font-bold">35 000 FCFA</span>
+            <a href="https://wa.me/2250748901234?text=Je%20veux%20r%C3%A9server%20un%20Soin%20K%C3%A9ratine" class="text-xs bg-[#C59564] text-black px-3 py-1.5 rounded-lg font-bold">Réserver</a>
+          </div>
+        </div>
+
+        <div class="bg-white/[0.02] border border-white/10 p-5 rounded-2xl hover:border-[#C59564]/40 transition-all flex flex-col justify-between">
+          <div>
+            <div class="h-44 rounded-xl overflow-hidden mb-4">
+              <img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=600&q=80" alt="Perruque Lace" class="w-full h-full object-cover">
+            </div>
+            <h3 class="font-cormorant text-2xl font-bold text-white">Pose Lace Front Invisible</h3>
+            <p class="text-slate-400 text-xs mt-2 leading-relaxed">Customisation complète de la ligne frontale et fixation 4 semaines.</p>
+          </div>
+          <div class="mt-4 pt-4 border-t border-white/10 flex items-center justify-between">
+            <span class="text-[#DFC6A8] font-bold">20 000 FCFA</span>
+            <a href="https://wa.me/2250748901234?text=Je%20veux%20r%C3%A9server%20une%20Pose%20Lace%20Front" class="text-xs bg-[#C59564] text-black px-3 py-1.5 rounded-lg font-bold">Réserver</a>
+          </div>
+        </div>
+
+        <div class="bg-white/[0.02] border border-white/10 p-5 rounded-2xl hover:border-[#C59564]/40 transition-all flex flex-col justify-between">
+          <div>
+            <div class="h-44 rounded-xl overflow-hidden mb-4">
+              <img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&w=600&q=80" alt="Nail Art" class="w-full h-full object-cover">
+            </div>
+            <h3 class="font-cormorant text-2xl font-bold text-white">Manucure Russe & Nail Art</h3>
+            <p class="text-slate-400 text-xs mt-2 leading-relaxed">Finition parfaite cuticules et vernis semi-permanent longue tenue.</p>
+          </div>
+          <div class="mt-4 pt-4 border-t border-white/10 flex items-center justify-between">
+            <span class="text-[#DFC6A8] font-bold">15 000 FCFA</span>
+            <a href="https://wa.me/2250748901234?text=Je%20veux%20r%C3%A9server%20une%20Manucure%20Russe" class="text-xs bg-[#C59564] text-black px-3 py-1.5 rounded-lg font-bold">Réserver</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AVIS CLIENTS -->
+  <section class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-xl mx-auto mb-12">
+      <span class="text-[#DFC6A8] text-sm">★★★★★</span>
+      <h2 class="font-cormorant text-3xl font-bold text-white mt-1">L'Avis de Nos Clientes de Cocody</h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="bg-white/[0.02] border border-white/10 p-6 rounded-2xl">
+        <div class="flex justify-between text-xs text-slate-400 mb-2">
+          <span class="font-bold text-white">Fatou Coulibaly</span>
+          <span>Hier</span>
+        </div>
+        <div class="text-[#DFC6A8] text-xs mb-2">★★★★★</div>
+        <p class="text-slate-300 text-sm">« Les meilleures coiffeuses de Cocody ! Salon chic, climatisé et musique d'ambiance très relaxante. »</p>
+      </div>
+
+      <div class="bg-white/[0.02] border border-white/10 p-6 rounded-2xl">
+        <div class="flex justify-between text-xs text-slate-400 mb-2">
+          <span class="font-bold text-white">Nathalie K.</span>
+          <span>Il y a 5 jours</span>
+        </div>
+        <div class="text-[#DFC6A8] text-xs mb-2">★★★★★</div>
+        <p class="text-slate-300 text-sm">« Mes knotless tresses tiennent toujours impeccablement après un mois. Bravo à toute l'équipe. »</p>
+      </div>
+
+      <div class="bg-white/[0.02] border border-white/10 p-6 rounded-2xl">
+        <div class="flex justify-between text-xs text-slate-400 mb-2">
+          <span class="font-bold text-white">Sarah G.</span>
+          <span>Il y a 2 semaines</span>
+        </div>
+        <div class="text-[#DFC6A8] text-xs mb-2">★★★★★</div>
+        <p class="text-slate-300 text-sm">« Expérience royale du café d'accueil jusqu'au brushing final. Merci à Madame Salimata. »</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-12 border-t border-white/10 bg-black text-slate-400 text-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div>
+        <span class="font-cormorant text-lg font-bold text-white block">Institut Ébène Prestige</span>
+        <span>Boulevard Hassan II, Résidence Les Palmiers, Cocody, Abidjan</span>
+      </div>
+      <div>
+        <a href="tel:+2250748901234" class="text-white hover:text-[#DFC6A8] font-bold text-sm">+225 07 48 90 12 34</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const isDemo = urlParams.get('demo') === 'true';
+
+      if (isDemo) {
+        const banner = document.getElementById('demo-banner');
+        if (banner) banner.classList.remove('hidden');
+
+        let totalSeconds = 48 * 3600 - (2 * 3600 + 17);
+        const countdownEl = document.getElementById('countdown');
+        function updateTimer() {
+          if (!countdownEl) return;
+          const h = Math.floor(totalSeconds / 3600);
+          const m = Math.floor((totalSeconds % 3600) / 60);
+          const s = totalSeconds % 60;
+          countdownEl.textContent = 
+            String(h).padStart(2, '0') + ':' + 
+            String(m).padStart(2, '0') + ':' + 
+            String(s).padStart(2, '0');
+          if (totalSeconds > 0) totalSeconds--;
+        }
+        setInterval(updateTimer, 1000);
+        updateTimer();
+
+        try {
+          fetch('/api/track-view?site=institut-ebene-prestige', { method: 'POST' }).catch(function() {});
+        } catch (e) {}
+      }
+    })();
+  </script>
+</body>
+</html>

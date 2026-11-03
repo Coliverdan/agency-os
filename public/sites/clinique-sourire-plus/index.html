@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clinique Dentaire Sourire Plus — Centre d'Implantologie & Esthétique | Bonanjo Douala</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['"Outfit"', 'sans-serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            medical: {
+              50: '#F0F9FF',
+              500: '#0EA5E9',
+              600: '#0284C7',
+              900: '#0C4A6E',
+            },
+            fondMedical: '#0B131F',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #0B131F; color: #F1F5F9; }
+    .font-outfit { font-family: 'Outfit', sans-serif; }
+  </style>
+</head>
+<body class="antialiased selection:bg-sky-500 selection:text-white">
+
+  <!-- BANDEAU DÉMO D'URGENCE -->
+  <div id="demo-banner" class="hidden sticky top-0 z-50 bg-[#07243B] border-b border-sky-500/40 px-4 py-2.5 text-white shadow-xl">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-3 text-sm">
+      <div class="flex items-center gap-2">
+        <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-sky-400 text-black font-bold text-xs">⚠️</span>
+        <span>Version de présentation médicale pour <strong>Clinique Sourire Plus</strong></span>
+      </div>
+      <div class="flex items-center gap-4">
+        <div class="flex items-center gap-1.5 bg-black/40 px-3 py-1 rounded-full border border-sky-500/30 text-sky-200 font-mono text-xs">
+          <span>Décompte priorité :</span>
+          <span id="countdown" class="font-bold text-white tracking-wider">47:51:39</span>
+        </div>
+        <a href="https://wa.me/237699448812?text=Bonjour,%20je%20souhaite%20activer%20le%20site%20officiel%20de%20la%20Clinique%20Sourire%20Plus%20(30%20000%20FCFA)" target="_blank" class="bg-sky-400 hover:bg-sky-300 text-black px-4 py-1.5 rounded-full font-bold text-xs transition-all shadow-md">
+          Activer ce site officiel (30 000 FCFA)
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVIGATION -->
+  <header class="border-b border-white/10 bg-black/40 backdrop-blur-md sticky top-0 z-40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-full border border-sky-400/30 bg-sky-500/10 flex items-center justify-center text-sky-400 font-bold">
+          +
+        </div>
+        <div>
+          <span class="font-outfit text-xl font-bold tracking-tight text-white block">Clinique Sourire Plus</span>
+          <span class="text-xs text-emerald-400 flex items-center gap-1.5 font-medium">
+            <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+            Bonanjo Douala • 08h00 - 18h30
+          </span>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <a href="https://wa.me/237699448812?text=Bonjour%20Clinique%20Sourire%20Plus,%20je%20souhaite%20un%20rendez-vous%20de%20consultation" target="_blank" class="bg-[#25D366] hover:bg-[#20ba59] text-white px-5 py-2.5 rounded-full text-xs font-bold flex items-center gap-2 shadow-lg transition-all hover:scale-105">
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.592 2.654-.696c1.001.572 1.944.875 2.806.875 3.18 0 5.767-2.587 5.767-5.766.001-3.18-2.585-5.758-5.758zm3.374 8.213c-.14.394-.807.75-1.126.79-.319.04-.632.062-1.921-.476-1.554-.648-2.548-2.227-2.627-2.332-.078-.105-.632-.841-.632-1.602 0-.761.399-1.136.541-1.289.143-.153.313-.191.417-.191.104 0 .209.002.3.007.096.006.223-.037.348.263.13.313.444 1.082.483 1.161.039.079.065.171.013.275-.052.105-.078.17-.156.262-.078.092-.164.205-.235.275-.078.079-.16.165-.069.321.091.157.406.67 871 1.084.598.533 1.101.698 1.258.777.157.078.248.069.339-.035.092-.105.392-.457.497-.614.105-.157.209-.13.348-.078.14.052.887.418 1.04.494.153.076.255.114.292.179.037.065.037.378-.103.772z"/></svg>
+          Prendre RDV Médical sur WhatsApp
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="py-16 md:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <div class="lg:col-span-7 space-y-6">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-sky-400/30 bg-sky-500/10 text-sky-300 text-xs font-semibold">
+          <span>★ 4.7 / 5 sur Google (92 avis certifiés)</span>
+          <span>•</span>
+          <span>Bonanjo, Douala</span>
+        </div>
+
+        <h1 class="font-outfit text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
+          Votre santé dentaire & esthétique entre des <span class="text-sky-400">mains expertes</span>.
+        </h1>
+
+        <p class="text-slate-300 text-base sm:text-lg leading-relaxed max-w-xl">
+          Plateau technique haute précision, radiographie 3D panoramique, blanchiment laser et soins sans douleur. Retrouvez un sourire éclatant en plein quartier d'affaires de Bonanjo.
+        </p>
+
+        <div class="pt-2 flex flex-wrap items-center gap-4">
+          <a href="https://wa.me/237699448812?text=Bonjour%20Clinique%20Sourire%20Plus,%20je%20souhaite%20un%20rendez-vous" target="_blank" class="bg-[#25D366] hover:bg-[#20ba59] text-white px-7 py-3.5 rounded-xl font-bold text-sm flex items-center gap-2 shadow-xl hover:scale-105 transition-all">
+            <span>Prendre Rendez-vous en Ligne</span>
+          </a>
+          <a href="#soins" class="border border-white/20 hover:bg-white/5 text-white px-6 py-3.5 rounded-xl text-sm font-semibold transition-all">
+            Consulter les tarifs des soins
+          </a>
+        </div>
+      </div>
+
+      <div class="lg:col-span-5">
+        <div class="rounded-3xl overflow-hidden border border-white/10 shadow-2xl relative">
+          <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=900&q=80" alt="Cabinet dentaire moderne à Douala" class="w-full h-[440px] object-cover">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+          <div class="absolute bottom-6 left-6 right-6 p-4 rounded-2xl bg-black/75 backdrop-blur-md border border-white/15 flex items-center justify-between">
+            <div>
+              <span class="text-xs text-sky-400 font-bold uppercase tracking-wider">Spécialité</span>
+              <span class="font-outfit text-lg font-bold text-white block">Blanchiment Dentaire Laser</span>
+            </div>
+            <span class="font-bold text-sky-300 text-sm bg-sky-500/20 border border-sky-400/30 px-3 py-1 rounded-lg">80 000 FCFA</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOINS & TARIFS -->
+  <section id="soins" class="py-20 bg-black/50 border-y border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-xl">
+        <span class="text-xs uppercase tracking-widest text-sky-400 font-bold">Transparence Médicale</span>
+        <h2 class="font-outfit text-3xl sm:text-4xl font-bold text-white mt-1">Actes & Tarifs en FCFA</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
+        <div class="bg-white/[0.03] border border-white/10 p-5 rounded-2xl flex flex-col justify-between">
+          <div>
+            <div class="h-40 rounded-xl overflow-hidden mb-4">
+              <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=600&q=80" alt="Consultation" class="w-full h-full object-cover">
+            </div>
+            <h3 class="font-outfit text-lg font-bold text-white">Bilan Dentaire & Radio 3D</h3>
+            <p class="text-slate-400 text-xs mt-1.5 leading-relaxed">Diagnostic complet haute définition avec bilan parodontal.</p>
+          </div>
+          <div class="mt-4 pt-4 border-t border-white/10 flex items-center justify-between">
+            <span class="text-sky-300 font-bold">15 000 FCFA</span>
+            <a href="https://wa.me/237699448812?text=Je%20veux%20r%C3%A9server%20un%20Bilan%20Dentaire" class="text-xs bg-sky-500 hover:bg-sky-400 text-black px-3 py-1.5 rounded-lg font-bold">Réserver</a>
+          </div>
+        </div>
+
+        <div class="bg-white/[0.03] border border-white/10 p-5 rounded-2xl flex flex-col justify-between">
+          <div>
+            <div class="h-40 rounded-xl overflow-hidden mb-4">
+              <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=600&q=80" alt="Détartrage" class="w-full h-full object-cover">
+            </div>
+            <h3 class="font-outfit text-lg font-bold text-white">Détartrage & Polissage</h3>
+            <p class="text-slate-400 text-xs mt-1.5 leading-relaxed">Nettoyage complet par ultrasons indolore et élimination des taches.</p>
+          </div>
+          <div class="mt-4 pt-4 border-t border-white/10 flex items-center justify-between">
+            <span class="text-sky-300 font-bold">25 000 FCFA</span>
+            <a href="https://wa.me/237699448812?text=Je%20veux%20r%C3%A9server%20un%20D%C3%A9tartrage" class="text-xs bg-sky-500 hover:bg-sky-400 text-black px-3 py-1.5 rounded-lg font-bold">Réserver</a>
+          </div>
+        </div>
+
+        <div class="bg-white/[0.03] border border-white/10 p-5 rounded-2xl flex flex-col justify-between">
+          <div>
+            <div class="h-40 rounded-xl overflow-hidden mb-4">
+              <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=600&q=80" alt="Blanchiment" class="w-full h-full object-cover">
+            </div>
+            <h3 class="font-outfit text-lg font-bold text-white">Blanchiment Laser Fauteuil</h3>
+            <p class="text-slate-400 text-xs mt-1.5 leading-relaxed">Résultat immédiat en 45 minutes, protection de l'émail garantie.</p>
+          </div>
+          <div class="mt-4 pt-4 border-t border-white/10 flex items-center justify-between">
+            <span class="text-sky-300 font-bold">80 000 FCFA</span>
+            <a href="https://wa.me/237699448812?text=Je%20veux%20un%20Blanchiment%20Laser" class="text-xs bg-sky-500 hover:bg-sky-400 text-black px-3 py-1.5 rounded-lg font-bold">Réserver</a>
+          </div>
+        </div>
+
+        <div class="bg-white/[0.03] border border-white/10 p-5 rounded-2xl flex flex-col justify-between">
+          <div>
+            <div class="h-40 rounded-xl overflow-hidden mb-4">
+              <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=600&q=80" alt="Orthodontie" class="w-full h-full object-cover">
+            </div>
+            <h3 class="font-outfit text-lg font-bold text-white">Gouttières Aligneurs Invisibles</h3>
+            <p class="text-slate-400 text-xs mt-1.5 leading-relaxed">Alignement discret sans bagues métalliques, confortable au quotidien.</p>
+          </div>
+          <div class="mt-4 pt-4 border-t border-white/10 flex items-center justify-between">
+            <span class="text-sky-300 font-bold">350 000 FCFA</span>
+            <a href="https://wa.me/237699448812?text=Je%20veux%20un%20devis%20Aligneurs%20Invisibles" class="text-xs bg-sky-500 hover:bg-sky-400 text-black px-3 py-1.5 rounded-lg font-bold">Réserver</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AVIS GOOGLE -->
+  <section class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-xl mx-auto mb-12">
+      <div class="text-sky-400 mb-2">★★★★★</div>
+      <h2 class="font-outfit text-3xl font-bold text-white">Retours Patients à Bonanjo</h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="bg-white/[0.02] border border-white/10 p-6 rounded-2xl">
+        <div class="flex justify-between text-xs text-slate-400 mb-2">
+          <span class="font-bold text-white">Dr Jean-Paul N.</span>
+          <span>Il y a 4 jours</span>
+        </div>
+        <p class="text-slate-300 text-sm">« Plateau technique à la pointe. Hygiène irréprochable et dentistes très doux avec les enfants. »</p>
+      </div>
+
+      <div class="bg-white/[0.02] border border-white/10 p-6 rounded-2xl">
+        <div class="flex justify-between text-xs text-slate-400 mb-2">
+          <span class="font-bold text-white">Carine Mbarga</span>
+          <span>Il y a 10 jours</span>
+        </div>
+        <p class="text-slate-300 text-sm">« Mon blanchiment est parfait ! Très bon accueil et respect scrupuleux des horaires de rendez-vous. »</p>
+      </div>
+
+      <div class="bg-white/[0.02] border border-white/10 p-6 rounded-2xl">
+        <div class="flex justify-between text-xs text-slate-400 mb-2">
+          <span class="font-bold text-white">Patrick E.</span>
+          <span>Il y a 3 semaines</span>
+        </div>
+        <p class="text-slate-300 text-sm">« Excellent cabinet médical à Bonanjo. Prise de rendez-vous fluide et équipe très rassurante. »</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-12 border-t border-white/10 bg-black text-slate-400 text-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div>
+        <span class="font-outfit text-lg font-bold text-white block">Clinique Dentaire Sourire Plus</span>
+        <span>Avenue du Général de Gaulle, Bonanjo, Douala, Cameroun</span>
+      </div>
+      <div>
+        <a href="tel:+237699448812" class="text-white hover:text-sky-300 font-bold text-sm">+237 699 44 88 12</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const isDemo = urlParams.get('demo') === 'true';
+
+      if (isDemo) {
+        const banner = document.getElementById('demo-banner');
+        if (banner) banner.classList.remove('hidden');
+
+        let totalSeconds = 48 * 3600 - (18 * 60 + 21);
+        const countdownEl = document.getElementById('countdown');
+        function updateTimer() {
+          if (!countdownEl) return;
+          const h = Math.floor(totalSeconds / 3600);
+          const m = Math.floor((totalSeconds % 3600) / 60);
+          const s = totalSeconds % 60;
+          countdownEl.textContent = 
+            String(h).padStart(2, '0') + ':' + 
+            String(m).padStart(2, '0') + ':' + 
+            String(s).padStart(2, '0');
+          if (totalSeconds > 0) totalSeconds--;
+        }
+        setInterval(updateTimer, 1000);
+        updateTimer();
+
+        try {
+          fetch('/api/track-view?site=clinique-sourire-plus', { method: 'POST' }).catch(function() {});
+        } catch (e) {}
+      }
+    })();
+  </script>
+</body>
+</html>

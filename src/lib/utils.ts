@@ -23,3 +23,4 @@ export function formatTimeAgo(isoDate?: string): string {
   const diffInDays = Math.floor(diffInHours / 24);
   return `il y a ${diffInDays} j`;
 }
+

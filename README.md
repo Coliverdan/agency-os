@@ -76,3 +76,4 @@ pnpm start
 1. Pousser le dépôt sur GitHub / GitLab.
 2. Importer le projet dans votre tableau de bord [Vercel](https://vercel.com).
 3. Vercel détecte automatiquement Next.js 15. Cliquez sur **Deploy**.
+

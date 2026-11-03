@@ -53,3 +53,4 @@ export async function POST(request: NextRequest) {
     count: serverTelemetryEvents[site].count,
   });
 }
+

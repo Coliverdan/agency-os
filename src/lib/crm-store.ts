@@ -147,3 +147,4 @@ Souhaitez-vous que je vous active le site officiel aujourd'hui ?`;
   const url = `https://wa.me/${cleanPhone}?text=${encodeURIComponent(messageText)}`;
   return { url, messageText };
 }
+

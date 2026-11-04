@@ -50,41 +50,185 @@
       background: #000;
       border: 1px solid #4F4836;
       overflow: hidden;
-      transition: border-color 0.3s ease, transform 0.3s ease;
+      font-size: 0;
+      line-height: 0;
+      cursor: pointer;
+      transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
     }
     .chablis-reel-container:hover {
       border-color: #FFD28D;
       transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.7);
     }
     .chablis-reel-video {
       width: 100%;
-      aspect-ratio: 9/16;
+      height: 100%;
+      aspect-ratio: 4 / 5;
       object-fit: cover;
       display: block;
-      cursor: pointer;
+      margin: 0;
+      padding: 0;
     }
-        .reel-play-btn {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            background: rgba(4, 13, 16, 0.7);
-            border: 1px solid #FFD28D;
-            color: #FFD28D;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-        .reel-play-btn:hover {
-            background: #FFD28D;
-            color: #040D10;
-            transform: translate(-50%, -50%) scale(1.1);
-        }
+    /* Animated Player Logo on Videos */
+    .reel-play-indicator {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: rgba(4, 13, 16, 0.75);
+      border: 1.5px solid #FFD28D;
+      color: #FFD28D;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      pointer-events: none;
+      z-index: 2;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+    .reel-pulse-ring {
+      position: absolute;
+      inset: -6px;
+      border-radius: 50%;
+      border: 2px solid rgba(255, 210, 141, 0.5);
+      animation: reel-pulse 2s infinite ease-out;
+    }
+    @keyframes reel-pulse {
+      0% { transform: scale(0.9); opacity: 1; }
+      100% { transform: scale(1.4); opacity: 0; }
+    }
+    .chablis-reel-container:hover .reel-play-indicator,
+    .chablis-reel-container.is-playing .reel-play-indicator {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.8);
+    }
+
+    /* Green Animated WhatsApp Card in Footer */
+    .footer-wa-card {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+      padding: 10px 18px;
+      border-radius: 6px;
+      color: #FFF !important;
+      text-decoration: none;
+      font-family: 'Prompt', sans-serif;
+      box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+      transition: all 0.3s ease;
+      animation: wa-glow 2.5s infinite ease-in-out;
+    }
+    .footer-wa-card:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6);
+      color: #FFF !important;
+    }
+    .wa-card-icon {
+      width: 32px;
+      height: 32px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .wa-card-text {
+      text-align: left;
+      line-height: 1.25;
+    }
+    .wa-card-title {
+      display: block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      opacity: 0.95;
+    }
+    .wa-card-num {
+      display: block;
+      font-size: 15px;
+      font-weight: 600;
+      color: #FFF;
+    }
+    @keyframes wa-glow {
+      0%, 100% { box-shadow: 0 4px 14px rgba(37, 211, 102, 0.35); }
+      50% { box-shadow: 0 6px 24px rgba(37, 211, 102, 0.7); }
+    }
+
+    /* Clean Styled Reservation Form */
+    .chablis-booking-wrapper {
+      max-width: 820px;
+      margin: 0 auto;
+      background: #091E24;
+      border: 1px solid #4F4836;
+      border-radius: 12px;
+      padding: 35px 30px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    }
+    .res-grid-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+    @media (max-width: 768px) {
+      .res-grid-row {
+        grid-template-columns: 1fr;
+        gap: 15px;
+      }
+      .chablis-booking-wrapper {
+        padding: 25px 20px;
+      }
+    }
+    .res-control-group label {
+      display: block;
+      font-size: 13px;
+      color: #FFD28D;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 6px;
+      font-weight: 500;
+    }
+    .res-input-field {
+      width: 100%;
+      height: 52px;
+      background: #040D10;
+      border: 1px solid #4F4836;
+      border-radius: 6px;
+      padding: 0 16px;
+      color: #FFF;
+      font-family: 'Prompt', sans-serif;
+      font-size: 15px;
+      outline: none;
+      transition: border-color 0.3s ease;
+    }
+    .res-input-field:focus {
+      border-color: #FFD28D;
+    }
+    .res-submit-btn {
+      width: 100%;
+      height: 56px;
+      background: linear-gradient(135deg, #FFD28D 0%, #D4AF37 100%);
+      color: #040D10;
+      border: none;
+      border-radius: 6px;
+      font-family: 'Prompt', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .res-submit-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(255, 210, 141, 0.4);
+    }
         /* Bouton Flottant WhatsApp */
         .whatsapp-float {
             position: fixed;
@@ -500,6 +644,10 @@
           <div class="col">
             <div class="chablis-reel-container">
               <video class="chablis-reel-video" loop playsinline muted preload="metadata" src="assets/videos/chablis-reel-1.mp4"></video>
+              <div class="reel-play-indicator">
+                <div class="reel-pulse-ring"></div>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+              </div>
             </div>
             <div style="margin-top: 12px; text-align: center;">
               <h6 style="color: #FFF; font-family: 'Baskervville', serif; margin: 0 0 4px 0; font-size: 17px;">Depuis l'Aéroport</h6>
@@ -511,6 +659,10 @@
           <div class="col">
             <div class="chablis-reel-container">
               <video class="chablis-reel-video" loop playsinline muted preload="metadata" src="assets/videos/chablis-reel-2.mp4"></video>
+              <div class="reel-play-indicator">
+                <div class="reel-pulse-ring"></div>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+              </div>
             </div>
             <div style="margin-top: 12px; text-align: center;">
               <h6 style="color: #FFF; font-family: 'Baskervville', serif; margin: 0 0 4px 0; font-size: 17px;">Depuis Fin Pavé</h6>
@@ -522,6 +674,10 @@
           <div class="col">
             <div class="chablis-reel-container">
               <video class="chablis-reel-video" loop playsinline muted preload="metadata" src="assets/videos/chablis-reel-3.mp4"></video>
+              <div class="reel-play-indicator">
+                <div class="reel-pulse-ring"></div>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+              </div>
             </div>
             <div style="margin-top: 12px; text-align: center;">
               <h6 style="color: #FFF; font-family: 'Baskervville', serif; margin: 0 0 4px 0; font-size: 17px;">Depuis Ganhi</h6>
@@ -533,6 +689,10 @@
           <div class="col">
             <div class="chablis-reel-container">
               <video class="chablis-reel-video" loop playsinline muted preload="metadata" src="assets/videos/chablis-reel-4.mp4"></video>
+              <div class="reel-play-indicator">
+                <div class="reel-pulse-ring"></div>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+              </div>
             </div>
             <div style="margin-top: 12px; text-align: center;">
               <h6 style="color: #FFF; font-family: 'Baskervville', serif; margin: 0 0 4px 0; font-size: 17px;">Depuis la route de Lomé</h6>
@@ -1099,84 +1259,66 @@
             </section>
             <!-- End Opening Hours Section -->
 
-            <!-- Start Booking System Section (Elegencia Booking Form) -->
-            <section id="reservation">
-                <div class="ak-height-150 ak-height-lg-60"></div>
-                <div class="container">
-                    <div class="booking-system-heading">
-                        <div class="ak-section-heading ak-style-1 ak-type-1">
-                            <div class="ak-section-subtitle">
-                                Réservation Instantanée
-                            </div>
-                            <h2 class="ak-section-title anim-title">Votre Table au Châblis</h2>
-                            <p style="color: #A0A0A0; font-size: 14px; margin-top: 10px;">
-                                Choisissez votre créneau ci-dessous. Votre demande sera transmise en un clic sur le WhatsApp officiel du restaurant (+229 01 56 34 48 62).
-                            </p>
-                        </div>
-                        <div class="ak-height-60 ak-height-lg-30"></div>
-                        
-                        <div class="booking-system-form">
-                            <form id="chablis-booking-form" class="booking-system-form style-2">
-                                
-                                <div class="row g-3 mb-3">
-                                    <div class="col-12 col-md-6">
-                                        <input type="text" id="cust-name" required placeholder="Votre Nom et Prénom *" style="width: 100%; height: 60px; background: #091E24; border: 1px solid #4F4836; border-radius: 8px; padding: 0 20px; color: #FFF; font-family: 'Prompt', sans-serif; font-size: 14px;">
-                                    </div>
-                                    <div class="col-12 col-md-6">
-                                        <div class="select" style="width: 100%;">
-                                            <select id="cust-guests" class="ak-form-select">
-                                                <option value="1">1 Personne (Solo)</option>
-                                                <option value="2" selected>2 Personnes (Dîner en couple)</option>
-                                                <option value="3">3 Personnes</option>
-                                                <option value="4">4 Personnes</option>
-                                                <option value="5">5 Personnes</option>
-                                                <option value="6">6 Personnes</option>
-                                                <option value="7">7 à 10 Personnes (Groupe)</option>
-                                                <option value="12">Plus de 10 Personnes (Salon Privé)</option>
-                                            </select>
-                                            <div class="select-icon">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="10" viewBox="0 0 18 10" fill="none">
-                                                    <path d="M8.99516 9.502C8.80335 9.502 8.61135 9.42869 8.46491 9.28225L0.964914 1.78225C0.671852 1.48919 0.671852 1.01463 0.964914 0.72175C1.25798 0.428875 1.73254 0.428688 2.02541 0.72175L8.99516 7.6915L15.9649 0.72175C16.258 0.428688 16.7325 0.428688 17.0254 0.72175C17.3183 1.01481 17.3185 1.48937 17.0254 1.78225L9.52541 9.28225C9.37898 9.42869 9.18698 9.502 8.99516 9.502Z" fill="#FFD28D" />
-                                                </svg>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+            <!-- Start Booking System Section (Expérience Optimisée) -->
+      <section id="reservation">
+        <div class="ak-height-150 ak-height-lg-60"></div>
+        <div class="container">
+          <div class="ak-section-heading ak-style-1 ak-type-1 text-center">
+            <div class="ak-section-subtitle">
+              Réservation Instantanée
+            </div>
+            <h2 class="ak-section-title anim-title">Votre Table au Châblis</h2>
+            <p style="color: #A0A0A0; font-size: 15px; margin-top: 10px;">
+              Remplissez les informations ci-dessous. Votre récapitulatif sera directement transmis sur le WhatsApp officiel du restaurant.
+            </p>
+          </div>
+          <div class="ak-height-50 ak-height-lg-30"></div>
 
-                                <div class="ak-form-time-date">
-                                    <div class="ak-time">
-                                        <input value="20:00" class="time-input" type="time" name="time" id="cust-time">
-                                        <div class="time-icon">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
-                                                <g clip-path="url(#clip0_1166_8212)">
-                                                    <path d="M12 24.002C5.38581 24.002 0 18.6161 0 12.002C0 5.38777 5.38581 0.00195312 12 0.00195312C18.6142 0.00195312 24 5.38777 24 12.002C24 18.6161 18.6142 24.002 12 24.002ZM12 1.14474C6.01423 1.14474 1.14279 6.01618 1.14279 12.002C1.14279 17.9877 6.01423 22.8592 12 22.8592C17.9858 22.8592 22.8572 17.9877 22.8572 12.002C22.8572 6.01618 17.9858 1.14474 12 1.14474Z" fill="#FFD28D" />
-                                                    <path d="M11.4287 4.00195H12.5717V10.2876H11.4287V4.00195Z" fill="#FFD28D" />
-                                                    <path d="M11.4287 13.7168H12.5717V16.5739H11.4287V13.7168Z" fill="#FFD28D" />
-                                                </g>
-                                            </svg>
-                                        </div>
-                                    </div>
-                                    <div class="ak-date">
-                                        <input class="date-input" type="date" name="date" id="cust-date">
-                                        <div class="date-icon">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
-                                                <path d="M12.0732 18.6094H13.917M17.6152 18.6094H19.4589M6.54198 18.6094H8.38571M12.0732 13.0781H13.917M17.6152 13.0781H19.4589M6.54198 13.0781H8.38571M1.93262 8.45311H24.0683M18.537 5.68749V1.07813M7.46387 5.68749V1.07813M5.63077 23.2031H20.3701C22.4125 23.2031 24.0683 21.5474 24.0683 19.5049V6.62006C24.0683 4.57763 22.4125 2.92186 20.3701 2.92186H5.63077C3.58834 2.92186 1.93262 4.57763 1.93262 6.62006V19.5049C1.93262 21.5474 3.58834 23.2031 5.63077 23.2031Z" stroke="#FFD28D" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
-                                            </svg>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="ak-btn style-5 mt-4">
-                                    <button type="submit" style="background: none; border: none; color: inherit; font: inherit; cursor: pointer; width: 100%; height: 100%;">
-                                        Envoyer sur WhatsApp (+229 01 56 34 48 62)
-                                    </button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
+          <div class="chablis-booking-wrapper">
+            <form id="chablis-booking-form">
+              <div class="res-grid-row">
+                <div class="res-control-group">
+                  <label for="cust-name">Nom complet *</label>
+                  <input type="text" id="cust-name" required placeholder="Votre Nom et Prénom" class="res-input-field">
                 </div>
-            </section>
-            <!-- End Booking System Section -->
+                <div class="res-control-group">
+                  <label for="cust-guests">Nombre de convives *</label>
+                  <select id="cust-guests" class="res-input-field">
+                    <option value="1 personne">1 Personne (Solo)</option>
+                    <option value="2 personnes" selected>2 Personnes (Dîner en couple)</option>
+                    <option value="3 personnes">3 Personnes</option>
+                    <option value="4 personnes">4 Personnes</option>
+                    <option value="5 à 6 personnes">5 à 6 Personnes</option>
+                    <option value="Groupe (7 à 10 personnes)">Groupe (7 à 10 personnes)</option>
+                    <option value="Salon Privé (10+ personnes)">Salon Privé (10+ personnes)</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="res-grid-row">
+                <div class="res-control-group">
+                  <label for="cust-date">Date de réservation *</label>
+                  <input type="date" id="cust-date" required class="res-input-field">
+                </div>
+                <div class="res-control-group">
+                  <label for="cust-time">Heure / Service *</label>
+                  <input type="time" id="cust-time" value="20:00" required class="res-input-field">
+                </div>
+              </div>
+
+              <div class="mt-4">
+                <button type="submit" class="res-submit-btn">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.592 2.654-.696c1.001.572 1.944.875 2.806.875 3.18 0 5.767-2.587 5.767-5.766.001-3.18-2.585-5.758-5.767-5.758zm3.374 8.213c-.14.394-.807.75-1.126.79-.319.04-.632.062-1.921-.476-1.554-.648-2.548-2.227-2.627-2.332-.078-.105-.632-.841-.632-1.602 0-.761.399-1.136.541-1.289.143-.153.313-.191.417-.191.104 0 .209.002.3.007.096.006.223-.037.348.263.13.313.444 1.082.483 1.161.039.079.065.171.013.275-.052.105-.078.17-.156.262-.078.092-.164.205-.235.275-.078.079-.16.165-.069.321.091.157.406.67 871 1.084.598.533 1.101.698 1.258.777.157.078.248.069.339-.035.092-.105.392-.457.497-.614.105-.157.209-.13.348-.078.14.052.887.418 1.04.494.153.076.255.114.292.179.037.065.037.378-.103.772z"/>
+                  </svg>
+                  <span>Confirmer la réservation sur WhatsApp (+229 01 56 34 48 62)</span>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+      <!-- End Booking System Section -->
 
             <!-- Start Video Banner Section (Elegencia Video Banner) -->
             <div class="ak-height-150 ak-height-lg-60"></div>
@@ -1211,7 +1353,7 @@
                         src="https://maps.google.com/maps?q=9C43%2BHPG+Rue+395+Cotonou+Benin&t=&z=16&ie=UTF8&iwloc=&output=embed"
                         width="100%"
                         height="100%"
-                        style="border:0; filter: contrast(110%) brightness(85%);"
+                        style="border:0; filter: invert(90%) hue-rotate(180deg) contrast(115%) saturate(75%); background: #040D10;"
                         allowfullscreen=""
                         loading="lazy">
                     </iframe>
@@ -1258,9 +1400,17 @@
                         <div class="ak-height-75 ak-height-lg-5"></div>
                         <div class="footer-info">
                             <div class="fooer-phn">
-                                <a href="tel:+2290156344862">+229 01 56 34 48 62</a>
-                                <br>
-                                <a href="https://wa.me/2290156344862" target="_blank" style="color: #25D366;">WhatsApp Direct</a>
+                                <a href="https://wa.me/2290156344862?text=Bonjour%20Le%20Ch%C3%A2blis,%20je%20souhaite%20r%C3%A9server%20une%20table." target="_blank" class="footer-wa-card" aria-label="Contacter Le Châblis sur WhatsApp">
+                                    <div class="wa-card-icon">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.592 2.654-.696c1.001.572 1.944.875 2.806.875 3.18 0 5.767-2.587 5.767-5.766.001-3.18-2.585-5.758-5.767-5.758zm3.374 8.213c-.14.394-.807.75-1.126.79-.319.04-.632.062-1.921-.476-1.554-.648-2.548-2.227-2.627-2.332-.078-.105-.632-.841-.632-1.602 0-.761.399-1.136.541-1.289.143-.153.313-.191.417-.191.104 0 .209.002.3.007.096.006.223-.037.348.263.13.313.444 1.082.483 1.161.039.079.065.171.013.275-.052.105-.078.17-.156.262-.078.092-.164.205-.235.275-.078.079-.16.165-.069.321.091.157.406.67 871 1.084.598.533 1.101.698 1.258.777.157.078.248.069.339-.035.092-.105.392-.457.497-.614.105-.157.209-.13.348-.078.14.052.887.418 1.04.494.153.076.255.114.292.179.037.065.037.378-.103.772z"/>
+                                        </svg>
+                                    </div>
+                                    <div class="wa-card-text">
+                                        <span class="wa-card-title">WHATSAPP DIRECT</span>
+                                        <span class="wa-card-num">+229 01 56 34 48 62</span>
+                                    </div>
+                                </a>
                             </div>
                             <div class="footer-address">
                                 <a href="https://maps.google.com/?q=9C43%2BHPG,+Rue+395,+Cotonou" target="_blank">
@@ -1383,19 +1533,74 @@
                 });
             });
 
-            // Formulaire de réservation WhatsApp
-            $('#chablis-booking-form').on('submit', function(e) {
-                e.preventDefault();
-                var name = $('#cust-name').val().trim() || 'Client';
-                var guests = $('#cust-guests').val();
-                var time = $('#cust-time').val();
-                var date = $('#cust-date').val();
+            // Initialiser la date par défaut sur aujourd'hui
+      var dateInput = document.getElementById('cust-date');
+      if (dateInput) {
+        var today = new Date().toISOString().split('T')[0];
+        dateInput.value = today;
+        dateInput.min = today;
+      }
 
-                var msg = "Bonjour Le Châblis, je souhaite réserver une table pour " + guests + " personne(s) le " + date + " à " + time + " au nom de " + name + ".";
-                var url = "https://wa.me/2290156344862?text=" + encodeURIComponent(msg);
-                window.open(url, '_blank');
-            });
+      // Gestion des vidéos au survol et au clic
+      $('.chablis-reel-container').each(function() {
+        var container = $(this);
+        var video = container.find('video')[0];
+
+        container.on('mouseenter', function() {
+          if (video) {
+            video.play().then(function() {
+              container.addClass('is-playing');
+            }).catch(function() {});
+          }
         });
+
+        container.on('mouseleave', function() {
+          if (video) {
+            video.pause();
+            container.removeClass('is-playing');
+          }
+        });
+
+        container.on('click', function() {
+          if (video) {
+            if (video.paused) {
+              video.play().then(function() {
+                container.addClass('is-playing');
+              }).catch(function() {});
+            } else {
+              video.pause();
+              container.removeClass('is-playing');
+            }
+          }
+        });
+      });
+
+      // Formulaire de réservation avec récapitulatif WhatsApp structuré
+      $('#chablis-booking-form').on('submit', function(e) {
+        e.preventDefault();
+        var name = $('#cust-name').val().trim() || 'Client';
+        var guests = $('#cust-guests').val();
+        var date = $('#cust-date').val();
+        var time = $('#cust-time').val();
+
+        var msg = "Bonjour Le Châblis, je souhaite effectuer une réservation :
+
+" +
+                  "• Nom : " + name + "
+" +
+                  "• Date : " + date + "
+" +
+                  "• Heure : " + time + "
+" +
+                  "• Nombre de personnes : " + guests + "
+
+" +
+                  "Merci de me confirmer la disponibilité.";
+
+        var url = "https://wa.me/2290156344862?text=" + encodeURIComponent(msg);
+        window.open(url, '_blank');
+      });
+    });
     </script>
 
     <!-- Télémétrie Silencieuse CRM Agency OS -->

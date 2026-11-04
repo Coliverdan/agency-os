@@ -165,3 +165,4 @@ Le site est prêt et optimisé smartphone. Seriez-vous disponible 5 minutes dema
   - **Frais de Création One-Shot :** 5 × 175 000 FCFA = **875 000 FCFA**.
   - **Abonnements Maintenance / Mises à jour :** 15 clients × 15 000 FCFA/mois = **225 000 FCFA**.
   - **TOTAL :** **1 100 000 FCFA / MOIS de trésorerie nette**.
+

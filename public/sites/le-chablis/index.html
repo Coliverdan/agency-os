@@ -45,26 +45,24 @@
         .chablis-gold-text {
             color: #FFD28D !important;
         }
-        .chablis-reel-card {
-            background: #091E24;
-            border: 1px solid #4F4836;
-            border-radius: 16px;
-            padding: 12px;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-        .chablis-reel-card:hover {
-            border-color: #FFD28D;
-            transform: translateY(-4px);
-        }
-        .chablis-reel-video {
-            width: 100%;
-            aspect-ratio: 9/16;
-            object-fit: cover;
-            border-radius: 12px;
-            background: #000;
-            display: block;
-        }
+        .chablis-reel-container {
+      position: relative;
+      background: #000;
+      border: 1px solid #4F4836;
+      overflow: hidden;
+      transition: border-color 0.3s ease, transform 0.3s ease;
+    }
+    .chablis-reel-container:hover {
+      border-color: #FFD28D;
+      transform: translateY(-4px);
+    }
+    .chablis-reel-video {
+      width: 100%;
+      aspect-ratio: 9/16;
+      object-fit: cover;
+      display: block;
+      cursor: pointer;
+    }
         .reel-play-btn {
             position: absolute;
             top: 50%;
@@ -482,89 +480,70 @@
                 </div>
             </div>
 
-            <!-- Start Video Reels Carousel Section (Instagram Reels exclusifs) -->
-            <section id="videos">
-                <div class="ak-height-150 ak-height-lg-60"></div>
-                <div class="container">
-                    <div class="ak-section-heading ak-style-1 ak-type-1">
-                        <div class="ak-section-subtitle">
-                            Série Vidéo Instagram @le_chablis_restaurant
-                        </div>
-                        <h2 class="ak-section-title anim-title">Les habitués connaissent le chemin par cœur...</h2>
-                        <p style="color: #A0A0A0; font-size: 15px; margin-top: 10px; max-width: 600px; margin-left: auto; margin-right: auto;">
-                            Découvrez en 4 séquences vidéo authentiques le chemin secret pour rejoindre La Patte d'Oie / Cadjèhoun et savourer l'atmosphère du Châblis.
-                        </p>
-                    </div>
+            <!-- Start Video Section (Itinéraires d'Accès) -->
+    <section id="videos">
+      <div class="ak-height-150 ak-height-lg-60"></div>
+      <div class="container">
+        <div class="ak-section-heading ak-style-1 ak-type-1">
+          <h2 class="ak-section-title anim-title">Les habitués connaissent le chemin par cœur...</h2>
+          <p style="color: #A0A0A0; font-size: 15px; margin-top: 10px; max-width: 650px; margin-left: auto; margin-right: auto;">
+            Itinéraires pour nous trouver depuis l'Aéroport, Fin Pavé, Ganhi et la route de Lomé.
+          </p>
+        </div>
 
-                    <div class="ak-height-65 ak-height-lg-30"></div>
+        <div class="ak-height-65 ak-height-lg-30"></div>
 
-                    <!-- Grille des 4 Vidéos Reels interactives -->
-                    <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4">
-                        
-                        <!-- Reel 1 -->
-                        <div class="col">
-                            <div class="chablis-reel-card">
-                                <video class="chablis-reel-video" loop playsinline muted preload="metadata" src="assets/videos/chablis-reel-1.mp4"></video>
-                                <button class="reel-play-btn" type="button" aria-label="Lire la vidéo">
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-                                </button>
-                                <div style="margin-top: 10px;">
-                                    <span style="font-size: 11px; color: #FFD28D; text-transform: uppercase; font-family: 'Prompt', sans-serif;">Épisode 1</span>
-                                    <h6 style="color: #FFF; font-family: 'Baskervville', serif; margin: 4px 0 2px 0;">Le Chemin vers Cadjèhoun</h6>
-                                    <p style="font-size: 12px; color: #9A9A9A; margin: 0;">L'accès discret depuis la Rue 395.</p>
-                                </div>
-                            </div>
-                        </div>
+        <!-- Grille des 4 Vidéos Itinéraires Rectangulaires -->
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4">
 
-                        <!-- Reel 2 -->
-                        <div class="col">
-                            <div class="chablis-reel-card">
-                                <video class="chablis-reel-video" loop playsinline muted preload="metadata" src="assets/videos/chablis-reel-2.mp4"></video>
-                                <button class="reel-play-btn" type="button" aria-label="Lire la vidéo">
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-                                </button>
-                                <div style="margin-top: 10px;">
-                                    <span style="font-size: 11px; color: #FFD28D; text-transform: uppercase; font-family: 'Prompt', sans-serif;">Épisode 2</span>
-                                    <h6 style="color: #FFF; font-family: 'Baskervville', serif; margin: 4px 0 2px 0;">L'Arrivée au Patio</h6>
-                                    <p style="font-size: 12px; color: #9A9A9A; margin: 0;">La terrasse verdoyante abritée.</p>
-                                </div>
-                            </div>
-                        </div>
+          <!-- Vidéo 1 -->
+          <div class="col">
+            <div class="chablis-reel-container">
+              <video class="chablis-reel-video" loop playsinline muted preload="metadata" src="assets/videos/chablis-reel-1.mp4"></video>
+            </div>
+            <div style="margin-top: 12px; text-align: center;">
+              <h6 style="color: #FFF; font-family: 'Baskervville', serif; margin: 0 0 4px 0; font-size: 17px;">Depuis l'Aéroport</h6>
+              <p style="font-size: 12px; color: #9A9A9A; margin: 0;">Itinéraire vers Le Châblis</p>
+            </div>
+          </div>
 
-                        <!-- Reel 3 -->
-                        <div class="col">
-                            <div class="chablis-reel-card">
-                                <video class="chablis-reel-video" loop playsinline muted preload="metadata" src="assets/videos/chablis-reel-3.mp4"></video>
-                                <button class="reel-play-btn" type="button" aria-label="Lire la vidéo">
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-                                </button>
-                                <div style="margin-top: 10px;">
-                                    <span style="font-size: 11px; color: #FFD28D; text-transform: uppercase; font-family: 'Prompt', sans-serif;">Épisode 3</span>
-                                    <h6 style="color: #FFF; font-family: 'Baskervville', serif; margin: 4px 0 2px 0;">La Salle Climatisée</h6>
-                                    <p style="font-size: 12px; color: #9A9A9A; margin: 0;">L'ambiance tamisée et feutrée.</p>
-                                </div>
-                            </div>
-                        </div>
+          <!-- Vidéo 2 -->
+          <div class="col">
+            <div class="chablis-reel-container">
+              <video class="chablis-reel-video" loop playsinline muted preload="metadata" src="assets/videos/chablis-reel-2.mp4"></video>
+            </div>
+            <div style="margin-top: 12px; text-align: center;">
+              <h6 style="color: #FFF; font-family: 'Baskervville', serif; margin: 0 0 4px 0; font-size: 17px;">Depuis Fin Pavé</h6>
+              <p style="font-size: 12px; color: #9A9A9A; margin: 0;">Itinéraire vers Le Châblis</p>
+            </div>
+          </div>
 
-                        <!-- Reel 4 -->
-                        <div class="col">
-                            <div class="chablis-reel-card">
-                                <video class="chablis-reel-video" loop playsinline muted preload="metadata" src="assets/videos/chablis-reel-4.mp4"></video>
-                                <button class="reel-play-btn" type="button" aria-label="Lire la vidéo">
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-                                </button>
-                                <div style="margin-top: 10px;">
-                                    <span style="font-size: 11px; color: #FFD28D; text-transform: uppercase; font-family: 'Prompt', sans-serif;">Épisode 4</span>
-                                    <h6 style="color: #FFF; font-family: 'Baskervville', serif; margin: 4px 0 2px 0;">Le Vin & La Table</h6>
-                                    <p style="font-size: 12px; color: #9A9A9A; margin: 0;">Le service attentif et les verres fins.</p>
-                                </div>
-                            </div>
-                        </div>
+          <!-- Vidéo 3 -->
+          <div class="col">
+            <div class="chablis-reel-container">
+              <video class="chablis-reel-video" loop playsinline muted preload="metadata" src="assets/videos/chablis-reel-3.mp4"></video>
+            </div>
+            <div style="margin-top: 12px; text-align: center;">
+              <h6 style="color: #FFF; font-family: 'Baskervville', serif; margin: 0 0 4px 0; font-size: 17px;">Depuis Ganhi</h6>
+              <p style="font-size: 12px; color: #9A9A9A; margin: 0;">Itinéraire vers Le Châblis</p>
+            </div>
+          </div>
 
-                    </div>
-                </div>
-            </section>
-            <!-- End Video Reels Section -->
+          <!-- Vidéo 4 -->
+          <div class="col">
+            <div class="chablis-reel-container">
+              <video class="chablis-reel-video" loop playsinline muted preload="metadata" src="assets/videos/chablis-reel-4.mp4"></video>
+            </div>
+            <div style="margin-top: 12px; text-align: center;">
+              <h6 style="color: #FFF; font-family: 'Baskervville', serif; margin: 0 0 4px 0; font-size: 17px;">Depuis la route de Lomé</h6>
+              <p style="font-size: 12px; color: #9A9A9A; margin: 0;">Itinéraire vers Le Châblis</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <!-- End Video Section -->
 
             <!-- Start Gallery Showcase Section (Elegencia LightGallery) -->
             <div class="ak-height-150 ak-height-lg-60"></div>
@@ -1264,11 +1243,7 @@
 
                     <div class="footer-main">
                         <div class="footer-eamil-menu">
-                            <div class="footer-email">
-                                <a href="tel:+2290156344862" style="font-family: 'Prompt', sans-serif; font-size: 18px; color: #FFD28D;">
-                                    +229 01 56 34 48 62
-                                </a>
-                            </div>
+                            
                             <div class="footer-menu">
                                 <ul>
                                     <li><a href="#accueil">Accueil</a></li>
@@ -1348,13 +1323,6 @@
         </div>
     </div>
     <!-- End Video Popup Modal -->
-
-    <!-- Bouton Flottant WhatsApp -->
-    <a href="https://wa.me/2290156344862?text=Bonjour%20Le%20Ch%C3%A2blis,%20je%20souhaite%20r%C3%A9server%20une%20table%20s'il%20vous%20pla%C3%AEt." target="_blank" class="whatsapp-float" aria-label="Contacter Le Châblis sur WhatsApp">
-        <div class="whatsapp-pulse"></div>
-        <span class="wa-tooltip">Réserver sur WhatsApp</span>
-        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.592 2.654-.696c1.001.572 1.944.875 2.806.875 3.18 0 5.767-2.587 5.767-5.766.001-3.18-2.585-5.758-5.767-5.758zm3.374 8.213c-.14.394-.807.75-1.126.79-.319.04-.632.062-1.921-.476-1.554-.648-2.548-2.227-2.627-2.332-.078-.105-.632-.841-.632-1.602 0-.761.399-1.136.541-1.289.143-.153.313-.191.417-.191.104 0 .209.002.3.007.096.006.223-.037.348.263.13.313.444 1.082.483 1.161.039.079.065.171.013.275-.052.105-.078.17-.156.262-.078.092-.164.205-.235.275-.078.079-.16.165-.069.321.091.157.406.67 871 1.084.598.533 1.101.698 1.258.777.157.078.248.069.339-.035.092-.105.392-.457.497-.614.105-.157.209-.13.348-.078.14.052.887.418 1.04.494.153.076.255.114.292.179.037.065.037.378-.103.772z"/></svg>
-    </a>
 
     <!-- Scripts Elegencia Plugins & Custom Scripts -->
     <script src="assets/js/plugins/jquery-3.7.1.min.js"></script>

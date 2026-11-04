@@ -45,7 +45,7 @@
   --yellow-color: #FFD28D;
   --body-color: #C8C8C8;
   --body-bg-color: #040D10;
-  --body-bg-color-two: #091E24;
+  --body-bg-color-two: #1E090E;
   --heading-color: #FFD28D;
   --border-color: #4F4836;
   --common-color-white: #FFF;
@@ -6217,7 +6217,7 @@ input[type=checkbox] {
 
 .feature-card {
   display: flex;
-  background-color: #091e24;
+  background-color: #1E090E;
   gap: 20px;
   padding: 50px;
   font-family: Prompt;

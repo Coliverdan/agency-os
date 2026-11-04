@@ -48,17 +48,16 @@
         .chablis-reel-container {
       position: relative;
       background: #000;
-      border: 1px solid #4F4836;
+      border: 1px solid #4A1B24;
       overflow: hidden;
       font-size: 0;
       line-height: 0;
       cursor: pointer;
-      transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+      transition: border-color 0.3s ease, transform 0.3s ease;
     }
     .chablis-reel-container:hover {
       border-color: #FFD28D;
       transform: translateY(-4px);
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.7);
     }
     .chablis-reel-video {
       width: 100%;
@@ -69,70 +68,62 @@
       margin: 0;
       padding: 0;
     }
-    /* Animated Player Logo on Videos */
     .reel-play-indicator {
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 52px;
-      height: 52px;
+      width: 56px;
+      height: 56px;
       border-radius: 50%;
-      background: rgba(4, 13, 16, 0.75);
-      border: 1.5px solid #FFD28D;
+      background: rgba(30, 9, 14, 0.85);
+      border: 2px solid #FFD28D;
       color: #FFD28D;
       display: flex;
       align-items: center;
       justify-content: center;
-      pointer-events: none;
-      z-index: 2;
-      transition: opacity 0.3s ease, transform 0.3s ease;
+      cursor: pointer;
+      z-index: 10;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
     }
-    .reel-pulse-ring {
-      position: absolute;
-      inset: -6px;
-      border-radius: 50%;
-      border: 2px solid rgba(255, 210, 141, 0.5);
-      animation: reel-pulse 2s infinite ease-out;
+    .reel-play-indicator:hover {
+      background: #FFD28D;
+      color: #040D10;
+      transform: translate(-50%, -50%) scale(1.1);
     }
-    @keyframes reel-pulse {
-      0% { transform: scale(0.9); opacity: 1; }
-      100% { transform: scale(1.4); opacity: 0; }
-    }
-    .chablis-reel-container:hover .reel-play-indicator,
     .chablis-reel-container.is-playing .reel-play-indicator {
-      opacity: 0;
-      transform: translate(-50%, -50%) scale(0.8);
+      opacity: 0.25;
+    }
+    .chablis-reel-container.is-playing:hover .reel-play-indicator {
+      opacity: 0.95;
     }
 
-    /* Green Animated WhatsApp Card in Footer */
+    /* Clean Solid WhatsApp Card in Footer (No gradient, no glow) */
     .footer-wa-card {
       display: inline-flex;
       align-items: center;
       gap: 12px;
-      background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+      background: #25D366; /* Vert solide officiel WhatsApp */
       padding: 10px 18px;
-      border-radius: 6px;
+      border-radius: 8px;
       color: #FFF !important;
       text-decoration: none;
       font-family: 'Prompt', sans-serif;
-      box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
-      transition: all 0.3s ease;
-      animation: wa-glow 2.5s infinite ease-in-out;
+      box-shadow: none !important;
+      transition: opacity 0.2s ease, transform 0.2s ease;
     }
     .footer-wa-card:hover {
-      transform: translateY(-3px) scale(1.02);
-      box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6);
+      transform: translateY(-2px);
+      opacity: 0.95;
+      box-shadow: none !important;
       color: #FFF !important;
     }
-    .wa-card-icon {
+    .wa-card-icon-img {
       width: 32px;
       height: 32px;
-      background: rgba(255, 255, 255, 0.2);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      display: block;
+      border-radius: 6px;
       flex-shrink: 0;
     }
     .wa-card-text {
@@ -144,7 +135,7 @@
       font-size: 11px;
       font-weight: 700;
       letter-spacing: 1px;
-      opacity: 0.95;
+      color: #FFF;
     }
     .wa-card-num {
       display: block;
@@ -152,8 +143,6 @@
       font-weight: 600;
       color: #FFF;
     }
-    @keyframes wa-glow {
-      0%, 100% { box-shadow: 0 4px 14px rgba(37, 211, 102, 0.35); }
       50% { box-shadow: 0 6px 24px rgba(37, 211, 102, 0.7); }
     }
 
@@ -161,7 +150,7 @@
     .chablis-booking-wrapper {
       max-width: 820px;
       margin: 0 auto;
-      background: #091E24;
+      background: #1E090E;
       border: 1px solid #4F4836;
       border-radius: 12px;
       padding: 35px 30px;
@@ -520,17 +509,6 @@
             </section>
             <!-- End Hero -->
 
-            <!-- Start Sliding Text Ticker (Elegencia signature) -->
-            <div class="sliding-text-section">
-                <div class="sliding-text-content">
-                    <p class="sliding-text">
-                        LE CHÂBLIS COTONOU &bull; TABLE RAFFINÉE &bull; BAR À VINS D'EXCEPTION &bull; CUISINE FAITE MAISON &bull; PATIO VÉGÉTAL & SALON PRIVÉ &bull; CADJÈHOUN RUE 395 &bull; NOTE GOOGLE 4.4 / 5 &bull; 
-                        LE CHÂBLIS COTONOU &bull; TABLE RAFFINÉE &bull; BAR À VINS D'EXCEPTION &bull; CUISINE FAITE MAISON &bull; PATIO VÉGÉTAL & SALON PRIVÉ &bull;
-                    </p>
-                </div>
-            </div>
-            <!-- End Sliding Text Ticker -->
-
             <!-- Start À Propos & Atmosphère Section -->
             <section id="apropos">
                 <div class="ak-height-150 ak-height-lg-60"></div>
@@ -582,7 +560,7 @@
                 <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 text-center">
                     
                     <div class="col">
-                        <div class="p-4" style="background: #091E24; border: 1px solid #4F4836; border-radius: 12px; height: 100%;">
+                        <div class="p-4" style="background: #1E090E; border: 1px solid #4A1B24; border-radius: 12px; height: 100%;">
                             <div style="font-size: 26px; color: #FFD28D; margin-bottom: 12px;">
                                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#FFD28D" stroke-width="1.7"><path d="M8 22h8M12 15v7M12 15a7 7 0 0 0 7-7c0-2-2-3-2-3H7s-2 1-2 3a7 7 0 0 0 7 7z"/></svg>
                             </div>
@@ -592,17 +570,17 @@
                     </div>
 
                     <div class="col">
-                        <div class="p-4" style="background: #091E24; border: 1px solid #4F4836; border-radius: 12px; height: 100%;">
+                        <div class="p-4" style="background: #1E090E; border: 1px solid #4A1B24; border-radius: 12px; height: 100%;">
                             <div style="font-size: 26px; color: #FFD28D; margin-bottom: 12px;">
                                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#FFD28D" stroke-width="1.7"><path d="M18 8h1a4 4 0 0 1 0 8h-1M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8zM6 1v3M10 1v3M14 1v3"/></svg>
                             </div>
                             <h5 style="color: #FFF; font-family: 'Baskervville', serif; margin-bottom: 8px;">Desserts Fins Maison</h5>
-                            <p style="font-size: 13px; color: #C8C8C8; line-height: 1.5; margin: 0;">Profiteroles minute au chocolat chaud Valrhona, tarte Tatin tiède et douceurs artisanales.</p>
+                            <p style="font-size: 13px; color: #C8C8C8; line-height: 1.5; margin: 0;">Douceurs artisanales et créations gourmandes de saison confectionnées sur place.</p>
                         </div>
                     </div>
 
                     <div class="col">
-                        <div class="p-4" style="background: #091E24; border: 1px solid #4F4836; border-radius: 12px; height: 100%;">
+                        <div class="p-4" style="background: #1E090E; border: 1px solid #4A1B24; border-radius: 12px; height: 100%;">
                             <div style="font-size: 26px; color: #FFD28D; margin-bottom: 12px;">
                                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#FFD28D" stroke-width="1.7"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M9 16h6M9 8h6M9 12h6"/></svg>
                             </div>
@@ -612,7 +590,7 @@
                     </div>
 
                     <div class="col">
-                        <div class="p-4" style="background: #091E24; border: 1px solid #4F4836; border-radius: 12px; height: 100%;">
+                        <div class="p-4" style="background: #1E090E; border: 1px solid #4A1B24; border-radius: 12px; height: 100%;">
                             <div style="font-size: 26px; color: #FFD28D; margin-bottom: 12px;">
                                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#FFD28D" stroke-width="1.7"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
                             </div>
@@ -642,11 +620,11 @@
 
           <!-- Vidéo 1 -->
           <div class="col">
-            <div class="chablis-reel-container">
+            <div class="chablis-reel-container" data-video-index="1">
               <video class="chablis-reel-video" loop playsinline muted preload="metadata" src="assets/videos/chablis-reel-1.mp4"></video>
-              <div class="reel-play-indicator">
-                <div class="reel-pulse-ring"></div>
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+              <div class="reel-play-indicator" aria-label="Lire la vidéo">
+                <svg class="play-svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                <svg class="pause-svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" style="display:none;"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
               </div>
             </div>
             <div style="margin-top: 12px; text-align: center;">
@@ -657,11 +635,11 @@
 
           <!-- Vidéo 2 -->
           <div class="col">
-            <div class="chablis-reel-container">
+            <div class="chablis-reel-container" data-video-index="2">
               <video class="chablis-reel-video" loop playsinline muted preload="metadata" src="assets/videos/chablis-reel-2.mp4"></video>
-              <div class="reel-play-indicator">
-                <div class="reel-pulse-ring"></div>
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+              <div class="reel-play-indicator" aria-label="Lire la vidéo">
+                <svg class="play-svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                <svg class="pause-svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" style="display:none;"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
               </div>
             </div>
             <div style="margin-top: 12px; text-align: center;">
@@ -672,11 +650,11 @@
 
           <!-- Vidéo 3 -->
           <div class="col">
-            <div class="chablis-reel-container">
+            <div class="chablis-reel-container" data-video-index="3">
               <video class="chablis-reel-video" loop playsinline muted preload="metadata" src="assets/videos/chablis-reel-3.mp4"></video>
-              <div class="reel-play-indicator">
-                <div class="reel-pulse-ring"></div>
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+              <div class="reel-play-indicator" aria-label="Lire la vidéo">
+                <svg class="play-svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                <svg class="pause-svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" style="display:none;"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
               </div>
             </div>
             <div style="margin-top: 12px; text-align: center;">
@@ -687,11 +665,11 @@
 
           <!-- Vidéo 4 -->
           <div class="col">
-            <div class="chablis-reel-container">
+            <div class="chablis-reel-container" data-video-index="4">
               <video class="chablis-reel-video" loop playsinline muted preload="metadata" src="assets/videos/chablis-reel-4.mp4"></video>
-              <div class="reel-play-indicator">
-                <div class="reel-pulse-ring"></div>
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+              <div class="reel-play-indicator" aria-label="Lire la vidéo">
+                <svg class="play-svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                <svg class="pause-svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" style="display:none;"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
               </div>
             </div>
             <div style="margin-top: 12px; text-align: center;">
@@ -708,78 +686,57 @@
             <!-- Start Gallery Showcase Section (Elegencia LightGallery) -->
             <div class="ak-height-150 ak-height-lg-60"></div>
             <section class="container" id="foodItems">
-                <div class="ak-section-heading ak-style-1 ak-type-1">
-                    <div class="ak-section-subtitle">
-                        Sélection du Chef
-                    </div>
-                    <h2 class="ak-section-title anim-title">Galerie & Saveurs Ciselées</h2>
+                <div class="ak-section-heading ak-style-1 ak-type-1 text-center">
+                    <h2 class="ak-section-title anim-title">Galerie</h2>
                 </div>
                 <div class="ak-height-65 ak-height-lg-30"></div>
                 <div id="static-thumbnails">
                     <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-5">
                         
                         <div class="col">
-                            <div class="gallery ak-bg" data-src="assets/img/chablis-dish-1.jpg">
-                                <div class="gallery style-1">
-                                    <div class="gallery-hover">
-                                        <div class="gallery-hover-icon">
-                                            <a href="assets/img/chablis-dish-1.jpg">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="41" height="41" viewBox="0 0 41 41" fill="none">
-                                                    <rect x="0.507812" y="19.7305" width="40" height="1" fill="#FFD28D" />
-                                                    <rect x="20.0078" y="0.730469" width="1" height="40" fill="#FFD28D" />
-                                                </svg>
-                                            </a>
-                                        </div>
-                                        <div class="gallery-hover-info">
-                                            <a href="#carte">
-                                                <h6>Confit de Canard Croustillant</h6>
-                                                <p>Cuisine Française</p>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col">
-                            <div class="gallery ak-bg" data-src="assets/img/chablis-dish-2.jpg">
-                                <div class="gallery style-1">
-                                    <div class="gallery-hover">
-                                        <div class="gallery-hover-icon">
-                                            <a href="assets/img/chablis-dish-2.jpg">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="41" height="41" viewBox="0 0 41 41" fill="none">
-                                                    <rect x="0.507812" y="19.7305" width="40" height="1" fill="#FFD28D" />
-                                                    <rect x="20.0078" y="0.730469" width="1" height="40" fill="#FFD28D" />
-                                                </svg>
-                                            </a>
-                                        </div>
-                                        <div class="gallery-hover-info">
-                                            <a href="#carte">
-                                                <h6>Profiteroles Maison Valrhona</h6>
-                                                <p>Dessert Signature</p>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col">
                             <div class="gallery ak-bg" data-src="assets/img/chablis-ambiance.jpg">
                                 <div class="gallery style-1">
                                     <div class="gallery-hover">
                                         <div class="gallery-hover-icon">
-                                            <a href="assets/img/chablis-ambiance.jpg">
+                                            <a href="assets/img/chablis-ambiance.jpg" aria-label="Agrandir la photo">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="41" height="41" viewBox="0 0 41 41" fill="none">
                                                     <rect x="0.507812" y="19.7305" width="40" height="1" fill="#FFD28D" />
                                                     <rect x="20.0078" y="0.730469" width="1" height="40" fill="#FFD28D" />
                                                 </svg>
                                             </a>
                                         </div>
-                                        <div class="gallery-hover-info">
-                                            <a href="#apropos">
-                                                <h6>Salle Intimiste & Verres Fins</h6>
-                                                <p>Cadre Feutré</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="gallery ak-bg" data-src="assets/img/chablis-salle.jpg">
+                                <div class="gallery style-1">
+                                    <div class="gallery-hover">
+                                        <div class="gallery-hover-icon">
+                                            <a href="assets/img/chablis-salle.jpg" aria-label="Agrandir la photo">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="41" height="41" viewBox="0 0 41 41" fill="none">
+                                                    <rect x="0.507812" y="19.7305" width="40" height="1" fill="#FFD28D" />
+                                                    <rect x="20.0078" y="0.730469" width="1" height="40" fill="#FFD28D" />
+                                                </svg>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="gallery ak-bg" data-src="assets/img/chablis-hero.jpg">
+                                <div class="gallery style-1">
+                                    <div class="gallery-hover">
+                                        <div class="gallery-hover-icon">
+                                            <a href="assets/img/chablis-hero.jpg" aria-label="Agrandir la photo">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="41" height="41" viewBox="0 0 41 41" fill="none">
+                                                    <rect x="0.507812" y="19.7305" width="40" height="1" fill="#FFD28D" />
+                                                    <rect x="20.0078" y="0.730469" width="1" height="40" fill="#FFD28D" />
+                                                </svg>
                                             </a>
                                         </div>
                                     </div>
@@ -796,247 +753,60 @@
             <section id="carte">
                 <div class="ak-height-150 ak-height-lg-60"></div>
                 <div class="container">
-                    <div class="ak-section-heading ak-style-1 ak-type-1">
+                    <div class="ak-section-heading ak-style-1 ak-type-1 text-center">
                         <div class="ak-section-subtitle">
-                            La Carte des Saisons
+                            L'Art de la Table & des Vins
                         </div>
-                        <h2 class="ak-section-title anim-title">Nos Plats & Vins d'Exception</h2>
+                        <h2 class="ak-section-title anim-title">La Cuisine & La Cave</h2>
+                        <p style="color: #A0A0A0; font-size: 15px; margin-top: 10px; max-width: 650px; margin-left: auto; margin-right: auto;">
+                            Une gastronomie soignée préparée à partir de produits frais du marché, accompagnée d'une remarquable sélection de vins de vignerons et de grands crus.
+                        </p>
                     </div>
+
                     <div class="ak-height-65 ak-height-lg-30"></div>
-                    
-                    <div class="ak-menu-list">
-                        
-                        <!-- Item 1 : Œufs Mimosa -->
-                        <div class="ak-menu-list-section-1">
-                            <img src="assets/img/item-show.png" alt="...">
-                            <div class="food-menu style-1">
-                                <div class="food-menu-section-1">
-                                    <div class="food-menu-title">
-                                        <p>Œufs Mimosa à l'Ancienne</p>
-                                    </div>
-                                    <div class="food-menu-hr">
-                                        <div class="food-menu-hr style-1"></div>
-                                        <div class="food-menu-hr style-1"></div>
-                                    </div>
-                                    <div class="food-menu-price">
-                                        <p>5 500 F</p>
-                                    </div>
-                                </div>
-                                <div class="food-menu-section-2">
-                                    <div class="food-menu-subsitle">
-                                        <p>Œufs fermiers bio, mayonnaise maison à la moutarde de Dijon, herbes fraîches</p>
-                                    </div>
-                                    <div class="food-menu-price-subsitle">
-                                        <a href="https://wa.me/2290156344862?text=Bonjour%20Le%20Ch%C3%A2blis,%20je%20souhaite%20r%C3%A9server%20des%20%C5%92ufs%20Mimosa." target="_blank" style="color: #FFD28D; text-decoration: underline;">Commander sur WhatsApp</a>
-                                    </div>
-                                </div>
+
+                    <div class="row row-cols-1 row-cols-md-3 g-4 text-center">
+                        <div class="col">
+                            <div style="background: #1E090E; border: 1px solid #4A1B24; border-radius: 12px; padding: 32px 24px; height: 100%;">
+                                <div style="font-size: 32px; color: #FFD28D; margin-bottom: 15px;">🍽️</div>
+                                <h5 style="color: #FFF; font-family: 'Baskervville', serif; margin-bottom: 12px;">Cuisine Fraîche du Marché</h5>
+                                <p style="font-size: 14px; color: #C8C8C8; line-height: 1.7; margin: 0;">
+                                    Viandes sélectionnées de premier choix, poissons frais et spécialités françaises cuisinées minute avec le souci du détail par nos propriétaires et chefs.
+                                </p>
                             </div>
                         </div>
 
-                        <!-- Item 2 : Terrine Maison -->
-                        <div class="ak-menu-list-section-1">
-                            <img src="assets/img/item-show_2.png" alt="...">
-                            <div class="food-menu style-1">
-                                <div class="food-menu-section-1">
-                                    <div class="food-menu-title">
-                                        <p>Terrine Maison aux Foies Fins</p>
-                                    </div>
-                                    <div class="food-menu-hr">
-                                        <div class="food-menu-hr style-1"></div>
-                                        <div class="food-menu-hr style-1"></div>
-                                    </div>
-                                    <div class="food-menu-price">
-                                        <p>6 000 F</p>
-                                    </div>
-                                </div>
-                                <div class="food-menu-section-2">
-                                    <div class="food-menu-subsitle">
-                                        <p>Recette traditionnelle marinée au Cognac, confit d'oignons rouges doux et toasts</p>
-                                    </div>
-                                    <div class="food-menu-price-subsitle">
-                                        <a href="https://wa.me/2290156344862?text=Bonjour%20Le%20Ch%C3%A2blis,%20je%20souhaite%20r%C3%A9server%20la%20Terrine%20Maison." target="_blank" style="color: #FFD28D; text-decoration: underline;">Commander sur WhatsApp</a>
-                                    </div>
-                                </div>
+                        <div class="col">
+                            <div style="background: #1E090E; border: 1px solid #4A1B24; border-radius: 12px; padding: 32px 24px; height: 100%;">
+                                <div style="font-size: 32px; color: #FFD28D; margin-bottom: 15px;">🍷</div>
+                                <h5 style="color: #FFF; font-family: 'Baskervville', serif; margin-bottom: 12px;">Cave de Sommellerie</h5>
+                                <p style="font-size: 14px; color: #C8C8C8; line-height: 1.7; margin: 0;">
+                                    Une sélection rigoureuse d'AOC Chablis, grands crus de Bourgogne, Bordeaux fins et spiritueux rares pour sublimer vos déjeuners et dîners.
+                                </p>
                             </div>
                         </div>
 
-                        <!-- Item 3 : Escargots de Bourgogne -->
-                        <div class="ak-menu-list-section-1">
-                            <img src="assets/img/item-show.png" alt="...">
-                            <div class="food-menu style-1">
-                                <div class="food-menu-section-1">
-                                    <div class="food-menu-title">
-                                        <p>Escargots de Bourgogne Persillés (x6)</p>
-                                    </div>
-                                    <div class="food-menu-hr">
-                                        <div class="food-menu-hr style-1"></div>
-                                        <div class="food-menu-hr style-1"></div>
-                                    </div>
-                                    <div class="food-menu-price">
-                                        <p>6 500 F</p>
-                                    </div>
-                                </div>
-                                <div class="food-menu-section-2">
-                                    <div class="food-menu-subsitle">
-                                        <p>Gros escargots sauvages, beurre AOP d'Isigny au persil plat et ail doux confit</p>
-                                    </div>
-                                    <div class="food-menu-price-subsitle">
-                                        <a href="https://wa.me/2290156344862?text=Bonjour%20Le%20Ch%C3%A2blis,%20je%20souhaite%20r%C3%A9server%20les%20Escargots." target="_blank" style="color: #FFD28D; text-decoration: underline;">Commander sur WhatsApp</a>
-                                    </div>
-                                </div>
+                        <div class="col">
+                            <div style="background: #1E090E; border: 1px solid #4A1B24; border-radius: 12px; padding: 32px 24px; height: 100%;">
+                                <div style="font-size: 32px; color: #FFD28D; margin-bottom: 15px;">🍰</div>
+                                <h5 style="color: #FFF; font-family: 'Baskervville', serif; margin-bottom: 12px;">Desserts Fins Maison</h5>
+                                <p style="font-size: 14px; color: #C8C8C8; line-height: 1.7; margin: 0;">
+                                    Une touche sucrée d'exception pour clore votre repas : desserts artisanaux et créations gourmandes élaborées au gré des inspirations de la saison.
+                                </p>
                             </div>
                         </div>
-
-                        <!-- Item 4 : Confit de Canard -->
-                        <div class="ak-menu-list-section-1">
-                            <img src="assets/img/item-show_2.png" alt="...">
-                            <div class="food-menu style-1">
-                                <div class="food-menu-section-1">
-                                    <div class="food-menu-title">
-                                        <p>Confit de Canard Croustillant</p>
-                                    </div>
-                                    <div class="food-menu-hr">
-                                        <div class="food-menu-hr style-1"></div>
-                                        <div class="food-menu-hr style-1"></div>
-                                    </div>
-                                    <div class="food-menu-price">
-                                        <p>14 500 F</p>
-                                    </div>
-                                </div>
-                                <div class="food-menu-section-2">
-                                    <div class="food-menu-subsitle">
-                                        <p>Cuisse confite maison, peau dorée craquante, pommes grenailles sautées à l'ail</p>
-                                    </div>
-                                    <div class="food-menu-price-subsitle">
-                                        <a href="https://wa.me/2290156344862?text=Bonjour%20Le%20Ch%C3%A2blis,%20je%20souhaite%20commander%20le%20Confit%20de%20Canard." target="_blank" style="color: #FFD28D; text-decoration: underline;">Commander sur WhatsApp</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Item 5 : Bœuf Bourguignon -->
-                        <div class="ak-menu-list-section-1">
-                            <img src="assets/img/item-show.png" alt="...">
-                            <div class="food-menu style-1">
-                                <div class="food-menu-section-1">
-                                    <div class="food-menu-title">
-                                        <p>Bœuf Bourguignon Façon Grand-Mère</p>
-                                    </div>
-                                    <div class="food-menu-hr">
-                                        <div class="food-menu-hr style-1"></div>
-                                        <div class="food-menu-hr style-1"></div>
-                                    </div>
-                                    <div class="food-menu-price">
-                                        <p>13 500 F</p>
-                                    </div>
-                                </div>
-                                <div class="food-menu-section-2">
-                                    <div class="food-menu-subsitle">
-                                        <p>Paleron mijoté 5 heures au vin de Bourgogne, carottes fondantes et champignons glacés</p>
-                                    </div>
-                                    <div class="food-menu-price-subsitle">
-                                        <a href="https://wa.me/2290156344862?text=Bonjour%20Le%20Ch%C3%A2blis,%20je%20souhaite%20commander%20le%20B%C5%93uf%20Bourguignon." target="_blank" style="color: #FFD28D; text-decoration: underline;">Commander sur WhatsApp</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Item 6 : Gambas Flambées -->
-                        <div class="ak-menu-list-section-1">
-                            <img src="assets/img/item-show_2.png" alt="...">
-                            <div class="food-menu style-1">
-                                <div class="food-menu-section-1">
-                                    <div class="food-menu-title">
-                                        <p>Gambas Fraîches Flambées au Pastis</p>
-                                    </div>
-                                    <div class="food-menu-hr">
-                                        <div class="food-menu-hr style-1"></div>
-                                        <div class="food-menu-hr style-1"></div>
-                                    </div>
-                                    <div class="food-menu-price">
-                                        <p>18 500 F</p>
-                                    </div>
-                                </div>
-                                <div class="food-menu-section-2">
-                                    <div class="food-menu-subsitle">
-                                        <p>Gambas sauvages de l'Atlantique sautées à vif, pastis provençal et risotto crémeux</p>
-                                    </div>
-                                    <div class="food-menu-price-subsitle">
-                                        <a href="https://wa.me/2290156344862?text=Bonjour%20Le%20Ch%C3%A2blis,%20je%20souhaite%20commander%20les%20Gambas%20Flamb%C3%A9es." target="_blank" style="color: #FFD28D; text-decoration: underline;">Commander sur WhatsApp</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Item 7 : Profiteroles Valrhona -->
-                        <div class="ak-menu-list-section-1">
-                            <img src="assets/img/item-show.png" alt="...">
-                            <div class="food-menu style-1">
-                                <div class="food-menu-section-1">
-                                    <div class="food-menu-title">
-                                        <p>Profiteroles Maison au Chocolat Valrhona</p>
-                                    </div>
-                                    <div class="food-menu-hr">
-                                        <div class="food-menu-hr style-1"></div>
-                                        <div class="food-menu-hr style-1"></div>
-                                    </div>
-                                    <div class="food-menu-price">
-                                        <p>5 000 F</p>
-                                    </div>
-                                </div>
-                                <div class="food-menu-section-2">
-                                    <div class="food-menu-subsitle">
-                                        <p>Choux pur beurre du jour, glace vanille Bourbon de Madagascar, coulis chaud Valrhona</p>
-                                    </div>
-                                    <div class="food-menu-price-subsitle">
-                                        <a href="https://wa.me/2290156344862?text=Bonjour%20Le%20Ch%C3%A2blis,%20je%20r%C3%A9serve%20des%20Profiteroles." target="_blank" style="color: #FFD28D; text-decoration: underline;">Commander sur WhatsApp</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Item 8 : AOC Chablis Domaine Saint Martin -->
-                        <div class="ak-menu-list-section-1">
-                            <img src="assets/img/item-show_2.png" alt="...">
-                            <div class="food-menu style-1">
-                                <div class="food-menu-section-1">
-                                    <div class="food-menu-title">
-                                        <p>AOC Chablis Domaine Saint Martin (75cl)</p>
-                                    </div>
-                                    <div class="food-menu-hr">
-                                        <div class="food-menu-hr style-1"></div>
-                                        <div class="food-menu-hr style-1"></div>
-                                    </div>
-                                    <div class="food-menu-price">
-                                        <p>28 000 F</p>
-                                    </div>
-                                </div>
-                                <div class="food-menu-section-2">
-                                    <div class="food-menu-subsitle">
-                                        <p>Bourgogne Blanc 100% Chardonnay minéral, fleurs blanches et fraîcheur iodée</p>
-                                    </div>
-                                    <div class="food-menu-price-subsitle">
-                                        <a href="https://wa.me/2290156344862?text=Bonjour%20Le%20Ch%C3%A2blis,%20je%20r%C3%A9serve%20une%20bouteille%20de%20Chablis." target="_blank" style="color: #FFD28D; text-decoration: underline;">Réserver ce Vin</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
                     </div>
 
-                    <div class="ak-height-40 ak-height-lg-20"></div>
-                    <div class="text-center">
-                        <div class="text-btn">
-                            <a href="#reservation" class="text-btn1">
-                                Réserver une Table pour ce Soir
-                            </a>
-                        </div>
+                    <div class="text-center mt-5">
+                        <a href="https://wa.me/2290156344862?text=Bonjour%20Le%20Ch%C3%A2blis,%20je%20souhaite%20consulter%20la%20carte%20du%20jour%20et%20la%20s%C3%A9lection%20des%20vins." target="_blank" class="ak-btn style-5" style="border-color: #FFD28D; display: inline-flex; align-items: center; gap: 10px;">
+                            <span>Demander la Carte du Jour & des Vins sur WhatsApp (+229 01 56 34 48 62)</span>
+                        </a>
                     </div>
+
                 </div>
             </section>
             <!-- End Food Menu Section -->
 
-            <!-- Start Special Event Section (Soirée Beaujolais Nouveau) -->
             <section id="evenement">
                 <div class="ak-height-150 ak-height-lg-60"></div>
                 <div class="container">
@@ -1057,7 +827,7 @@
                                     À partir de 19h30, célébrez le premier vin de l'année au Châblis. 
                                     Une soirée conviviale avec dîner gastronomique en quatre temps, musique d'ambiance et accords mets & vins inédits.
                                 </p>
-                                <div style="margin-top: 20px; padding: 20px; background: #091E24; border: 1px solid #4F4836; border-radius: 12px;">
+                                <div style="margin-top: 20px; padding: 20px; background: #1E090E; border: 1px solid #4A1B24; border-radius: 12px;">
                                     <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #4F4836; padding-bottom: 10px; margin-bottom: 12px;">
                                         <span style="font-family: 'Baskervville', serif; font-size: 18px; color: #FFF;">Dîner en 4 Temps</span>
                                         <span style="color: #FFD28D; font-weight: bold; font-size: 18px;">45 000 FCFA / pers.</span>
@@ -1401,11 +1171,7 @@
                         <div class="footer-info">
                             <div class="fooer-phn">
                                 <a href="https://wa.me/2290156344862?text=Bonjour%20Le%20Ch%C3%A2blis,%20je%20souhaite%20r%C3%A9server%20une%20table." target="_blank" class="footer-wa-card" aria-label="Contacter Le Châblis sur WhatsApp">
-                                    <div class="wa-card-icon">
-                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                                            <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.592 2.654-.696c1.001.572 1.944.875 2.806.875 3.18 0 5.767-2.587 5.767-5.766.001-3.18-2.585-5.758-5.767-5.758zm3.374 8.213c-.14.394-.807.75-1.126.79-.319.04-.632.062-1.921-.476-1.554-.648-2.548-2.227-2.627-2.332-.078-.105-.632-.841-.632-1.602 0-.761.399-1.136.541-1.289.143-.153.313-.191.417-.191.104 0 .209.002.3.007.096.006.223-.037.348.263.13.313.444 1.082.483 1.161.039.079.065.171.013.275-.052.105-.078.17-.156.262-.078.092-.164.205-.235.275-.078.079-.16.165-.069.321.091.157.406.67 871 1.084.598.533 1.101.698 1.258.777.157.078.248.069.339-.035.092-.105.392-.457.497-.614.105-.157.209-.13.348-.078.14.052.887.418 1.04.494.153.076.255.114.292.179.037.065.037.378-.103.772z"/>
-                                        </svg>
-                                    </div>
+                                    <img src="assets/img/whatsapp-logo.png" alt="WhatsApp" class="wa-card-icon-img">
                                     <div class="wa-card-text">
                                         <span class="wa-card-title">WHATSAPP DIRECT</span>
                                         <span class="wa-card-num">+229 01 56 34 48 62</span>
@@ -1541,37 +1307,51 @@
         dateInput.min = today;
       }
 
-      // Gestion des vidéos au survol et au clic
+      // Lecture véritable de la vidéo au clic
       $('.chablis-reel-container').each(function() {
         var container = $(this);
         var video = container.find('video')[0];
+        var playSvg = container.find('.play-svg');
+        var pauseSvg = container.find('.pause-svg');
 
-        container.on('mouseenter', function() {
-          if (video) {
-            video.play().then(function() {
-              container.addClass('is-playing');
-            }).catch(function() {});
-          }
-        });
-
-        container.on('mouseleave', function() {
-          if (video) {
+        function togglePlay() {
+          if (!video) return;
+          if (video.paused) {
+            // Mettre en pause les autres vidéos
+            $('.chablis-reel-video').each(function() {
+              if (this !== video) {
+                this.pause();
+                var other = $(this).closest('.chablis-reel-container');
+                other.removeClass('is-playing');
+                other.find('.play-svg').show();
+                other.find('.pause-svg').hide();
+              }
+            });
+            var playPromise = video.play();
+            if (playPromise !== undefined) {
+              playPromise.then(function() {
+                container.addClass('is-playing');
+                playSvg.hide();
+                pauseSvg.show();
+              }).catch(function() {
+                video.muted = true;
+                video.play();
+                container.addClass('is-playing');
+                playSvg.hide();
+                pauseSvg.show();
+              });
+            }
+          } else {
             video.pause();
             container.removeClass('is-playing');
+            playSvg.show();
+            pauseSvg.hide();
           }
-        });
+        }
 
-        container.on('click', function() {
-          if (video) {
-            if (video.paused) {
-              video.play().then(function() {
-                container.addClass('is-playing');
-              }).catch(function() {});
-            } else {
-              video.pause();
-              container.removeClass('is-playing');
-            }
-          }
+        container.on('click', function(e) {
+          e.preventDefault();
+          togglePlay();
         });
       });
 

@@ -1560,7 +1560,7 @@
       // 4. Formulaire de réservation avec transmission WhatsApp propre et formatée
       
       // Navigation fluide pour tous les liens d'ancres (Footer, Header, Hamburger Menu)
-      $('a[href^="#"]').on('click', function(e) {
+      $(document).on('click', 'a[href^="#"]', function(e) {
         var href = $(this).attr('href');
         if (href && href.length > 1) {
           var target = $(href);
@@ -1576,16 +1576,22 @@
               }
             }
 
-            // Scroll fluide avec ScrollSmoother ou fallback jQuery
+            // Scroll fluide avec ScrollSmoother ou fallback natif / jQuery
             setTimeout(function() {
               if (window.ScrollSmoother && typeof ScrollSmoother.get === 'function' && ScrollSmoother.get()) {
-                ScrollSmoother.get().scrollTo(target[0], true, 'top top');
+                try {
+                  ScrollSmoother.get().scrollTo(target[0], true, 'top top');
+                } catch(err) {
+                  target[0].scrollIntoView({ behavior: 'smooth' });
+                }
+              } else if (target[0] && typeof target[0].scrollIntoView === 'function') {
+                target[0].scrollIntoView({ behavior: 'smooth' });
               } else {
                 $('html, body').animate({
                   scrollTop: target.offset().top - 80
                 }, 600);
               }
-            }, 100);
+            }, 120);
           }
         }
       });

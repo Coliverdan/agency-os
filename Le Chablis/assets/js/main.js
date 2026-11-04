@@ -71,18 +71,16 @@
  --------------------------------------------------------------*/
 
   function preloader() {
+    if ($("#preloader").data("dismissed")) return;
+    $("#preloader").data("dismissed", true);
     setTimeout(function () {
       $("#ak-preloader").addClass("loaded");
-
-      if ($("#ak-preloader").hasClass("loaded")) {
-        $("#preloader")
-          .delay(800)
-          .queue(function () {
-            $(this).remove();
-          })
-          .fadeOut();
-      }
-    }, 1000);
+      $("#preloader")
+        .delay(200)
+        .fadeOut(350, function () {
+          $(this).remove();
+        });
+    }, 350);
   }
   /*--------------------------------------------------------------
      2. Mobile  Menu  

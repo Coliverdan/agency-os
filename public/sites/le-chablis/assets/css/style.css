@@ -43,11 +43,16 @@
   --body-font-family: "Prompt", sans-serif;
   --heading-font-family: "Baskervville", sans-serif;
   --yellow-color: #FFD28D;
+  --wine-color: #6B1522;
+  --wine-color-hover: #8A1C2D;
+  --wine-dark: #1A090E;
+  --wine-black: #0E0407;
+  --wine-border: #4A1E25;
   --body-color: #C8C8C8;
-  --body-bg-color: #040D10;
-  --body-bg-color-two: #091E24;
+  --body-bg-color: #0E0407;
+  --body-bg-color-two: #1A090E;
   --heading-color: #FFD28D;
-  --border-color: #4F4836;
+  --border-color: #4A1E25;
   --common-color-white: #FFF;
   --common-color-black: #000000;
 }
@@ -186,7 +191,7 @@ table th {
 }
 table td,
 table th {
-  border-top: 1px solid #4F4836;
+  border-top: 1px solid #4A1E25;
   padding: 11px 10px;
 }
 
@@ -204,7 +209,7 @@ strong {
 
 pre {
   color: var(--body-color);
-  border: 1px solid #4F4836;
+  border: 1px solid #4A1E25;
   font-size: 18px;
   padding: 25px;
   border-radius: 5px;
@@ -267,7 +272,7 @@ textarea {
   animation: spinner 1s infinite linear;
   border-radius: 50%;
   border: 3px solid rgba(0, 0, 0, 0.2);
-  border-top-color: #4f4836;
+  border-top-color: #4A1E25;
   height: 9em;
   margin: 0 auto 3.5em auto;
   width: 9em;
@@ -321,7 +326,7 @@ textarea {
   animation-delay: 0.9s;
 }
 .ak-preloader .loader-section {
-  background-color: #040d10;
+  background-color: #0E0407;
   height: 100%;
   position: fixed;
   top: 0;
@@ -1095,7 +1100,7 @@ select:focus {
   height: 1px;
   top: 25%;
   display: none;
-  background-color: #4F4836;
+  background-color: #4A1E25;
 }
 .section-all-item-center .border-comming-soon-bottom {
   position: absolute;
@@ -1103,14 +1108,14 @@ select:focus {
   left: 0;
   height: 1px;
   bottom: 15%;
-  background-color: #4F4836;
+  background-color: #4A1E25;
 }
 .section-all-item-center .border-comming-soon-colum-left {
   width: 1px;
   height: 0%;
   top: 0;
   position: absolute;
-  background-color: #4F4836;
+  background-color: #4A1E25;
   align-self: flex-start;
   left: 20%;
 }
@@ -1119,7 +1124,7 @@ select:focus {
   height: 0%;
   top: 0;
   position: absolute;
-  background-color: #4F4836;
+  background-color: #4A1E25;
   align-self: flex-end;
   right: 20%;
 }
@@ -1159,13 +1164,13 @@ select:focus {
   text-align: center;
 }
 .section-all-item-center .back-btn {
-  border: 1px solid #4F4836;
+  border: 1px solid #4A1E25;
   margin-top: 70px;
   padding: 18px 36px;
 }
 
 .ak-border {
-  border-bottom: 1px solid #4F4836;
+  border-bottom: 1px solid #4A1E25;
   margin: 0;
   padding: 20px;
 }
@@ -1177,7 +1182,7 @@ select:focus {
 }
 
 .border-right-1 {
-  border-right: 1px solid #4F4836;
+  border-right: 1px solid #4A1E25;
   border-top: 0;
   border-left: 0;
   border-bottom: 0;
@@ -1186,7 +1191,7 @@ select:focus {
 .border-height-one {
   height: 1px;
   width: 100%;
-  background-color: #4f4836;
+  background-color: #4A1E25;
 }
 .border-height-one.top-50px {
   top: 50px;
@@ -1207,11 +1212,11 @@ select:focus {
 .border-width-one {
   width: 1px;
   height: 300px;
-  background-color: #4F4836;
+  background-color: #4A1E25;
 }
 
 .border-bottom-1 {
-  border: 1px solid #4F4836;
+  border: 1px solid #4A1E25;
   border-top: 0;
   border-left: 0;
   border-right: 0;
@@ -1619,7 +1624,7 @@ select:focus {
   top: 0;
   height: 200%;
   width: 1px;
-  background-color: #4F4836;
+  background-color: #4A1E25;
 }
 
 .drop-anim-gallery::after {
@@ -1785,7 +1790,7 @@ select:focus {
 }
 
 .lg-custom-thumbnails {
-  background-color: #040d10;
+  background-color: #0E0407;
 }
 .lg-custom-thumbnails #lg-counter {
   color: #fff;
@@ -1976,13 +1981,13 @@ input[type=checkbox] {
     min-height: 300px;
   }
   .ak-border {
-    border-bottom: 1px solid #4F4836;
+    border-bottom: 1px solid #4A1E25;
   }
   .ak-border.border-none-right {
     border-right: 0;
   }
   .ak-border.border-none-bottom {
-    border-bottom: 1px solid #4F4836;
+    border-bottom: 1px solid #4A1E25;
   }
   .ak-commmon-hero.ak-style1 {
     min-height: 350px;
@@ -2592,7 +2597,7 @@ input[type=checkbox] {
   height: 16px;
   width: 16px;
   background-color: transparent;
-  border: 1px solid #4F4836;
+  border: 1px solid #4A1E25;
   border-radius: 50%;
   margin: 30px 10px;
   cursor: pointer;
@@ -4001,7 +4006,7 @@ input[type=checkbox] {
   border: 1px solid #FFD28D;
 }
 .footer-main .footer-info .footer-email .email-input {
-  border: 1px solid #4F4836;
+  border: 1px solid #4A1E25;
 }
 .footer-main .footer-info .footer-email .email-input .e-input {
   background-color: transparent;
@@ -4160,7 +4165,7 @@ input[type=checkbox] {
 }
 .ak-hero.ak-style1 .hero-text-section .slider-info .hero-title .hero-main-title-1 {
   font-style: italic;
-  border-bottom: 1px solid #4F4836;
+  border-bottom: 1px solid #4A1E25;
   display: inline-flex;
   position: relative;
   left: 10%;
@@ -4371,7 +4376,7 @@ input[type=checkbox] {
   13. About
 ----------------------------------------------------------------*/
 .ak-about-bg-color {
-  background: #040D10;
+  background: #0E0407;
 }
 
 .ak-about-hr {
@@ -4739,7 +4744,7 @@ input[type=checkbox] {
   left: 5%;
   bottom: -60px;
   opacity: 0;
-  background-color: #040D10;
+  background-color: #0E0407;
   transition: all 0.3s ease-in-out;
 }
 .ak-card.ak-style-1 .card-info .card-text {
@@ -4887,7 +4892,7 @@ input[type=checkbox] {
 
 .img-overlay {
   position: absolute;
-  background-color: #040D10;
+  background-color: #0E0407;
   width: 100%;
   bottom: 0;
   height: 100%;
@@ -4932,7 +4937,7 @@ input[type=checkbox] {
 }
 .chef .chef-style-1 {
   position: absolute;
-  background: #040D10;
+  background: #0E0407;
   bottom: -20px;
   padding: 36px 0px;
   width: 76%;
@@ -4940,7 +4945,7 @@ input[type=checkbox] {
   margin: 0 12%;
   overflow: hidden;
   transition: all 0.5s ease-in-out;
-  border-bottom: 1px solid #4F4836;
+  border-bottom: 1px solid #4A1E25;
 }
 .chef .chef-info {
   display: flex;
@@ -4994,7 +4999,7 @@ input[type=checkbox] {
 }
 .gallery.style-1 {
   position: absolute;
-  background: #040D10;
+  background: #0E0407;
   padding: 36px;
   width: 80%;
   height: 88%;
@@ -5152,7 +5157,7 @@ input[type=checkbox] {
   padding: 15px 20px;
 }
 .booking-system-form .select {
-  border: 1px solid #4F4836;
+  border: 1px solid #4A1E25;
   margin-bottom: 25px;
   cursor: pointer;
   position: relative;
@@ -5190,7 +5195,7 @@ input[type=checkbox] {
   justify-content: space-between;
 }
 .booking-system-form .ak-form-time-date .ak-time .time-input {
-  border: 1px solid #4F4836;
+  border: 1px solid #4A1E25;
   color: #fff;
   width: 100%;
   position: absolute;
@@ -5218,7 +5223,7 @@ input[type=checkbox] {
   justify-content: space-between;
 }
 .booking-system-form .ak-form-time-date .ak-date .date-input {
-  border: 1px solid #4F4836;
+  border: 1px solid #4A1E25;
   color: #fff;
   width: 100%;
   position: absolute;
@@ -5312,7 +5317,7 @@ input[type=checkbox] {
   left: 0;
   bottom: -10px;
   opacity: 1;
-  background-color: #4F4836;
+  background-color: #4A1E25;
   transition: all 0.5s;
 }
 .blog .blog-body .blog-title:hover:after {
@@ -5344,7 +5349,7 @@ input[type=checkbox] {
   gap: 30px;
 }
 .blog-details .blog-details-subtitle .blog-details-date {
-  border: 1px solid #4F4836;
+  border: 1px solid #4A1E25;
 }
 
 .quote-option {
@@ -5400,7 +5405,7 @@ input[type=checkbox] {
 
 .input-section {
   width: 100%;
-  border: 1px solid #4F4836;
+  border: 1px solid #4A1E25;
   border-right: none;
   padding: 15px;
   background: transparent;
@@ -5412,7 +5417,7 @@ input[type=checkbox] {
 }
 
 .search-icon {
-  border: 1px solid #4F4836;
+  border: 1px solid #4A1E25;
   padding: 15px;
   border-left: none;
   text-align: center;
@@ -5543,7 +5548,7 @@ input[type=checkbox] {
   margin-top: 17px;
 }
 .location-card .location-card-item.style-1 {
-  border-right: 1px solid #4F4836;
+  border-right: 1px solid #4A1E25;
 }
 .location-card .location-card-item .card-icon {
   transition: all 1s ease-in-out;
@@ -5624,7 +5629,7 @@ input[type=checkbox] {
   margin-bottom: 12px;
   padding-bottom: 10px;
   text-transform: uppercase;
-  border-bottom: 1px solid #4F4836;
+  border-bottom: 1px solid #4A1E25;
   word-spacing: 10px;
 }
 .portfolio-section .portfolio-info h6 span {
@@ -5642,7 +5647,7 @@ input[type=checkbox] {
 }
 .portfolio-details .portfolio-details-text {
   padding-right: 30px;
-  border-right: 1px solid #4F4836;
+  border-right: 1px solid #4A1E25;
 }
 .portfolio-details .portfolio-details-icon {
   padding-left: 40px;
@@ -5734,7 +5739,7 @@ input[type=checkbox] {
 }
 .contact-content .contact-form .from-input input {
   background-color: transparent;
-  border: 1px solid #4F4836;
+  border: 1px solid #4A1E25;
   padding: 10px;
   margin-bottom: 20px;
 }
@@ -5742,12 +5747,12 @@ input[type=checkbox] {
   box-shadow: none;
   outline: none;
   background-color: transparent;
-  border: 1px solid #4F4836;
+  border: 1px solid #4A1E25;
   padding: 10px;
   margin-bottom: 10px;
 }
 .contact-content .contact-form textarea:focus {
-  border: 1px solid #4F4836;
+  border: 1px solid #4A1E25;
 }
 .contact-content .contact-form .contact-btn {
   border: none;
@@ -5855,7 +5860,7 @@ input[type=checkbox] {
   position: absolute;
   max-width: 1320px;
   padding: 60px 70px;
-  background-color: #040D10;
+  background-color: #0E0407;
   gap: 20px;
   justify-content: center;
 }
@@ -5863,7 +5868,7 @@ input[type=checkbox] {
 .select-input-style1 {
   cursor: pointer;
   position: relative;
-  border: 1px solid #4F4836;
+  border: 1px solid #4A1E25;
   display: flex;
   justify-content: space-between;
   width: 225px;
@@ -5895,7 +5900,7 @@ input[type=checkbox] {
   justify-content: space-between;
   width: 225px;
   overflow: hidden;
-  border: 1px solid #4F4836;
+  border: 1px solid #4A1E25;
 }
 .date-input-style1 .date-input {
   border: none;
@@ -6045,7 +6050,7 @@ input[type=checkbox] {
   left: 0;
   bottom: 0px;
   opacity: 1;
-  background-color: #4f4836;
+  background-color: #4A1E25;
   transition: all 0.5s;
 }
 .room-card .room-footer .room-card-bottom-text span {
@@ -6155,7 +6160,7 @@ input[type=checkbox] {
   color: #FFD28D;
 }
 .core-services .services-list .feature-list:nth-child(n) {
-  border-bottom: 1px solid #4F4836;
+  border-bottom: 1px solid #4A1E25;
 }
 .core-services .services-list .swiper-pagination-bullet-active {
   color: #FFD28D;
@@ -6217,7 +6222,7 @@ input[type=checkbox] {
 
 .feature-card {
   display: flex;
-  background-color: #091e24;
+  background-color: #1A090E;
   gap: 20px;
   padding: 50px;
   font-family: Prompt;
@@ -6252,7 +6257,7 @@ input[type=checkbox] {
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  border: 1px solid #4F4836;
+  border: 1px solid #4A1E25;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -6452,7 +6457,7 @@ input[type=checkbox] {
   padding: 0px 13px;
   border-radius: 21.5px;
   background-color: transparent;
-  border: 0.5px solid #4F4836;
+  border: 0.5px solid #4A1E25;
 }
 .booking-widget .booking-widget-inner .number-of-input .increase-decrease .value-button {
   cursor: pointer;
@@ -6468,7 +6473,7 @@ input[type=checkbox] {
   height: 40px;
   background-color: transparent;
   color: #fff;
-  border: 0.5px solid #4F4836;
+  border: 0.5px solid #4A1E25;
   border-top: none;
   border-bottom: none;
 }
@@ -6507,7 +6512,7 @@ input[type=checkbox] {
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  border: 1px solid #4F4836;
+  border: 1px solid #4A1E25;
   display: flex;
   flex-shrink: 0;
   flex-direction: column;
@@ -6590,7 +6595,7 @@ input[type=checkbox] {
 ----------------------------------------------------------------*/
 .ak-accordeon .ak-accordion-item {
   margin-bottom: 30px;
-  border: 1px solid #4F4836;
+  border: 1px solid #4A1E25;
 }
 .ak-accordeon .ak-accordion-item .ak-accordion-header {
   padding-top: 22px;

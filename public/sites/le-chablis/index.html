@@ -2,1442 +2,1142 @@
 <html class="no-js" lang="fr">
 
 <head>
-    <!-- Meta Tags -->
-    <meta charset="utf-8" />
-    <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="author" content="Le Châblis" />
-    <meta name="description" content="Table raffinée et bar à vins d'exception à Cotonou (Cadjèhoun / Patte d'Oie). Cuisine française maison, produits frais, patio intime et salon privé. Réservation WhatsApp : +229 01 56 34 48 62." />
+  <!-- Meta Tags -->
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Le Châblis Cotonou">
+  <!-- Favicon Icon -->
+  <link rel="icon" href="assets/img/chablis-logo.png" type="image/png">
+  <!-- Site Title -->
+  <title>Le Châblis — Restaurant & Cave à Vins à Cotonou</title>
+  <meta name="description" content="Le Châblis à Cadjèhoun, Cotonou. Table intime, cuisine soignée et sélection de vins d'exception. Réservation directe via WhatsApp au +229 01 56 34 48 62.">
 
-    <!-- Favicon Icon -->
-    <link rel="icon" href="assets/img/chablis-logo.png" />
-    <!-- Site Title -->
-    <title>Le Châblis — Table Raffinée & Bar à Vins d'Exception | Cotonou</title>
+  <!-- Elegencia Core & Plugin Styles -->
+  <link rel="stylesheet" href="assets/css/plugins/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/plugins/swiper.min.css">
+  <link rel="stylesheet" href="assets/css/plugins/fontawesome.min.css">
+  <link rel="stylesheet" href="assets/css/plugins/lightgallery.min.css">
+  <link rel="stylesheet" href="assets/css/plugins/locomotive-scroll.css">
+  <link rel="stylesheet" href="assets/css/style.css">
 
-    <!-- Google Fonts (Baskervville & Prompt) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Prompt:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    /* Wine Red Theme & Shadow Enhancements */
+    :root {
+      --wine-base: #0E0407;
+      --wine-card: #1A090E;
+      --wine-accent: #6B1522;
+      --wine-accent-hover: #8A1C2D;
+      --wine-border: #4A1E25;
+      --gold-accent: #FFD28D;
+    }
 
-    <!-- Elegencia CSS Plugins -->
-    <link rel="stylesheet" href="assets/css/plugins/bootstrap.min.css" />
-    <link rel="stylesheet" href="assets/css/plugins/lightgallery.min.css" />
-    <link rel="stylesheet" href="assets/css/plugins/swiper.min.css" />
-    <link rel="stylesheet" href="assets/css/style.css" />
+    body {
+      background-color: var(--wine-base) !important;
+      color: #C8C8C8;
+    }
 
-    <style>
-        /* Ajustements spécifiques haute fidélité pour Le Châblis */
-        .ak-site_branding img {
-            max-height: 48px;
-            width: auto;
-            object-fit: contain;
-        }
-        .center-log img {
-            max-height: 52px;
-            width: auto;
-            object-fit: contain;
-        }
-        .footer-logo img {
-            max-height: 85px;
-            width: auto;
-            object-fit: contain;
-        }
-        .chablis-gold-text {
-            color: #FFD28D !important;
-        }
-        .chablis-reel-card {
-            background: #091E24;
-            border: 1px solid #4F4836;
-            border-radius: 16px;
-            padding: 12px;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-        .chablis-reel-card:hover {
-            border-color: #FFD28D;
-            transform: translateY(-4px);
-        }
-        .chablis-reel-video {
-            width: 100%;
-            aspect-ratio: 9/16;
-            object-fit: cover;
-            border-radius: 12px;
-            background: #000;
-            display: block;
-        }
-        .reel-play-btn {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            background: rgba(4, 13, 16, 0.7);
-            border: 1px solid #FFD28D;
-            color: #FFD28D;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-        .reel-play-btn:hover {
-            background: #FFD28D;
-            color: #040D10;
-            transform: translate(-50%, -50%) scale(1.1);
-        }
-        /* Bouton Flottant WhatsApp */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            z-index: 9999;
-            width: 58px;
-            height: 58px;
-            border-radius: 50%;
-            background-color: #25D366;
-            color: #FFF;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
-            transition: all 0.3s ease;
-            text-decoration: none;
-        }
-        .whatsapp-float:hover {
-            transform: scale(1.1);
-            color: #FFF;
-            box-shadow: 0 12px 30px rgba(37, 211, 102, 0.4);
-        }
-        .whatsapp-pulse {
-            position: absolute;
-            inset: -4px;
-            border-radius: 50%;
-            border: 2px solid #25D366;
-            animation: wa-pulse 2s infinite ease-out;
-            pointer-events: none;
-        }
-        @keyframes wa-pulse {
-            0% { transform: scale(0.95); opacity: 0.9; }
-            50% { transform: scale(1.2); opacity: 0; }
-            100% { transform: scale(0.95); opacity: 0; }
-        }
-        .wa-tooltip {
-            position: absolute;
-            right: 70px;
-            background: #040D10;
-            color: #FFF;
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-family: 'Prompt', sans-serif;
-            white-space: nowrap;
-            border: 1px solid #4F4836;
-            pointer-events: none;
-            opacity: 0;
-            transform: translateX(10px);
-            transition: all 0.3s ease;
-        }
-        .whatsapp-float:hover .wa-tooltip {
-            opacity: 1;
-            transform: translateX(0);
-        }
-    </style>
+    /* Top-Down Dark Shadow Gradient for Header & Hero */
+    .ak-site-header {
+      background: linear-gradient(180deg, rgba(14, 4, 7, 0.98) 0%, rgba(14, 4, 7, 0.82) 60%, rgba(14, 4, 7, 0) 100%) !important;
+      backdrop-filter: blur(8px);
+      padding-top: 10px;
+      padding-bottom: 25px;
+      transition: all 0.3s ease;
+    }
+
+    .header-logo-img {
+      filter: drop-shadow(0 4px 18px rgba(0, 0, 0, 0.95)) drop-shadow(0 0 2px rgba(255, 255, 255, 0.3));
+      max-height: 80px;
+      width: auto;
+      transition: transform 0.3s ease;
+    }
+    .header-logo-img:hover {
+      transform: scale(1.04);
+    }
+
+    /* Hero Slide Overlay with Downward Dark Gradient */
+    .ak-slider-hero-2 {
+      position: relative;
+    }
+    .ak-slider-hero-2::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 60%;
+      background: linear-gradient(180deg, rgba(14, 4, 7, 0.98) 0%, rgba(14, 4, 7, 0.72) 45%, transparent 100%);
+      z-index: 2;
+      pointer-events: none;
+    }
+    .ak-slider-hero-2 .ak-hero-bg::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(14, 4, 7, 0.88) 0%, rgba(14, 4, 7, 0.4) 40%, rgba(14, 4, 7, 0.94) 100%);
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .hero-title, .ak-hero-title, .hero-sub-title {
+      position: relative;
+      z-index: 3;
+      text-shadow: 0 4px 30px rgba(0, 0, 0, 0.98), 0 2px 10px rgba(0, 0, 0, 0.9);
+    }
+
+    /* Video Reels Cards */
+    .chablis-reel-card {
+      position: relative;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid var(--wine-border);
+      background: var(--wine-card);
+      padding: 10px;
+      transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    .chablis-reel-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--wine-accent);
+      box-shadow: 0 15px 35px rgba(107, 21, 34, 0.25);
+    }
+    .chablis-reel-video {
+      width: 100%;
+      aspect-ratio: 9 / 16;
+      object-fit: cover;
+      border-radius: 10px;
+      background: #000;
+      cursor: pointer;
+      display: block;
+    }
+    .reel-play-btn {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: rgba(14, 4, 7, 0.8);
+      border: 2px solid var(--gold-accent);
+      color: var(--gold-accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      z-index: 2;
+    }
+    .chablis-reel-card:hover .reel-play-btn {
+      background: var(--wine-accent);
+      color: #FFF;
+      border-color: #FFF;
+      transform: translate(-50%, -50%) scale(1.1);
+    }
+
+    /* Feature Pillars */
+    .pillar-card {
+      background: var(--wine-card);
+      border: 1px solid var(--wine-border);
+      border-radius: 12px;
+      padding: 24px;
+      height: 100%;
+      transition: all 0.3s ease;
+    }
+    .pillar-card:hover {
+      border-color: var(--gold-accent);
+      transform: translateY(-4px);
+    }
+
+    /* Clean Gallery Styling */
+    .clean-gallery-item {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--wine-border);
+      aspect-ratio: 4 / 3;
+    }
+    .clean-gallery-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+      display: block;
+    }
+    .clean-gallery-item:hover .clean-gallery-img {
+      transform: scale(1.08);
+    }
+    .clean-gallery-zoom {
+      position: absolute;
+      inset: 0;
+      background: rgba(14, 4, 7, 0.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .clean-gallery-item:hover .clean-gallery-zoom {
+      opacity: 1;
+    }
+    .clean-gallery-zoom span {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: 1px solid var(--gold-accent);
+      color: var(--gold-accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(14, 4, 7, 0.85);
+      font-size: 20px;
+    }
+
+    /* Practical Reservation Form */
+    .res-card {
+      background: var(--wine-card);
+      border: 1px solid var(--wine-border);
+      border-radius: 16px;
+      padding: 35px 30px;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+    }
+    .res-input, .res-select {
+      width: 100%;
+      height: 54px;
+      background: rgba(14, 4, 7, 0.7);
+      border: 1px solid var(--wine-border);
+      border-radius: 8px;
+      padding: 0 16px;
+      color: #FFF;
+      font-family: 'Prompt', sans-serif;
+      font-size: 15px;
+      outline: none;
+      transition: border-color 0.3s ease;
+    }
+    .res-input:focus, .res-select:focus {
+      border-color: var(--gold-accent);
+    }
+    .res-label {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--gold-accent);
+      margin-bottom: 6px;
+      display: block;
+      font-weight: 500;
+    }
+    .btn-res-submit {
+      width: 100%;
+      padding: 16px 24px;
+      background: var(--wine-accent);
+      color: #FFF;
+      border: 1px solid var(--gold-accent);
+      border-radius: 8px;
+      font-family: 'Prompt', sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      transition: all 0.3s ease;
+    }
+    .btn-res-submit:hover {
+      background: var(--wine-accent-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(107, 21, 34, 0.4);
+    }
+
+    /* Lightened Sleek Footer */
+    .footer-light {
+      background: #080204;
+      border-top: 1px solid var(--wine-border);
+      padding: 60px 0 30px;
+    }
+  </style>
 </head>
 
 <body>
-    <!-- Curseur Magnétique Elegencia -->
-    <div id="minicircle"></div>
-
-    <!-- Start preloader -->
-    <div id="preloader">
-        <div id="ak-preloader" class="ak-preloader">
-            <div class="animation-preloader">
-                <div class="spinner"></div>
-                <div class="txt-loading">
-                    <span data-text-preloader="L" class="letters-loading">L</span>
-                    <span data-text-preloader="E" class="letters-loading">E</span>
-                    <span data-text-preloader="&nbsp;" class="letters-loading">&nbsp;</span>
-                    <span data-text-preloader="C" class="letters-loading">C</span>
-                    <span data-text-preloader="H" class="letters-loading">H</span>
-                    <span data-text-preloader="A" class="letters-loading">A</span>
-                    <span data-text-preloader="B" class="letters-loading">B</span>
-                    <span data-text-preloader="L" class="letters-loading">L</span>
-                    <span data-text-preloader="I" class="letters-loading">I</span>
-                    <span data-text-preloader="S" class="letters-loading">S</span>
-                </div>
-            </div>
-            <div class="loader-section section-left"></div>
-            <div class="loader-section section-right"></div>
+  <!-- Start preloader -->
+  <div id="preloader" class="ak-preloader">
+    <div class="ak-preloader-wave"></div>
+    <div class="ak-preloader-content">
+      <div class="ak-preloader-logo">
+        <div class="ak-preloader-circle">
+          <svg width="190" height="190" viewBox="0 0 190 190">
+            <circle cx="95" cy="95" r="88" fill="none" stroke="#6B1522" stroke-width="2" stroke-dasharray="8 8" />
+          </svg>
         </div>
+        <img src="assets/img/chablis-logo.png" alt="Le Châblis" style="max-height: 80px; width: auto;">
+      </div>
+      <div class="ak-preloader-text">
+        <span>L</span><span>E</span>&nbsp;
+        <span>C</span><span>H</span><span>Â</span><span>B</span><span>L</span><span>I</span><span>S</span>
+      </div>
     </div>
-    <!-- End preloader -->
+  </div>
+  <!-- End preloader -->
+
+  <!-- Cursor Animation -->
+  <div id="minicircle"></div>
+
+  <div id="scrollSmoother-container">
 
     <!-- Start Header Section -->
-    <header class="ak-site_header ak-style1 ak-sticky_header ak-site_header_full_width">
-        <div class="header-top">
-            <div class="wrapper">
-                <div class="header-logo">
-                    <a href="#reservation" class="logo">RÉSERVATION</a>
+    <header class="ak-site-header ak-style-1 ak-sticky-header">
+      <div class="ak-top-header">
+        <div class="container">
+          <div class="ak-top-header-in">
+            <div class="ak-top-header-left">
+              <a href="#reservation" class="ak-top-header-btn">
+                <span class="ak-btn-style-1">Réservation</span>
+              </a>
+            </div>
+            <div class="ak-top-header-center">
+              <a href="#accueil" class="ak-logo">
+                <img src="assets/img/chablis-logo.png" alt="Logo Le Châblis" class="header-logo-img">
+              </a>
+            </div>
+            <div class="ak-top-header-right">
+              <a href="https://wa.me/2290156344862" target="_blank" class="ak-top-header-btn" style="color: var(--gold-accent);">
+                <span>+229 01 56 34 48 62</span>
+              </a>
+              <div class="ak-menu-toggle">
+                <div class="ak-toggle-icon">
+                  <span></span><span></span><span></span>
                 </div>
-                <div class="center-log">
-                    <a href="#accueil"><img src="assets/img/chablis-logo.png" alt="Le Châblis Cotonou"></a>
-                </div>
-                <button class="ak-menu-toggle" id="akMenuToggle" type="button" aria-label="Menu">
-                    <svg viewBox="0 0 20 15" width="40px" height="30px" class="ak-menu-icon">
-                        <path d="M20,2 L2,2" class="bar-1"></path>
-                        <path d="M2,7 L20,7" class="bar-2"></path>
-                        <path d="M30,12 L2,12" class="bar-3"></path>
-                    </svg>
-                </button>
-
-                <!-- Menu Plein Écran au Survol -->
-                <ul class="top-main-menu">
-                    <li class="top-main-menu-li">
-                        <a href="#accueil">Accueil</a>
-                        <img class="top-main-menu-img" src="assets/img/chablis-hero.jpg" alt="Le Châblis">
-                    </li>
-                    <li class="top-main-menu-li">
-                        <a href="#apropos">L'Atmosphère</a>
-                        <img class="top-main-menu-img" src="assets/img/chablis-ambiance.jpg" alt="Cadre et Ambiance">
-                    </li>
-                    <li class="top-main-menu-li">
-                        <a href="#carte">La Carte</a>
-                        <img class="top-main-menu-img menu-img" src="assets/img/chablis-dish-1.jpg" alt="Plats Signature">
-                    </li>
-                    <li class="top-main-menu-li">
-                        <a href="#videos">En Vidéo</a>
-                        <img class="top-main-menu-img" src="assets/img/chablis-facade.jpg" alt="L'Accès en Vidéo">
-                    </li>
-                    <li class="top-main-menu-li">
-                        <a href="#evenement">Beaujolais Nouveau</a>
-                        <img class="top-main-menu-img" src="assets/img/chablis-wine-event.jpg" alt="Soirée Festive">
-                    </li>
-                    <li class="top-main-menu-li">
-                        <a href="#avis">Avis Clients</a>
-                        <img class="top-main-menu-img" src="assets/img/chablis-salle.jpg" alt="Avis Google">
-                    </li>
-                    <li class="top-main-menu-li">
-                        <a href="#reservation">Réservation</a>
-                        <img class="top-main-menu-img" src="assets/img/chablis-hero.jpg" alt="Réservation WhatsApp">
-                    </li>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ak-main-header">
+        <div class="container">
+          <div class="ak-main-header-in">
+            <div class="ak-main-header-left">
+              <a href="#accueil" class="ak-logo-sticky">
+                <img src="assets/img/chablis-logo.png" alt="Le Châblis" style="max-height: 50px;">
+              </a>
+            </div>
+            <div class="ak-main-header-center">
+              <nav class="ak-nav ak-desktop-nav">
+                <ul class="ak-nav-list">
+                  <li><a href="#accueil">Accueil</a></li>
+                  <li><a href="#apropos">Atmosphère</a></li>
+                  <li><a href="#itineraires">Comment Venir</a></li>
+                  <li><a href="#galerie">Galerie</a></li>
+                  <li><a href="#evenement">Événement</a></li>
+                  <li><a href="#avis">Avis</a></li>
+                  <li><a href="#horaires">Horaires</a></li>
+                  <li><a href="#contact">Contact</a></li>
                 </ul>
-
+              </nav>
             </div>
-        </div>
-        <div class="nav-bar-border"></div>
-        <div class="ak-main_header">
-            <div class="container">
-                <div class="ak-main_header_in">
-                    <div class="ak-main_header_left">
-                        <a class="ak-site_branding" href="#accueil">
-                            <img src="assets/img/chablis-logo.png" alt="Le Châblis">
-                        </a>
-                    </div>
-                    <div class="ak-main_header_right">
-                        <div class="ak-nav ak-medium">
-                            <ul class="ak-nav_list">
-                                <li><a href="#accueil">Accueil</a></li>
-                                <li><a href="#apropos">Atmosphère</a></li>
-                                <li><a href="#carte">La Carte</a></li>
-                                <li><a href="#videos">Vidéos</a></li>
-                                <li><a href="#evenement">Événement</a></li>
-                                <li><a href="#avis">Avis</a></li>
-                                <li><a href="#horaires">Horaires</a></li>
-                                <li><a href="#contact">Contact</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+            <div class="ak-main-header-right">
+              <a href="#reservation" class="ak-btn style-5" style="border-color: var(--wine-border); background: var(--wine-accent); padding: 8px 18px; font-size: 13px;">
+                <span>Réserver</span>
+              </a>
             </div>
+          </div>
         </div>
+      </div>
+      <!-- Fullscreen Overlay Menu for Mobile / Toggle -->
+      <div class="ak-fullscreen-menu" style="background: var(--wine-base);">
+        <div class="ak-fullscreen-menu-close">&times;</div>
+        <div class="text-center mb-4">
+          <img src="assets/img/chablis-logo.png" alt="Le Châblis" style="max-height: 90px;">
+        </div>
+        <ul class="ak-fullscreen-nav-list text-center">
+          <li><a href="#accueil">Accueil</a></li>
+          <li><a href="#apropos">Atmosphère</a></li>
+          <li><a href="#itineraires">Comment Venir (Vidéos)</a></li>
+          <li><a href="#galerie">Galerie</a></li>
+          <li><a href="#evenement">Événement à venir</a></li>
+          <li><a href="#avis">Avis Vérifiés</a></li>
+          <li><a href="#horaires">Horaires</a></li>
+          <li><a href="#reservation">Réservation</a></li>
+          <li><a href="#contact">Contact & Accès</a></li>
+        </ul>
+        <div class="text-center mt-4">
+          <p style="color: var(--gold-accent); font-size: 16px;">Tél / WhatsApp : +229 01 56 34 48 62</p>
+        </div>
+      </div>
     </header>
     <!-- End Header Section -->
 
-    <div id="scrollsmoother-container">
-        <main>
-            <!-- Start Hero Section (Elegencia Swiper Hero) -->
-            <section id="accueil">
-                <div class="ak-hero ak-style1 heignt-100vh">
-                    <div class="ak-hero-bg ak-bg" data-src="assets/img/chablis-hero.jpg"></div>
-                    <div class="container">
-                        <div class="hero-text-section container-fluid container-md">
-                            <div class="ak-slider ak-slider-hero-2">
-                                <div class="swiper-wrapper">
-                                    
-                                    <!-- Slide 1 -->
-                                    <div class="swiper-slide">
-                                        <div class="slider-info">
-                                            <div class="hero-title">
-                                                <p class="mini-title">Table Raffinée & Bar à Vins • Cotonou</p>
-                                                <h1 class="hero-main-title">Le Châblis</h1>
-                                                <h1 class="hero-main-title-1 style-2">French Restaurant</h1>
-                                            </div>
-                                            <div class="ak-height-40 ak-height-lg-30"></div>
-                                            <a href="#reservation" class="hero-btn style-1">
-                                                <div class="ak-btn style-5">
-                                                    Réserver une Table
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
+    <!-- Start Hero Section (Elegencia Swiper Hero) -->
+    <section id="accueil">
+      <div class="ak-slider ak-slider-hero-2">
+        <div class="swiper-wrapper">
 
-                                    <!-- Slide 2 -->
-                                    <div class="swiper-slide">
-                                        <div class="slider-info">
-                                            <div class="hero-title">
-                                                <p class="mini-title">Cuisine de Marché • 100% Faite Maison</p>
-                                                <h1 class="hero-main-title">L'Art de Recevoir</h1>
-                                                <h1 class="hero-main-title-1 style-2">Patio & Salon Privé</h1>
-                                            </div>
-                                            <div class="ak-height-40 ak-height-lg-30"></div>
-                                            <a href="#carte" class="hero-btn style-1">
-                                                <div class="ak-btn style-5">
-                                                    Découvrir la Sélection
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-
-                                    <!-- Slide 3 -->
-                                    <div class="swiper-slide">
-                                        <div class="slider-info">
-                                            <div class="hero-title">
-                                                <p class="mini-title">Jeudi 19 Novembre • Soirée Festive</p>
-                                                <h1 class="hero-main-title">Beaujolais Nouveau</h1>
-                                                <h1 class="hero-main-title-1 style-2">Dîner en 4 Temps</h1>
-                                            </div>
-                                            <div class="ak-height-40 ak-height-lg-30"></div>
-                                            <a href="#evenement" class="hero-btn style-1">
-                                                <div class="ak-btn style-5">
-                                                    Menu Beaujolais (45 000 F)
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Contrôles Flèches Hero -->
-                        <div class="ak-swiper-controll-hero-2">
-                            <div class="ak-swiper-navigation-wrap">
-                                <div class="ak-swiper-button-prev-hero-2">
-                                    <div class="hero-swiper-prev">
-                                        <div class="btn-cricle"></div>
-                                        <div class="btn-arrow">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="29" height="41" viewBox="0 0 29 41" fill="none">
-                                                <path d="M20.5013 20.0839L14.6041 14.1866C14.3922 13.9392 14.0199 13.9104 13.7726 14.1223C13.5252 14.3341 13.4964 14.7064 13.7083 14.9538C13.728 14.9769 13.7495 14.9984 13.7726 15.0181L18.6614 19.9129H2.24401C1.91834 19.9129 1.6543 20.1769 1.6543 20.5026C1.6543 20.8284 1.91834 21.0924 2.24401 21.0924H18.6614L13.7726 25.9812C13.5252 26.193 13.4964 26.5653 13.7083 26.8127C13.9202 27.0601 14.2924 27.0889 14.5398 26.877C14.5628 26.8572 14.5844 26.8358 14.6041 26.8127L20.5014 20.9154C20.73 20.6854 20.73 20.314 20.5013 20.0839Z" fill="#FFD28D" />
-                                            </svg>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="ak-swiper-button-next-hero-2">
-                                    <div class="hero-swiper-next">
-                                        <div class="btn-cricle"></div>
-                                        <div class="btn-arrow">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="29" height="41" viewBox="0 0 29 41" fill="none">
-                                                <path d="M1.82581 20.0839L7.72307 14.1866C7.93491 13.9392 8.3072 13.9104 8.55457 14.1223C8.80194 14.3341 8.83078 14.7064 8.61889 14.9538C8.59912 14.9769 8.57763 14.9984 8.55457 15.0181L3.66574 19.9129H20.0831C20.4088 19.9129 20.6729 20.1769 20.6729 20.5026C20.6729 20.8284 20.4088 21.0924 20.0831 21.0924H3.66574L8.55457 25.9812C8.80194 26.193 8.83078 26.5653 8.61889 26.8127C8.40699 27.0601 8.03475 27.0889 7.78738 26.877C7.76432 26.8572 7.74278 26.8358 7.72307 26.8127L1.82575 20.9154C1.59714 20.6854 1.59714 20.314 1.82581 20.0839Z" fill="#FFD28D" />
-                                            </svg>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Barre Latérale Réseaux Sociaux -->
-                    <div class="social-icon-section">
-                        <p>SUIVEZ-NOUS</p>
-                        <div class="social-border"></div>
-                        <div class="social-icon">
-                            <a href="https://instagram.com/le_chablis_restaurant" target="_blank" title="@le_chablis_restaurant">
-                                <span>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
-                                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                                        <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
-                                    </svg>
-                                </span>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Bouton Défilement Vers le Bas -->
-                    <div class="scroll-btn" id="scroll-btn">
-                        <div class="icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="52" height="55" viewBox="0 0 52 55" fill="none">
-                                <path d="M25.4001 38.124L16.8902 29.6143C16.5333 29.3086 16.4917 28.7714 16.7974 28.4144C17.1031 28.0575 17.6404 28.0158 17.9973 28.3216C18.0306 28.3501 18.0617 28.3811 18.0901 28.4144L25.1532 35.469L25.1532 1.77869C25.1532 1.30875 25.5343 0.927734 26.0043 0.927734C26.4743 0.927734 26.8552 1.30875 26.8552 1.77869L26.8552 35.469L33.9098 28.4144C34.2155 28.0575 34.7527 28.0158 35.1097 28.3216C35.4666 28.6274 35.5082 29.1645 35.2025 29.5215C35.174 29.5547 35.1429 29.5858 35.1097 29.6143L26.5999 38.1241C26.2681 38.454 25.732 38.454 25.4001 38.124Z" fill="#FFD28D" class="arro" />
-                                <path d="M51 29C51 32.283 50.3534 35.5339 49.097 38.5671C47.8406 41.6002 45.9991 44.3562 43.6777 46.6777C41.3562 48.9991 38.6002 50.8406 35.5671 52.097C32.5339 53.3534 29.283 54 26 54C22.717 54 19.4661 53.3534 16.4329 52.097C13.3998 50.8406 10.6438 48.9991 8.32233 46.6777C6.00086 44.3562 4.15938 41.6002 2.90301 38.5671C1.64664 35.5339 0.999998 32.283 0.999998 29" stroke="#FFD28D" />
-                            </svg>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- End Hero -->
-
-            <!-- Start Sliding Text Ticker (Elegencia signature) -->
-            <div class="sliding-text-section">
-                <div class="sliding-text-content">
-                    <p class="sliding-text">
-                        LE CHÂBLIS COTONOU &bull; TABLE RAFFINÉE &bull; BAR À VINS D'EXCEPTION &bull; CUISINE FAITE MAISON &bull; PATIO VÉGÉTAL & SALON PRIVÉ &bull; CADJÈHOUN RUE 395 &bull; NOTE GOOGLE 4.4 / 5 &bull; 
-                        LE CHÂBLIS COTONOU &bull; TABLE RAFFINÉE &bull; BAR À VINS D'EXCEPTION &bull; CUISINE FAITE MAISON &bull; PATIO VÉGÉTAL & SALON PRIVÉ &bull;
-                    </p>
-                </div>
-            </div>
-            <!-- End Sliding Text Ticker -->
-
-            <!-- Start À Propos & Atmosphère Section -->
-            <section id="apropos">
-                <div class="ak-height-150 ak-height-lg-60"></div>
-                <div class="container">
-                    <div class="ak-best-item">
-                        <div class="best-item-section-1">
-                            <div class="ak-section-heading ak-style-1">
-                                <div class="ak-section-subtitle">
-                                    L'Art de Recevoir à la Française
-                                </div>
-                                <h2 class="ak-section-title anim-title-2">
-                                    <span class="text-white">Le Châblis,</span> <br>
-                                    Atmosphère Cosy & Intimiste
-                                </h2>
-                            </div>
-                            <div class="ak-height-30 ak-height-lg-30"></div>
-                            <div>
-                                <p>
-                                    Niché au cœur de Cadjèhoun, <strong>Le Châblis</strong> cultive l'authenticité d'un bistrot chic d'inspiration française. 
-                                    Reconnus pour l'accueil direct et chaleureux de ses propriétaires, nous proposons une cuisine de marché entièrement faite maison à partir de produits frais et de saison.
-                                </p>
-                                <p style="margin-top: 15px; color: #9A9A9A; font-size: 14px;">
-                                    Que vous choisissiez la fraîcheur de notre salle climatisée intimiste ou la douceur de notre patio ombragé, savourez un moment suspendu autour de nos créations gourmandes et de notre cave à vins d'exception.
-                                </p>
-                            </div>
-                            <div class="ak-height-50 ak-height-lg-30"></div>
-                            <div class="img-one">
-                                <img src="assets/img/chablis-ambiance.jpg" alt="Cadre intimiste au Châblis" data-speed="1.2" data-lag="0">
-                                <div class="img-overlay"></div>
-                            </div>
-                        </div>
-                        <div class="best-item-section-2" data-speed="1.1" data-lag="1">
-                            <img src="assets/img/star_line.svg" alt="...">
-                        </div>
-                        <div class="best-item-section-3">
-                            <div class="img-two">
-                                <img src="assets/img/chablis-dish-1.jpg" alt="Plat signature du Châblis" data-speed="1.1" data-lag="0">
-                                <div class="img-overlay"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- End À Propos Section -->
-
-            <!-- Start Grille des Points Forts Réels Google Maps -->
-            <div class="ak-height-100 ak-height-lg-50"></div>
-            <div class="container">
-                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 text-center">
-                    
-                    <div class="col">
-                        <div class="p-4" style="background: #091E24; border: 1px solid #4F4836; border-radius: 12px; height: 100%;">
-                            <div style="font-size: 26px; color: #FFD28D; margin-bottom: 12px;">
-                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#FFD28D" stroke-width="1.7"><path d="M8 22h8M12 15v7M12 15a7 7 0 0 0 7-7c0-2-2-3-2-3H7s-2 1-2 3a7 7 0 0 0 7 7z"/></svg>
-                            </div>
-                            <h5 style="color: #FFF; font-family: 'Baskervville', serif; margin-bottom: 8px;">Cave à Vins & Spiritueux</h5>
-                            <p style="font-size: 13px; color: #C8C8C8; line-height: 1.5; margin: 0;">Sélection rigoureuse de Chablis, Bourgogne, Bordeaux et cuvées de vignerons indépendants.</p>
-                        </div>
-                    </div>
-
-                    <div class="col">
-                        <div class="p-4" style="background: #091E24; border: 1px solid #4F4836; border-radius: 12px; height: 100%;">
-                            <div style="font-size: 26px; color: #FFD28D; margin-bottom: 12px;">
-                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#FFD28D" stroke-width="1.7"><path d="M18 8h1a4 4 0 0 1 0 8h-1M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8zM6 1v3M10 1v3M14 1v3"/></svg>
-                            </div>
-                            <h5 style="color: #FFF; font-family: 'Baskervville', serif; margin-bottom: 8px;">Desserts Fins Maison</h5>
-                            <p style="font-size: 13px; color: #C8C8C8; line-height: 1.5; margin: 0;">Profiteroles minute au chocolat chaud Valrhona, tarte Tatin tiède et douceurs artisanales.</p>
-                        </div>
-                    </div>
-
-                    <div class="col">
-                        <div class="p-4" style="background: #091E24; border: 1px solid #4F4836; border-radius: 12px; height: 100%;">
-                            <div style="font-size: 26px; color: #FFD28D; margin-bottom: 12px;">
-                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#FFD28D" stroke-width="1.7"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M9 16h6M9 8h6M9 12h6"/></svg>
-                            </div>
-                            <h5 style="color: #FFF; font-family: 'Baskervville', serif; margin-bottom: 8px;">Parking Gratuit Assuré</h5>
-                            <p style="font-size: 13px; color: #C8C8C8; line-height: 1.5; margin: 0;">Stationnement calme et sécurisé directement dans la cour intérieure et le long de la Rue 395.</p>
-                        </div>
-                    </div>
-
-                    <div class="col">
-                        <div class="p-4" style="background: #091E24; border: 1px solid #4F4836; border-radius: 12px; height: 100%;">
-                            <div style="font-size: 26px; color: #FFD28D; margin-bottom: 12px;">
-                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#FFD28D" stroke-width="1.7"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
-                            </div>
-                            <h5 style="color: #FFF; font-family: 'Baskervville', serif; margin-bottom: 8px;">Paiement Sans Contact</h5>
-                            <p style="font-size: 13px; color: #C8C8C8; line-height: 1.5; margin: 0;">Cartes bancaires NFC Visa / Mastercard et Mobile Money (MTN MoMo, Moov, Celtiis Cash).</p>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-            <!-- Start Video Reels Carousel Section (Instagram Reels exclusifs) -->
-            <section id="videos">
-                <div class="ak-height-150 ak-height-lg-60"></div>
-                <div class="container">
-                    <div class="ak-section-heading ak-style-1 ak-type-1">
-                        <div class="ak-section-subtitle">
-                            Série Vidéo Instagram @le_chablis_restaurant
-                        </div>
-                        <h2 class="ak-section-title anim-title">Les habitués connaissent le chemin par cœur...</h2>
-                        <p style="color: #A0A0A0; font-size: 15px; margin-top: 10px; max-width: 600px; margin-left: auto; margin-right: auto;">
-                            Découvrez en 4 séquences vidéo authentiques le chemin secret pour rejoindre La Patte d'Oie / Cadjèhoun et savourer l'atmosphère du Châblis.
-                        </p>
-                    </div>
-
-                    <div class="ak-height-65 ak-height-lg-30"></div>
-
-                    <!-- Grille des 4 Vidéos Reels interactives -->
-                    <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4">
-                        
-                        <!-- Reel 1 -->
-                        <div class="col">
-                            <div class="chablis-reel-card">
-                                <video class="chablis-reel-video" loop playsinline muted preload="metadata" src="assets/videos/chablis-reel-1.mp4"></video>
-                                <button class="reel-play-btn" type="button" aria-label="Lire la vidéo">
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-                                </button>
-                                <div style="margin-top: 10px;">
-                                    <span style="font-size: 11px; color: #FFD28D; text-transform: uppercase; font-family: 'Prompt', sans-serif;">Épisode 1</span>
-                                    <h6 style="color: #FFF; font-family: 'Baskervville', serif; margin: 4px 0 2px 0;">Le Chemin vers Cadjèhoun</h6>
-                                    <p style="font-size: 12px; color: #9A9A9A; margin: 0;">L'accès discret depuis la Rue 395.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Reel 2 -->
-                        <div class="col">
-                            <div class="chablis-reel-card">
-                                <video class="chablis-reel-video" loop playsinline muted preload="metadata" src="assets/videos/chablis-reel-2.mp4"></video>
-                                <button class="reel-play-btn" type="button" aria-label="Lire la vidéo">
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-                                </button>
-                                <div style="margin-top: 10px;">
-                                    <span style="font-size: 11px; color: #FFD28D; text-transform: uppercase; font-family: 'Prompt', sans-serif;">Épisode 2</span>
-                                    <h6 style="color: #FFF; font-family: 'Baskervville', serif; margin: 4px 0 2px 0;">L'Arrivée au Patio</h6>
-                                    <p style="font-size: 12px; color: #9A9A9A; margin: 0;">La terrasse verdoyante abritée.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Reel 3 -->
-                        <div class="col">
-                            <div class="chablis-reel-card">
-                                <video class="chablis-reel-video" loop playsinline muted preload="metadata" src="assets/videos/chablis-reel-3.mp4"></video>
-                                <button class="reel-play-btn" type="button" aria-label="Lire la vidéo">
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-                                </button>
-                                <div style="margin-top: 10px;">
-                                    <span style="font-size: 11px; color: #FFD28D; text-transform: uppercase; font-family: 'Prompt', sans-serif;">Épisode 3</span>
-                                    <h6 style="color: #FFF; font-family: 'Baskervville', serif; margin: 4px 0 2px 0;">La Salle Climatisée</h6>
-                                    <p style="font-size: 12px; color: #9A9A9A; margin: 0;">L'ambiance tamisée et feutrée.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Reel 4 -->
-                        <div class="col">
-                            <div class="chablis-reel-card">
-                                <video class="chablis-reel-video" loop playsinline muted preload="metadata" src="assets/videos/chablis-reel-4.mp4"></video>
-                                <button class="reel-play-btn" type="button" aria-label="Lire la vidéo">
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-                                </button>
-                                <div style="margin-top: 10px;">
-                                    <span style="font-size: 11px; color: #FFD28D; text-transform: uppercase; font-family: 'Prompt', sans-serif;">Épisode 4</span>
-                                    <h6 style="color: #FFF; font-family: 'Baskervville', serif; margin: 4px 0 2px 0;">Le Vin & La Table</h6>
-                                    <p style="font-size: 12px; color: #9A9A9A; margin: 0;">Le service attentif et les verres fins.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </section>
-            <!-- End Video Reels Section -->
-
-            <!-- Start Gallery Showcase Section (Elegencia LightGallery) -->
-            <div class="ak-height-150 ak-height-lg-60"></div>
-            <section class="container" id="foodItems">
-                <div class="ak-section-heading ak-style-1 ak-type-1">
-                    <div class="ak-section-subtitle">
-                        Sélection du Chef
-                    </div>
-                    <h2 class="ak-section-title anim-title">Galerie & Saveurs Ciselées</h2>
-                </div>
-                <div class="ak-height-65 ak-height-lg-30"></div>
-                <div id="static-thumbnails">
-                    <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-5">
-                        
-                        <div class="col">
-                            <div class="gallery ak-bg" data-src="assets/img/chablis-dish-1.jpg">
-                                <div class="gallery style-1">
-                                    <div class="gallery-hover">
-                                        <div class="gallery-hover-icon">
-                                            <a href="assets/img/chablis-dish-1.jpg">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="41" height="41" viewBox="0 0 41 41" fill="none">
-                                                    <rect x="0.507812" y="19.7305" width="40" height="1" fill="#FFD28D" />
-                                                    <rect x="20.0078" y="0.730469" width="1" height="40" fill="#FFD28D" />
-                                                </svg>
-                                            </a>
-                                        </div>
-                                        <div class="gallery-hover-info">
-                                            <a href="#carte">
-                                                <h6>Confit de Canard Croustillant</h6>
-                                                <p>Cuisine Française</p>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col">
-                            <div class="gallery ak-bg" data-src="assets/img/chablis-dish-2.jpg">
-                                <div class="gallery style-1">
-                                    <div class="gallery-hover">
-                                        <div class="gallery-hover-icon">
-                                            <a href="assets/img/chablis-dish-2.jpg">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="41" height="41" viewBox="0 0 41 41" fill="none">
-                                                    <rect x="0.507812" y="19.7305" width="40" height="1" fill="#FFD28D" />
-                                                    <rect x="20.0078" y="0.730469" width="1" height="40" fill="#FFD28D" />
-                                                </svg>
-                                            </a>
-                                        </div>
-                                        <div class="gallery-hover-info">
-                                            <a href="#carte">
-                                                <h6>Profiteroles Maison Valrhona</h6>
-                                                <p>Dessert Signature</p>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col">
-                            <div class="gallery ak-bg" data-src="assets/img/chablis-ambiance.jpg">
-                                <div class="gallery style-1">
-                                    <div class="gallery-hover">
-                                        <div class="gallery-hover-icon">
-                                            <a href="assets/img/chablis-ambiance.jpg">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="41" height="41" viewBox="0 0 41 41" fill="none">
-                                                    <rect x="0.507812" y="19.7305" width="40" height="1" fill="#FFD28D" />
-                                                    <rect x="20.0078" y="0.730469" width="1" height="40" fill="#FFD28D" />
-                                                </svg>
-                                            </a>
-                                        </div>
-                                        <div class="gallery-hover-info">
-                                            <a href="#apropos">
-                                                <h6>Salle Intimiste & Verres Fins</h6>
-                                                <p>Cadre Feutré</p>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </section>
-            <!-- End Gallery Section -->
-
-            <!-- Start Food Menu Section (Elegencia Menu Architecture) -->
-            <section id="carte">
-                <div class="ak-height-150 ak-height-lg-60"></div>
-                <div class="container">
-                    <div class="ak-section-heading ak-style-1 ak-type-1">
-                        <div class="ak-section-subtitle">
-                            La Carte des Saisons
-                        </div>
-                        <h2 class="ak-section-title anim-title">Nos Plats & Vins d'Exception</h2>
-                    </div>
-                    <div class="ak-height-65 ak-height-lg-30"></div>
-                    
-                    <div class="ak-menu-list">
-                        
-                        <!-- Item 1 : Œufs Mimosa -->
-                        <div class="ak-menu-list-section-1">
-                            <img src="assets/img/item-show.png" alt="...">
-                            <div class="food-menu style-1">
-                                <div class="food-menu-section-1">
-                                    <div class="food-menu-title">
-                                        <p>Œufs Mimosa à l'Ancienne</p>
-                                    </div>
-                                    <div class="food-menu-hr">
-                                        <div class="food-menu-hr style-1"></div>
-                                        <div class="food-menu-hr style-1"></div>
-                                    </div>
-                                    <div class="food-menu-price">
-                                        <p>5 500 F</p>
-                                    </div>
-                                </div>
-                                <div class="food-menu-section-2">
-                                    <div class="food-menu-subsitle">
-                                        <p>Œufs fermiers bio, mayonnaise maison à la moutarde de Dijon, herbes fraîches</p>
-                                    </div>
-                                    <div class="food-menu-price-subsitle">
-                                        <a href="https://wa.me/2290156344862?text=Bonjour%20Le%20Ch%C3%A2blis,%20je%20souhaite%20r%C3%A9server%20des%20%C5%92ufs%20Mimosa." target="_blank" style="color: #FFD28D; text-decoration: underline;">Commander sur WhatsApp</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Item 2 : Terrine Maison -->
-                        <div class="ak-menu-list-section-1">
-                            <img src="assets/img/item-show_2.png" alt="...">
-                            <div class="food-menu style-1">
-                                <div class="food-menu-section-1">
-                                    <div class="food-menu-title">
-                                        <p>Terrine Maison aux Foies Fins</p>
-                                    </div>
-                                    <div class="food-menu-hr">
-                                        <div class="food-menu-hr style-1"></div>
-                                        <div class="food-menu-hr style-1"></div>
-                                    </div>
-                                    <div class="food-menu-price">
-                                        <p>6 000 F</p>
-                                    </div>
-                                </div>
-                                <div class="food-menu-section-2">
-                                    <div class="food-menu-subsitle">
-                                        <p>Recette traditionnelle marinée au Cognac, confit d'oignons rouges doux et toasts</p>
-                                    </div>
-                                    <div class="food-menu-price-subsitle">
-                                        <a href="https://wa.me/2290156344862?text=Bonjour%20Le%20Ch%C3%A2blis,%20je%20souhaite%20r%C3%A9server%20la%20Terrine%20Maison." target="_blank" style="color: #FFD28D; text-decoration: underline;">Commander sur WhatsApp</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Item 3 : Escargots de Bourgogne -->
-                        <div class="ak-menu-list-section-1">
-                            <img src="assets/img/item-show.png" alt="...">
-                            <div class="food-menu style-1">
-                                <div class="food-menu-section-1">
-                                    <div class="food-menu-title">
-                                        <p>Escargots de Bourgogne Persillés (x6)</p>
-                                    </div>
-                                    <div class="food-menu-hr">
-                                        <div class="food-menu-hr style-1"></div>
-                                        <div class="food-menu-hr style-1"></div>
-                                    </div>
-                                    <div class="food-menu-price">
-                                        <p>6 500 F</p>
-                                    </div>
-                                </div>
-                                <div class="food-menu-section-2">
-                                    <div class="food-menu-subsitle">
-                                        <p>Gros escargots sauvages, beurre AOP d'Isigny au persil plat et ail doux confit</p>
-                                    </div>
-                                    <div class="food-menu-price-subsitle">
-                                        <a href="https://wa.me/2290156344862?text=Bonjour%20Le%20Ch%C3%A2blis,%20je%20souhaite%20r%C3%A9server%20les%20Escargots." target="_blank" style="color: #FFD28D; text-decoration: underline;">Commander sur WhatsApp</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Item 4 : Confit de Canard -->
-                        <div class="ak-menu-list-section-1">
-                            <img src="assets/img/item-show_2.png" alt="...">
-                            <div class="food-menu style-1">
-                                <div class="food-menu-section-1">
-                                    <div class="food-menu-title">
-                                        <p>Confit de Canard Croustillant</p>
-                                    </div>
-                                    <div class="food-menu-hr">
-                                        <div class="food-menu-hr style-1"></div>
-                                        <div class="food-menu-hr style-1"></div>
-                                    </div>
-                                    <div class="food-menu-price">
-                                        <p>14 500 F</p>
-                                    </div>
-                                </div>
-                                <div class="food-menu-section-2">
-                                    <div class="food-menu-subsitle">
-                                        <p>Cuisse confite maison, peau dorée craquante, pommes grenailles sautées à l'ail</p>
-                                    </div>
-                                    <div class="food-menu-price-subsitle">
-                                        <a href="https://wa.me/2290156344862?text=Bonjour%20Le%20Ch%C3%A2blis,%20je%20souhaite%20commander%20le%20Confit%20de%20Canard." target="_blank" style="color: #FFD28D; text-decoration: underline;">Commander sur WhatsApp</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Item 5 : Bœuf Bourguignon -->
-                        <div class="ak-menu-list-section-1">
-                            <img src="assets/img/item-show.png" alt="...">
-                            <div class="food-menu style-1">
-                                <div class="food-menu-section-1">
-                                    <div class="food-menu-title">
-                                        <p>Bœuf Bourguignon Façon Grand-Mère</p>
-                                    </div>
-                                    <div class="food-menu-hr">
-                                        <div class="food-menu-hr style-1"></div>
-                                        <div class="food-menu-hr style-1"></div>
-                                    </div>
-                                    <div class="food-menu-price">
-                                        <p>13 500 F</p>
-                                    </div>
-                                </div>
-                                <div class="food-menu-section-2">
-                                    <div class="food-menu-subsitle">
-                                        <p>Paleron mijoté 5 heures au vin de Bourgogne, carottes fondantes et champignons glacés</p>
-                                    </div>
-                                    <div class="food-menu-price-subsitle">
-                                        <a href="https://wa.me/2290156344862?text=Bonjour%20Le%20Ch%C3%A2blis,%20je%20souhaite%20commander%20le%20B%C5%93uf%20Bourguignon." target="_blank" style="color: #FFD28D; text-decoration: underline;">Commander sur WhatsApp</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Item 6 : Gambas Flambées -->
-                        <div class="ak-menu-list-section-1">
-                            <img src="assets/img/item-show_2.png" alt="...">
-                            <div class="food-menu style-1">
-                                <div class="food-menu-section-1">
-                                    <div class="food-menu-title">
-                                        <p>Gambas Fraîches Flambées au Pastis</p>
-                                    </div>
-                                    <div class="food-menu-hr">
-                                        <div class="food-menu-hr style-1"></div>
-                                        <div class="food-menu-hr style-1"></div>
-                                    </div>
-                                    <div class="food-menu-price">
-                                        <p>18 500 F</p>
-                                    </div>
-                                </div>
-                                <div class="food-menu-section-2">
-                                    <div class="food-menu-subsitle">
-                                        <p>Gambas sauvages de l'Atlantique sautées à vif, pastis provençal et risotto crémeux</p>
-                                    </div>
-                                    <div class="food-menu-price-subsitle">
-                                        <a href="https://wa.me/2290156344862?text=Bonjour%20Le%20Ch%C3%A2blis,%20je%20souhaite%20commander%20les%20Gambas%20Flamb%C3%A9es." target="_blank" style="color: #FFD28D; text-decoration: underline;">Commander sur WhatsApp</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Item 7 : Profiteroles Valrhona -->
-                        <div class="ak-menu-list-section-1">
-                            <img src="assets/img/item-show.png" alt="...">
-                            <div class="food-menu style-1">
-                                <div class="food-menu-section-1">
-                                    <div class="food-menu-title">
-                                        <p>Profiteroles Maison au Chocolat Valrhona</p>
-                                    </div>
-                                    <div class="food-menu-hr">
-                                        <div class="food-menu-hr style-1"></div>
-                                        <div class="food-menu-hr style-1"></div>
-                                    </div>
-                                    <div class="food-menu-price">
-                                        <p>5 000 F</p>
-                                    </div>
-                                </div>
-                                <div class="food-menu-section-2">
-                                    <div class="food-menu-subsitle">
-                                        <p>Choux pur beurre du jour, glace vanille Bourbon de Madagascar, coulis chaud Valrhona</p>
-                                    </div>
-                                    <div class="food-menu-price-subsitle">
-                                        <a href="https://wa.me/2290156344862?text=Bonjour%20Le%20Ch%C3%A2blis,%20je%20r%C3%A9serve%20des%20Profiteroles." target="_blank" style="color: #FFD28D; text-decoration: underline;">Commander sur WhatsApp</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Item 8 : AOC Chablis Domaine Saint Martin -->
-                        <div class="ak-menu-list-section-1">
-                            <img src="assets/img/item-show_2.png" alt="...">
-                            <div class="food-menu style-1">
-                                <div class="food-menu-section-1">
-                                    <div class="food-menu-title">
-                                        <p>AOC Chablis Domaine Saint Martin (75cl)</p>
-                                    </div>
-                                    <div class="food-menu-hr">
-                                        <div class="food-menu-hr style-1"></div>
-                                        <div class="food-menu-hr style-1"></div>
-                                    </div>
-                                    <div class="food-menu-price">
-                                        <p>28 000 F</p>
-                                    </div>
-                                </div>
-                                <div class="food-menu-section-2">
-                                    <div class="food-menu-subsitle">
-                                        <p>Bourgogne Blanc 100% Chardonnay minéral, fleurs blanches et fraîcheur iodée</p>
-                                    </div>
-                                    <div class="food-menu-price-subsitle">
-                                        <a href="https://wa.me/2290156344862?text=Bonjour%20Le%20Ch%C3%A2blis,%20je%20r%C3%A9serve%20une%20bouteille%20de%20Chablis." target="_blank" style="color: #FFD28D; text-decoration: underline;">Réserver ce Vin</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="ak-height-40 ak-height-lg-20"></div>
-                    <div class="text-center">
-                        <div class="text-btn">
-                            <a href="#reservation" class="text-btn1">
-                                Réserver une Table pour ce Soir
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- End Food Menu Section -->
-
-            <!-- Start Special Event Section (Soirée Beaujolais Nouveau) -->
-            <section id="evenement">
-                <div class="ak-height-150 ak-height-lg-60"></div>
-                <div class="container">
-                    <div class="ak-best-item">
-                        <div class="best-item-section-1">
-                            <div class="ak-section-heading ak-style-1">
-                                <div class="ak-section-subtitle">
-                                    Événement Exclusif • Jeudi 19 Novembre
-                                </div>
-                                <h2 class="ak-section-title anim-title-2">
-                                    <span class="text-white">Soirée Festive</span> <br>
-                                    Beaujolais Nouveau
-                                </h2>
-                            </div>
-                            <div class="ak-height-30 ak-height-lg-30"></div>
-                            <div>
-                                <p>
-                                    À partir de 19h30, célébrez le premier vin de l'année au Châblis. 
-                                    Une soirée conviviale avec dîner gastronomique en quatre temps, musique d'ambiance et accords mets & vins inédits.
-                                </p>
-                                <div style="margin-top: 20px; padding: 20px; background: #091E24; border: 1px solid #4F4836; border-radius: 12px;">
-                                    <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #4F4836; padding-bottom: 10px; margin-bottom: 12px;">
-                                        <span style="font-family: 'Baskervville', serif; font-size: 18px; color: #FFF;">Dîner en 4 Temps</span>
-                                        <span style="color: #FFD28D; font-weight: bold; font-size: 18px;">45 000 FCFA / pers.</span>
-                                    </div>
-                                    <ul style="list-style: none; padding: 0; margin: 0; font-size: 13px; color: #C8C8C8; line-height: 2;">
-                                        <li>&bull; Amuse-bouche du Chef</li>
-                                        <li>&bull; Entrée Gourmande de Saison</li>
-                                        <li>&bull; Plat Principal Ciselé</li>
-                                        <li>&bull; Dessert Maison</li>
-                                        <li style="color: #FFD28D;">&bull; Beaujolais Nouveau inclus dans la limite des disponibilités</li>
-                                    </ul>
-                                </div>
-                                <p style="font-size: 12px; color: #9A9A9A; margin-top: 15px;">
-                                    En partenariat officiel avec : <strong>Les Vignes de France SARL</strong> & <strong>De Mour</strong>
-                                </p>
-                            </div>
-                            <div class="ak-height-40 ak-height-lg-20"></div>
-                            <div class="text-btn">
-                                <a href="https://wa.me/2290156344862?text=Bonjour%20Le%20Ch%C3%A2blis,%20je%20souhaite%20r%C3%A9server%20des%20places%20pour%20la%20Soir%C3%A9e%20Beaujolais%20Nouveau%20(45%20000%20FCFA)." target="_blank" class="text-btn1">
-                                    Bloquer mes places sur WhatsApp
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="best-item-section-2" data-speed="1.1" data-lag="1">
-                            <img src="assets/img/star_line.svg" alt="...">
-                        </div>
-
-                        <div class="best-item-section-3">
-                            <div class="img-two" style="box-shadow: 0 20px 40px rgba(0,0,0,0.6); border: 1px solid #4F4836; border-radius: 16px; overflow: hidden;">
-                                <img src="assets/img/chablis-wine-event.jpg" alt="Affiche Beaujolais Nouveau Le Châblis" data-speed="1.1" data-lag="0">
-                                <div class="img-overlay"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- End Special Event Section -->
-
-            <!-- Start Testimonial Section (Elegencia Swiper Testimonial) -->
-            <section id="avis" class="container">
-                <div class="ak-height-150 ak-height-lg-60"></div>
-                <div class="ak-section-heading ak-style-1 ak-type-1">
-                    <div class="ak-section-subtitle">
-                        Retours d'Expérience Certifiés Google Maps (4.4 / 5.0)
-                    </div>
-                    <h2 class="ak-section-title anim-title">Ce que disent nos convives</h2>
-                </div>
-                <div class="ak-height-65 ak-height-lg-30"></div>
-
-                <div class="ak-slider ak-slider-3">
-                    <div class="swiper-wrapper">
-                        
-                        <!-- Témoignage 1 -->
-                        <div class="swiper-slide">
-                            <div class="container">
-                                <div class="testimonial-section">
-                                    <div class="testimonial-icon-1">
-                                        <img src="assets/img/testimonial_icon_l.svg" alt="...">
-                                    </div>
-                                    <div class="testimonial-info-section">
-                                        <div class="testimonial-info">
-                                            <div style="color: #FFD28D; font-size: 18px; margin-bottom: 8px;">&#9733;&#9733;&#9733;&#9733;&#9733; (5/5)</div>
-                                            <h6 class="testimonial-info-title">Marc Dossou</h6>
-                                            <p class="short-title">Avis Certifié Google Maps</p>
-                                            <p class="testimonial-info-subtitle">
-                                                “Excellent menu, good products and very good service. We didn’t need to wait long for our dishes, they were served with eye for detail. We had an excellent evening.”
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="testimonial-icon-1">
-                                        <img src="assets/img/testimonial_icon_r.svg" alt="...">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Témoignage 2 -->
-                        <div class="swiper-slide">
-                            <div class="container">
-                                <div class="testimonial-section">
-                                    <div class="testimonial-icon-1">
-                                        <img src="assets/img/testimonial_icon_l.svg" alt="...">
-                                    </div>
-                                    <div class="testimonial-info-section">
-                                        <div class="testimonial-info">
-                                            <div style="color: #FFD28D; font-size: 18px; margin-bottom: 8px;">&#9733;&#9733;&#9733;&#9733;&#9733; (5/5)</div>
-                                            <h6 class="testimonial-info-title">Aïcha B.</h6>
-                                            <p class="short-title">Guide Local Google</p>
-                                            <p class="testimonial-info-subtitle">
-                                                “Excellent food with very attentive staff and lovely owners. The wine selection is very good as well. I strongly recommend it.”
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="testimonial-icon-1">
-                                        <img src="assets/img/testimonial_icon_r.svg" alt="...">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Témoignage 3 -->
-                        <div class="swiper-slide">
-                            <div class="container">
-                                <div class="testimonial-section">
-                                    <div class="testimonial-icon-1">
-                                        <img src="assets/img/testimonial_icon_l.svg" alt="...">
-                                    </div>
-                                    <div class="testimonial-info-section">
-                                        <div class="testimonial-info">
-                                            <div style="color: #FFD28D; font-size: 18px; margin-bottom: 8px;">&#9733;&#9733;&#9733;&#9733;&#9733; (5/5)</div>
-                                            <h6 class="testimonial-info-title">Stéphane V.</h6>
-                                            <p class="short-title">Visiteur Cadjèhoun</p>
-                                            <p class="testimonial-info-subtitle">
-                                                “Very good experience and top services and dishes. Cost can be spicy but it's relevant to the high-end experience.”
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="testimonial-icon-1">
-                                        <img src="assets/img/testimonial_icon_r.svg" alt="...">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-                <!-- Contrôles Flèches Témoignages -->
-                <div class="container">
-                    <div class="ak-swiper-controll-3">
-                        <div class="ak-swiper-navigation-wrap">
-                            <div class="ak-swiper-button-prev-3">
-                                <button class="btn-style-2 btn-size btn-style-round button-prev-next-2 rotate-svg" aria-label="Précédent">
-                                    <svg width="20" height="14" xmlns="http://www.w3.org/2000/svg">
-                                        <g stroke="#fff" fill="none" fill-rule="evenodd">
-                                            <path d="M12.743 1.343L18.4 7l-5.657 5.657M18.4 7H.4"></path>
-                                        </g>
-                                    </svg>
-                                    <svg width="20" height="14" xmlns="http://www.w3.org/2000/svg">
-                                        <g stroke="#fff" fill="none" fill-rule="evenodd">
-                                            <path d="M12.743 1.343L18.4 7l-5.657 5.657M18.4 7H.4"></path>
-                                        </g>
-                                    </svg>
-                                </button>
-                            </div>
-                            <div class="ak-swiper-button-next-3">
-                                <button class="btn-style-2 btn-size btn-style-round button-prev-next-2" aria-label="Suivant">
-                                    <svg width="20" height="14" xmlns="http://www.w3.org/2000/svg">
-                                        <g stroke="#fff" fill="none" fill-rule="evenodd">
-                                            <path d="M12.743 1.343L18.4 7l-5.657 5.657M18.4 7H.4"></path>
-                                        </g>
-                                    </svg>
-                                    <svg width="20" height="14" xmlns="http://www.w3.org/2000/svg">
-                                        <g stroke="#fff" fill="none" fill-rule="evenodd">
-                                            <path d="M12.743 1.343L18.4 7l-5.657 5.657M18.4 7H.4"></path>
-                                        </g>
-                                    </svg>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- End Testimonial Section -->
-
-            <!-- Start Opening Hours Section (Elegencia Opening Hours) -->
-            <section id="horaires" class="container">
-                <div class="ak-height-150 ak-height-lg-60"></div>
-                <div class="opening-hour type-2">
-                    <div class="opening-hour-img-section style-2">
-                        <img src="assets/img/chablis-ambiance.jpg" class="imagesZoom opening-bg-img ak-bg" alt="Le Châblis Cotonou">
-                        <div class="overlap-opening-img"></div>
-                    </div>
-                    <div class="opening-hour-text-section type-2">
-                        <h2 class="opening-hour-title anim-title-2">Horaires d'Ouverture</h2>
-                        <div class="ak-height-30 ak-height-lg-30"></div>
-                        <p class="opening-hour-subtext">
-                            Situé à la Patte d'Oie / Cadjèhoun, nous vous accueillons midi et soir pour vos déjeuners gourmands, réunions d'affaires et dîners feutrés.
-                        </p>
-                        <div class="ak-height-30 ak-height-lg-30"></div>
-                        <div class="opening-hour-date">
-                            <p>LUNDI & MARDI : 12H00 - 15H00 | 18H00 - 22H30</p>
-                            <div class="opening-hour-hr"></div>
-                            <p style="color: #FFD28D;">MERCREDI (NOCTURNE) : 12H00 - 15H00 | 18H00 - 00H00</p>
-                            <div class="opening-hour-hr"></div>
-                            <p>JEUDI - SAMEDI : 12H00 - 15H00 | 18H00 - 23H00</p>
-                            <div class="opening-hour-hr"></div>
-                            <p>DIMANCHE : 12H00 - 15H00 | 18H00 - 22H30</p>
-                        </div>
-                        <div class="ak-height-40 ak-height-lg-20"></div>
-                        <div class="text-btn">
-                            <a href="#reservation" class="text-btn1">
-                                Réserver sur WhatsApp
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- End Opening Hours Section -->
-
-            <!-- Start Booking System Section (Elegencia Booking Form) -->
-            <section id="reservation">
-                <div class="ak-height-150 ak-height-lg-60"></div>
-                <div class="container">
-                    <div class="booking-system-heading">
-                        <div class="ak-section-heading ak-style-1 ak-type-1">
-                            <div class="ak-section-subtitle">
-                                Réservation Instantanée
-                            </div>
-                            <h2 class="ak-section-title anim-title">Votre Table au Châblis</h2>
-                            <p style="color: #A0A0A0; font-size: 14px; margin-top: 10px;">
-                                Choisissez votre créneau ci-dessous. Votre demande sera transmise en un clic sur le WhatsApp officiel du restaurant (+229 01 56 34 48 62).
-                            </p>
-                        </div>
-                        <div class="ak-height-60 ak-height-lg-30"></div>
-                        
-                        <div class="booking-system-form">
-                            <form id="chablis-booking-form" class="booking-system-form style-2">
-                                
-                                <div class="row g-3 mb-3">
-                                    <div class="col-12 col-md-6">
-                                        <input type="text" id="cust-name" required placeholder="Votre Nom et Prénom *" style="width: 100%; height: 60px; background: #091E24; border: 1px solid #4F4836; border-radius: 8px; padding: 0 20px; color: #FFF; font-family: 'Prompt', sans-serif; font-size: 14px;">
-                                    </div>
-                                    <div class="col-12 col-md-6">
-                                        <div class="select" style="width: 100%;">
-                                            <select id="cust-guests" class="ak-form-select">
-                                                <option value="1">1 Personne (Solo)</option>
-                                                <option value="2" selected>2 Personnes (Dîner en couple)</option>
-                                                <option value="3">3 Personnes</option>
-                                                <option value="4">4 Personnes</option>
-                                                <option value="5">5 Personnes</option>
-                                                <option value="6">6 Personnes</option>
-                                                <option value="7">7 à 10 Personnes (Groupe)</option>
-                                                <option value="12">Plus de 10 Personnes (Salon Privé)</option>
-                                            </select>
-                                            <div class="select-icon">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="10" viewBox="0 0 18 10" fill="none">
-                                                    <path d="M8.99516 9.502C8.80335 9.502 8.61135 9.42869 8.46491 9.28225L0.964914 1.78225C0.671852 1.48919 0.671852 1.01463 0.964914 0.72175C1.25798 0.428875 1.73254 0.428688 2.02541 0.72175L8.99516 7.6915L15.9649 0.72175C16.258 0.428688 16.7325 0.428688 17.0254 0.72175C17.3183 1.01481 17.3185 1.48937 17.0254 1.78225L9.52541 9.28225C9.37898 9.42869 9.18698 9.502 8.99516 9.502Z" fill="#FFD28D" />
-                                                </svg>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="ak-form-time-date">
-                                    <div class="ak-time">
-                                        <input value="20:00" class="time-input" type="time" name="time" id="cust-time">
-                                        <div class="time-icon">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
-                                                <g clip-path="url(#clip0_1166_8212)">
-                                                    <path d="M12 24.002C5.38581 24.002 0 18.6161 0 12.002C0 5.38777 5.38581 0.00195312 12 0.00195312C18.6142 0.00195312 24 5.38777 24 12.002C24 18.6161 18.6142 24.002 12 24.002ZM12 1.14474C6.01423 1.14474 1.14279 6.01618 1.14279 12.002C1.14279 17.9877 6.01423 22.8592 12 22.8592C17.9858 22.8592 22.8572 17.9877 22.8572 12.002C22.8572 6.01618 17.9858 1.14474 12 1.14474Z" fill="#FFD28D" />
-                                                    <path d="M11.4287 4.00195H12.5717V10.2876H11.4287V4.00195Z" fill="#FFD28D" />
-                                                    <path d="M11.4287 13.7168H12.5717V16.5739H11.4287V13.7168Z" fill="#FFD28D" />
-                                                </g>
-                                            </svg>
-                                        </div>
-                                    </div>
-                                    <div class="ak-date">
-                                        <input class="date-input" type="date" name="date" id="cust-date">
-                                        <div class="date-icon">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
-                                                <path d="M12.0732 18.6094H13.917M17.6152 18.6094H19.4589M6.54198 18.6094H8.38571M12.0732 13.0781H13.917M17.6152 13.0781H19.4589M6.54198 13.0781H8.38571M1.93262 8.45311H24.0683M18.537 5.68749V1.07813M7.46387 5.68749V1.07813M5.63077 23.2031H20.3701C22.4125 23.2031 24.0683 21.5474 24.0683 19.5049V6.62006C24.0683 4.57763 22.4125 2.92186 20.3701 2.92186H5.63077C3.58834 2.92186 1.93262 4.57763 1.93262 6.62006V19.5049C1.93262 21.5474 3.58834 23.2031 5.63077 23.2031Z" stroke="#FFD28D" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
-                                            </svg>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="ak-btn style-5 mt-4">
-                                    <button type="submit" style="background: none; border: none; color: inherit; font: inherit; cursor: pointer; width: 100%; height: 100%;">
-                                        Envoyer sur WhatsApp (+229 01 56 34 48 62)
-                                    </button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- End Booking System Section -->
-
-            <!-- Start Video Banner Section (Elegencia Video Banner) -->
-            <div class="ak-height-150 ak-height-lg-60"></div>
-            <div class="video-section">
-                <img src="assets/img/chablis-hero.jpg" alt="Le Châblis Ambiance" class="video-section-bg-img ak-bg imagesZoom" data-speed="1.1">
-                <div class="video-section-btn">
-                    <a href="assets/videos/chablis-reel-1.mp4" class="ak-video-block ak-style1 ak-video-open">
-                        <span class="ak-player-btn ak-accent-color">
-                            <span></span>
-                        </span>
+          <!-- Slide 1 -->
+          <div class="swiper-slide">
+            <div class="ak-hero-bg ak-bg" data-src="assets/img/chablis-hero.jpg">
+              <div class="container h-100 d-flex align-items-center">
+                <div class="ak-hero-content">
+                  <div class="hero-sub-title mb-2">
+                    <span style="letter-spacing: 2px; text-transform: uppercase; font-size: 13px; color: var(--gold-accent);">Table Intime & Cave d'Exception</span>
+                  </div>
+                  <h1 class="hero-title anim-title" style="color: #FFF;">
+                    Le Châblis <br>
+                    <span style="font-family: 'Prompt', sans-serif; font-size: 0.45em; font-weight: 300; display: block; margin-top: 10px; color: #E8E8E8;">
+                      L'Art de Recevoir à Cadjèhoun, Cotonou
+                    </span>
+                  </h1>
+                  <div class="ak-height-30"></div>
+                  <div class="d-flex flex-wrap gap-3">
+                    <a href="#reservation" class="ak-btn style-5" style="background: var(--wine-accent); border-color: var(--gold-accent);">
+                      <span>Réserver une Table</span>
                     </a>
+                    <a href="#itineraires" class="ak-btn style-5" style="background: rgba(14, 4, 7, 0.7); border-color: var(--wine-border);">
+                      <span>Comment Nous Trouver</span>
+                    </a>
+                  </div>
                 </div>
+              </div>
             </div>
-            <!-- End Video Banner Section -->
+          </div>
 
-            <!-- Start Google Maps Section -->
-            <div class="ak-height-150 ak-height-lg-60"></div>
-            <section class="container" id="contact">
-                <div class="ak-section-heading ak-style-1 ak-type-1">
-                    <div class="ak-section-subtitle">
-                        Situation Géographique & Accès
-                    </div>
-                    <h2 class="ak-section-title anim-title">Plan d'Accès Google Maps</h2>
-                    <p style="color: #A0A0A0; font-size: 14px; margin-top: 10px;">
-                        9C43+HPG, Rue 395, Cadjèhoun / Patte d'Oie, Cotonou, Bénin (Face au Collège Père Aupiais).
-                    </p>
+          <!-- Slide 2 -->
+          <div class="swiper-slide">
+            <div class="ak-hero-bg ak-bg" data-src="assets/img/chablis-ambiance.jpg">
+              <div class="container h-100 d-flex align-items-center">
+                <div class="ak-hero-content">
+                  <div class="hero-sub-title mb-2">
+                    <span style="letter-spacing: 2px; text-transform: uppercase; font-size: 13px; color: var(--gold-accent);">Sélection de Sommellerie</span>
+                  </div>
+                  <h2 class="hero-title anim-title" style="color: #FFF;">
+                    Vins Fins & Grands Crus <br>
+                    <span style="font-family: 'Prompt', sans-serif; font-size: 0.45em; font-weight: 300; display: block; margin-top: 10px; color: #E8E8E8;">
+                      Chablis, Bourgognes & Spiritueux Rares
+                    </span>
+                  </h2>
+                  <div class="ak-height-30"></div>
+                  <div class="d-flex flex-wrap gap-3">
+                    <a href="#reservation" class="ak-btn style-5" style="background: var(--wine-accent); border-color: var(--gold-accent);">
+                      <span>Réserver</span>
+                    </a>
+                    <a href="#galerie" class="ak-btn style-5" style="background: rgba(14, 4, 7, 0.7); border-color: var(--wine-border);">
+                      <span>Découvrir le Cadre</span>
+                    </a>
+                  </div>
                 </div>
-                <div class="ak-height-65 ak-height-lg-30"></div>
-                <div style="border: 1px solid #4F4836; border-radius: 16px; overflow: hidden; height: 420px; box-shadow: 0 20px 40px rgba(0,0,0,0.5);">
-                    <iframe
-                        title="Carte Google Maps Le Châblis Cotonou"
-                        src="https://maps.google.com/maps?q=9C43%2BHPG+Rue+395+Cotonou+Benin&t=&z=16&ie=UTF8&iwloc=&output=embed"
-                        width="100%"
-                        height="100%"
-                        style="border:0; filter: contrast(110%) brightness(85%);"
-                        allowfullscreen=""
-                        loading="lazy">
-                    </iframe>
-                </div>
-            </section>
-            <!-- End Google Maps Section -->
-
-        </main>
-
-        <!-- Start Footer Section (Exact Elegencia Footer) -->
-        <footer>
-            <div class="ak-footer ak-style-1">
-                <div class="ak-bg footer-bg-img" data-src="assets/img/footer_bg.png"></div>
-                <div class="ak-height-150 ak-height-lg-60"></div>
-                <div class="container ak-hr-container">
-
-                    <div class="ak-braner-logo type-color-1 footer-logo">
-                        <div class="footer-log-elem">
-                            <div class="footer-log-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="13" viewBox="0 0 30 13" fill="none">
-                                    <path d="M28.991 12.2063L14.8322 1L0.67334 12.2063" stroke="white" stroke-linecap="round" />
-                                </svg>
-                            </div>
-                            <img src="assets/img/chablis-logo.png" alt="Le Châblis">
-                        </div>
-                    </div>
-                    <div class="ak-height-100 ak-height-lg-60"></div>
-                    <div class="ak-footer-hr-top"></div>
-
-                    <div class="footer-main">
-                        <div class="footer-eamil-menu">
-                            <div class="footer-email">
-                                <a href="tel:+2290156344862" style="font-family: 'Prompt', sans-serif; font-size: 18px; color: #FFD28D;">
-                                    +229 01 56 34 48 62
-                                </a>
-                            </div>
-                            <div class="footer-menu">
-                                <ul>
-                                    <li><a href="#accueil">Accueil</a></li>
-                                    <li><a href="#apropos">Atmosphère</a></li>
-                                    <li><a href="#carte">La Carte</a></li>
-                                    <li><a href="#videos">Vidéos</a></li>
-                                    <li><a href="#evenement">Beaujolais</a></li>
-                                    <li><a href="#reservation">Réservation</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="ak-height-75 ak-height-lg-5"></div>
-                        <div class="footer-info">
-                            <div class="fooer-phn">
-                                <a href="tel:+2290156344862">+229 01 56 34 48 62</a>
-                                <br>
-                                <a href="https://wa.me/2290156344862" target="_blank" style="color: #25D366;">WhatsApp Direct</a>
-                            </div>
-                            <div class="footer-address">
-                                <a href="https://maps.google.com/?q=9C43%2BHPG,+Rue+395,+Cotonou" target="_blank">
-                                    9C43+HPG, Rue 395<br>Cadjèhoun / Patte d'Oie, Cotonou
-                                </a>
-                            </div>
-                            <div class="footer-time">
-                                <p>MIDI : 12H00 - 15H00</p>
-                                <div class="footer-time-border my-1"></div>
-                                <p>SOIR : 18H00 - 23H00 (MER. 00H)</p>
-                            </div>
-                            <div class="footer-btn">
-                                <a href="#reservation">
-                                    <div class="ak-btn style-5">
-                                        Réservation
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="ak-footer-hr-bottom qodef-grid-item"></div>
-                    <div class="ak-height-130 ak-height-lg-30"></div>
-
-                    <div class="copy-right-section">
-                        <p class="text-uppercase text-md-center text-white" style="font-size: 13px; letter-spacing: 1px;">
-                            Copyright 2026 Le Châblis Cotonou. Tous Droits Réservés.
-                        </p>
-                    </div>
-
-                    <div class="ak-height-45 ak-height-lg-30"></div>
-                </div>
+              </div>
             </div>
-        </footer>
-        <!-- End Footer Section -->
+          </div>
 
-    </div>
-
-    <!-- Start Scrollup Section -->
-    <span class="ak-scrollup">
-        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0 10L1.7625 11.7625L8.75 4.7875V20H11.25V4.7875L18.225 11.775L20 10L10 0L0 10Z" fill="currentColor" />
-        </svg>
-    </span>
-    <!-- End Scrollup Section -->
-
-    <!-- Start Video Popup Modal -->
-    <div class="ak-video-popup">
-        <div class="ak-video-popup-overlay"></div>
-        <div class="ak-video-popup-content">
-            <div class="ak-video-popup-layer"></div>
-            <div class="ak-video-popup-container">
-                <div class="ak-video-popup-align">
-                    <div class="embed-responsive embed-responsive-16by9">
-                        <iframe class="embed-responsive-item" src="about:blank"></iframe>
-                    </div>
+          <!-- Slide 3 -->
+          <div class="swiper-slide">
+            <div class="ak-hero-bg ak-bg" data-src="assets/img/chablis-salle.jpg">
+              <div class="container h-100 d-flex align-items-center">
+                <div class="ak-hero-content">
+                  <div class="hero-sub-title mb-2">
+                    <span style="letter-spacing: 2px; text-transform: uppercase; font-size: 13px; color: var(--gold-accent);">Cadre Feutré & Patio</span>
+                  </div>
+                  <h2 class="hero-title anim-title" style="color: #FFF;">
+                    Atmosphère Feutrée <br>
+                    <span style="font-family: 'Prompt', sans-serif; font-size: 0.45em; font-weight: 300; display: block; margin-top: 10px; color: #E8E8E8;">
+                      Salle Climatisée & Terrasse Intimiste
+                    </span>
+                  </h2>
+                  <div class="ak-height-30"></div>
+                  <div class="d-flex flex-wrap gap-3">
+                    <a href="#reservation" class="ak-btn style-5" style="background: var(--wine-accent); border-color: var(--gold-accent);">
+                      <span>Réserver</span>
+                    </a>
+                    <a href="#contact" class="ak-btn style-5" style="background: rgba(14, 4, 7, 0.7); border-color: var(--wine-border);">
+                      <span>Plan & Accès</span>
+                    </a>
+                  </div>
                 </div>
-                <div class="ak-video-popup-close"></div>
+              </div>
             </div>
+          </div>
+
         </div>
+
+        <!-- Hero Nav Controls -->
+        <div class="ak-swiper-controls d-none d-md-flex">
+          <div class="ak-swiper-button-prev hero-prev">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          </div>
+          <div class="ak-swiper-button-next hero-next">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </div>
+
+        <!-- Scroll down indicator -->
+        <div class="ak-scroll-down">
+          <a href="#apropos">
+            <span>Défiler</span>
+            <svg width="14" height="20" viewBox="0 0 14 20" fill="none"><path d="M7 0v16M1 11l6 6 6-6" stroke="#FFD28D" stroke-width="1.5"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- End Hero -->
+
+    <!-- Start Sliding Text Ticker (Elegencia signature) -->
+    <div class="sliding-text-section" style="background: var(--wine-card); border-top: 1px solid var(--wine-border); border-bottom: 1px solid var(--wine-border);">
+      <div class="sliding-text-content">
+        <p class="sliding-text" style="color: var(--gold-accent); letter-spacing: 2px;">
+          LE CHÂBLIS COTONOU &bull; CAVE À VINS FINS &bull; CUISINE SOIGNÉE &bull; CADJÈHOUN &bull; ATMOSPHÈRE INTIMISTE &bull; NOTE GOOGLE 4.4/5 &bull; LE CHÂBLIS COTONOU &bull; CAVE À VINS FINS &bull; CUISINE SOIGNÉE &bull; CADJÈHOUN &bull; ATMOSPHÈRE INTIMISTE
+        </p>
+      </div>
     </div>
-    <!-- End Video Popup Modal -->
+    <!-- End Sliding Text Ticker -->
 
-    <!-- Bouton Flottant WhatsApp -->
-    <a href="https://wa.me/2290156344862?text=Bonjour%20Le%20Ch%C3%A2blis,%20je%20souhaite%20r%C3%A9server%20une%20table%20s'il%20vous%20pla%C3%AEt." target="_blank" class="whatsapp-float" aria-label="Contacter Le Châblis sur WhatsApp">
-        <div class="whatsapp-pulse"></div>
-        <span class="wa-tooltip">Réserver sur WhatsApp</span>
-        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.592 2.654-.696c1.001.572 1.944.875 2.806.875 3.18 0 5.767-2.587 5.767-5.766.001-3.18-2.585-5.758-5.767-5.758zm3.374 8.213c-.14.394-.807.75-1.126.79-.319.04-.632.062-1.921-.476-1.554-.648-2.548-2.227-2.627-2.332-.078-.105-.632-.841-.632-1.602 0-.761.399-1.136.541-1.289.143-.153.313-.191.417-.191.104 0 .209.002.3.007.096.006.223-.037.348.263.13.313.444 1.082.483 1.161.039.079.065.171.013.275-.052.105-.078.17-.156.262-.078.092-.164.205-.235.275-.078.079-.16.165-.069.321.091.157.406.67 871 1.084.598.533 1.101.698 1.258.777.157.078.248.069.339-.035.092-.105.392-.457.497-.614.105-.157.209-.13.348-.078.14.052.887.418 1.04.494.153.076.255.114.292.179.037.065.037.378-.103.772z"/></svg>
-    </a>
+    <!-- Start À Propos Section (Texte Allégé & Sans Répétition) -->
+    <section id="apropos">
+      <div class="ak-height-120 ak-height-lg-60"></div>
+      <div class="container">
+        <div class="ak-best-item">
+          <div class="best-item-section-1">
+            <div class="ak-section-heading ak-style-1">
+              <div class="ak-section-subtitle">
+                Atmosphère & Art de Recevoir
+              </div>
+              <h2 class="ak-section-title anim-title-2">
+                <span class="text-white">Le Châblis,</span> <br>
+                Cadre Cosy & Intimiste
+              </h2>
+            </div>
+            <div class="ak-height-30 ak-height-lg-20"></div>
+            <div>
+              <p style="font-size: 16px; color: #D0D0D0; line-height: 1.8;">
+                Niché à Cadjèhoun, <strong>Le Châblis</strong> vous accueille dans un cadre discret et chaleureux. Une cuisine raffinée servie avec le souci du détail, accompagnée d'une remarquable sélection de vins fins et de desserts maison.
+              </p>
+            </div>
+            <div class="ak-height-40 ak-height-lg-30"></div>
+            <div class="img-one">
+              <img src="assets/img/chablis-ambiance.jpg" alt="Cadre intimiste au Châblis" data-speed="1.2" data-lag="0.5" style="border-radius: 12px; border: 1px solid var(--wine-border);">
+              <div class="img-overlay"></div>
+            </div>
+          </div>
+          <div class="best-item-section-2" data-speed="1.1" data-lag="1">
+            <img src="assets/img/star_line.svg" alt="...">
+          </div>
+          <div class="best-item-section-3">
+            <div class="img-two">
+              <img src="assets/img/chablis-salle.jpg" alt="Salle du Châblis" data-speed="1.1" data-lag="0.3" style="border-radius: 12px; border: 1px solid var(--wine-border);">
+              <div class="img-overlay"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End À Propos Section -->
 
-    <!-- Scripts Elegencia Plugins & Custom Scripts -->
-    <script src="assets/js/plugins/jquery-3.7.1.min.js"></script>
-    <script src="assets/js/plugins/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/plugins/isotope.pkg.min.js"></script>
-    <script src="assets/js/plugins/swiper.min.js"></script>
-    <script src="assets/js/plugins/lightgallery.min.js"></script>
-    <script src="assets/js/plugins/ScrollSmoother.min.js"></script>
-    <script src="assets/js/plugins/SplitText.min.js"></script>
-    <script src="assets/js/plugins/ScrollTrigger.min.js"></script>
-    <script src="assets/js/plugins/ScrollToPlugin.min.js"></script>
-    <script src="assets/js/plugins/gsap.min.js"></script>
-    <script src="assets/js/main.js"></script>
+    <!-- Start Grille des Points Forts (Couleur Vin & Bordure Or) -->
+    <div class="ak-height-80 ak-height-lg-40"></div>
+    <div class="container">
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 text-center">
 
-    <!-- Gestion Vidéos Reels & Formulaire Réservation -->
-    <script>
-        $(document).ready(function() {
-            // Définir la date par défaut sur aujourd'hui
-            var today = new Date().toISOString().split('T')[0];
-            var dateInput = document.getElementById('cust-date');
-            if (dateInput) {
-                dateInput.value = today;
-                dateInput.min = today;
-            }
+        <div class="col">
+          <div class="pillar-card">
+            <div style="font-size: 26px; color: var(--gold-accent); margin-bottom: 12px;">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#FFD28D" stroke-width="1.7"><path d="M8 22h8M12 11v11M5 2h14l-2 9H7L5 2z"/></svg>
+            </div>
+            <h5 style="color: #FFF; font-family: 'Baskervville', serif; margin-bottom: 8px;">Cave à Vins Fins</h5>
+            <p style="font-size: 13px; color: #C8C8C8; line-height: 1.5; margin: 0;">Grands crus de Chablis, Bourgognes et spiritueux sélectionnés.</p>
+          </div>
+        </div>
 
-            // Gestion de la lecture des vidéos reels
-            $('.chablis-reel-card').each(function() {
-                var card = $(this);
-                var video = card.find('video')[0];
-                var btn = card.find('.reel-play-btn');
+        <div class="col">
+          <div class="pillar-card">
+            <div style="font-size: 26px; color: var(--gold-accent); margin-bottom: 12px;">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#FFD28D" stroke-width="1.7"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 14h-2v-2h2zm0-4h-2V7h2z"/></svg>
+            </div>
+            <h5 style="color: #FFF; font-family: 'Baskervville', serif; margin-bottom: 8px;">Desserts Fins Maison</h5>
+            <p style="font-size: 13px; color: #C8C8C8; line-height: 1.5; margin: 0;">Douceurs artisanales et desserts signatures préparés sur place.</p>
+          </div>
+        </div>
 
-                btn.on('click', function(e) {
-                    e.stopPropagation();
-                    if (video.paused) {
-                        // Pause all other reels
-                        $('.chablis-reel-video').each(function() {
-                            if (this !== video) {
-                                this.pause();
-                                $(this).siblings('.reel-play-btn').show();
-                            }
-                        });
-                        video.play();
-                        btn.hide();
-                    } else {
-                        video.pause();
-                        btn.show();
-                    }
-                });
+        <div class="col">
+          <div class="pillar-card">
+            <div style="font-size: 26px; color: var(--gold-accent); margin-bottom: 12px;">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#FFD28D" stroke-width="1.7"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            </div>
+            <h5 style="color: #FFF; font-family: 'Baskervville', serif; margin-bottom: 8px;">Parking Gratuit Assuré</h5>
+            <p style="font-size: 13px; color: #C8C8C8; line-height: 1.5; margin: 0;">Stationnement calme et sécurisé devant l'établissement.</p>
+          </div>
+        </div>
 
-                $(video).on('click', function() {
-                    if (video.paused) {
-                        video.play();
-                        btn.hide();
-                    } else {
-                        video.pause();
-                        btn.show();
-                    }
-                });
+        <div class="col">
+          <div class="pillar-card">
+            <div style="font-size: 26px; color: var(--gold-accent); margin-bottom: 12px;">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#FFD28D" stroke-width="1.7"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+            </div>
+            <h5 style="color: #FFF; font-family: 'Baskervville', serif; margin-bottom: 8px;">Paiement Sans Contact</h5>
+            <p style="font-size: 13px; color: #C8C8C8; line-height: 1.5; margin: 0;">Cartes bancaires Visa, Mastercard & Mobile Money acceptés.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Start 4 Video Itineraries Section (Guides d'Accès depuis 4 Endroits de Cotonou) -->
+    <section id="itineraires">
+      <div class="ak-height-140 ak-height-lg-60"></div>
+      <div class="container">
+        <div class="ak-section-heading ak-style-1 ak-type-1 text-center">
+          <div class="ak-section-subtitle">
+            Page Instagram @le_chablis_restaurant
+          </div>
+          <h2 class="ak-section-title anim-title">Comment nous trouver</h2>
+          <p style="color: #B0B0B0; font-size: 15px; margin-top: 10px; max-width: 650px; margin-left: auto; margin-right: auto;">
+            Retrouvez nos 4 indications filmées depuis différents repères de Cotonou pour rejoindre facilement Le Châblis.
+          </p>
+        </div>
+
+        <div class="ak-height-50 ak-height-lg-30"></div>
+
+        <!-- Grille des 4 Vidéos Itinéraires -->
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4">
+
+          <!-- Vidéo Itinéraire 1 -->
+          <div class="col">
+            <div class="chablis-reel-card">
+              <video class="chablis-reel-video" loop playsinline muted preload="metadata" src="assets/videos/chablis-reel-1.mp4"></video>
+              <button class="reel-play-btn" type="button" aria-label="Lire l'itinéraire 1">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+              </button>
+              <div style="margin-top: 10px; text-align: center;">
+                <span style="font-size: 11px; color: var(--gold-accent); text-transform: uppercase; font-family: 'Prompt', sans-serif; letter-spacing: 1px;">Itinéraire Vidéo 1</span>
+                <h6 style="color: #FFF; font-family: 'Baskervville', serif; margin: 4px 0 2px 0;">Accès vers Le Châblis</h6>
+              </div>
+            </div>
+          </div>
+
+          <!-- Vidéo Itinéraire 2 -->
+          <div class="col">
+            <div class="chablis-reel-card">
+              <video class="chablis-reel-video" loop playsinline muted preload="metadata" src="assets/videos/chablis-reel-2.mp4"></video>
+              <button class="reel-play-btn" type="button" aria-label="Lire l'itinéraire 2">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+              </button>
+              <div style="margin-top: 10px; text-align: center;">
+                <span style="font-size: 11px; color: var(--gold-accent); text-transform: uppercase; font-family: 'Prompt', sans-serif; letter-spacing: 1px;">Itinéraire Vidéo 2</span>
+                <h6 style="color: #FFF; font-family: 'Baskervville', serif; margin: 4px 0 2px 0;">Accès vers Le Châblis</h6>
+              </div>
+            </div>
+          </div>
+
+          <!-- Vidéo Itinéraire 3 -->
+          <div class="col">
+            <div class="chablis-reel-card">
+              <video class="chablis-reel-video" loop playsinline muted preload="metadata" src="assets/videos/chablis-reel-3.mp4"></video>
+              <button class="reel-play-btn" type="button" aria-label="Lire l'itinéraire 3">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+              </button>
+              <div style="margin-top: 10px; text-align: center;">
+                <span style="font-size: 11px; color: var(--gold-accent); text-transform: uppercase; font-family: 'Prompt', sans-serif; letter-spacing: 1px;">Itinéraire Vidéo 3</span>
+                <h6 style="color: #FFF; font-family: 'Baskervville', serif; margin: 4px 0 2px 0;">Accès vers Le Châblis</h6>
+              </div>
+            </div>
+          </div>
+
+          <!-- Vidéo Itinéraire 4 -->
+          <div class="col">
+            <div class="chablis-reel-card">
+              <video class="chablis-reel-video" loop playsinline muted preload="metadata" src="assets/videos/chablis-reel-4.mp4"></video>
+              <button class="reel-play-btn" type="button" aria-label="Lire l'itinéraire 4">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+              </button>
+              <div style="margin-top: 10px; text-align: center;">
+                <span style="font-size: 11px; color: var(--gold-accent); text-transform: uppercase; font-family: 'Prompt', sans-serif; letter-spacing: 1px;">Itinéraire Vidéo 4</span>
+                <h6 style="color: #FFF; font-family: 'Baskervville', serif; margin: 4px 0 2px 0;">Accès vers Le Châblis</h6>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="text-center mt-5">
+          <a href="https://www.instagram.com/le_chablis_restaurant/" target="_blank" class="ak-btn style-5" style="background: rgba(107, 21, 34, 0.4); border-color: var(--wine-accent);">
+            <span>Suivre nos vidéos sur Instagram @le_chablis_restaurant</span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+    <!-- End Video Itineraries Section -->
+
+    <!-- Start Galerie Section (Sans Spécialité du Chef, Uniquement Photos Réelles) -->
+    <section class="container" id="galerie">
+      <div class="ak-height-140 ak-height-lg-60"></div>
+      <div class="ak-section-heading ak-style-1 ak-type-1 text-center">
+        <h2 class="ak-section-title anim-title">Galerie</h2>
+      </div>
+      <div class="ak-height-50 ak-height-lg-30"></div>
+
+      <div id="static-thumbnails">
+        <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4">
+
+          <div class="col">
+            <div class="clean-gallery-item">
+              <img src="assets/img/chablis-ambiance.jpg" alt="Atmosphère Le Châblis" class="clean-gallery-img">
+              <a href="assets/img/chablis-ambiance.jpg" class="clean-gallery-zoom" aria-label="Agrandir">
+                <span>&plus;</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="clean-gallery-item">
+              <img src="assets/img/chablis-salle.jpg" alt="Salle du Châblis" class="clean-gallery-img">
+              <a href="assets/img/chablis-salle.jpg" class="clean-gallery-zoom" aria-label="Agrandir">
+                <span>&plus;</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="clean-gallery-item">
+              <img src="assets/img/chablis-hero.jpg" alt="Cadre Le Châblis" class="clean-gallery-img">
+              <a href="assets/img/chablis-hero.jpg" class="clean-gallery-zoom" aria-label="Agrandir">
+                <span>&plus;</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="clean-gallery-item">
+              <img src="assets/img/chablis-facade.jpg" alt="Extérieur Le Châblis" class="clean-gallery-img">
+              <a href="assets/img/chablis-facade.jpg" class="clean-gallery-zoom" aria-label="Agrandir">
+                <span>&plus;</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="clean-gallery-item">
+              <img src="assets/img/chablis-wine.jpg" alt="Cave et Verres Fins" class="clean-gallery-img">
+              <a href="assets/img/chablis-wine.jpg" class="clean-gallery-zoom" aria-label="Agrandir">
+                <span>&plus;</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="clean-gallery-item">
+              <img src="assets/img/chablis-wine-event.jpg" alt="Dégustation & Événement" class="clean-gallery-img">
+              <a href="assets/img/chablis-wine-event.jpg" class="clean-gallery-zoom" aria-label="Agrandir">
+                <span>&plus;</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <!-- End Galerie Section -->
+
+    <!-- Start Événement à Venir Section (Introduit Sobrement) -->
+    <section id="evenement">
+      <div class="ak-height-140 ak-height-lg-60"></div>
+      <div class="container">
+        <div class="ak-best-item">
+          <div class="best-item-section-1">
+            <div class="ak-section-heading ak-style-1">
+              <h2 class="ak-section-title anim-title-2">
+                <span class="text-white">Événement à venir</span>
+              </h2>
+            </div>
+            <div class="ak-height-25"></div>
+            <div>
+              <h4 style="font-family: 'Baskervville', serif; color: var(--gold-accent); margin-bottom: 12px;">Soirée Beaujolais Nouveau</h4>
+              <p style="font-size: 15px; color: #D0D0D0; line-height: 1.7;">
+                Célébrez l'arrivée du premier vin de l'année au Châblis lors d'une soirée festive avec musique d'ambiance et accords mets & vins.
+              </p>
+              <div style="margin-top: 20px; padding: 22px; background: var(--wine-card); border: 1px solid var(--wine-border); border-radius: 12px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--wine-border); padding-bottom: 10px; margin-bottom: 12px;">
+                  <span style="font-family: 'Baskervville', serif; font-size: 18px; color: #FFF;">Dîner en 4 Temps</span>
+                  <span style="color: var(--gold-accent); font-weight: bold; font-size: 18px;">45 000 FCFA / pers.</span>
+                </div>
+                <ul style="list-style: none; padding: 0; margin: 0; font-size: 14px; color: #C8C8C8; line-height: 2;">
+                  <li>&bull; Amuse-bouche du Chef</li>
+                  <li>&bull; Entrée Gourmande</li>
+                  <li>&bull; Plat Principal de Saison</li>
+                  <li>&bull; Dessert Maison</li>
+                  <li style="color: var(--gold-accent);">&bull; Beaujolais Nouveau inclus dans la limite des disponibilités</li>
+                </ul>
+              </div>
+              <p style="font-size: 12px; color: #9A9A9A; margin-top: 15px;">
+                En partenariat officiel avec : <strong>Les Vignes de France SARL</strong> & <strong>De Mour</strong>
+              </p>
+            </div>
+            <div class="ak-height-30"></div>
+            <div>
+              <a href="https://wa.me/2290156344862?text=Bonjour%20Le%20Ch%C3%A2blis,%20je%20souhaite%20r%C3%A9server%20des%20places%20pour%20la%20Soir%C3%A9e%20Beaujolais%20Nouveau." target="_blank" class="ak-btn style-5" style="background: var(--wine-accent); border-color: var(--gold-accent);">
+                <span>Réserver pour l'Événement sur WhatsApp</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="best-item-section-2" data-speed="1.1" data-lag="1">
+            <img src="assets/img/star_line.svg" alt="...">
+          </div>
+
+          <div class="best-item-section-3">
+            <div class="img-two" style="box-shadow: 0 20px 40px rgba(0,0,0,0.6); border: 1px solid var(--wine-border); border-radius: 12px; overflow: hidden;">
+              <img src="assets/img/chablis-wine-event.jpg" alt="Affiche Beaujolais Nouveau Le Châblis" data-speed="1.1" data-lag="0.5">
+              <div class="img-overlay"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Événement Section -->
+
+    <!-- Start Avis Clients Réels Google Maps -->
+    <section id="avis" class="container">
+      <div class="ak-height-140 ak-height-lg-60"></div>
+      <div class="ak-section-heading ak-style-1 ak-type-1 text-center">
+        <div class="ak-section-subtitle">
+          Note 4.4 / 5 sur 67 Avis Google
+        </div>
+        <h2 class="ak-section-title anim-title">Ce que disent nos hôtes</h2>
+      </div>
+
+      <div class="ak-height-50 ak-height-lg-30"></div>
+
+      <div class="ak-slider ak-slider-3">
+        <div class="swiper-wrapper">
+
+          <div class="swiper-slide">
+            <div class="pillar-card text-center" style="padding: 35px 25px;">
+              <div style="color: var(--gold-accent); margin-bottom: 12px; font-size: 18px;">★★★★★</div>
+              <p style="font-size: 16px; font-style: italic; color: #E0E0E0; line-height: 1.8; margin-bottom: 20px;">
+                "Excellent menu, good products and very good service. We didn’t need to wait long for our dishes, they were served with eye for detail. We had an excellent evening."
+              </p>
+              <h6 style="color: var(--gold-accent); font-family: 'Baskervville', serif; margin-bottom: 2px;">Avis Client Vérifié</h6>
+              <span style="font-size: 12px; color: #888;">Fiche Google Maps</span>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="pillar-card text-center" style="padding: 35px 25px;">
+              <div style="color: var(--gold-accent); margin-bottom: 12px; font-size: 18px;">★★★★★</div>
+              <p style="font-size: 16px; font-style: italic; color: #E0E0E0; line-height: 1.8; margin-bottom: 20px;">
+                "Excellent food with very attentive staff and lovely owners. The wine selection is very good as well. I strongly recommend it."
+              </p>
+              <h6 style="color: var(--gold-accent); font-family: 'Baskervville', serif; margin-bottom: 2px;">Avis Client Vérifié</h6>
+              <span style="font-size: 12px; color: #888;">Fiche Google Maps</span>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="pillar-card text-center" style="padding: 35px 25px;">
+              <div style="color: var(--gold-accent); margin-bottom: 12px; font-size: 18px;">★★★★★</div>
+              <p style="font-size: 16px; font-style: italic; color: #E0E0E0; line-height: 1.8; margin-bottom: 20px;">
+                "Very good experience and top services and dishes. Cosy atmosphere, delicious wine and attentive owners."
+              </p>
+              <h6 style="color: var(--gold-accent); font-family: 'Baskervville', serif; margin-bottom: 2px;">Avis Client Vérifié</h6>
+              <span style="font-size: 12px; color: #888;">Fiche Google Maps</span>
+            </div>
+          </div>
+
+        </div>
+        <div class="ak-swiper-controls d-flex justify-content-center gap-3 mt-4">
+          <div class="ak-swiper-button-prev review-prev">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          </div>
+          <div class="ak-swiper-button-next review-next">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Avis Section -->
+
+    <!-- Start Horaires Officiels Google Maps -->
+    <section id="horaires" class="container">
+      <div class="ak-height-140 ak-height-lg-60"></div>
+      <div class="opening-hour type-2 ak-bg" data-src="assets/img/chablis-hero.jpg" style="border: 1px solid var(--wine-border); border-radius: 16px; overflow: hidden;">
+        <div class="opening-hour-title">
+          <h2 class="title" style="font-family: 'Baskervville', serif; color: #FFF;">Horaires d'Ouverture</h2>
+          <p style="color: var(--gold-accent); font-size: 14px;">Service du Midi & du Soir</p>
+        </div>
+        <div class="row row-cols-1 row-cols-md-2 g-4 mt-3">
+          <div class="col">
+            <div style="background: rgba(14, 4, 7, 0.85); padding: 20px; border-radius: 10px; border: 1px solid var(--wine-border);">
+              <h5 style="color: #FFF; font-family: 'Baskervville', serif; font-size: 18px; margin-bottom: 12px;">Lundi & Mardi</h5>
+              <p style="margin: 0; color: #D0D0D0; font-size: 14px;">12h00 - 15h00 &bull; 18h00 - 22h30</p>
+              <div class="my-3" style="height: 1px; background: var(--wine-border);"></div>
+              <h5 style="color: #FFF; font-family: 'Baskervville', serif; font-size: 18px; margin-bottom: 12px;">Mercredi (Nocturne)</h5>
+              <p style="margin: 0; color: #D0D0D0; font-size: 14px;">12h00 - 15h00 &bull; 18h00 - 00h00</p>
+            </div>
+          </div>
+          <div class="col">
+            <div style="background: rgba(14, 4, 7, 0.85); padding: 20px; border-radius: 10px; border: 1px solid var(--wine-border);">
+              <h5 style="color: #FFF; font-family: 'Baskervville', serif; font-size: 18px; margin-bottom: 12px;">Jeudi, Vendredi & Samedi</h5>
+              <p style="margin: 0; color: #D0D0D0; font-size: 14px;">12h00 - 15h00 &bull; 18h00 - 23h00</p>
+              <div class="my-3" style="height: 1px; background: var(--wine-border);"></div>
+              <h5 style="color: #FFF; font-family: 'Baskervville', serif; font-size: 18px; margin-bottom: 12px;">Dimanche</h5>
+              <p style="margin: 0; color: #D0D0D0; font-size: 14px;">12h00 - 15h00 &bull; 18h00 - 22h30</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Horaires Section -->
+
+    <!-- Start Réservation 1-Clic Pratique via WhatsApp -->
+    <section id="reservation">
+      <div class="ak-height-140 ak-height-lg-60"></div>
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-12 col-lg-8">
+            <div class="res-card">
+              <div class="text-center mb-4">
+                <div class="ak-section-subtitle mb-2" style="color: var(--gold-accent);">Réservation Directe</div>
+                <h2 style="font-family: 'Baskervville', serif; color: #FFF; font-size: 32px; margin-bottom: 8px;">Réserver une Table</h2>
+                <p style="color: #C0C0C0; font-size: 14px; margin: 0;">
+                  Remplissez le formulaire ci-dessous pour transmettre automatiquement votre récapitulatif sur le WhatsApp du restaurant.
+                </p>
+              </div>
+
+              <form id="chablis-booking-form">
+                <div class="row g-3">
+                  <!-- Nom -->
+                  <div class="col-12 col-md-6">
+                    <label class="res-label" for="res-name">Nom complet *</label>
+                    <input type="text" id="res-name" class="res-input" required placeholder="Ex: Marc Laurent">
+                  </div>
+
+                  <!-- Date -->
+                  <div class="col-12 col-md-6">
+                    <label class="res-label" for="res-date">Date souhaitée *</label>
+                    <input type="date" id="res-date" class="res-input" required>
+                  </div>
+
+                  <!-- Heure / Service -->
+                  <div class="col-12 col-md-6">
+                    <label class="res-label" for="res-time">Heure / Service *</label>
+                    <select id="res-time" class="res-select" required>
+                      <option value="12:30">Déjeuner — 12h30</option>
+                      <option value="13:00">Déjeuner — 13h00</option>
+                      <option value="13:30">Déjeuner — 13h30</option>
+                      <option value="19:30">Dîner — 19h30</option>
+                      <option value="20:00" selected>Dîner — 20h00</option>
+                      <option value="20:30">Dîner — 20h30</option>
+                      <option value="21:00">Dîner — 21h00</option>
+                      <option value="21:30">Dîner — 21h30</option>
+                    </select>
+                  </div>
+
+                  <!-- Nombre de Convives -->
+                  <div class="col-12 col-md-6">
+                    <label class="res-label" for="res-guests">Nombre de personnes *</label>
+                    <select id="res-guests" class="res-select" required>
+                      <option value="1 personne">1 Personne</option>
+                      <option value="2 personnes" selected>2 Personnes</option>
+                      <option value="3 personnes">3 Personnes</option>
+                      <option value="4 personnes">4 Personnes</option>
+                      <option value="5 personnes">5 Personnes</option>
+                      <option value="6 personnes">6 Personnes</option>
+                      <option value="Groupe (7 à 10 personnes)">Groupe (7 à 10 personnes)</option>
+                      <option value="Salon Privé (10+ personnes)">Salon Privé (10+ personnes)</option>
+                    </select>
+                  </div>
+
+                  <!-- Préférence / Précision -->
+                  <div class="col-12">
+                    <label class="res-label" for="res-note">Précision / Occasion (Facultatif)</label>
+                    <input type="text" id="res-note" class="res-input" placeholder="Ex: Table au calme, terrasse ou salle climatisée, anniversaire...">
+                  </div>
+
+                  <!-- Submit -->
+                  <div class="col-12 mt-4">
+                    <button type="submit" class="btn-res-submit">
+                      <span>Envoyer la réservation sur WhatsApp (+229 01 56 34 48 62)</span>
+                    </button>
+                    <div class="text-center mt-3">
+                      <a href="tel:+2290156344862" style="font-size: 13px; color: var(--gold-accent); text-decoration: underline;">
+                        Ou appelez directement au +229 01 56 34 48 62
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Réservation Section -->
+
+    <!-- Start Google Maps Embed Section -->
+    <section class="container" id="contact">
+      <div class="ak-height-140 ak-height-lg-60"></div>
+      <div class="ak-section-heading ak-style-1 ak-type-1 text-center">
+        <div class="ak-section-subtitle">
+          Situation Géographique
+        </div>
+        <h2 class="ak-section-title anim-title">Nous Rendre Visite</h2>
+        <p style="color: #A0A0A0; font-size: 14px; margin-top: 8px;">
+          9C43+HPG, Rue 395, Face Collège Père Aupiais, Patte d'Oie / Cadjèhoun, Cotonou, Bénin
+        </p>
+      </div>
+      <div class="ak-height-40 ak-height-lg-20"></div>
+      <div style="border-radius: 14px; overflow: hidden; border: 1px solid var(--wine-border); box-shadow: 0 15px 40px rgba(0,0,0,0.5);">
+        <iframe
+          src="https://maps.google.com/maps?q=9C43%2BHPG,%20Rue%20395,%20Cotonou,%20Benin&t=&z=16&ie=UTF8&iwloc=&output=embed"
+          width="100%"
+          height="420"
+          style="border:0; display: block;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Google Maps Le Châblis">
+        </iframe>
+      </div>
+    </section>
+    <!-- End Google Maps Section -->
+
+    <!-- Start Lightened Sleek Footer Section -->
+    <footer class="footer-light mt-5">
+      <div class="container text-center">
+        <div class="mb-4">
+          <a href="#accueil">
+            <img src="assets/img/chablis-logo.png" alt="Le Châblis" style="max-height: 80px; width: auto; filter: drop-shadow(0 4px 10px rgba(0,0,0,0.7));">
+          </a>
+        </div>
+        
+        <div class="row row-cols-1 row-cols-md-3 g-4 mb-4 text-center">
+          <div class="col">
+            <h6 style="color: var(--gold-accent); font-family: 'Baskervville', serif; margin-bottom: 6px;">Adresse</h6>
+            <p style="font-size: 14px; color: #C0C0C0; margin: 0;">
+              Rue 395, Cadjèhoun<br>Patte d'Oie, Cotonou
+            </p>
+          </div>
+          <div class="col">
+            <h6 style="color: var(--gold-accent); font-family: 'Baskervville', serif; margin-bottom: 6px;">Contact & Réservation</h6>
+            <p style="font-size: 14px; color: #C0C0C0; margin: 0;">
+              <a href="tel:+2290156344862" style="color: #FFF;">+229 01 56 34 48 62</a><br>
+              <a href="https://wa.me/2290156344862" target="_blank" style="color: var(--gold-accent);">WhatsApp Direct</a>
+            </p>
+          </div>
+          <div class="col">
+            <h6 style="color: var(--gold-accent); font-family: 'Baskervville', serif; margin-bottom: 6px;">Réseaux Sociaux</h6>
+            <p style="font-size: 14px; color: #C0C0C0; margin: 0;">
+              <a href="https://www.instagram.com/le_chablis_restaurant/" target="_blank" style="color: #FFF;">
+                Instagram : @le_chablis_restaurant
+              </a>
+            </p>
+          </div>
+        </div>
+
+        <div style="height: 1px; background: var(--wine-border); max-width: 600px; margin: 30px auto 20px;"></div>
+
+        <p style="font-size: 13px; color: #777; margin: 0; letter-spacing: 0.5px;">
+          &copy; 2026 Le Châblis Cotonou. Tous droits réservés.
+        </p>
+      </div>
+    </footer>
+    <!-- End Footer Section -->
+
+    <!-- Scrollup Button -->
+    <span class="ak-scrollup" style="background: var(--wine-accent); border: 1px solid var(--gold-accent);">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 10L1.7625 11.7625L8.75 4.7875V20H11.25V4.7875L18.225 11.775L20 10L10 0L0 10Z" fill="currentColor"/>
+      </svg>
+    </span>
+
+  </div>
+
+  <!-- Scripts: jQuery & Elegencia Plugins -->
+  <script src="assets/js/plugins/jquery-3.7.1.min.js"></script>
+  <script src="assets/js/plugins/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/plugins/swiper.min.js"></script>
+  <script src="assets/js/plugins/lightgallery.min.js"></script>
+  <script src="assets/js/plugins/gsap.min.js"></script>
+  <script src="assets/js/plugins/ScrollTrigger.min.js"></script>
+  <script src="assets/js/plugins/ScrollToPlugin.min.js"></script>
+  <script src="assets/js/plugins/ScrollSmoother.min.js"></script>
+  <script src="assets/js/plugins/SplitText.min.js"></script>
+  <script src="assets/js/main.js"></script>
+
+  <!-- Custom Scripts for Videos & Reservation Recap -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Set default date for reservation to today
+      const dateInput = document.getElementById('res-date');
+      if (dateInput) {
+        const today = new Date().toISOString().split('T')[0];
+        dateInput.value = today;
+        dateInput.min = today;
+      }
+
+      // Video play/pause on click for the 4 direction reels
+      const reelCards = document.querySelectorAll('.chablis-reel-card');
+      reelCards.forEach(function (card) {
+        const video = card.querySelector('video');
+        const btn = card.querySelector('.reel-play-btn');
+
+        function togglePlay() {
+          if (!video) return;
+          if (video.paused) {
+            // Pause others first
+            document.querySelectorAll('.chablis-reel-video').forEach(function(v) {
+              if (v !== video) {
+                v.pause();
+                const parent = v.closest('.chablis-reel-card');
+                if (parent) {
+                  const b = parent.querySelector('.reel-play-btn');
+                  if (b) b.style.display = 'flex';
+                }
+              }
             });
+            video.play();
+            if (btn) btn.style.display = 'none';
+          } else {
+            video.pause();
+            if (btn) btn.style.display = 'flex';
+          }
+        }
 
-            // Formulaire de réservation WhatsApp
-            $('#chablis-booking-form').on('submit', function(e) {
-                e.preventDefault();
-                var name = $('#cust-name').val().trim() || 'Client';
-                var guests = $('#cust-guests').val();
-                var time = $('#cust-time').val();
-                var date = $('#cust-date').val();
-
-                var msg = "Bonjour Le Châblis, je souhaite réserver une table pour " + guests + " personne(s) le " + date + " à " + time + " au nom de " + name + ".";
-                var url = "https://wa.me/2290156344862?text=" + encodeURIComponent(msg);
-                window.open(url, '_blank');
-            });
+        if (video) video.addEventListener('click', togglePlay);
+        if (btn) btn.addEventListener('click', function(e) {
+          e.stopPropagation();
+          togglePlay();
         });
-    </script>
+      });
 
-    <!-- Télémétrie Silencieuse CRM Agency OS -->
-    <script>
-        (function() {
-            try {
-                fetch('/api/track-view?site=le-chablis', { method: 'POST' }).catch(function(){});
-            } catch(e){}
-        })();
-    </script>
+      // Practical WhatsApp Reservation Form
+      const bookingForm = document.getElementById('chablis-booking-form');
+      if (bookingForm) {
+        bookingForm.addEventListener('submit', function (e) {
+          e.preventDefault();
+          const name = document.getElementById('res-name').value.trim();
+          const date = document.getElementById('res-date').value;
+          const time = document.getElementById('res-time').value;
+          const guests = document.getElementById('res-guests').value;
+          const note = document.getElementById('res-note').value.trim();
 
+          let msg = "Bonjour Le Châblis, je souhaite effectuer une réservation :\n";
+          msg += "• Nom : " + name + "\n";
+          msg += "• Date : " + date + "\n";
+          msg += "• Heure : " + time + "\n";
+          msg += "• Convives : " + guests + "\n";
+          if (note) {
+            msg += "• Précision : " + note + "\n";
+          }
+          msg += "\nMerci de me confirmer la disponibilité.";
+
+          const phone = "2290156344862";
+          const waUrl = "https://wa.me/" + phone + "?text=" + encodeURIComponent(msg);
+          window.open(waUrl, '_blank');
+        });
+      }
+
+      // Silent telemetry ping
+      fetch('/api/track-view?site=le-chablis').catch(function() {});
+    });
+  </script>
 </body>
 </html>

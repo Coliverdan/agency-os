@@ -1241,31 +1241,31 @@
             </div>
             <!-- End Video Banner Section -->
 
-            <!-- Start Google Maps Section -->
-            <div class="ak-height-150 ak-height-lg-60"></div>
-            <section class="container" id="contact">
-                <div class="ak-section-heading ak-style-1 ak-type-1">
+            <!-- Start Location & Access Section (Bouton Google Maps externe) -->
+            <section class="container text-center" id="contact">
+                <div class="ak-height-150 ak-height-lg-60"></div>
+                <div class="ak-section-heading ak-style-1 ak-type-1 text-center">
                     <div class="ak-section-subtitle">
                         Situation Géographique & Accès
                     </div>
-                    <h2 class="ak-section-title anim-title">Plan d'Accès Google Maps</h2>
-                    <p style="color: #A0A0A0; font-size: 14px; margin-top: 10px;">
-                        9C43+HPG, Rue 395, Cadjèhoun / Patte d'Oie, Cotonou, Bénin (Face au Collège Père Aupiais).
+                    <h2 class="ak-section-title anim-title">Nous Trouver à Cotonou</h2>
+                    <p style="color: #C8C8C8; font-size: 16px; margin-top: 14px; max-width: 620px; margin-left: auto; margin-right: auto; line-height: 1.7;">
+                        9C43+HPG, Rue 395, Cadjèhoun / Patte d'Oie, Cotonou, Bénin<br>
+                        <span style="color: #FFD28D; font-size: 14px;">(En face du Collège Père Aupiais)</span>
                     </p>
                 </div>
-                <div class="ak-height-65 ak-height-lg-30"></div>
-                <div style="border: 1px solid #4F4836; border-radius: 16px; overflow: hidden; height: 420px; box-shadow: 0 20px 40px rgba(0,0,0,0.5);">
-                    <iframe
-                        title="Carte Google Maps Le Châblis Cotonou"
-                        src="https://maps.google.com/maps?q=9C43%2BHPG+Rue+395+Cotonou+Benin&t=&z=16&ie=UTF8&iwloc=&output=embed"
-                        width="100%"
-                        height="100%"
-                        style="border:0; filter: invert(90%) hue-rotate(180deg) contrast(115%) saturate(75%); background: #040D10;"
-                        allowfullscreen=""
-                        loading="lazy">
-                    </iframe>
+                <div class="ak-height-45 ak-height-lg-25"></div>
+                <div>
+                    <a href="https://maps.google.com/?q=9C43%2BHPG,+Rue+395,+Cadj%C3%A8houn,+Cotonou,+Benin" target="_blank" rel="noopener noreferrer" class="ak-btn style-5" style="border-color: #FFD28D; display: inline-flex; align-items: center; justify-content: center; gap: 12px; padding: 15px 32px; text-decoration: none; border-radius: 8px;">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                        <span style="letter-spacing: 1px; font-weight: 600; text-transform: uppercase; font-size: 14px;">Ouvrir l'Itinéraire dans Google Maps</span>
+                    </a>
                 </div>
             </section>
+            <!-- End Location & Access Section -->
             <!-- End Google Maps Section -->
 
         </main>
@@ -1558,6 +1558,38 @@
       });
 
       // 4. Formulaire de réservation avec transmission WhatsApp propre et formatée
+      
+      // Navigation fluide pour tous les liens d'ancres (Footer, Header, Hamburger Menu)
+      $('a[href^="#"]').on('click', function(e) {
+        var href = $(this).attr('href');
+        if (href && href.length > 1) {
+          var target = $(href);
+          if (target.length) {
+            e.preventDefault();
+
+            // Fermer le menu hamburger plein écran s'il est ouvert
+            var akMenuToggle = document.getElementById('akMenuToggle');
+            var topMenuLi = document.querySelector('.top-main-menu-li');
+            if (topMenuLi && window.getComputedStyle(topMenuLi).display !== 'none') {
+              if (akMenuToggle) {
+                akMenuToggle.click();
+              }
+            }
+
+            // Scroll fluide avec ScrollSmoother ou fallback jQuery
+            setTimeout(function() {
+              if (window.ScrollSmoother && typeof ScrollSmoother.get === 'function' && ScrollSmoother.get()) {
+                ScrollSmoother.get().scrollTo(target[0], true, 'top top');
+              } else {
+                $('html, body').animate({
+                  scrollTop: target.offset().top - 80
+                }, 600);
+              }
+            }, 100);
+          }
+        }
+      });
+
       var bookingForm = document.getElementById('chablis-booking-form');
       if (bookingForm) {
         bookingForm.addEventListener('submit', function(e) {

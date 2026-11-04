@@ -1,7 +1,7 @@
 import { BusinessItem, PipelineStage, SubscriptionItem } from "@/types";
 import { INITIAL_BUSINESSES, INITIAL_SUBSCRIPTIONS } from "./mock-data";
 
-const STORAGE_KEY_BIZ = "agency_os_crm_businesses_v1";
+const STORAGE_KEY_BIZ = "agency_os_crm_businesses_v2";
 const STORAGE_KEY_SUBS = "agency_os_crm_subscriptions_v1";
 
 export function loadStoredBusinesses(): BusinessItem[] {

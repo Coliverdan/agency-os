@@ -224,3 +224,4 @@ function generateRegionalScan(city: string, sector: string): BusinessItem[] {
     }
   ];
 }
+

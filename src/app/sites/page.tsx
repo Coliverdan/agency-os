@@ -18,6 +18,15 @@ import { cn } from "@/lib/utils";
 
 const DEMO_SITES = [
   {
+    slug: "le-chablis",
+    name: "Le Châblis",
+    sector: "Table Française & Bar à Vins",
+    location: "Cadjèhoun / Patte d'Oie, Cotonou (Bénin)",
+    font: "Cormorant Garamond + Plus Jakarta Sans",
+    palette: "Noir Sombre #0B0F17 + Laiton Or #D4AF37",
+    url: "/sites/le-chablis/index.html",
+  },
+  {
     slug: "le-braise-d-or",
     name: "Le Braisé d'Or",
     sector: "Restaurant Gastronomique",

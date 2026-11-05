@@ -46,21 +46,97 @@
             --wa-green: #25D366;
         }
 
-        /* Branding Logo Sizing */
+        /* Header Top Full-Height Gold Button (Matches Ticrou Original Capture) */
+        .header-top {
+            background: #212226;
+        }
+        .header-top .top-inner {
+            height: 70px;
+        }
+        .header-top .right-column,
+        .header-top .btn-box,
+        .header-top .btn-box a {
+            height: 100%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .header-top .btn-box a {
+            padding: 0 42px;
+            font-size: 16px;
+            font-weight: 700;
+            font-family: 'DM Sans', sans-serif;
+            background: #C59D5F;
+            color: #FFFFFF;
+            letter-spacing: 0.5px;
+            text-transform: capitalize;
+            border-radius: 0;
+            transition: all 400ms ease;
+        }
+        .header-top .btn-box a:hover {
+            background: #FFFFFF;
+            color: #C59D5F;
+        }
+
+        /* Branding Logo Crisp High-Contrast Sizing (Matches Ticrou Original Capture) */
+        .main-header .logo-box {
+            padding: 22px 0px;
+        }
+        .main-header .logo-box .logo {
+            max-width: 195px;
+            width: 100%;
+        }
         .main-header .logo-box .logo img {
-            max-height: 58px;
-            width: auto;
+            width: 100%;
+            max-height: 52px;
             object-fit: contain;
+            display: block;
+        }
+        .sticky-header .logo-box .logo {
+            max-width: 175px;
         }
         .sticky-header .logo-box .logo img {
-            max-height: 48px;
+            width: 100%;
+            max-height: 44px;
+            object-fit: contain;
+            display: block;
+        }
+        .main-footer .footer-logo img {
+            max-height: 65px;
             width: auto;
             object-fit: contain;
         }
-        .main-footer .footer-logo img {
-            max-height: 70px;
-            width: auto;
-            object-fit: contain;
+
+        /* Navigation Menu Single-Line Strict Alignment (No Wrapping) */
+        .main-menu .navigation {
+            display: flex !important;
+            flex-wrap: nowrap !important;
+            align-items: center !important;
+            white-space: nowrap !important;
+            margin: 0 !important;
+        }
+        .main-menu .navigation > li {
+            margin: 0 16px !important;
+            float: none !important;
+            display: inline-block !important;
+        }
+        .main-menu .navigation > li:first-child {
+            margin-left: 0 !important;
+        }
+        .main-menu .navigation > li:last-child {
+            margin-right: 0 !important;
+        }
+        .main-menu .navigation > li > a {
+            font-size: 16px !important;
+            font-weight: 500 !important;
+            padding: 34px 0px !important;
+            white-space: nowrap !important;
+            color: #141417 !important;
+            transition: all 300ms ease;
+        }
+        .main-menu .navigation > li.current > a,
+        .main-menu .navigation > li > a:hover {
+            color: #C59D5F !important;
         }
 
         /* Hero Banner Overlay for perfect text contrast */
@@ -73,26 +149,6 @@
             position: absolute;
             inset: 0;
             background: linear-gradient(180deg, rgba(15, 15, 15, 0.75) 0%, rgba(15, 15, 15, 0.45) 50%, rgba(15, 15, 15, 0.85) 100%);
-        }
-
-        /* WhatsApp Button Custom Styling */
-        .btn-wa-header {
-            background-color: var(--wa-green) !important;
-            color: #FFFFFF !important;
-            border-radius: 4px;
-            padding: 10px 22px;
-            font-size: 13px;
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.35);
-        }
-        .btn-wa-header:hover {
-            filter: brightness(1.08);
-            transform: translateY(-2px);
-            color: #FFFFFF !important;
         }
 
         /* Badges Chic Chez Bijou */
@@ -182,7 +238,7 @@
         <!-- Preloader End -->
 
 
-        <!-- Main Header -->
+        <!-- Main Header (Strict Ticrou Architecture) -->
         <header class="main-header">
             <!-- Header Top Bar -->
             <div class="header-top">
@@ -190,27 +246,31 @@
                     <div class="top-inner">
                         <div class="left-column">
                             <ul class="info clearfix">
-                                <li><i class="fab fa-whatsapp"></i><a href="https://wa.me/2290197815555" target="_blank">+229 01 97 81 55 55</a></li>
-                                <li><i class="icon-2"></i>Ouvert 7j/7 : 08h00 – 00h00 (Service Continu)</li>
-                                <li><i class="fas fa-map-marker-alt"></i>Route de Lomé, Cotonou, Bénin</li>
+                                <li><i class="icon-1"></i><a href="tel:+2290197815555">+229 01 97 81 55 55</a></li>
+                                <li><i class="icon-2"></i>Ouvert 7j/7 : 08h00 – 00h00</li>
+                            </ul>
+                            <ul class="social-links clearfix">
+                                <li><a href="https://facebook.com" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a></li>
+                                <li><a href="https://www.google.com/maps/search/?api=1&query=Restaurant+Chez+Bijou&query_place_id=ChIJAdxWL8tVIxARqlrzG1F2m5Y" target="_blank" rel="noopener noreferrer"><i class="fas fa-map-marker-alt"></i></a></li>
                             </ul>
                         </div>
                         <div class="right-column">
                             <div class="btn-box">
-                                <a href="#reservation" class="theme-btn-one" style="padding: 8px 24px;">Réserver une Table</a>
+                                <a href="#reservation">Book An Table</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Header Lower -->
+            <!-- Header Lower (White Bar with High-Contrast Logo & Single-Line Menu) -->
             <div class="header-lower">
                 <div class="auto-container">
                     <div class="outer-box">
                         <div class="logo-box">
                             <figure class="logo">
-                                <a href="#banner"><img src="assets/images/bijou-logo.png" alt="Restaurant Chez Bijou Cotonou"></a>
+                                <a href="#banner"><img src="assets/images/logo.png" alt="Chez Bijou Cotonou"></a>
                             </figure>
                         </div>
                         <div class="menu-area clearfix">
@@ -229,18 +289,18 @@
                                         <li><a href="#specialites">Spécialités</a></li>
                                         <li><a href="#galerie">Galerie</a></li>
                                         <li><a href="#traiteur">Traiteur & Salons</a></li>
-                                        <li><a href="#avis">Avis Clients</a></li>
-                                        <li><a href="#reservation">Réservation</a></li>
-                                        <li><a href="#contact">Contact & Accès</a></li>
+                                        <li><a href="#contact">Contact</a></li>
                                     </ul>
                                 </div>
                             </nav>
                         </div>
+                        <!-- Original Ticrou Circular Buttons (Search & Reservation Cart) -->
                         <ul class="nav-right">
-                            <li>
-                                <a href="https://wa.me/2290197815555?text=Bonjour%20Chez%20Bijou,%20je%20souhaite%20r%C3%A9server%20une%20table." target="_blank" class="btn-wa-header" title="WhatsApp Direct">
-                                    <i class="fab fa-whatsapp" style="font-size: 16px;"></i> WhatsApp
-                                </a>
+                            <li class="search-box-outer search-toggler">
+                                <i class="icon-3"></i>
+                            </li>
+                            <li class="shop-cart">
+                                <a href="#reservation" title="Réserver une table"><i class="icon-4"></i><span>3</span></a>
                             </li>
                         </ul>
                     </div>
@@ -252,18 +312,19 @@
                 <div class="auto-container">
                     <div class="outer-box">
                         <div class="logo-box">
-                            <figure class="logo"><a href="#banner"><img src="assets/images/bijou-logo.png" alt="Chez Bijou"></a></figure>
+                            <figure class="logo"><a href="#banner"><img src="assets/images/logo.png" alt="Chez Bijou"></a></figure>
                         </div>
                         <div class="menu-area clearfix">
                             <nav class="main-menu clearfix">
-                                <!-- Rempli automatiquement via JS -->
+                                <!-- Rempli automatiquement via JS par Ticrou script.js -->
                             </nav>
                         </div>
                         <ul class="nav-right">
-                            <li>
-                                <a href="https://wa.me/2290197815555?text=Bonjour%20Chez%20Bijou,%20je%20souhaite%20r%C3%A9server%20une%20table." target="_blank" class="btn-wa-header">
-                                    <i class="fab fa-whatsapp"></i> WhatsApp
-                                </a>
+                            <li class="search-box-outer search-toggler">
+                                <i class="icon-3"></i>
+                            </li>
+                            <li class="shop-cart">
+                                <a href="#reservation" title="Réserver une table"><i class="icon-4"></i><span>3</span></a>
                             </li>
                         </ul>
                     </div>
@@ -279,7 +340,7 @@
             <div class="close-btn"><i class="fas fa-times"></i></div>
 
             <nav class="menu-box">
-                <div class="nav-logo"><a href="#banner"><img src="assets/images/bijou-logo.png" alt="Chez Bijou Cotonou" title="Chez Bijou"></a></div>
+                <div class="nav-logo"><a href="#banner"><img src="assets/images/footer-logo.png" alt="Chez Bijou Cotonou" title="Chez Bijou"></a></div>
                 <div class="menu-outer"><!-- Rempli automatiquement par Ticrou JS --></div>
                 <div class="contact-info">
                     <h4>Coordonnées</h4>
@@ -1077,7 +1138,7 @@
                                     <div class="shape-2" style="background-image: url(assets/images/shape/shape-20.png);\"></div>
                                 </div>
                                 <div class="widget-content">
-                                    <figure class="footer-logo"><a href="#banner"><img src="assets/images/bijou-logo.png" alt="Chez Bijou Cotonou"></a></figure>
+                                    <figure class="footer-logo"><a href="#banner"><img src="assets/images/footer-logo.png" alt="Chez Bijou Cotonou"></a></figure>
                                     <div class="text">
                                         <p>L'excellence de la cuisine traditionnelle béninoise, des grillades au feu de bois et de l'hospitalité africaine sur la Route de Lomé à Cotonou.</p>
                                     </div>
@@ -1132,6 +1193,29 @@
 
     </div><!-- End .boxed_wrapper -->
 
+
+        <!-- Search Popup -->
+    <div id="search-popup" class="search-popup">
+        <div class="popup-inner">
+            <div class="upper-box clearfix">
+                <figure class="logo-box pull-left"><a href="#banner"><img src="assets/images/logo-2.png" alt="Chez Bijou"></a></figure>
+                <div class="close-search pull-right"><span class="far fa-times"></span></div>
+            </div>
+            <div class="overlay-layer"></div>
+            <div class="auto-container">
+                <div class="search-form">
+                    <form method="get" action="#menu">
+                        <div class="form-group">
+                            <fieldset>
+                                <input type="search" class="form-control" name="search-input" value="" placeholder="Rechercher un plat (Ex: Poisson braisé, Thiéboudienne, Alloco...)" required>
+                                <button type="submit"><i class="far fa-search"></i></button>
+                            </fieldset>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Scripts Originaux Ticrou -->
     <script src="assets/js/jquery.js"></script>

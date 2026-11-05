@@ -205,6 +205,341 @@
         html {
             scroll-behavior: smooth;
         }
+    
+        /* --- CHEZ BIJOU REFINED COLOR HARMONY & CONTRAST --- */
+        :root {
+            --bijou-gold: #B38038;
+            --bijou-gold-accent: #C59D5F;
+            --bijou-gold-glow: #E2BC7A;
+            --bijou-dark: #141417;
+            --bijou-body: #333333;
+            --wa-green: #25D366;
+        }
+
+        /* Subtitle Legibility on Light vs Dark Backgrounds */
+        .sec-title .sub-title {
+            color: #A6742C !important;
+            font-family: 'Rouge Script', cursive !important;
+            font-size: 52px !important;
+            line-height: 62px !important;
+            font-weight: 400 !important;
+        }
+        .sec-title.light .sub-title {
+            color: #E2BC7A !important;
+        }
+        .sec-title h2 {
+            color: #141417 !important;
+            font-weight: 700 !important;
+        }
+        .sec-title h2 span {
+            color: #A6742C !important;
+        }
+        .sec-title.light h2 {
+            color: #FFFFFF !important;
+        }
+        .sec-title.light h2 span {
+            color: #E2BC7A !important;
+        }
+
+        /* High-Contrast Body Text */
+        .text p, .content-box p {
+            color: #383838 !important;
+            font-size: 16px !important;
+            line-height: 28px !important;
+        }
+
+        /* Header Top Full-Height Gold Button */
+        .header-top .btn-box a {
+            padding: 0 40px !important;
+            font-size: 15px !important;
+            font-weight: 700 !important;
+            font-family: 'DM Sans', sans-serif !important;
+            background: #C59D5F !important;
+            color: #FFFFFF !important;
+            letter-spacing: 0.5px !important;
+            text-transform: capitalize !important;
+            border-radius: 0 !important;
+            transition: all 400ms ease !important;
+        }
+        .header-top .btn-box a:hover {
+            background: #141417 !important;
+            color: #FFFFFF !important;
+        }
+
+        /* About Section Images Harmonization */
+        .about-section .image_block_one .image-box .image-1 img {
+            max-width: 440px !important;
+            height: 440px !important;
+            object-fit: cover !important;
+            border-radius: 12px !important;
+            border: 4px solid #FFFFFF !important;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12) !important;
+        }
+        .about-section .image_block_one .image-box .image-2 {
+            top: 180px !important;
+            right: -50px !important;
+        }
+        .about-section .image_block_one .image-box .image-2 img {
+            width: 220px !important;
+            height: 180px !important;
+            object-fit: cover !important;
+            border-radius: 10px !important;
+            border: 4px solid #FFFFFF !important;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.18) !important;
+        }
+        .feature-badge-item {
+            background: rgba(166, 116, 44, 0.08) !important;
+            border: 1px solid rgba(166, 116, 44, 0.28) !important;
+            color: #1F1F1F !important;
+            font-weight: 600 !important;
+        }
+        .feature-badge-item i {
+            color: #A6742C !important;
+        }
+
+        /* Menu Section Cards & Prices */
+        .menu-block-one .inner-box {
+            border-radius: 10px !important;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15) !important;
+        }
+        .menu-block-one .inner-box .single-item h4 a {
+            color: #141417 !important;
+            font-weight: 700 !important;
+        }
+        .menu-block-one .inner-box .single-item h4 a:hover {
+            color: #A6742C !important;
+        }
+        .menu-block-one .inner-box .single-item .price {
+            color: #A6742C !important;
+            font-weight: 700 !important;
+        }
+        .menu-block-one .inner-box .single-item .text p {
+            color: #555555 !important;
+            font-size: 14.5px !important;
+            line-height: 24px !important;
+        }
+
+        /* Specialties Carousel Uniform Height & Contrast */
+        .shop-section .bg-layer:before {
+            background: #FAF7F2 !important;
+            opacity: 1 !important;
+        }
+        .shop-block-one .inner-box {
+            border-radius: 8px !important;
+            overflow: hidden !important;
+            background: #FFFFFF !important;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06) !important;
+            transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+        }
+        .shop-block-one .inner-box:hover {
+            transform: translateY(-6px) !important;
+            box-shadow: 0 20px 45px rgba(166, 116, 44, 0.16) !important;
+        }
+        .shop-block-one .inner-box .image-box {
+            height: 250px !important;
+            overflow: hidden !important;
+            background: #FAF7F2 !important;
+        }
+        .shop-block-one .inner-box .image-box img {
+            width: 100% !important;
+            height: 100% !important;
+            object-fit: cover !important;
+            transition: transform 0.6s ease !important;
+        }
+        .shop-block-one .inner-box:hover .image-box img {
+            transform: scale(1.08) !important;
+            opacity: 0.88 !important;
+        }
+        .shop-block-one .inner-box .lower-content {
+            padding: 24px 20px 28px 20px !important;
+            min-height: 155px !important;
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: space-between !important;
+        }
+        .shop-block-one .inner-box .lower-content h5 a {
+            color: #141417 !important;
+            font-size: 18px !important;
+            font-weight: 700 !important;
+            line-height: 24px !important;
+        }
+        .shop-block-one .inner-box .lower-content h5 a:hover {
+            color: #A6742C !important;
+        }
+        .shop-block-one .inner-box .lower-content .price {
+            color: #A6742C !important;
+            font-size: 18px !important;
+            font-weight: 700 !important;
+        }
+
+        /* Gallery Section Uniform 420px Height */
+        .gallery-block-one .inner-box {
+            border-radius: 8px !important;
+            overflow: hidden !important;
+        }
+        .gallery-block-one .inner-box .image-box {
+            height: 420px !important;
+            overflow: hidden !important;
+            background: #141417 !important;
+        }
+        .gallery-block-one .inner-box .image-box img {
+            width: 100% !important;
+            height: 100% !important;
+            object-fit: cover !important;
+        }
+        .gallery-block-one .inner-box .content-box h4 a {
+            background: #FFFFFF !important;
+            color: #141417 !important;
+            font-weight: 700 !important;
+            border-radius: 4px !important;
+        }
+        .gallery-block-one .inner-box .content-box span {
+            background: #FAF7F2 !important;
+            color: #A6742C !important;
+            font-weight: 600 !important;
+            border-radius: 4px !important;
+        }
+
+        /* Promotion / Traiteur Section */
+        .promotion-block-one .inner-box .image-box .image {
+            height: 380px !important;
+            overflow: hidden !important;
+            border-radius: 8px !important;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1) !important;
+        }
+        .promotion-block-one .inner-box .image-box .image img {
+            width: 100% !important;
+            height: 100% !important;
+            object-fit: cover !important;
+        }
+        .promotion-block-one .inner-box .content-box {
+            border-radius: 8px !important;
+            padding: 45px 50px !important;
+        }
+        .promotion-block-one .inner-box .content-box h2 {
+            color: #141417 !important;
+        }
+        .promotion-block-one .inner-box .content-box h2 span {
+            color: #A6742C !important;
+        }
+        .promotion-block-one .inner-box .content-box h4 {
+            color: #A6742C !important;
+            font-weight: 600 !important;
+            margin-bottom: 15px !important;
+        }
+        .promotion-block-one .inner-box .content-box p {
+            color: #444444 !important;
+            font-size: 15.5px !important;
+            line-height: 27px !important;
+        }
+
+        /* Testimonial Section Polish */
+        .testimonial-section .image-box .image-1 {
+            max-width: 480px !important;
+            border-radius: 12px !important;
+            overflow: hidden !important;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.14) !important;
+            border: 4px solid #FFFFFF !important;
+        }
+        .testimonial-section .image-box .image-1 img {
+            width: 100% !important;
+            height: auto !important;
+            display: block !important;
+            border-radius: 8px !important;
+        }
+        .testimonial-section .image-box .image-2,
+        .testimonial-section .image-box .image-3 {
+            border-radius: 8px !important;
+            overflow: hidden !important;
+            border: 3px solid #FFFFFF !important;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15) !important;
+        }
+        .testimonial-section .image-box .image-2 img,
+        .testimonial-section .image-box .image-3 img {
+            width: 100% !important;
+            height: 100% !important;
+            object-fit: cover !important;
+            display: block !important;
+        }
+        .testimonial-block-one .inner-box p {
+            color: #222222 !important;
+            font-size: 18px !important;
+            line-height: 32px !important;
+            font-style: italic !important;
+        }
+        .testimonial-block-one .inner-box .author-box h4 {
+            color: #141417 !important;
+            font-weight: 700 !important;
+        }
+        .testimonial-block-one .inner-box .author-box .designation {
+            color: #A6742C !important;
+            font-weight: 600 !important;
+        }
+
+        /* Order / Reservation Form Polish */
+        .order-section .form-inner {
+            border-radius: 12px !important;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.06) !important;
+            border: 1px solid rgba(166, 116, 44, 0.2) !important;
+        }
+        .order-section .form-inner .form-group input,
+        .order-section .form-inner .form-group select,
+        .order-section .form-inner .form-group textarea,
+        .nice-select {
+            border: 1px solid #D5D5D5 !important;
+            border-radius: 6px !important;
+            color: #1A1A1A !important;
+            font-size: 15px !important;
+            background: #FFFFFF !important;
+            padding: 0 16px !important;
+            height: 52px !important;
+            line-height: 50px !important;
+        }
+        .order-section .form-inner .form-group textarea {
+            height: 110px !important;
+            padding: 14px 16px !important;
+            line-height: 24px !important;
+        }
+        .order-section .form-inner .form-group input:focus,
+        .order-section .form-inner .form-group select:focus,
+        .order-section .form-inner .form-group textarea:focus,
+        .nice-select:focus,
+        .nice-select.open {
+            border-color: #A6742C !important;
+            box-shadow: 0 0 0 3px rgba(166, 116, 44, 0.15) !important;
+        }
+        .nice-select .current {
+            color: #1A1A1A !important;
+            font-weight: 500 !important;
+        }
+        .nice-select .list {
+            background: #FFFFFF !important;
+            border-radius: 6px !important;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15) !important;
+        }
+        .nice-select .option {
+            color: #222222 !important;
+        }
+        .nice-select .option:hover,
+        .nice-select .option.selected.focus {
+            background: #FAF5ED !important;
+            color: #A6742C !important;
+        }
+
+        /* Gold Action Buttons */
+        .theme-btn-one {
+            background: #C59D5F !important;
+            color: #FFFFFF !important;
+            font-family: 'DM Sans', sans-serif !important;
+            font-weight: 700 !important;
+            border-radius: 4px !important;
+            transition: all 300ms ease !important;
+        }
+        .theme-btn-one:hover {
+            background: #141417 !important;
+            color: #FFFFFF !important;
+        }
+    
     </style>
 </head>
 
@@ -257,7 +592,7 @@
                         </div>
                         <div class="right-column">
                             <div class="btn-box">
-                                <a href="#reservation">Book An Table</a>
+                                <a href="#reservation">Réserver une table</a>
                             </div>
                         </div>
                     </div>

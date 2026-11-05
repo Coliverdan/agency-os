@@ -1,1053 +1,1208 @@
 <!DOCTYPE html>
-<html class="no-js" lang="fr">
+<html lang="fr">
+
 <head>
-    <base href="/sites/chez-bijou/" />
-    <!-- Meta Tags Clés -->
-    <meta charset="utf-8" />
-    <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="author" content="Restaurant Chez Bijou" />
-    <meta name="description" content="Restaurant Chez Bijou à Cotonou (Route de Lomé). Cuisine traditionnelle béninoise, grillades de poissons et viandes, salon privé VIP, terrasse rooftop et service traiteur. Ouvert 7j/7 de 08h à 00h. Réservation WhatsApp : +229 01 97 81 55 55." />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 
-    <!-- Favicon / Icône Officielle du Site (Barre d'onglets du navigateur) -->
-    <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png" />
-    <link rel="shortcut icon" href="assets/img/favicon.ico" />
+    <title>Restaurant Chez Bijou Cotonou | Cuisine Traditionnelle Béninoise & Grillades d'Exception</title>
+    <base href="/sites/chez-bijou/">
 
-    <!-- Site Title -->
-    <title>Restaurant Chez Bijou — Cuisine Béninoise, Grillades & Rooftop | Cotonou</title>
+    <!-- Meta Description & SEO -->
+    <meta name="description" content="Restaurant Chez Bijou à Cotonou (Route de Lomé). Grillades au feu de bois, poissons braisés, thiéboudienne, grande salle climatisée, terrasse rooftop et salons privés VIP. Ouvert 7j/7 de 08h à minuit.">
+    <meta name="keywords" content="Chez Bijou, restaurant Cotonou, cuisine béninoise, poisson braisé Cotonou, grillades Route de Lomé, salon VIP Cotonou, traiteur Cotonou">
 
-    <!-- Google Fonts (Baskervville & Prompt) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Prompt:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
 
-    <!-- Elegencia CSS Plugins -->
-    <link rel="stylesheet" href="assets/css/plugins/bootstrap.min.css" />
-    <link rel="stylesheet" href="assets/css/plugins/lightgallery.min.css" />
-    <link rel="stylesheet" href="assets/css/plugins/swiper.min.css" />
-    <link rel="stylesheet" href="assets/css/style.css" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Rouge+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
+    <!-- Stylesheets (Ticrou Original & Responsive) -->
+    <link href="assets/css/font-awesome-all.css" rel="stylesheet">
+    <link href="assets/css/flaticon.css" rel="stylesheet">
+    <link href="assets/css/owl.css" rel="stylesheet">
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/css/jquery.fancybox.min.css" rel="stylesheet">
+    <link href="assets/css/animate.css" rel="stylesheet">
+    <link href="assets/css/nice-select.css" rel="stylesheet">
+    <link href="assets/css/jquery-ui.css" rel="stylesheet">
+    <link href="assets/css/color.css" rel="stylesheet">
+    <link href="assets/css/elpath.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/responsive.css" rel="stylesheet">
+
+    <!-- Custom Luxury Tweaks for Chez Bijou -->
     <style>
-        /* DIRECTION ARTISTIQUE RESTAURANT LUXURY DA (Anti-AI Slop) */
         :root {
-            --bijou-bg: #070A0E;
-            --bijou-gold: #FFD28D;
-            --bijou-gold-hover: #F0BC6D;
-            --bijou-white: #FFFFFF;
-            --bijou-gray: #C8C8C8;
+            --bijou-gold: #C59D5F;
+            --bijou-gold-hover: #b08a4f;
+            --bijou-dark: #1e1e1e;
             --wa-green: #25D366;
         }
 
-        body, html {
-            background-color: var(--bijou-bg) !important;
-            color: var(--bijou-white);
-            font-family: 'Prompt', sans-serif;
-            overflow-x: hidden;
-        }
-
-        h1, h2, h3, h4, h5, h6, .anim-title, .hero-title-style {
-            font-family: 'Baskervville', serif !important;
-            letter-spacing: 0.5px;
-        }
-
-        /* Branding Navbar */
-        .ak-site_branding img {
-            max-height: 52px;
+        /* Branding Logo Sizing */
+        .main-header .logo-box .logo img {
+            max-height: 58px;
             width: auto;
             object-fit: contain;
-            transition: transform 0.3s ease;
         }
-        .ak-site_branding img:hover {
-            transform: scale(1.04);
-        }
-        .center-log img {
-            max-height: 56px;
+        .sticky-header .logo-box .logo img {
+            max-height: 48px;
             width: auto;
+            object-fit: contain;
+        }
+        .main-footer .footer-logo img {
+            max-height: 70px;
+            width: auto;
+            object-fit: contain;
         }
 
-        /* Hero Overlay Sombre Vertical (80% / 40% / 0%) */
-        .hero-section-overlay {
+        /* Hero Banner Overlay for perfect text contrast */
+        .banner-carousel .slide-item .image-layer {
+            background-size: cover;
+            background-position: center center;
+        }
+        .banner-carousel .slide-item .image-layer::after {
+            content: '';
             position: absolute;
             inset: 0;
-            background: linear-gradient(180deg, rgba(7, 10, 14, 0.85) 0%, rgba(7, 10, 14, 0.50) 50%, rgba(7, 10, 14, 0.90) 100%);
-            z-index: 1;
-            pointer-events: none;
+            background: linear-gradient(180deg, rgba(15, 15, 15, 0.75) 0%, rgba(15, 15, 15, 0.45) 50%, rgba(15, 15, 15, 0.85) 100%);
         }
 
-        /* Badges Chic */
-        .bijou-pill-badge {
+        /* WhatsApp Button Custom Styling */
+        .btn-wa-header {
+            background-color: var(--wa-green) !important;
+            color: #FFFFFF !important;
+            border-radius: 4px;
+            padding: 10px 22px;
+            font-size: 13px;
+            font-weight: 600;
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            padding: 6px 16px;
-            border-radius: 30px;
-            background: rgba(255, 210, 141, 0.10);
-            border: 1px solid var(--bijou-gold);
-            color: var(--bijou-gold);
-            font-size: 13px;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            margin-bottom: 20px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.35);
         }
-
-        /* Cartes de Prestations et Espaces */
-        .bijou-card-box {
-            background: #0E131A;
-            border: 1px solid #1C232E;
-            border-radius: 8px;
-            overflow: hidden;
-            transition: transform 0.35s ease, border-color 0.35s ease;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-        }
-        .bijou-card-box:hover {
-            transform: translateY(-6px);
-            border-color: var(--bijou-gold);
-        }
-        .bijou-card-img-wrap {
-            position: relative;
-            height: 260px;
-            overflow: hidden;
-        }
-        .bijou-card-img-wrap img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.6s ease;
-        }
-        .bijou-card-box:hover .bijou-card-img-wrap img {
-            transform: scale(1.08);
-        }
-        .bijou-card-body {
-            padding: 24px;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-        .bijou-card-title {
-            color: var(--bijou-white);
-            font-size: 22px;
-            margin-bottom: 12px;
-        }
-        .bijou-card-desc {
-            color: var(--bijou-gray);
-            font-size: 14px;
-            line-height: 1.6;
-            margin-bottom: 18px;
-        }
-
-        /* Bouton WhatsApp Officiel Flottant & Header */
-        .btn-wa-official {
-            background-color: var(--wa-green) !important;
-            color: #FFFFFF !important;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            font-family: 'Prompt', sans-serif;
-            font-weight: 600;
-            font-size: 14px;
-            letter-spacing: 0.8px;
-            text-transform: uppercase;
-            padding: 14px 28px;
-            border-radius: 6px;
-            text-decoration: none;
-            transition: filter 0.25s ease, transform 0.25s ease;
-            box-shadow: 0 4px 14px rgba(37, 211, 102, 0.35);
-        }
-        .btn-wa-official:hover {
+        .btn-wa-header:hover {
             filter: brightness(1.08);
             transform: translateY(-2px);
             color: #FFFFFF !important;
         }
 
-        /* Formulaire de Réservation Ultra-Épuré (Zéro cadre lourd, zéro lueur) */
-        .bijou-booking-wrapper {
-            background: transparent !important;
-            border: none !important;
-            padding: 10px 0;
-            max-width: 820px;
-            margin: 0 auto;
-        }
-        .res-input-clean {
-            width: 100%;
-            height: 52px;
-            background: #FFFFFF !important;
-            border: 1px solid #D0D0D0;
-            border-radius: 6px;
-            padding: 0 16px;
-            color: #111111 !important;
-            font-family: 'Prompt', sans-serif;
-            font-size: 15px;
-            font-weight: 500;
-            outline: none;
-            cursor: pointer;
-            box-shadow: none !important;
-            color-scheme: light;
-            transition: border-color 0.25s ease;
-        }
-        .res-input-clean:focus {
-            border-color: var(--bijou-gold) !important;
-        }
-        select.res-input-clean option {
-            background: #FFFFFF;
-            color: #111111;
-            padding: 8px;
-        }
-
-        /* Quick Pills pour le formulaire */
-        .pill-picker-group {
-            display: flex;
-            gap: 8px;
-            margin-bottom: 10px;
-            flex-wrap: wrap;
-        }
-        .pill-btn {
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(255, 255, 255, 0.18);
-            color: #E0E0E0;
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 13px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-        .pill-btn:hover, .pill-btn.active {
-            background: var(--bijou-gold);
-            color: #070A0E;
-            border-color: var(--bijou-gold);
-            font-weight: 600;
-        }
-
-        /* Menu Tabs Isotope */
-        .menu-filter-btn {
-            background: transparent;
-            border: 1px solid rgba(255, 210, 141, 0.3);
-            color: var(--bijou-gray);
-            padding: 8px 22px;
-            border-radius: 30px;
-            font-size: 14px;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            cursor: pointer;
-            margin: 0 5px 12px 5px;
-            transition: all 0.25s ease;
-        }
-        .menu-filter-btn.active, .menu-filter-btn:hover {
-            background: var(--bijou-gold);
-            color: #070A0E;
-            border-color: var(--bijou-gold);
-            font-weight: 600;
-        }
-
-        /* Preloader Blanc Pur 0.7s */
-        #preloader {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: #070A0E;
-            z-index: 999999;
-            display: flex;
+        /* Badges Chic Chez Bijou */
+        .feature-badge-item {
+            display: inline-flex;
             align-items: center;
-            justify-content: center;
+            gap: 8px;
+            padding: 8px 18px;
+            background: rgba(197, 157, 95, 0.08);
+            border: 1px solid rgba(197, 157, 95, 0.3);
+            border-radius: 30px;
+            font-size: 13px;
+            color: #333333;
+            margin-right: 8px;
+            margin-bottom: 10px;
+            font-weight: 500;
         }
-        .bijou-spinner {
-            width: 80px;
-            height: 80px;
-            border: 2px solid rgba(255, 255, 255, 0.15);
-            border-top: 2px solid #FFFFFF;
-            border-radius: 50%;
-            animation: bijouSpin 0.7s linear infinite;
+        .feature-badge-item i {
+            color: var(--bijou-gold);
         }
-        @keyframes bijouSpin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+
+        /* Booking Form Clean Inputs */
+        .order-section .form-inner .form-group input,
+        .order-section .form-inner .form-group select,
+        .order-section .form-inner .form-group textarea {
+            border: 1px solid #e0e0e0;
+            background: #FFFFFF;
+            transition: border-color 0.3s ease;
+        }
+        .order-section .form-inner .form-group input:focus,
+        .order-section .form-inner .form-group select:focus,
+        .order-section .form-inner .form-group textarea:focus {
+            border-color: var(--bijou-gold);
+        }
+
+        /* Payment Badges in Footer */
+        .momo-badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            margin: 3px;
+            text-transform: uppercase;
+        }
+        .badge-mtn { background: #FFCC00; color: #000000; }
+        .badge-moov { background: #006699; color: #FFFFFF; }
+        .badge-wave { background: #1DC3F4; color: #000000; }
+        .badge-card { background: #333333; color: #FFFFFF; border: 1px solid #555555; }
+
+        /* Smooth Anchor Scroll */
+        html {
+            scroll-behavior: smooth;
         }
     </style>
 </head>
 
-<body class="ak-dark">
-    <!-- Preloader Éclair (0.7s) -->
-    <div id="preloader">
-        <div style="text-align: center;">
-            <div class="bijou-spinner mx-auto mb-3"></div>
-            <p style="font-family: 'Baskervville', serif; color: #FFFFFF; font-size: 16px; letter-spacing: 3px; text-transform: uppercase; margin: 0;">
-                C H E Z   B I J O U
-            </p>
+<body>
+
+    <div class="boxed_wrapper">
+
+        <!-- Preloader Lettrage Animé C H E Z   B I J O U (Ticrou Pattern) -->
+        <div class="loader-wrap">
+            <div class="preloader">
+                <div class="preloader-close">x</div>
+                <div id="handle-preloader" class="handle-preloader">
+                    <div class="animation-preloader">
+                        <div class="spinner"></div>
+                        <div class="txt-loading">
+                            <span data-text-preloader="C" class="letters-loading">C</span>
+                            <span data-text-preloader="H" class="letters-loading">H</span>
+                            <span data-text-preloader="E" class="letters-loading">E</span>
+                            <span data-text-preloader="Z" class="letters-loading">Z</span>
+                            <span data-text-preloader="-" class="letters-loading">&nbsp;</span>
+                            <span data-text-preloader="B" class="letters-loading">B</span>
+                            <span data-text-preloader="I" class="letters-loading">I</span>
+                            <span data-text-preloader="J" class="letters-loading">J</span>
+                            <span data-text-preloader="O" class="letters-loading">O</span>
+                            <span data-text-preloader="U" class="letters-loading">U</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
+        <!-- Preloader End -->
 
-    <!-- ScrollSmoother Container Wrapper -->
-    <div id="scrollsmoother-container">
 
-        <!-- Header Section (Elegencia Sticky Navbar) -->
-        <header class="ak-site_header ak-style1 ak-sticky_header ak-site_header_full_width">
+        <!-- Main Header -->
+        <header class="main-header">
+            <!-- Header Top Bar -->
             <div class="header-top">
-                <div class="wrapper">
-                    <div class="header-logo">
-                        <a href="#reservation" class="logo" style="color: var(--bijou-gold); font-size: 13px; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 600;">
-                            RÉSERVER UNE TABLE
-                        </a>
+                <div class="auto-container">
+                    <div class="top-inner">
+                        <div class="left-column">
+                            <ul class="info clearfix">
+                                <li><i class="fab fa-whatsapp"></i><a href="https://wa.me/2290197815555" target="_blank">+229 01 97 81 55 55</a></li>
+                                <li><i class="icon-2"></i>Ouvert 7j/7 : 08h00 – 00h00 (Service Continu)</li>
+                                <li><i class="fas fa-map-marker-alt"></i>Route de Lomé, Cotonou, Bénin</li>
+                            </ul>
+                        </div>
+                        <div class="right-column">
+                            <div class="btn-box">
+                                <a href="#reservation" class="theme-btn-one" style="padding: 8px 24px;">Réserver une Table</a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="center-log">
-                        <a href="#accueil"><img src="assets/img/bijou-logo.png" alt="Restaurant Chez Bijou Cotonou"></a>
-                    </div>
-                    <button class="ak-menu-toggle" id="akMenuToggle" type="button" aria-label="Ouvrir le menu">
-                        <svg viewBox="0 0 20 15" width="40px" height="30px" class="ak-menu-icon">
-                            <path d="M20,2 L2,2" class="bar-1" stroke="#FFFFFF" stroke-width="2"></path>
-                            <path d="M2,7 L20,7" class="bar-2" stroke="#FFFFFF" stroke-width="2"></path>
-                            <path d="M30,12 L2,12" class="bar-3" stroke="#FFFFFF" stroke-width="2"></path>
-                        </svg>
-                    </button>
-
-                    <!-- Menu Plein Écran au Clic -->
-                    <ul class="top-main-menu">
-                        <li class="top-main-menu-li">
-                            <a href="#accueil">Accueil</a>
-                            <img class="top-main-menu-img" src="assets/img/bijou-hero.jpg" alt="Accueil Chez Bijou">
-                        </li>
-                        <li class="top-main-menu-li">
-                            <a href="#cadre">Le Cadre & Rooftop</a>
-                            <img class="top-main-menu-img" src="assets/img/bijou-salle.jpg" alt="Salle et Rooftop">
-                        </li>
-                        <li class="top-main-menu-li">
-                            <a href="#carte">La Carte & Grillades</a>
-                            <img class="top-main-menu-img" src="assets/img/bijou-poisson.jpg" alt="Spécialités Culinaire">
-                        </li>
-                        <li class="top-main-menu-li">
-                            <a href="#vip">Salon Privé VIP</a>
-                            <img class="top-main-menu-img" src="assets/img/bijou-vip.jpg" alt="Espace VIP">
-                        </li>
-                        <li class="top-main-menu-li">
-                            <a href="#traiteur">Traiteur & Événements</a>
-                            <img class="top-main-menu-img" src="assets/img/bijou-buffet.jpg" alt="Service Traiteur">
-                        </li>
-                        <li class="top-main-menu-li">
-                            <a href="#avis">Avis Clients Google</a>
-                            <img class="top-main-menu-img" src="assets/img/bijou-table.jpg" alt="Avis Clients">
-                        </li>
-                        <li class="top-main-menu-li">
-                            <a href="#reservation">Réservation & Commande</a>
-                            <img class="top-main-menu-img" src="assets/img/bijou-thieb.jpg" alt="Réservation WhatsApp">
-                        </li>
-                        <li class="top-main-menu-li">
-                            <a href="#contact">Accès & Localisation</a>
-                            <img class="top-main-menu-img" src="assets/img/bijou-facade.jpg" alt="Accès Route de Lomé">
-                        </li>
-                    </ul>
                 </div>
             </div>
 
-            <div class="nav-bar-border"></div>
-
-            <div class="ak-main_header">
-                <div class="container">
-                    <div class="ak-main_header_in">
-                        <div class="ak-main_header_left">
-                            <a class="ak-site_branding" href="#accueil">
-                                <img src="assets/img/bijou-logo.png" alt="Chez Bijou">
-                            </a>
+            <!-- Header Lower -->
+            <div class="header-lower">
+                <div class="auto-container">
+                    <div class="outer-box">
+                        <div class="logo-box">
+                            <figure class="logo">
+                                <a href="#banner"><img src="assets/images/bijou-logo.png" alt="Restaurant Chez Bijou Cotonou"></a>
+                            </figure>
                         </div>
-                        <div class="ak-main_header_right">
-                            <div class="ak-nav ak-medium">
-                                <ul class="ak-nav_list">
-                                    <li><a href="#accueil">Accueil</a></li>
-                                    <li><a href="#cadre">Le Cadre</a></li>
-                                    <li><a href="#carte">La Carte</a></li>
-                                    <li><a href="#vip">Salon VIP</a></li>
-                                    <li><a href="#traiteur">Traiteur</a></li>
-                                    <li><a href="#avis">Avis</a></li>
-                                    <li><a href="#reservation">Réserver</a></li>
-                                    <li><a href="#contact">Accès</a></li>
-                                </ul>
+                        <div class="menu-area clearfix">
+                            <!-- Mobile Navigation Toggler -->
+                            <div class="mobile-nav-toggler">
+                                <i class="icon-bar"></i>
+                                <i class="icon-bar"></i>
+                                <i class="icon-bar"></i>
                             </div>
+                            <nav class="main-menu navbar-expand-md navbar-light">
+                                <div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
+                                    <ul class="navigation clearfix">
+                                        <li class="current"><a href="#banner">Accueil</a></li>
+                                        <li><a href="#about">Notre Histoire</a></li>
+                                        <li><a href="#menu">La Carte</a></li>
+                                        <li><a href="#specialites">Spécialités</a></li>
+                                        <li><a href="#galerie">Galerie</a></li>
+                                        <li><a href="#traiteur">Traiteur & Salons</a></li>
+                                        <li><a href="#avis">Avis Clients</a></li>
+                                        <li><a href="#reservation">Réservation</a></li>
+                                        <li><a href="#contact">Contact & Accès</a></li>
+                                    </ul>
+                                </div>
+                            </nav>
                         </div>
+                        <ul class="nav-right">
+                            <li>
+                                <a href="https://wa.me/2290197815555?text=Bonjour%20Chez%20Bijou,%20je%20souhaite%20r%C3%A9server%20une%20table." target="_blank" class="btn-wa-header" title="WhatsApp Direct">
+                                    <i class="fab fa-whatsapp" style="font-size: 16px;"></i> WhatsApp
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sticky Header -->
+            <div class="sticky-header">
+                <div class="auto-container">
+                    <div class="outer-box">
+                        <div class="logo-box">
+                            <figure class="logo"><a href="#banner"><img src="assets/images/bijou-logo.png" alt="Chez Bijou"></a></figure>
+                        </div>
+                        <div class="menu-area clearfix">
+                            <nav class="main-menu clearfix">
+                                <!-- Rempli automatiquement via JS -->
+                            </nav>
+                        </div>
+                        <ul class="nav-right">
+                            <li>
+                                <a href="https://wa.me/2290197815555?text=Bonjour%20Chez%20Bijou,%20je%20souhaite%20r%C3%A9server%20une%20table." target="_blank" class="btn-wa-header">
+                                    <i class="fab fa-whatsapp"></i> WhatsApp
+                                </a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </header>
+        <!-- End Main Header -->
 
-        <!-- Start Hero Section -->
-        <section id="accueil" class="position-relative" style="min-height: 100vh; display: flex; align-items: center; padding: 160px 0 100px 0; background: url('assets/img/bijou-hero.jpg') center/cover no-repeat;">
-            <div class="hero-section-overlay"></div>
-            <div class="container position-relative" style="z-index: 2;">
-                <div class="row align-items-center">
-                    <div class="col-lg-9 col-xl-8">
-                        <div class="bijou-pill-badge">
-                            <span>Route de Lomé, Cotonou</span>
-                            <span>•</span>
-                            <span>Ouvert 7j/7 (08h00 - 00h00)</span>
-                        </div>
-                        <h1 style="font-size: clamp(38px, 6vw, 68px); line-height: 1.15; color: #FFFFFF; margin-bottom: 24px;">
-                            L'Art Culinaire Béninois & les Grillades de Prestige
-                        </h1>
-                        <p style="font-size: clamp(16px, 2vw, 19px); line-height: 1.7; color: #E0E0E0; max-width: 680px; margin-bottom: 35px; font-weight: 300;">
-                            Bienvenue au <strong>Restaurant Chez Bijou</strong>. Une table de référence à Cotonou alliant poissons braisés d'exception, spécialités africaines généreuses, salle climatisée grand confort, terrasse rooftop et salon privé VIP.
-                        </p>
-                        <div class="d-flex flex-wrap gap-3 align-items-center">
-                            <a href="#reservation" class="ak-btn style-5" style="border-color: var(--bijou-gold); padding: 15px 34px; text-decoration: none; border-radius: 6px;">
-                                <span style="letter-spacing: 1px; font-weight: 600; text-transform: uppercase; font-size: 14px;">Réserver une Table</span>
-                            </a>
-                            <a href="https://wa.me/2290197815555?text=Bonjour%20Chez%20Bijou,%20je%20souhaite%20r%C3%A9server%20une%20table." target="_blank" rel="noopener noreferrer" class="btn-wa-official">
-                                <svg width="22" height="22" viewBox="0 0 24 24" fill="#FFFFFF">
-                                    <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.592 2.654-.696c1.001.572 1.944.875 2.806.875 3.18 0 5.767-2.587 5.767-5.766.001-3.18-2.585-5.758-5.767-5.758zm3.374 8.213c-.14.394-.807.75-1.126.79-.319.04-.632.062-1.921-.476-1.554-.648-2.548-2.227-2.627-2.332-.078-.105-.632-.841-.632-1.602 0-.761.399-1.136.541-1.289.143-.153.313-.191.417-.191.104 0 .209.002.3.007.096.006.223-.037.348.263.13.313.444 1.082.483 1.161.039.079.065.171.013.275-.052.105-.078.17-.156.262-.078.092-.164.205-.235.275-.078.079-.16.165-.069.321.091.157.406.67.871 1.084.598.533 1.101.698 1.258.777.157.078.248.069.339-.035.092-.105.392-.457.497-.614.105-.157.209-.13.348-.078.14.052.887.418 1.04.494.153.076.255.114.292.179.037.065.037.378-.103.772z"/>
-                                    <path d="M12 2C6.48 2 2 6.48 2 12c0 1.82.49 3.53 1.34 5L2 22l5.16-1.32C8.6 21.52 10.25 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18.2c-1.57 0-3.04-.45-4.29-1.22l-.31-.18-3.06.78.82-2.98-.2-.32C4.15 15.01 3.7 13.55 3.7 12c0-4.58 3.72-8.3 8.3-8.3 4.58 0 8.3 3.72 8.3 8.3 0 4.58-3.72 8.2-8.3 8.2z"/>
-                                </svg>
-                                <span>WhatsApp Direct</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- End Hero Section -->
 
-        <!-- Start 3 Points Forts Quick Bar -->
-        <section style="background: #0B1017; border-top: 1px solid #1A222D; border-bottom: 1px solid #1A222D; padding: 25px 0;">
-            <div class="container">
-                <div class="row text-center gy-3">
-                    <div class="col-md-4">
-                        <div style="color: var(--bijou-gold); font-size: 20px; font-weight: 600; margin-bottom: 4px;">Service Continu 7j/7</div>
-                        <div style="color: var(--bijou-gray); font-size: 14px;">Ouvert non-stop de 08h00 à minuit</div>
-                    </div>
-                    <div class="col-md-4" style="border-left: 1px solid #1A222D; border-right: 1px solid #1A222D;">
-                        <div style="color: var(--bijou-gold); font-size: 20px; font-weight: 600; margin-bottom: 4px;">Sur Place • Emporter • Livraison</div>
-                        <div style="color: var(--bijou-gray); font-size: 14px;">Repas chauds livrés directement à Cotonou</div>
-                    </div>
-                    <div class="col-md-4">
-                        <div style="color: var(--bijou-gold); font-size: 20px; font-weight: 600; margin-bottom: 4px;">Parking Gratuit & Accès PMR</div>
-                        <div style="color: var(--bijou-gray); font-size: 14px;">Cour intérieure fermée et sécurisée</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- End Points Forts -->
+        <!-- Mobile Menu -->
+        <div class="mobile-menu">
+            <div class="menu-backdrop"></div>
+            <div class="close-btn"><i class="fas fa-times"></i></div>
 
-        <!-- Start Section Cadre & Rooftop -->
-        <section id="cadre" class="container py-5">
-            <div class="ak-height-80 ak-height-lg-40"></div>
-            <div class="ak-section-heading ak-style-1 ak-type-1 text-center">
-                <div class="ak-section-subtitle" style="color: var(--bijou-gold);">
-                    Un Cadre Entièrement Rénové & Climatisé
-                </div>
-                <h2 class="ak-section-title anim-title">Trois Ambiances Singulières</h2>
-                <p style="color: var(--bijou-gray); max-width: 680px; margin: 15px auto 0 auto; line-height: 1.7;">
-                    Situé sur l'artère de la Route de Lomé, Chez Bijou a repensé ses espaces pour offrir une expérience feutrée et conviviale adaptée à chaque moment de la journée.
-                </p>
-            </div>
-            <div class="ak-height-50 ak-height-lg-30"></div>
-
-            <div class="row g-4">
-                <!-- Espace 1 : La Grande Salle Climatisée -->
-                <div class="col-lg-4">
-                    <div class="bijou-card-box">
-                        <div class="bijou-card-img-wrap">
-                            <img src="assets/img/bijou-salle.jpg" alt="Grande Salle Climatisée Chez Bijou">
-                        </div>
-                        <div class="bijou-card-body">
-                            <div>
-                                <h3 class="bijou-card-title">La Salle Principale</h3>
-                                <p class="bijou-card-desc">
-                                    Fraîcheur optimale, assises confortables en bois noble, finitions en tissu wax traditionnel béninois et buffets chauds en libre service. Parfait pour vos déjeuners quotidiens en famille ou entre collègues.
-                                </p>
-                            </div>
-                            <div style="border-top: 1px solid #1C232E; padding-top: 12px; color: var(--bijou-gold); font-size: 13px; font-weight: 500;">
-                                Climatisation HD • Écrans TV • Wi-Fi
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Espace 2 : Terrasse & Rooftop Aérien -->
-                <div class="col-lg-4">
-                    <div class="bijou-card-box">
-                        <div class="bijou-card-img-wrap">
-                            <img src="assets/img/bijou-facade.jpg" alt="Terrasse Rooftop Chez Bijou">
-                        </div>
-                        <div class="bijou-card-body">
-                            <div>
-                                <h3 class="bijou-card-title">Terrasse & Rooftop</h3>
-                                <p class="bijou-card-desc">
-                                    Une vue dominante sur la Route de Lomé au coucher du soleil. Profitez de la brise atlantique pour savourer nos grillades au feu de bois accompagnées de cocktails signatures ou de bières fraîches.
-                                </p>
-                            </div>
-                            <div style="border-top: 1px solid #1C232E; padding-top: 12px; color: var(--bijou-gold); font-size: 13px; font-weight: 500;">
-                                Plein Air • Bar Complet • Ambiance Lounge
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Espace 3 : Le Salon Privé VIP -->
-                <div class="col-lg-4" id="vip">
-                    <div class="bijou-card-box">
-                        <div class="bijou-card-img-wrap">
-                            <img src="assets/img/bijou-vip.jpg" alt="Salon Privé VIP Chez Bijou">
-                        </div>
-                        <div class="bijou-card-body">
-                            <div>
-                                <h3 class="bijou-card-title">Le Salon Privé VIP</h3>
-                                <p class="bijou-card-desc">
-                                    Une salle isolée et exclusive avec table d'honneur dressée, vaisselle élégante et cave à vins vitrée. Idéale pour vos réunions d'affaires de direction, déjeuners protocolaires ou célébrations privées.
-                                </p>
-                            </div>
-                            <div style="border-top: 1px solid #1C232E; padding-top: 12px; color: var(--bijou-gold); font-size: 13px; font-weight: 500;">
-                                Confidentialité Totale • Service Dédié
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- End Section Cadre -->
-
-        <!-- Start Section La Carte & Gastronomie -->
-        <section id="carte" style="background: #0A0E14; padding: 100px 0; border-top: 1px solid #151C24; border-bottom: 1px solid #151C24;">
-            <div class="container">
-                <div class="ak-section-heading ak-style-1 ak-type-1 text-center">
-                    <div class="ak-section-subtitle" style="color: var(--bijou-gold);">
-                        Recettes Traditionnelles & Produits Frais
-                    </div>
-                    <h2 class="ak-section-title anim-title">La Carte des Saveurs</h2>
-                    <p style="color: var(--bijou-gray); max-width: 640px; margin: 15px auto 0 auto; line-height: 1.7;">
-                        Tous nos plats sont cuisinés à la commande à partir d'ingrédients locaux minutieusement sélectionnés : poissons frais de l'Atlantique, viandes tendres et épices authentiques.
-                    </p>
-                </div>
-                <div class="ak-height-50 ak-height-lg-30"></div>
-
-                <!-- Grille des Spécialités Culinaires Réelles -->
-                <div class="row g-4">
-                    <!-- Plat 1 : Poisson Braisé Signature -->
-                    <div class="col-md-6 col-lg-3">
-                        <div class="bijou-card-box">
-                            <div class="bijou-card-img-wrap" style="height: 220px;">
-                                <img src="assets/img/bijou-poisson.jpg" alt="Poisson Braisé Alloco">
-                            </div>
-                            <div class="bijou-card-body">
-                                <h4 style="font-size: 19px; color: #FFFFFF; margin-bottom: 8px;">Poisson Braisé Chez Bijou</h4>
-                                <p style="font-size: 13px; color: var(--bijou-gray); line-height: 1.5; margin-bottom: 12px;">
-                                    Bar ou carpe fraîche braisée minute aux aromates, servie avec alloco doré, attiéké parfumé et sauce pimentée maison.
-                                </p>
-                                <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #1C232E; padding-top: 10px;">
-                                    <span style="color: var(--bijou-gold); font-weight: 600; font-size: 15px;">Spécialité Maison</span>
-                                    <span style="color: #FFFFFF; font-size: 13px;">4 500 – 7 000 FCFA</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Plat 2 : Thiéboudienne d'Afrique de l'Ouest -->
-                    <div class="col-md-6 col-lg-3">
-                        <div class="bijou-card-box">
-                            <div class="bijou-card-img-wrap" style="height: 220px;">
-                                <img src="assets/img/bijou-thieb.jpg" alt="Thiéboudienne Poisson">
-                            </div>
-                            <div class="bijou-card-body">
-                                <h4 style="font-size: 19px; color: #FFFFFF; margin-bottom: 8px;">Thiéboudienne Royal</h4>
-                                <p style="font-size: 13px; color: var(--bijou-gray); line-height: 1.5; margin-bottom: 12px;">
-                                    Riz rouge mijoté au bouillon de poisson, garni de mérou tendre, manioc fondant, carottes, chou braisé et piments frais.
-                                </p>
-                                <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #1C232E; padding-top: 10px;">
-                                    <span style="color: var(--bijou-gold); font-weight: 600; font-size: 15px;">Tradition Africaine</span>
-                                    <span style="color: #FFFFFF; font-size: 13px;">4 000 – 6 000 FCFA</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Plat 3 : Grillade Fine sur Ardoise -->
-                    <div class="col-md-6 col-lg-3">
-                        <div class="bijou-card-box">
-                            <div class="bijou-card-img-wrap" style="height: 220px;">
-                                <img src="assets/img/bijou-bar.jpg" alt="Bar Grillé sur Ardoise">
-                            </div>
-                            <div class="bijou-card-body">
-                                <h4 style="font-size: 19px; color: #FFFFFF; margin-bottom: 8px;">Grillade Prestige du Chef</h4>
-                                <p style="font-size: 13px; color: var(--bijou-gray); line-height: 1.5; margin-bottom: 12px;">
-                                    Filets grillés minute présentés sur ardoise d'ardoise avec riz blanc parfumé, julienne de poivrons et jeunes pousses.
-                                </p>
-                                <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #1C232E; padding-top: 10px;">
-                                    <span style="color: var(--bijou-gold); font-weight: 600; font-size: 15px;">Cuisson Braise</span>
-                                    <span style="color: #FFFFFF; font-size: 13px;">5 000 – 8 000 FCFA</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Plat 4 : Desserts & Douceurs Maison -->
-                    <div class="col-md-6 col-lg-3">
-                        <div class="bijou-card-box">
-                            <div class="bijou-card-img-wrap" style="height: 220px;">
-                                <img src="assets/img/bijou-dessert.jpg" alt="Crème Caramel Artisanale">
-                            </div>
-                            <div class="bijou-card-body">
-                                <h4 style="font-size: 19px; color: #FFFFFF; margin-bottom: 8px;">Flan & Crème Caramel</h4>
-                                <p style="font-size: 13px; color: var(--bijou-gray); line-height: 1.5; margin-bottom: 12px;">
-                                    Préparations sucrées artisanales réalisées chaque matin en cuisine. Une note de fraîcheur vanillée pour clore votre repas.
-                                </p>
-                                <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #1C232E; padding-top: 10px;">
-                                    <span style="color: var(--bijou-gold); font-weight: 600; font-size: 15px;">Fait Maison</span>
-                                    <span style="color: #FFFFFF; font-size: 13px;">1 500 – 2 500 FCFA</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="text-center mt-5">
-                    <p style="color: var(--bijou-gray); font-size: 14px; margin-bottom: 20px;">
-                        <em>Options végétariennes, viandes certifiées Halal et menus enfants disponibles tous les jours.</em>
-                    </p>
-                    <a href="https://wa.me/2290197815555?text=Bonjour%20Chez%20Bijou,%20pouvez-vous%20m'envoyer%20la%20carte%20compl%C3%A8te%20du%20jour%20?" target="_blank" rel="noopener noreferrer" class="ak-btn style-5" style="border-color: var(--bijou-gold); padding: 12px 30px; text-decoration: none; border-radius: 6px;">
-                        <span>Demander la Carte du Jour sur WhatsApp</span>
-                    </a>
-                </div>
-            </div>
-        </section>
-        <!-- End Section La Carte -->
-
-        <!-- Start Section Traiteur & Buffets Dorés -->
-        <section id="traiteur" class="container py-5">
-            <div class="ak-height-80 ak-height-lg-40"></div>
-            <div class="row align-items-center g-5">
-                <div class="col-lg-6">
-                    <div style="position: relative; border-radius: 8px; overflow: hidden; border: 1px solid #1C232E;">
-                        <img src="assets/img/bijou-hero.jpg" alt="Buffet Doré de Prestige Chez Bijou" style="width: 100%; height: auto; display: block;">
-                        <div style="position: absolute; bottom: 15px; left: 15px; right: 15px; background: rgba(7, 10, 14, 0.85); backdrop-filter: blur(8px); padding: 15px 20px; border-radius: 6px; border: 1px solid rgba(255, 210, 141, 0.3);">
-                            <span style="color: var(--bijou-gold); font-size: 13px; text-transform: uppercase; letter-spacing: 1px; font-weight: 600;">Service Banquets & Célébrations</span>
-                            <p style="margin: 4px 0 0 0; color: #FFFFFF; font-size: 14px;">Chafing dishes dorés, maîtres d'hôtel en livrée et buffets gastronomiques.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="bijou-pill-badge">Événements Professionnels & Privés</div>
-                    <h2 style="font-size: clamp(32px, 4vw, 46px); color: #FFFFFF; line-height: 1.25; margin-bottom: 20px;">
-                        Votre Traiteur d'Exception à Cotonou
-                    </h2>
-                    <p style="color: var(--bijou-gray); font-size: 16px; line-height: 1.8; margin-bottom: 22px;">
-                        Que ce soit pour un séminaire d'entreprise, une réception officielle, un mariage ou un anniversaire d'envergure, <strong>Chez Bijou</strong> met à votre disposition son savoir-faire gastronomique complet.
-                    </p>
-                    <ul style="list-style: none; padding: 0; margin-bottom: 30px;">
-                        <li style="color: #E0E0E0; font-size: 15px; margin-bottom: 12px; display: flex; align-items: center; gap: 10px;">
-                            <span style="color: var(--bijou-gold); font-size: 18px;">✦</span>
-                            <span><strong>Buffets chauds & froids sur-mesure :</strong> Viandes maturées, poissons nobles et salades fraîches composées.</span>
-                        </li>
-                        <li style="color: #E0E0E0; font-size: 15px; margin-bottom: 12px; display: flex; align-items: center; gap: 10px;">
-                            <span style="color: var(--bijou-gold); font-size: 18px;">✦</span>
-                            <span><strong>Privatisation du Salon VIP ou du Rooftop :</strong> Équipements audiovisuels et service dédié.</span>
-                        </li>
-                        <li style="color: #E0E0E0; font-size: 15px; margin-bottom: 12px; display: flex; align-items: center; gap: 10px;">
-                            <span style="color: var(--bijou-gold); font-size: 18px;">✦</span>
-                            <span><strong>Service Traiteur Extérieur :</strong> Livraison et dressage à domicile ou dans votre salle de réception.</span>
-                        </li>
+            <nav class="menu-box">
+                <div class="nav-logo"><a href="#banner"><img src="assets/images/bijou-logo.png" alt="Chez Bijou Cotonou" title="Chez Bijou"></a></div>
+                <div class="menu-outer"><!-- Rempli automatiquement par Ticrou JS --></div>
+                <div class="contact-info">
+                    <h4>Coordonnées</h4>
+                    <ul>
+                        <li>Route de Lomé, Cotonou, Bénin</li>
+                        <li><a href="https://wa.me/2290197815555" target="_blank">+229 01 97 81 55 55</a></li>
+                        <li>Service continu 7j/7 : 08h00 – 00h00</li>
                     </ul>
-                    <a href="https://wa.me/2290197815555?text=Bonjour%20Chez%20Bijou,%20je%20souhaite%20un%20devis%20pour%20un%20%C3%A9v%C3%A9nement%20/%20service%20traiteur." target="_blank" rel="noopener noreferrer" class="btn-wa-official">
-                        <span>Demander un Devis Événementiel</span>
-                    </a>
+                </div>
+                <div class="social-links">
+                    <ul class="clearfix">
+                        <li><a href="https://wa.me/2290197815555" target="_blank"><span class="fab fa-whatsapp"></span></a></li>
+                        <li><a href="https://www.google.com/maps/search/?api=1&query=Restaurant+Chez+Bijou&query_place_id=ChIJAdxWL8tVIxARqlrzG1F2m5Y" target="_blank"><span class="fas fa-map-marked-alt"></span></a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <!-- End Mobile Menu -->
+
+
+        <!-- Banner Section (Hero Carousel Ticrou) -->
+        <section class="banner-section p_relative centred" id="banner">
+            <div class="pattern-layer" style="background-image: url(assets/images/shape/shape-1.png);"></div>
+            <div class="banner-carousel owl-theme owl-carousel owl-dots-none">
+
+                <!-- Slide 1 : Buffet Doré & Réceptions -->
+                <div class="slide-item p_relative">
+                    <div class="image-layer p_absolute" style="background-image:url(assets/images/bijou-hero.jpg)"></div>
+                    <div class="auto-container">
+                        <div class="content-box p_relative d_block z_5">
+                            <span class="animation_text_word special-text p_relative d_block"></span>
+                            <h2 class="p_relative d_block" style="color: #FFFFFF;">Restaurant Chez Bijou</h2>
+                            <p class="p_relative d_block" style="color: #EAEAEA;">Institution gastronomique sur la Route de Lomé à Cotonou.<br />Cuisine traditionnelle béninoise, grillades au feu de bois, terrasse rooftop & salon VIP.</p>
+                            <div class="btn-box">
+                                <a href="https://wa.me/2290197815555?text=Bonjour%20Chez%20Bijou,%20je%20souhaite%20r%C3%A9server%20une%20table." target="_blank" class="theme-btn-one">Réserver sur WhatsApp</a>
+                                <a href="#menu" class="theme-btn-one" style="background: transparent; border: 2px solid var(--bijou-gold); margin-left: 15px;">Découvrir la Carte</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 2 : Grillades & Poissons Braisés -->
+                <div class="slide-item p_relative">
+                    <div class="image-layer p_absolute" style="background-image:url(assets/images/bijou-poisson.jpg)"></div>
+                    <div class="auto-container">
+                        <div class="content-box p_relative d_block z_5">
+                            <span class="animation_text_word special-text p_relative d_block"></span>
+                            <h2 class="p_relative d_block" style="color: #FFFFFF;">Poissons Braisés & Saveurs Locales</h2>
+                            <p class="p_relative d_block" style="color: #EAEAEA;">Bar entier grillé, Thiéboudienne d'honneur, alloco doré & attiéké artisanal.<br />Une cuisson maîtrisée aux braises de charbon de bois.</p>
+                            <div class="btn-box">
+                                <a href="#specialites" class="theme-btn-one">Nos Plats Signatures</a>
+                                <a href="https://wa.me/2290197815555?text=Bonjour%20Chez%20Bijou,%20pouvez-vous%20m'envoyer%20la%20carte%20compl%C3%A8te%20?\" target="_blank" class="theme-btn-one" style="background: transparent; border: 2px solid var(--bijou-gold); margin-left: 15px;">Commander</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 3 : Cadre Réel Route de Lomé & Rooftop -->
+                <div class="slide-item p_relative">
+                    <div class="image-layer p_absolute" style="background-image:url(assets/images/bijou-facade.jpg)"></div>
+                    <div class="auto-container">
+                        <div class="content-box p_relative d_block z_5">
+                            <span class="animation_text_word special-text p_relative d_block"></span>
+                            <h2 class="p_relative d_block" style="color: #FFFFFF;">Terrasse Rooftop & Salons VIP</h2>
+                            <p class="p_relative d_block" style="color: #EAEAEA;">Ouvert 7 jours sur 7 en service continu de 08h00 à 00h00.<br />Parking sécurisé gratuit, accès PMR et salons climatisés pour séminaires et déjeuners d'affaires.</p>
+                            <div class="btn-box">
+                                <a href="#traiteur" class="theme-btn-one">Privatiser un Salon</a>
+                                <a href="https://www.google.com/maps/search/?api=1&query=Restaurant+Chez+Bijou&query_place_id=ChIJAdxWL8tVIxARqlrzG1F2m5Y" target="_blank" class="theme-btn-one" style="background: transparent; border: 2px solid var(--bijou-gold); margin-left: 15px;">Localiser sur Google Maps</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <!-- Banner Section End -->
+
+
+        <!-- About Section (Ticrou About Architecture) -->
+        <section class="about-section sec-pad" id="about">
+            <div class="image_block_one">
+                <div class="image-box">
+                    <figure class="image-1 wow slideInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+                        <img src="assets/images/bijou-salle.jpg" alt="Salle climatisée Chez Bijou Cotonou" style="border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
+                    </figure>
+                    <figure class="image-2">
+                        <img src="assets/images/bijou-table.jpg" alt="Table romantique et grands crus" style="border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
+                    </figure>
+                    <figure class="vector-1"><img src="assets/images/icons/vector-1.png" alt=""></figure>
+                    <div class="shape">
+                        <div class="shape-1"></div>
+                        <div class="shape-2" style="background-image: url(assets/images/shape/shape-2.png);"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="auto-container">
+                <div class="row clearfix">
+                    <div class="col-lg-6 col-md-12 col-sm-12 content-column">
+                        <div class="content_block_one">
+                            <div class="content-box">
+                                <div class="sec-title mb_30">
+                                    <span class="sub-title">Notre Histoire & Philosophie</span>
+                                    <h2>L'Art de la Table Béninoise <span>sur la Route de Lomé</span></h2>
+                                </div>
+                                <div class="text">
+                                    <p>Implanté stratégiquement sur la Route de Lomé à Cotonou, le <strong>Restaurant Chez Bijou</strong> est le rendez-vous des amoureux de saveurs authentiques béninoises et ouest-africaines. Dans un cadre soigné mêlant touches locales wax et élégance contemporaine, nos maîtres grilladins préparent chaque jour vos poissons et viandes braisés sur charbon de bois ardent.</p>
+                                    <p>Que ce soit pour un déjeuner d'affaires au calme dans notre <strong>Salon VIP climatisé</strong>, un dîner sous les étoiles sur notre <strong>terrasse rooftop</strong>, ou un repas convivial en famille, nous vous accueillons 7j/7 sans interruption de 08h00 à minuit.</p>
+                                </div>
+
+                                <!-- Points forts rapides -->
+                                <div style="margin: 25px 0 30px 0;">
+                                    <div class="feature-badge-item"><i class="fas fa-clock"></i> Ouvert 7j/7 : 08h00 – 00h00</div>
+                                    <div class="feature-badge-item"><i class="fas fa-concierge-bell"></i> Sur Place, À Emporter & Livraison</div>
+                                    <div class="feature-badge-item"><i class="fas fa-glass-cheers"></i> Terrasse Rooftop & Salon VIP</div>
+                                    <div class="feature-badge-item"><i class="fas fa-parking"></i> Parking Gratuit Sécurisé</div>
+                                    <div class="feature-badge-item"><i class="fas fa-wheelchair"></i> Accessible PMR</div>
+                                </div>
+
+                                <figure class="signature"><img src="assets/images/icons/signature-1.png" alt="Signature Chef Chez Bijou"></figure>
+                                <div class="btn-box mt_20">
+                                    <a href="#menu" class="theme-btn-one">Découvrir la Carte</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
-        <!-- End Section Traiteur -->
+        <!-- About Section End -->
 
-        <!-- Start Section Témoignages & Avis Clients Google Maps (3.9 / 5 sur 166 avis) -->
-        <section id="avis" style="background: #080C11; padding: 100px 0; border-top: 1px solid #1A222D; border-bottom: 1px solid #1A222D;">
-            <div class="container">
-                <div class="ak-section-heading ak-style-1 ak-type-1 text-center">
-                    <div class="ak-section-subtitle" style="color: var(--bijou-gold);">
-                        Retours d'Expérience Certifiés Google Maps (166 avis)
+
+        <!-- Menu Section (Ticrou Daily Menu Pattern) -->
+        <section class="menu-section bg-color-1" id="menu">
+            <div class="pattern-layer">
+                <div class="pattern-1" style="background-image: url(assets/images/shape/shape-5.png);"></div>
+                <div class="pattern-2" style="background-image: url(assets/images/shape/shape-6.png);"></div>
+                <div class="pattern-3" style="background-image: url(assets/images/shape/shape-7.png);"></div>
+            </div>
+            <div class="auto-container">
+                <div class="inner-container">
+                    <div class="sec-title light centred mb_100">
+                        <span class="sub-title">Saveurs d'Exception</span>
+                        <h2>La Carte du Jour & Traditions</h2>
+                        <p style="color: #C59D5F; margin-top: 10px;">Cuisine fraîche préparée à la commande aux aromates du terroir béninois</p>
                     </div>
-                    <h2 class="ak-section-title anim-title">Ce que nos clients apprécient</h2>
+                    <div class="row clearfix">
+
+                        <!-- Colonne 1 : Grillades & Pêche Fraîche -->
+                        <div class="col-lg-6 col-md-6 col-sm-12 menu-block">
+                            <div class="menu-block-one wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+                                <div class="inner-box">
+                                    <div class="shape">
+                                        <div class="shape-1" style="background-image: url(assets/images/shape/shape-3.png);"></div>
+                                        <div class="shape-2" style="background-image: url(assets/images/shape/shape-4.png);"></div>
+                                    </div>
+                                    <div class="inner">
+
+                                        <div class="single-item">
+                                            <div class="upper-box">
+                                                <h4><a href="#reservation">Poisson Braisé Royal Alloco</a></h4>
+                                                <span class="price">5 500 FCFA</span>
+                                            </div>
+                                            <div class="text">
+                                                <p>Poisson frais du marché mariné aux épices du pays, braisé à cœur sur braise ardente, alloco doré et attiéké frais.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="single-item">
+                                            <div class="upper-box">
+                                                <h4><a href="#reservation">Thiéboudienne Royale au Mérou</a></h4>
+                                                <span class="price">4 500 FCFA</span>
+                                            </div>
+                                            <div class="text">
+                                                <p>Riz rouge mijoté au bouillon corsé de poisson, légumes fondants (chou, manioc, carotte) et vannerie d'honneur artisanale.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="single-item">
+                                            <div class="upper-box">
+                                                <h4><a href="#reservation">Brochettes de Bœuf & Pintade</a></h4>
+                                                <span class="price">4 500 FCFA</span>
+                                            </div>
+                                            <div class="text">
+                                                <p>Morceaux tendres de filet de bœuf marinés aux épices suya et pintade fermière dorée au feu de bois.</p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Colonne 2 : Spécialités Marines & Douceurs -->
+                        <div class="col-lg-6 col-md-6 col-sm-12 menu-block">
+                            <div class="menu-block-one wow fadeInUp animated" data-wow-delay="300ms" data-wow-duration="1500ms">
+                                <div class="inner-box">
+                                    <div class="shape">
+                                        <div class="shape-1" style="background-image: url(assets/images/shape/shape-3.png);"></div>
+                                        <div class="shape-2" style="background-image: url(assets/images/shape/shape-4.png);"></div>
+                                    </div>
+                                    <div class="inner">
+
+                                        <div class="single-item">
+                                            <div class="upper-box">
+                                                <h4><a href="#reservation">Bar Entier Grillé sur Ardoise</a></h4>
+                                                <span class="price">6 000 FCFA</span>
+                                            </div>
+                                            <div class="text">
+                                                <p>Bar sélectionné du port de Cotonou, assaisonnement vert secret de Chez Bijou, piment confit et tranches de citron frais.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="single-item">
+                                            <div class="upper-box">
+                                                <h4><a href="#reservation">Portion d'Alloco Doré Croustillant</a></h4>
+                                                <span class="price">1 500 FCFA</span>
+                                            </div>
+                                            <div class="text">
+                                                <p>Bananes plantains mûres frites à point dans une huile végétale propre, servies avec notre sauce tomate mijotée.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="single-item">
+                                            <div class="upper-box">
+                                                <h4><a href="#reservation">Crème Caramel & Flans Maison</a></h4>
+                                                <span class="price">2 000 FCFA</span>
+                                            </div>
+                                            <div class="text">
+                                                <p>Flan onctueux préparé maison au sucre de canne caramélisé, servi bien frais pour clôturer le repas avec douceur.</p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="centred mt_50">
+                        <a href="https://wa.me/2290197815555?text=Bonjour%20Chez%20Bijou,%20pouvez-vous%20m'envoyer%20la%20carte%20compl%C3%A8te%20du%20jour%20?" target="_blank" class="theme-btn-one">Demander la Carte Complète sur WhatsApp</a>
+                    </div>
                 </div>
-                <div class="ak-height-60 ak-height-lg-30"></div>
+            </div>
+        </section>
+        <!-- Menu Section End -->
 
-                <div class="row g-4">
-                    <!-- Avis 1 -->
-                    <div class="col-lg-4">
-                        <div class="bijou-card-box p-4" style="border-color: #1F2836;">
-                            <div style="color: var(--bijou-gold); font-size: 18px; margin-bottom: 10px;">
-                                ★★★★★ <span style="font-size: 13px; color: #FFFFFF; margin-left: 6px;">(5/5)</span>
+
+        <!-- Shop / Specialties Section (Ticrou 4-Item Carousel) -->
+        <section class="shop-section" id="specialites">
+            <div class="bg-layer parallax-bg" data-parallax='{"y": 100}' style="background-image: url(assets/images/background/shop-bg.jpg);"></div>
+            <div class="auto-container">
+                <div class="sec-title mb_50">
+                    <span class="sub-title">Plats Signatures</span>
+                    <h2>Les Plats les Plus Prisés de Chez Bijou</h2>
+                </div>
+                <div class="four-item-carousel owl-carousel owl-theme owl-dots-none nav-style-one">
+
+                    <!-- Item 1 : Poisson Braisé -->
+                    <div class="shop-block-one">
+                        <div class="inner-box">
+                            <div class="image-box">
+                                <figure class="image"><img src="assets/images/bijou-poisson.jpg" alt="Poisson Braisé Royal"></figure>
+                                <div class="btn-box">
+                                    <a href="https://wa.me/2290197815555?text=Bonjour%20Chez%20Bijou,%20je%20souhaite%20commander%20le%20Poisson%20Brais%C3%A9%20Royal." target="_blank" class="theme-btn-one">Commander sur WhatsApp</a>
+                                </div>
                             </div>
-                            <p style="color: #E0E0E0; font-size: 15px; line-height: 1.7; font-style: italic; margin-bottom: 20px;">
-                                « Le poisson braisé est tout simplement exquis, bien assaisonné avec des alloco bien moelleux. La salle climatisée fait un bien fou après le soleil de midi sur la route de Lomé. Accueil très poli et respectueux. »
-                            </p>
-                            <div style="border-top: 1px solid #1C232E; padding-top: 14px;">
-                                <h6 style="color: #FFFFFF; font-size: 16px; margin: 0;">Rodrigue K.</h6>
-                                <p style="color: var(--bijou-gold); font-size: 13px; margin: 2px 0 0 0;">Guide Local Google • Cotonou</p>
+                            <div class="lower-content">
+                                <h5><a href="#reservation">Poisson Braisé Royal & Alloco</a></h5>
+                                <ul class="rating clearfix">
+                                    <li><i class="fas fa-star" style="color: #C59D5F;"></i></li>
+                                    <li><i class="fas fa-star" style="color: #C59D5F;"></i></li>
+                                    <li><i class="fas fa-star" style="color: #C59D5F;"></i></li>
+                                    <li><i class="fas fa-star" style="color: #C59D5F;"></i></li>
+                                    <li><i class="fas fa-star" style="color: #C59D5F;"></i></li>
+                                </ul>
+                                <span class="price">5 500 FCFA</span>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Avis 2 -->
-                    <div class="col-lg-4">
-                        <div class="bijou-card-box p-4" style="border-color: #1F2836;">
-                            <div style="color: var(--bijou-gold); font-size: 18px; margin-bottom: 10px;">
-                                ★★★★★ <span style="font-size: 13px; color: #FFFFFF; margin-left: 6px;">(5/5)</span>
+                    <!-- Item 2 : Thiéboudienne -->
+                    <div class="shop-block-one">
+                        <div class="inner-box">
+                            <div class="image-box">
+                                <figure class="image"><img src="assets/images/bijou-thieb.jpg" alt="Thiéboudienne Royale"></figure>
+                                <div class="btn-box">
+                                    <a href="https://wa.me/2290197815555?text=Bonjour%20Chez%20Bijou,%20je%20souhaite%20commander%20la%20Thi%C3%A9boudienne%20Royale." target="_blank" class="theme-btn-one">Commander sur WhatsApp</a>
+                                </div>
                             </div>
-                            <p style="color: #E0E0E0; font-size: 15px; line-height: 1.7; font-style: italic; margin-bottom: 20px;">
-                                « Nous avons réservé le salon VIP pour un déjeuner de travail avec des partenaires étrangers. La discrétion était totale, la sélection de vins très honorable et le service impeccable. Une adresse très fiable. »
-                            </p>
-                            <div style="border-top: 1px solid #1C232E; padding-top: 14px;">
-                                <h6 style="color: #FFFFFF; font-size: 16px; margin: 0;">Chantal M.</h6>
-                                <p style="color: var(--bijou-gold); font-size: 13px; margin: 2px 0 0 0;">Déjeuner d'Affaires • Cotonou</p>
+                            <div class="lower-content">
+                                <h5><a href="#reservation">Thiéboudienne Sénégalaise</a></h5>
+                                <ul class="rating clearfix">
+                                    <li><i class="fas fa-star" style="color: #C59D5F;"></i></li>
+                                    <li><i class="fas fa-star" style="color: #C59D5F;"></i></li>
+                                    <li><i class="fas fa-star" style="color: #C59D5F;"></i></li>
+                                    <li><i class="fas fa-star" style="color: #C59D5F;"></i></li>
+                                    <li><i class="fas fa-star" style="color: #C59D5F;"></i></li>
+                                </ul>
+                                <span class="price">4 500 FCFA</span>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Avis 3 -->
-                    <div class="col-lg-4">
-                        <div class="bijou-card-box p-4" style="border-color: #1F2836;">
-                            <div style="color: var(--bijou-gold); font-size: 18px; margin-bottom: 10px;">
-                                ★★★★☆ <span style="font-size: 13px; color: #FFFFFF; margin-left: 6px;">(4/5)</span>
+                    <!-- Item 3 : Bar Grillé Ardoise -->
+                    <div class="shop-block-one">
+                        <div class="inner-box">
+                            <div class="image-box">
+                                <figure class="image"><img src="assets/images/bijou-bar.jpg" alt="Bar Grillé sur Ardoise"></figure>
+                                <div class="btn-box">
+                                    <a href="https://wa.me/2290197815555?text=Bonjour%20Chez%20Bijou,%20je%20souhaite%20commander%20le%20Bar%20Grill%C3%A9%20sur%20Ardoise." target="_blank" class="theme-btn-one">Commander sur WhatsApp</a>
+                                </div>
                             </div>
-                            <p style="color: #E0E0E0; font-size: 15px; line-height: 1.7; font-style: italic; margin-bottom: 20px;">
-                                « Très bonne surprise pour les plats africains traditionnels, les portions sont très généreuses. Le parking fermé avec vigile est un énorme avantage pratique le long de la Route de Lomé. Je reviendrai tester le rooftop ! »
-                            </p>
-                            <div style="border-top: 1px solid #1C232E; padding-top: 14px;">
-                                <h6 style="color: #FFFFFF; font-size: 16px; margin: 0;">Armand D.</h6>
-                                <p style="color: var(--bijou-gold); font-size: 13px; margin: 2px 0 0 0;">Avis Vérifié Google Maps</p>
+                            <div class="lower-content">
+                                <h5><a href="#reservation">Bar Entier Braisé aux Aromates</a></h5>
+                                <ul class="rating clearfix">
+                                    <li><i class="fas fa-star" style="color: #C59D5F;"></i></li>
+                                    <li><i class="fas fa-star" style="color: #C59D5F;"></i></li>
+                                    <li><i class="fas fa-star" style="color: #C59D5F;"></i></li>
+                                    <li><i class="fas fa-star" style="color: #C59D5F;"></i></li>
+                                    <li><i class="fas fa-star" style="color: #C59D5F;"></i></li>
+                                </ul>
+                                <span class="price">6 000 FCFA</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 4 : Crème Caramel -->
+                    <div class="shop-block-one">
+                        <div class="inner-box">
+                            <div class="image-box">
+                                <figure class="image"><img src="assets/images/bijou-dessert.jpg" alt="Crème Caramel Maison"></figure>
+                                <div class="btn-box">
+                                    <a href="https://wa.me/2290197815555?text=Bonjour%20Chez%20Bijou,%20je%20souhaite%20commander%20les%20Cr%C3%A8mes%20Caramel%20Maison." target="_blank" class="theme-btn-one">Commander sur WhatsApp</a>
+                                </div>
+                            </div>
+                            <div class="lower-content">
+                                <h5><a href="#reservation">Crème Caramel & Douceurs</a></h5>
+                                <ul class="rating clearfix">
+                                    <li><i class="fas fa-star" style="color: #C59D5F;"></i></li>
+                                    <li><i class="fas fa-star" style="color: #C59D5F;"></i></li>
+                                    <li><i class="fas fa-star" style="color: #C59D5F;"></i></li>
+                                    <li><i class="fas fa-star" style="color: #C59D5F;"></i></li>
+                                    <li><i class="fas fa-star" style="color: #C59D5F;"></i></li>
+                                </ul>
+                                <span class="price">2 000 FCFA</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <!-- Shop / Specialties Section End -->
+
+
+        <!-- Gallery Section (Ticrou Carousel) -->
+        <section class="gallery-section pt_65" id="galerie">
+            <div class="auto-container">
+                <div class="sec-title centred mb_45">
+                    <span class="sub-title">Immersion Visuelle</span>
+                    <h2>Le Cadre de Chez Bijou en Images</h2>
+                </div>
+                <div class="gallery-carousel owl-carousel owl-theme owl-dots-none nav-style-one">
+
+                    <div class="gallery-block-one">
+                        <div class="inner-box">
+                            <figure class="image-box"><img src="assets/images/bijou-salle.jpg" alt="Grande Salle Climatisée"></figure>
+                            <div class="content-box">
+                                <h4><a href="#reservation">Grande Salle Climatisée</a></h4>
+                                <span>Confort & Décoration Wax</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-block-one">
+                        <div class="inner-box">
+                            <figure class="image-box"><img src="assets/images/bijou-vip.jpg" alt="Salon Privé VIP"></figure>
+                            <div class="content-box">
+                                <h4><a href="#traiteur">Salon Privé VIP</a></h4>
+                                <span>Séminaires & Dîners d'Affaires</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-block-one">
+                        <div class="inner-box">
+                            <figure class="image-box"><img src="assets/images/bijou-facade.jpg" alt="Façade Route de Lomé"></figure>
+                            <div class="content-box">
+                                <h4><a href="#contact">Façade & Rooftop</a></h4>
+                                <span>Route de Lomé Cotonou</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-block-one">
+                        <div class="inner-box">
+                            <figure class="image-box"><img src="assets/images/bijou-table.jpg" alt="Table Romantique & Vins"></figure>
+                            <div class="content-box">
+                                <h4><a href="#reservation">Dîners Romantiques</a></h4>
+                                <span>Vins Fins & Grands Crus</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-block-one">
+                        <div class="inner-box">
+                            <figure class="image-box"><img src="assets/images/bijou-buffet.jpg" alt="Buffet Traiteur d'Honneur"></figure>
+                            <div class="content-box">
+                                <h4><a href="#traiteur">Buffet Traiteur de Prestige</a></h4>
+                                <span>Réceptions d'Entreprise & Mariages</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <!-- Gallery Section End -->
+
+
+        <!-- Promotion Section (Traiteur & Réceptions Privées) -->
+        <section class="promotion-section sec-pad" id="traiteur">
+            <div class="auto-container">
+                <div class="sec-title centred mb_45">
+                    <span class="sub-title">Réceptions & Séminaires</span>
+                    <h2>Service Traiteur & Salons Privatisables</h2>
+                </div>
+
+                <!-- Block 1 : Buffet Traiteur -->
+                <div class="promotion-block-one">
+                    <div class="inner-box">
+                        <div class="shape" style="background-image: url(assets/images/shape/shape-2.png);"></div>
+                        <div class="row clearfix">
+                            <div class="col-lg-6 col-md-12 col-sm-12 image-column">
+                                <div class="image-box">
+                                    <figure class="image"><img src="assets/images/bijou-buffet.jpg" alt="Service Traiteur Chez Bijou Cotonou"></figure>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-12 col-sm-12 content-column">
+                                <div class="content-box">
+                                    <div class="content-shape" style="background-image: url(assets/images/shape/shape-9.png);"></div>
+                                    <h2>Buffets de Gala & <span>Événements Privés</span></h2>
+                                    <h4>Pour 20 à 300+ Convives</h4>
+                                    <p>Mariages, célébrations familiales, déjeuners de fin d'année ou cocktails d'entreprise : nous élaborons des buffets sur-mesure alliant spécialités béninoises raffinées, grillades et service de standing.</p>
+                                    <a href="https://wa.me/2290197815555?text=Bonjour%20Chez%20Bijou,%20je%20souhaite%20un%20devis%20pour%20un%20service%20traiteur." target="_blank" class="theme-btn-one">Demander un Devis Traiteur</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Block 2 : Salon VIP -->
+                <div class="promotion-block-one">
+                    <div class="inner-box">
+                        <div class="shape" style="background-image: url(assets/images/shape/shape-2.png);"></div>
+                        <div class="row clearfix">
+                            <div class="col-lg-6 col-md-12 col-sm-12 content-column">
+                                <div class="content-box">
+                                    <div class="content-shape" style="background-image: url(assets/images/shape/shape-9.png);"></div>
+                                    <h2>Salon Privé VIP <span>Climatisé</span></h2>
+                                    <h4>Séminaires & Dîners d'Affaires</h4>
+                                    <p>Un espace feutré et climatisé avec table d'honneur, parfait pour recevoir des délégations, signer des contrats ou réunir votre équipe en toute discrétion avec service à table dédié.</p>
+                                    <a href="https://wa.me/2290197815555?text=Bonjour%20Chez%20Bijou,%20je%20souhaite%20r%C3%A9server%20le%20salon%20priv%C3%A9%20VIP." target="_blank" class="theme-btn-one">Réserver le Salon VIP</a>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-12 col-sm-12 image-column">
+                                <div class="image-box">
+                                    <figure class="image"><img src="assets/images/bijou-vip.jpg" alt="Salon VIP Chez Bijou"></figure>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <!-- Promotion Section End -->
+
+
+        <!-- Testimonial Section (Avis Google Maps Vérifiés) -->
+        <section class="testimonial-section sec-pad bg-color-2" id="avis">
+            <div class="pattern-layer">
+                <div class="pattern-1" style="background-image: url(assets/images/shape/shape-8.png);"></div>
+                <div class="pattern-2" style="background-image: url(assets/images/shape/shape-2.png);"></div>
+            </div>
+            <div class="image-box">
+                <figure class="image-1"><img src="assets/images/resource/men-1.png" alt=""></figure>
+                <figure class="image-2"><img src="assets/images/resource/image-1.png" alt=""></figure>
+                <figure class="image-3"><img src="assets/images/resource/image-2.png" alt=""></figure>
+            </div>
+            <div class="auto-container">
+                <div class="row clearfix">
+                    <div class="col-xl-6 col-lg-12 col-md-12 offset-xl-6 content-column">
+                        <div class="content-box">
+                            <div class="sec-title mb_45">
+                                <span class="sub-title">Note Google : 3.9 / 5 (166 Avis)</span>
+                                <h2>Ce que Disent nos Clients <br />sur <span>Chez Bijou</span></h2>
+                            </div>
+                            <div class="single-item-carousel owl-carousel owl-theme owl-dots-none nav-style-one">
+
+                                <!-- Avis 1 -->
+                                <div class="testimonial-block-one">
+                                    <div class="inner-box">
+                                        <div class="icon-box"><i class="icon-9"></i></div>
+                                        <p>“Le meilleur poisson braisé de la Route de Lomé ! L'assaisonnement est parfait, le poisson est très frais et servi avec un alloco fondant. Le service est rapide et prévenant.”</p>
+                                        <div class="author-box">
+                                            <ul class="rating clearfix mb-2">
+                                                <li><i class="fas fa-star" style="color: #C59D5F;"></i></li>
+                                                <li><i class="fas fa-star" style="color: #C59D5F;"></i></li>
+                                                <li><i class="fas fa-star" style="color: #C59D5F;"></i></li>
+                                                <li><i class="fas fa-star" style="color: #C59D5F;"></i></li>
+                                                <li><i class="fas fa-star" style="color: #C59D5F;"></i></li>
+                                            </ul>
+                                            <h4>Rodrigue K.</h4>
+                                            <span class="designation">Guide Local Cotonou (Avis Google vérifié)</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Avis 2 -->
+                                <div class="testimonial-block-one">
+                                    <div class="inner-box">
+                                        <div class="icon-box"><i class="icon-9"></i></div>
+                                        <p>“Cadre agréable et propre. Nous avons réservé le salon VIP pour un déjeuner d'affaires : la climatisation est impeccable, la discrétion assurée et les plats étaient excellents.”</p>
+                                        <div class="author-box">
+                                            <ul class="rating clearfix mb-2">
+                                                <li><i class="fas fa-star" style="color: #C59D5F;"></i></li>
+                                                <li><i class="fas fa-star" style="color: #C59D5F;"></i></li>
+                                                <li><i class="fas fa-star" style="color: #C59D5F;"></i></li>
+                                                <li><i class="fas fa-star" style="color: #C59D5F;"></i></li>
+                                                <li><i class="fas fa-star" style="color: #C59D5F;"></i></li>
+                                            </ul>
+                                            <h4>Chantal M.</h4>
+                                            <span class="designation">Cadre d'Entreprise (Avis Google vérifié)</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Avis 3 -->
+                                <div class="testimonial-block-one">
+                                    <div class="inner-box">
+                                        <div class="icon-box"><i class="icon-9"></i></div>
+                                        <p>“Très pratique avec son service continu ouvert 7j/7 jusqu'à minuit. Le parking intérieur est sécurisé, ce qui est un vrai plus sur la Route de Lomé. Je recommande vivement le bar braisé !”</p>
+                                        <div class="author-box">
+                                            <ul class="rating clearfix mb-2">
+                                                <li><i class="fas fa-star" style="color: #C59D5F;"></i></li>
+                                                <li><i class="fas fa-star" style="color: #C59D5F;"></i></li>
+                                                <li><i class="fas fa-star" style="color: #C59D5F;"></i></li>
+                                                <li><i class="fas fa-star" style="color: #C59D5F;"></i></li>
+                                                <li><i class="fas fa-star" style="color: #C59D5F;"></i></li>
+                                            </ul>
+                                            <h4>Armand D.</h4>
+                                            <span class="designation">Client Habitué (Avis Google vérifié)</span>
+                                        </div>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <!-- End Section Témoignages -->
+        <!-- Testimonial Section End -->
 
-        <!-- Start Section Système de Réservation Instantanée & Commande WhatsApp-First -->
-        <section id="reservation" class="container py-5">
-            <div class="ak-height-80 ak-height-lg-40"></div>
-            <div class="text-center mb-5">
-                <div class="bijou-pill-badge">Réservation & Commande Directe</div>
-                <h2 style="font-size: clamp(34px, 5vw, 54px); color: #FFFFFF; margin-bottom: 15px;">
-                    Réservez Votre Table ou Commandez
-                </h2>
-                <p style="color: var(--bijou-gray); font-size: 16px; max-width: 640px; margin: 0 auto; line-height: 1.6;">
-                    Remplissez vos critères ci-dessous. Votre récapitulatif sera instantanément transmis sur le WhatsApp officiel du restaurant pour confirmation en quelques minutes.
-                </p>
+
+        <!-- CTA Section -->
+        <section class="cta-section centred bg-color-1 sec-pad">
+            <div class="shape">
+                <div class="shape-1 p_absolute l_0 t_0" style="background-image: url(assets/images/shape/shape-10.png);"></div>
+                <div class="shape-2 p_absolute l_60 t_60" style="background-image: url(assets/images/shape/shape-11.png);"></div>
+                <div class="shape-3 p_absolute" style="background-image: url(assets/images/shape/shape-12.png);"></div>
+                <div class="shape-4 p_absolute" style="background-image: url(assets/images/shape/shape-13.png);"></div>
             </div>
-
-            <div class="bijou-booking-wrapper">
-                <form id="bijou-booking-form">
-                    <div class="row g-4">
-                        <!-- Nom Complet -->
-                        <div class="col-md-6">
-                            <label style="display: block; font-size: 13px; color: var(--bijou-gold); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; font-weight: 500;">
-                                Nom & Prénom *
-                            </label>
-                            <input type="text" id="cust-name" class="res-input-clean" placeholder="Ex: Jean Dossou" required>
-                        </div>
-
-                        <!-- Type de Service & Espace -->
-                        <div class="col-md-6">
-                            <label style="display: block; font-size: 13px; color: var(--bijou-gold); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; font-weight: 500;">
-                                Type de Prestation *
-                            </label>
-                            <select id="cust-service" class="res-input-clean">
-                                <option value="Table en Salle Climatisée">Table en Salle Climatisée</option>
-                                <option value="Table sur la Terrasse Rooftop">Table sur la Terrasse Rooftop</option>
-                                <option value="Salon Privé VIP (Événement / Affaires)">Salon Privé VIP (Événement / Affaires)</option>
-                                <option value="Commande à Emporter (Takeaway)">Commande à Emporter (Takeaway)</option>
-                                <option value="Livraison Directe à Domicile / Bureau">Livraison Directe à Domicile / Bureau</option>
-                            </select>
-                        </div>
-
-                        <!-- Date avec Sélecteurs Rapides -->
-                        <div class="col-md-6">
-                            <label style="display: block; font-size: 13px; color: var(--bijou-gold); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; font-weight: 500;">
-                                Date Souhaitée *
-                            </label>
-                            <div class="pill-picker-group">
-                                <button type="button" class="pill-btn active" id="btn-date-today">Aujourd'hui</button>
-                                <button type="button" class="pill-btn" id="btn-date-tomorrow">Demain</button>
-                                <button type="button" class="pill-btn" id="btn-date-weekend">Ce week-end</button>
-                            </div>
-                            <input type="date" id="cust-date" class="res-input-clean" required>
-                        </div>
-
-                        <!-- Heure avec Sélecteurs Rapides -->
-                        <div class="col-md-6">
-                            <label style="display: block; font-size: 13px; color: var(--bijou-gold); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; font-weight: 500;">
-                                Heure / Service *
-                            </label>
-                            <div class="pill-picker-group">
-                                <button type="button" class="pill-btn" id="btn-time-lunch">Midi 12h30</button>
-                                <button type="button" class="pill-btn active" id="btn-time-dinner">Dîner 20h00</button>
-                                <button type="button" class="pill-btn" id="btn-time-late">Soirée 21h30</button>
-                            </div>
-                            <input type="time" id="cust-time" class="res-input-clean" value="20:00" required>
-                        </div>
-
-                        <!-- Nombre de Convives -->
-                        <div class="col-md-6">
-                            <label style="display: block; font-size: 13px; color: var(--bijou-gold); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; font-weight: 500;">
-                                Nombre de Personnes *
-                            </label>
-                            <select id="cust-guests" class="res-input-clean">
-                                <option value="1 Personne">1 Personne</option>
-                                <option value="2 Personnes (Dîner en couple)" selected>2 Personnes (Dîner en couple)</option>
-                                <option value="3 à 4 Personnes (Famille / Amis)">3 à 4 Personnes (Famille / Amis)</option>
-                                <option value="5 à 8 Personnes (Table conviviale)">5 à 8 Personnes (Table conviviale)</option>
-                                <option value="Plus de 8 Personnes (Salon VIP / Groupe)">Plus de 8 Personnes (Salon VIP / Groupe)</option>
-                            </select>
-                        </div>
-
-                        <!-- Mode de Règlement Prévu -->
-                        <div class="col-md-6">
-                            <label style="display: block; font-size: 13px; color: var(--bijou-gold); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; font-weight: 500;">
-                                Moyen de Paiement Préféré
-                            </label>
-                            <select id="cust-payment" class="res-input-clean">
-                                <option value="Mobile Money (MTN MoMo / Moov Money / Wave)">Mobile Money (MTN MoMo / Moov / Wave)</option>
-                                <option value="Carte Bancaire (Visa / Mastercard)">Carte Bancaire (Visa / Mastercard)</option>
-                                <option value="Espèces à l'arrivée">Espèces à l'arrivée</option>
-                            </select>
-                        </div>
-
-                        <!-- Bouton de Soumission WhatsApp -->
-                        <div class="col-12 text-center mt-4">
-                            <button type="submit" class="ak-btn style-5 w-100" style="background: var(--bijou-gold); color: #070A0E; border: none; padding: 18px 30px; font-size: 15px; font-weight: 700; letter-spacing: 1.5px; border-radius: 6px; text-transform: uppercase; cursor: pointer; transition: transform 0.2s ease;">
-                                Confirmer la Réservation sur WhatsApp
-                            </button>
-                            <p style="color: var(--bijou-gray); font-size: 13px; margin-top: 12px;">
-                                Zéro frais de réservation • Réponse rapide de l'équipe de service au <strong>+229 01 97 81 55 55</strong>
-                            </p>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </section>
-        <!-- End Section Réservation -->
-
-        <!-- Start Section Situation Géographique & Accès Google Maps -->
-        <section id="contact" style="background: #090D12; padding: 100px 0; border-top: 1px solid #1A222D; border-bottom: 1px solid #1A222D;" class="text-center">
-            <div class="container">
-                <div class="ak-section-heading ak-style-1 ak-type-1 text-center">
-                    <div class="ak-section-subtitle" style="color: var(--bijou-gold);">
-                        Localisation & Itinéraire Facile
-                    </div>
-                    <h2 class="ak-section-title anim-title">Nous Trouver à Cotonou</h2>
-                    <p style="color: var(--bijou-gray); font-size: 16px; margin: 15px auto 0 auto; max-width: 620px; line-height: 1.7;">
-                        <strong>Restaurant Chez Bijou</strong><br>
-                        Route de Lomé, Cotonou, Bénin<br>
-                        <span style="color: var(--bijou-gold); font-size: 14px;">(Parking sécurisé dans la cour & accès PMR aménagé)</span>
-                    </p>
-                </div>
-                <div class="ak-height-45 ak-height-lg-25"></div>
-
-                <div>
-                    <a href="https://www.google.com/maps/search/?api=1&query=Restaurant+Chez+Bijou&query_place_id=ChIJAdxWL8tVIxARqlrzG1F2m5Y" target="_blank" rel="noopener noreferrer" class="ak-btn style-5" style="border-color: var(--bijou-gold); display: inline-flex; align-items: center; justify-content: center; gap: 12px; padding: 16px 36px; text-decoration: none; border-radius: 8px;">
-                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;">
-                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                            <circle cx="12" cy="10" r="3"></circle>
-                        </svg>
-                        <span style="letter-spacing: 1px; font-weight: 600; text-transform: uppercase; font-size: 14px;">Ouvrir l'Itinéraire dans Google Maps</span>
-                    </a>
+            <div class="auto-container">
+                <div class="sec-title light">
+                    <span class="sub-title">Service Continu 7j/7 de 08h00 à 00h00</span>
+                    <h2>Une Table d'Exception Vous Attend <br />au Restaurant Chez Bijou</h2>
+                    <a href="#reservation" class="theme-btn-one mt_45">Réserver ma Table en 1 Clic</a>
                 </div>
             </div>
         </section>
-        <!-- End Section Accès -->
+        <!-- CTA Section End -->
 
-        <!-- Start Footer Section -->
-        <footer id="footer" class="ak-footer" style="background: #05070A; padding-top: 80px; padding-bottom: 40px; border-top: 1px solid #141A22;">
-            <div class="container">
-                <div class="row g-4 align-items-center justify-content-between">
-                    <div class="col-lg-4 text-center text-lg-start">
-                        <img src="assets/img/bijou-logo.png" alt="Chez Bijou Cotonou" style="max-height: 58px; width: auto; margin-bottom: 15px;">
-                        <p style="color: var(--bijou-gray); font-size: 14px; line-height: 1.6; max-width: 340px; margin: 0 auto 0 0;">
-                            Le goût authentique des grillades et de la cuisine béninoise sur la Route de Lomé à Cotonou.
-                        </p>
+
+        <!-- Order / Reservation Section (Moteur WhatsApp-First & Google Maps) -->
+        <section class="order-section bg-color-2" id="reservation">
+            <div class="pattern-layer" style="background-image: url(assets/images/shape/shape-14.png);"></div>
+            <div class="shape">
+                <div class="shape-1" style="background-image: url(assets/images/shape/shape-15.png);"></div>
+                <div class="shape-2" style="background-image: url(assets/images/shape/shape-16.png);"></div>
+                <div class="shape-3" style="background-image: url(assets/images/shape/shape-17.png);"></div>
+                <div class="shape-4" style="background-image: url(assets/images/shape/shape-18.png);"></div>
+            </div>
+            <div class="auto-container">
+                <div class="sec-title centred mb_50">
+                    <span class="sub-title">Réservation & Commande Instantanées</span>
+                    <h2>Réservez Votre Table en Direct <br />sur WhatsApp</h2>
+                    <p style="color: #666; margin-top: 10px;">Votre récapitulatif sera directement transmis à la direction sur le WhatsApp officiel (+229 01 97 81 55 55)</p>
+                </div>
+                <div class="form-inner">
+                    <form id="bijouOrderForm">
+                        <div class="row clearfix">
+
+                            <!-- Nom complet -->
+                            <div class="col-lg-6 col-md-6 col-sm-12 form-group">
+                                <input type="text" id="orderName" placeholder="Votre Nom et Prénom *" required>
+                            </div>
+
+                            <!-- Téléphone / WhatsApp -->
+                            <div class="col-lg-6 col-md-6 col-sm-12 form-group">
+                                <input type="text" id="orderPhone" placeholder="Numéro WhatsApp / Téléphone *" required>
+                            </div>
+
+                            <!-- Date de réservation -->
+                            <div class="col-lg-6 col-md-6 col-sm-12 form-group">
+                                <input type="date" id="orderDate" required style="padding: 10px 15px;">
+                            </div>
+
+                            <!-- Heure souhaitée -->
+                            <div class="col-lg-6 col-md-6 col-sm-12 form-group">
+                                <div class="select-box">
+                                    <select class="wide" id="orderTime">
+                                        <option value="Midi 12h30">Service Midi — 12h30</option>
+                                        <option value="Déjeuner 13h30">Déjeuner — 13h30</option>
+                                        <option value="Dîner 19h30" selected>Dîner — 19h30</option>
+                                        <option value="Soirée 21h00">Soirée — 21h00</option>
+                                        <option value="Fin de soirée 22h30">Tard le soir — 22h30</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Nombre de personnes -->
+                            <div class="col-lg-6 col-md-6 col-sm-12 form-group">
+                                <div class="select-box">
+                                    <select class="wide" id="orderGuests">
+                                        <option value="1 Personne">1 Personne (Individuel)</option>
+                                        <option value="2 Personnes (Dîner en couple)" selected>2 Personnes (Dîner en couple)</option>
+                                        <option value="3 à 4 Personnes (Famille / Amis)">3 à 4 Personnes (Famille / Amis)</option>
+                                        <option value="5 à 8 Personnes (Groupe / Dîner d'affaires)">5 à 8 Personnes (Groupe / Dîner d'affaires)</option>
+                                        <option value="9+ Personnes (Grande Table / Privatisation)">9+ Personnes (Grande Table / Privatisation)</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Espace souhaité -->
+                            <div class="col-lg-6 col-md-6 col-sm-12 form-group">
+                                <div class="select-box">
+                                    <select class="wide" id="orderSpace">
+                                        <option value="Grande Salle Climatisée" selected>Grande Salle Climatisée</option>
+                                        <option value="Terrasse Rooftop sous les Étoiles">Terrasse Rooftop sous les Étoiles</option>
+                                        <option value="Salon Privé VIP (Séminaire / Discrétion)">Salon Privé VIP (Séminaire / Discrétion)</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Formule de consommation -->
+                            <div class="col-lg-6 col-md-6 col-sm-12 form-group">
+                                <div class="select-box">
+                                    <select class="wide" id="orderType">
+                                        <option value="Sur Place (Dine-in)" selected>Repas Sur Place (Dine-in)</option>
+                                        <option value="À Emporter (Takeaway)">Commande À Emporter (Takeaway)</option>
+                                        <option value="Livraison Directe Cotonou">Livraison Directe à Domicile / Bureau</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Mode de Paiement préféré -->
+                            <div class="col-lg-6 col-md-6 col-sm-12 form-group">
+                                <div class="select-box">
+                                    <select class="wide" id="orderPayment">
+                                        <option value="Mobile Money (MTN MoMo)" selected>MTN Mobile Money</option>
+                                        <option value="Moov Money">Moov Money</option>
+                                        <option value="Wave Bénin / Celtiis">Wave Bénin / Celtiis Cash</option>
+                                        <option value="Carte Bancaire (Visa / Mastercard)">Carte Bancaire (Visa / Mastercard)</option>
+                                        <option value="Espèces à la table">Espèces à la table</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Remarques -->
+                            <div class="col-lg-12 col-md-12 col-sm-12 form-group">
+                                <textarea id="orderNotes" placeholder="Remarques particulières (Ex: Préférence de plat, anniversaire, allergies, etc.)"></textarea>
+                            </div>
+
+                            <!-- Bouton Submit WhatsApp -->
+                            <div class="col-lg-12 col-md-12 col-sm-12 form-group message-btn centred">
+                                <button type="submit" class="theme-btn-one" style="padding: 16px 45px; font-size: 15px;">
+                                    <i class="fab fa-whatsapp" style="margin-right: 8px; font-size: 18px;"></i> Confirmer la Réservation sur WhatsApp
+                                </button>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <!-- Order / Reservation Section End -->
+
+
+        <!-- Localisation & Google Maps Section -->
+        <section class="contact-section sec-pad" id="contact" style="background-color: #FFFFFF;">
+            <div class="auto-container">
+                <div class="sec-title centred mb_50">
+                    <span class="sub-title">Accès & Itinéraire</span>
+                    <h2>Nous Trouver sur la Route de Lomé</h2>
+                    <p style="color: #666; margin-top: 10px;">Parking privé sécurisé dans la cour et en bordure de rue. Établissement accessible aux personnes à mobilité réduite (PMR).</p>
+                </div>
+                <div class="row clearfix align-items-center">
+
+                    <div class="col-lg-6 col-md-12 col-sm-12">
+                        <div style="background: #F8F9FA; padding: 40px; border-radius: 8px; border-left: 4px solid var(--bijou-gold);">
+                            <h3 style="font-size: 22px; margin-bottom: 20px;">Informations Pratiques</h3>
+                            <ul style="list-style: none; padding: 0;">
+                                <li style="margin-bottom: 15px; display: flex; align-items: flex-start; gap: 12px;">
+                                    <i class="fas fa-map-marker-alt" style="color: var(--bijou-gold); font-size: 20px; margin-top: 3px;"></i>
+                                    <div>
+                                        <strong>Adresse :</strong><br>Route de Lomé, Cotonou, Bénin
+                                    </div>
+                                </li>
+                                <li style="margin-bottom: 15px; display: flex; align-items: flex-start; gap: 12px;">
+                                    <i class="fab fa-whatsapp" style="color: var(--wa-green); font-size: 20px; margin-top: 3px;"></i>
+                                    <div>
+                                        <strong>Téléphone & WhatsApp Officiel :</strong><br>
+                                        <a href="https://wa.me/2290197815555" target="_blank" style="color: #222; font-weight: 600;">+229 01 97 81 55 55</a> (international : +229 97 81 55 55)
+                                    </div>
+                                </li>
+                                <li style="margin-bottom: 15px; display: flex; align-items: flex-start; gap: 12px;">
+                                    <i class="fas fa-clock" style="color: var(--bijou-gold); font-size: 20px; margin-top: 3px;"></i>
+                                    <div>
+                                        <strong>Horaires d'Ouverture :</strong><br>Ouvert 7 jours sur 7, de 08h00 à 00h00 (Service continu)
+                                    </div>
+                                </li>
+                                <li style="margin-bottom: 15px; display: flex; align-items: flex-start; gap: 12px;">
+                                    <i class="fas fa-car" style="color: var(--bijou-gold); font-size: 20px; margin-top: 3px;"></i>
+                                    <div>
+                                        <strong>Parking :</strong><br>Parking gratuit et surveillé pour nos clients
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="mt-4">
+                                <a href="https://www.google.com/maps/search/?api=1&query=Restaurant+Chez+Bijou&query_place_id=ChIJAdxWL8tVIxARqlrzG1F2m5Y" target="_blank" rel="noopener noreferrer" class="theme-btn-one" style="display: inline-flex; align-items: center; gap: 10px; width: 100%; justify-content: center;">
+                                    <i class="fas fa-location-arrow"></i> Ouvrir l'Itinéraire dans Google Maps
+                                </a>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="col-lg-4 text-center">
-                        <div style="color: var(--bijou-gold); font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px;">
-                            Horaires de Service
-                        </div>
-                        <p style="color: #FFFFFF; font-size: 15px; margin-bottom: 4px;">Du Lundi au Dimanche (7j/7)</p>
-                        <p style="color: var(--bijou-gray); font-size: 14px; margin-bottom: 12px;">08h00 — 00h00 (Service Continu)</p>
-                        <div style="display: inline-flex; gap: 8px; flex-wrap: wrap; justify-content: center;">
-                            <span style="background: #111822; padding: 4px 10px; border-radius: 4px; font-size: 12px; color: var(--bijou-gold);">MoMo</span>
-                            <span style="background: #111822; padding: 4px 10px; border-radius: 4px; font-size: 12px; color: var(--bijou-gold);">Moov</span>
-                            <span style="background: #111822; padding: 4px 10px; border-radius: 4px; font-size: 12px; color: var(--bijou-gold);">Wave</span>
-                            <span style="background: #111822; padding: 4px 10px; border-radius: 4px; font-size: 12px; color: #FFFFFF;">Visa / Mastercard</span>
-                            <span style="background: #111822; padding: 4px 10px; border-radius: 4px; font-size: 12px; color: #FFFFFF;">Espèces</span>
+                    <div class="col-lg-6 col-md-12 col-sm-12 mt-4 mt-lg-0">
+                        <div style="position: relative; overflow: hidden; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                            <img src="assets/images/bijou-facade.jpg" alt="Façade Restaurant Chez Bijou Route de Lomé" style="width: 100%; height: 380px; object-fit: cover;">
+                            <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.8) 100%); padding: 25px 20px; color: #FFFFFF;">
+                                <span style="color: var(--bijou-gold); text-transform: uppercase; font-size: 12px; letter-spacing: 1px;">Établissement Réel</span>
+                                <h4 style="color: #FFFFFF; margin: 4px 0;">Chez Bijou — Route de Lomé</h4>
+                                <p style="margin: 0; font-size: 13px; color: #DDD;">Identifiant officiel Google Place : ChIJAdxWL8tVIxARqlrzG1F2m5Y</p>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="col-lg-4 text-center text-lg-end">
-                        <div style="color: var(--bijou-gold); font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px;">
-                            Contact Direct WhatsApp
+                </div>
+            </div>
+        </section>
+        <!-- Localisation End -->
+
+
+        <!-- Main Footer (Ticrou Pattern) -->
+        <footer class="main-footer bg-color-1">
+            <div class="footer-top pt_85 pb_100">
+                <div class="auto-container">
+                    <div class="row align-items-center clearfix">
+
+                        <!-- Horaires -->
+                        <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
+                            <div class="footer-widget schedule-widget text-right">
+                                <div class="widget-title">
+                                    <h3>Horaires 7j/7</h3>
+                                </div>
+                                <div class="widget-content">
+                                    <ul class="list clearfix">
+                                        <li>Lundi – Dimanche : 08h00 – 00h00</li>
+                                        <li>Service Continu (Midi & Soir)</li>
+                                        <li>Salon VIP : Sur Réservation</li>
+                                        <li>WhatsApp Direct : 24h/24</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
-                        <a href="https://wa.me/2290197815555" target="_blank" style="color: #FFFFFF; font-size: 18px; font-weight: 600; text-decoration: none; display: block; margin-bottom: 10px;">
-                            +229 01 97 81 55 55
-                        </a>
-                        <a href="#reservation" class="ak-btn style-5" style="border-color: var(--bijou-gold); padding: 10px 22px; font-size: 13px; text-decoration: none;">
-                            <span>Prendre Rendez-vous</span>
-                        </a>
+
+                        <!-- Logo & Philosophie Central -->
+                        <div class="col-lg-6 col-md-6 col-sm-12 footer-column">
+                            <div class="footer-widget logo-widget text-center">
+                                <div class="shape">
+                                    <div class="shape-1" style="background-image: url(assets/images/shape/shape-19.png);"></div>
+                                    <div class="shape-2" style="background-image: url(assets/images/shape/shape-20.png);"></div>
+                                </div>
+                                <div class="widget-content">
+                                    <figure class="footer-logo"><a href="#banner"><img src="assets/images/bijou-logo.png" alt="Chez Bijou Cotonou"></a></figure>
+                                    <div class="text">
+                                        <p>L'excellence de la cuisine traditionnelle béninoise, des grillades au feu de bois et de l'hospitalité africaine sur la Route de Lomé à Cotonou.</p>
+                                    </div>
+                                    <div style="margin: 15px 0;">
+                                        <span class="momo-badge badge-mtn">MTN MoMo</span>
+                                        <span class="momo-badge badge-moov">Moov Money</span>
+                                        <span class="momo-badge badge-wave">Wave</span>
+                                        <span class="momo-badge badge-card">Visa / Mastercard</span>
+                                    </div>
+                                    <ul class="social-links clearfix justify-content-center">
+                                        <li><a href="https://wa.me/2290197815555" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
+                                        <li><a href="https://www.google.com/maps/search/?api=1&query=Restaurant+Chez+Bijou&query_place_id=ChIJAdxWL8tVIxARqlrzG1F2m5Y" target="_blank"><i class="fas fa-map-marked-alt"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Coordonnées -->
+                        <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
+                            <div class="footer-widget contact-widget text-left">
+                                <div class="widget-title">
+                                    <h3>Coordonnées</h3>
+                                </div>
+                                <div class="widget-content">
+                                    <ul class="info-list clearfix">
+                                        <li><span>Adresse : </span>Route de Lomé, Cotonou</li>
+                                        <li><span>WhatsApp : </span><a href="https://wa.me/2290197815555" target="_blank">+229 01 97 81 55 55</a></li>
+                                        <li><span>Localisation : </span>Bénin (Google Place)</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
-
-                <div style="border-top: 1px solid #141A22; margin-top: 50px; padding-top: 25px; text-align: center;">
-                    <p style="color: #777777; font-size: 13px; margin: 0;">
-                        &copy; 2026 Restaurant Chez Bijou — Route de Lomé, Cotonou, Bénin. Tous Droits Réservés.
-                    </p>
+            </div>
+            <div class="footer-bottom centred">
+                <div class="auto-container">
+                    <div class="copyright">
+                        <p>© 2026 <strong>Restaurant Chez Bijou</strong> Cotonou. Tous Droits Réservés. Concept propulsé par Agency OS.</p>
+                    </div>
                 </div>
             </div>
         </footer>
-        <!-- End Footer Section -->
+        <!-- Main Footer End -->
 
-    </div>
-    <!-- End ScrollSmoother Container Wrapper -->
 
-    <!-- Scripts Elegencia Plugins & Custom Scripts -->
-    <script src="assets/js/plugins/jquery-3.7.1.min.js"></script>
-    <script src="assets/js/plugins/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/plugins/isotope.pkg.min.js"></script>
-    <script src="assets/js/plugins/swiper.min.js"></script>
-    <script src="assets/js/plugins/lightgallery.min.js"></script>
-    <script src="assets/js/plugins/ScrollSmoother.min.js"></script>
-    <script src="assets/js/plugins/SplitText.min.js"></script>
-    <script src="assets/js/plugins/ScrollToPlugin.min.js"></script>
-    <script src="assets/js/plugins/ScrollTrigger.min.js"></script>
-    <script src="assets/js/plugins/gsap.min.js"></script>
-    <script src="assets/js/main.js"></script>
+        <!-- Back to Top Button -->
+        <button class="scroll-top scroll-to-target" data-target="html">
+            <span class="fal fa-long-arrow-up"></span>
+        </button>
 
-    <!-- Script de Réservation Instantanée & Smooth Scroll Universel -->
+    </div><!-- End .boxed_wrapper -->
+
+
+    <!-- Scripts Originaux Ticrou -->
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/owl.js"></script>
+    <script src="assets/js/wow.js"></script>
+    <script src="assets/js/validation.js"></script>
+    <script src="assets/js/jquery.fancybox.js"></script>
+    <script src="assets/js/appear.js"></script>
+    <script src="assets/js/scrollbar.js"></script>
+    <script src="assets/js/isotope.js"></script>
+    <script src="assets/js/jquery.nice-select.min.js"></script>
+    <script src="assets/js/parallax-scroll.js"></script>
+    <script src="assets/js/text_plugins.js"></script>
+    <script src="assets/js/text_animation.js"></script>
+    <script src="assets/js/jquery-ui.js"></script>
+    <script src="assets/js/script.js"></script>
+
+    <!-- Gestionnaire Réservation WhatsApp-First & Navigation Fluide -->
     <script>
     $(document).ready(function() {
-      // 1. Preloader Express : Disparition en 0.7 seconde
-      setTimeout(function() {
-        $('#preloader').fadeOut(300, function() { $(this).remove(); });
-      }, 700);
+        // Définir la date du jour par défaut
+        var today = new Date().toISOString().split('T')[0];
+        $('#orderDate').val(today);
 
-      // 2. Gestionnaire Universel d'Ancres Fluides (Header, Hamburger Menu, Footer)
-      $(document).on('click', 'a[href^="#"]', function(e) {
-        var href = $(this).attr('href');
-        if (href && href.length > 1) {
-          var target = $(href);
-          if (target.length) {
+        // Fermeture automatique du menu mobile lors du clic sur un lien d'ancre
+        $('.mobile-menu .menu-box a[href^="#"], .navigation a[href^="#"]').on('click', function(e) {
+            $('body').removeClass('mobile-menu-visible');
+        });
+
+        // Formulaire de réservation instantanée WhatsApp
+        $('#bijouOrderForm').on('submit', function(e) {
             e.preventDefault();
 
-            // Fermer le menu hamburger plein écran s'il est ouvert
-            var akMenuToggle = document.getElementById('akMenuToggle');
-            var topMenuLi = document.querySelector('.top-main-menu-li');
-            if (topMenuLi && window.getComputedStyle(topMenuLi).display !== 'none') {
-              if (akMenuToggle) {
-                akMenuToggle.click();
-              }
+            var name = $('#orderName').val().trim();
+            var phone = $('#orderPhone').val().trim();
+            var date = $('#orderDate').val();
+            var time = $('#orderTime').val();
+            var guests = $('#orderGuests').val();
+            var space = $('#orderSpace').val();
+            var type = $('#orderType').val();
+            var payment = $('#orderPayment').val();
+            var notes = $('#orderNotes').val().trim();
+
+            if (!name || !phone) {
+                alert('Veuillez renseigner votre nom et votre numéro de téléphone.');
+                return;
             }
 
-            // Scroll fluide avec ScrollSmoother ou fallback natif
-            setTimeout(function() {
-              if (window.ScrollSmoother && typeof ScrollSmoother.get === 'function' && ScrollSmoother.get()) {
-                try {
-                  ScrollSmoother.get().scrollTo(target[0], true, 'top top');
-                } catch(err) {
-                  target[0].scrollIntoView({ behavior: 'smooth' });
-                }
-              } else if (target[0] && typeof target[0].scrollIntoView === 'function') {
-                target[0].scrollIntoView({ behavior: 'smooth' });
-              } else {
-                $('html, body').animate({
-                  scrollTop: target.offset().top - 80
-                }, 600);
-              }
-            }, 120);
-          }
-        }
-      });
+            var message = "*RÉSERVATION / COMMANDE CHEZ BIJOU*\n";
+            message += "------------------------------------\n";
+            message += "👤 *Client :* " + name + "\n";
+            message += "📞 *Téléphone :* " + phone + "\n";
+            message += "📅 *Date :* " + date + "\n";
+            message += "⏰ *Heure / Service :* " + time + "\n";
+            message += "👥 *Nombre de personnes :* " + guests + "\n";
+            message += "🏛️ *Espace choisi :* " + space + "\n";
+            message += "🍽️ *Formule :* " + type + "\n";
+            message += "💳 *Mode de paiement :* " + payment + "\n";
+            if (notes) {
+                message += "📝 *Remarques :* " + notes + "\n";
+            }
+            message += "------------------------------------\n";
+            message += "Transmis depuis le site officiel de Chez Bijou (Route de Lomé, Cotonou).";
 
-      // 3. Sélecteurs rapides de Date
-      function formatDate(d) {
-        var year = d.getFullYear();
-        var month = String(d.getMonth() + 1).padStart(2, '0');
-        var day = String(d.getDate()).padStart(2, '0');
-        return year + '-' + month + '-' + day;
-      }
-
-      var today = new Date();
-      var custDate = document.getElementById('cust-date');
-      if (custDate) {
-        custDate.value = formatDate(today);
-      }
-
-      $('#btn-date-today').on('click', function() {
-        $('.pill-picker-group #btn-date-today, #btn-date-tomorrow, #btn-date-weekend').removeClass('active');
-        $(this).addClass('active');
-        if (custDate) custDate.value = formatDate(new Date());
-      });
-
-      $('#btn-date-tomorrow').on('click', function() {
-        $('.pill-picker-group #btn-date-today, #btn-date-tomorrow, #btn-date-weekend').removeClass('active');
-        $(this).addClass('active');
-        var tom = new Date();
-        tom.setDate(tom.getDate() + 1);
-        if (custDate) custDate.value = formatDate(tom);
-      });
-
-      $('#btn-date-weekend').on('click', function() {
-        $('.pill-picker-group #btn-date-today, #btn-date-tomorrow, #btn-date-weekend').removeClass('active');
-        $(this).addClass('active');
-        var now = new Date();
-        var dayOfWeek = now.getDay();
-        var daysUntilSaturday = (6 - dayOfWeek + 7) % 7;
-        if (daysUntilSaturday === 0) daysUntilSaturday = 7;
-        var sat = new Date();
-        sat.setDate(sat.getDate() + daysUntilSaturday);
-        if (custDate) custDate.value = formatDate(sat);
-      });
-
-      // 4. Sélecteurs rapides d'Heure
-      var custTime = document.getElementById('cust-time');
-      $('#btn-time-lunch').on('click', function() {
-        $('#btn-time-lunch, #btn-time-dinner, #btn-time-late').removeClass('active');
-        $(this).addClass('active');
-        if (custTime) custTime.value = '12:30';
-      });
-      $('#btn-time-dinner').on('click', function() {
-        $('#btn-time-lunch, #btn-time-dinner, #btn-time-late').removeClass('active');
-        $(this).addClass('active');
-        if (custTime) custTime.value = '20:00';
-      });
-      $('#btn-time-late').on('click', function() {
-        $('#btn-time-lunch, #btn-time-dinner, #btn-time-late').removeClass('active');
-        $(this).addClass('active');
-        if (custTime) custTime.value = '21:30';
-      });
-
-      // 5. Envoi WhatsApp Formaté Sans Base de Données
-      var bookingForm = document.getElementById('bijou-booking-form');
-      if (bookingForm) {
-        bookingForm.addEventListener('submit', function(e) {
-          e.preventDefault();
-          var name = (document.getElementById('cust-name').value.trim()) || 'Client';
-          var service = document.getElementById('cust-service').value;
-          var date = document.getElementById('cust-date').value;
-          var time = document.getElementById('cust-time').value;
-          var guests = document.getElementById('cust-guests').value;
-          var payment = document.getElementById('cust-payment').value;
-
-          var message = "Bonjour Restaurant Chez Bijou, je souhaite effectuer une réservation / commande :\n\n" +
-                        "• Nom : " + name + "\n" +
-                        "• Prestation / Espace : " + service + "\n" +
-                        "• Date : " + date + "\n" +
-                        "• Heure : " + time + "\n" +
-                        "• Nombre de personnes : " + guests + "\n" +
-                        "• Règlement souhaité : " + payment + "\n\n" +
-                        "Merci de me confirmer la disponibilité.";
-
-          var waUrl = "https://wa.me/2290197815555?text=" + encodeURIComponent(message);
-          window.open(waUrl, '_blank');
+            var waUrl = 'https://wa.me/2290197815555?text=' + encodeURIComponent(message);
+            window.open(waUrl, '_blank');
         });
-      }
     });
     </script>
 </body>
+
 </html>

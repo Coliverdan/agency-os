@@ -37,58 +37,129 @@
     <link href="assets/css/style.css" rel="stylesheet">
     <link href="assets/css/responsive.css" rel="stylesheet">
 
-    <!-- Custom Luxury Tweaks for Chez Bijou -->
+        <!-- Custom Luxury Tweaks for Chez Bijou (Orange Gastronomic Identity) -->
     <style>
         :root {
-            --bijou-gold: #C59D5F;
-            --bijou-gold-hover: #b08a4f;
-            --bijou-dark: #1e1e1e;
+            --bijou-orange: #FF6A00;
+            --bijou-orange-deep: #D45500;
+            --bijou-orange-glow: #FFA04D;
+            --bijou-orange-soft: rgba(255, 106, 0, 0.08);
+            --bijou-dark: #141417;
+            --bijou-body: #333333;
             --wa-green: #25D366;
         }
 
-        /* Header Top Full-Height Gold Button (Matches Ticrou Original Capture) */
+        /* Suppress Any Loader */
+        .loader-wrap, .preloader, #handle-preloader {
+            display: none !important;
+            visibility: hidden !important;
+            opacity: 0 !important;
+            pointer-events: none !important;
+        }
+
+        /* Header Top Full-Height Orange Button (Strict Edge-to-Edge Ticrou Geometry) */
         .header-top {
-            background: #212226;
+            background: #212226 !important;
+            padding: 0 !important;
+            margin: 0 !important;
+            height: 72px !important;
+            position: relative;
+            z-index: 99;
+        }
+        .header-top .auto-container {
+            height: 100% !important;
         }
         .header-top .top-inner {
-            height: 70px;
+            height: 100% !important;
+            display: flex !important;
+            align-items: stretch !important;
+            justify-content: space-between !important;
+            padding: 0 !important;
+            margin: 0 !important;
+        }
+        .header-top .top-inner .left-column {
+            display: flex !important;
+            align-items: center !important;
+            height: 100% !important;
         }
         .header-top .right-column,
-        .header-top .btn-box,
-        
-        
-        
+        .header-top .btn-box {
+            display: flex !important;
+            align-items: stretch !important;
+            height: 100% !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+        .header-top .btn-box a {
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            height: 100% !important;
+            min-height: 72px !important;
+            padding: 0 48px !important;
+            margin: 0 !important;
+            border-radius: 0 !important;
+            background: #FF6A00 !important;
+            color: #FFFFFF !important;
+            font-family: 'DM Sans', sans-serif !important;
+            font-size: 16px !important;
+            font-weight: 700 !important;
+            letter-spacing: 0.5px !important;
+            text-transform: capitalize !important;
+            position: relative !important;
+            overflow: hidden !important;
+            z-index: 1 !important;
+            transition: color 300ms ease, background-color 300ms ease !important;
+        }
+        .header-top .btn-box a:before {
+            position: absolute;
+            content: '';
+            background: #FFFFFF !important;
+            width: 0%;
+            height: 100%;
+            left: 0px;
+            top: 0px;
+            z-index: -1;
+            transition: all 400ms ease !important;
+        }
+        .header-top .btn-box a:hover:before {
+            width: 100% !important;
+        }
+        .header-top .btn-box a:hover {
+            background: #FFFFFF !important;
+            color: #000000 !important;
+        }
 
-        /* Branding Logo Crisp High-Contrast Sizing (Matches Ticrou Original Capture) */
+        /* Branding Logo Crisp High-Contrast Sizing (Chef Hat Emblem) */
         .main-header .logo-box {
-            padding: 22px 0px;
+            padding: 18px 0px !important;
         }
         .main-header .logo-box .logo {
-            max-width: 195px;
-            width: 100%;
+            max-width: 220px !important;
+            width: 100% !important;
         }
         .main-header .logo-box .logo img {
-            width: 100%;
-            max-height: 52px;
-            object-fit: contain;
-            display: block;
+            width: 100% !important;
+            max-height: 54px !important;
+            object-fit: contain !important;
+            display: block !important;
         }
         .sticky-header .logo-box .logo {
-            max-width: 175px;
+            max-width: 190px !important;
         }
         .sticky-header .logo-box .logo img {
-            width: 100%;
-            max-height: 44px;
-            object-fit: contain;
-            display: block;
+            width: 100% !important;
+            max-height: 46px !important;
+            object-fit: contain !important;
+            display: block !important;
         }
         .main-footer .footer-logo img {
-            max-height: 65px;
-            width: auto;
-            object-fit: contain;
+            max-height: 70px !important;
+            width: auto !important;
+            object-fit: contain !important;
         }
 
-        /* Navigation Menu Single-Line Strict Alignment (No Wrapping) */
+        /* Navigation Menu Single-Line Strict Alignment */
         .main-menu .navigation {
             display: flex !important;
             flex-wrap: nowrap !important;
@@ -117,7 +188,7 @@
         }
         .main-menu .navigation > li.current > a,
         .main-menu .navigation > li > a:hover {
-            color: #C59D5F !important;
+            color: #FF6A00 !important;
         }
 
         /* Hero Banner Overlay for perfect text contrast */
@@ -132,79 +203,29 @@
             background: linear-gradient(180deg, rgba(15, 15, 15, 0.75) 0%, rgba(15, 15, 15, 0.45) 50%, rgba(15, 15, 15, 0.85) 100%);
         }
 
-        /* Badges Chic Chez Bijou */
-        .feature-badge-item {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 8px 18px;
-            background: rgba(197, 157, 95, 0.08);
-            border: 1px solid rgba(197, 157, 95, 0.3);
-            border-radius: 30px;
-            font-size: 13px;
-            color: #333333;
-            margin-right: 8px;
-            margin-bottom: 10px;
-            font-weight: 500;
-        }
-        .feature-badge-item i {
-            color: var(--bijou-gold);
-        }
-
-        /* Booking Form Clean Inputs */
-        .order-section .form-inner .form-group input,
-        .order-section .form-inner .form-group select,
-        .order-section .form-inner .form-group textarea {
-            border: 1px solid #e0e0e0;
-            background: #FFFFFF;
-            transition: border-color 0.3s ease;
-        }
-        .order-section .form-inner .form-group input:focus,
-        .order-section .form-inner .form-group select:focus,
-        .order-section .form-inner .form-group textarea:focus {
-            border-color: var(--bijou-gold);
-        }
-
-        
-
-        /* Smooth Anchor Scroll */
-        html {
-            scroll-behavior: smooth;
-        }
-    
-        /* --- CHEZ BIJOU REFINED COLOR HARMONY & CONTRAST --- */
-        :root {
-            --bijou-gold: #B38038;
-            --bijou-gold-accent: #C59D5F;
-            --bijou-gold-glow: #E2BC7A;
-            --bijou-dark: #141417;
-            --bijou-body: #333333;
-            --wa-green: #25D366;
-        }
-
         /* Subtitle Legibility on Light vs Dark Backgrounds */
         .sec-title .sub-title {
-            color: #A6742C !important;
+            color: #D45500 !important;
             font-family: 'Rouge Script', cursive !important;
             font-size: 52px !important;
             line-height: 62px !important;
             font-weight: 400 !important;
         }
         .sec-title.light .sub-title {
-            color: #E2BC7A !important;
+            color: #FFA04D !important;
         }
         .sec-title h2 {
             color: #141417 !important;
             font-weight: 700 !important;
         }
         .sec-title h2 span {
-            color: #A6742C !important;
+            color: #D45500 !important;
         }
         .sec-title.light h2 {
             color: #FFFFFF !important;
         }
         .sec-title.light h2 span {
-            color: #E2BC7A !important;
+            color: #FFA04D !important;
         }
 
         /* High-Contrast Body Text */
@@ -214,9 +235,24 @@
             line-height: 28px !important;
         }
 
-        /* Header Top Full-Height Gold Button */
-        
-        
+        /* Badges Chic Chez Bijou */
+        .feature-badge-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 18px;
+            background: rgba(255, 106, 0, 0.08) !important;
+            border: 1px solid rgba(255, 106, 0, 0.3) !important;
+            border-radius: 30px;
+            font-size: 13px;
+            color: #1F1F1F !important;
+            margin-right: 8px;
+            margin-bottom: 10px;
+            font-weight: 600 !important;
+        }
+        .feature-badge-item i {
+            color: #D45500 !important;
+        }
 
         /* About Section Images Harmonization */
         .about-section .image_block_one .image-box .image-1 img {
@@ -239,15 +275,6 @@
             border: 4px solid #FFFFFF !important;
             box-shadow: 0 10px 30px rgba(0,0,0,0.18) !important;
         }
-        .feature-badge-item {
-            background: rgba(166, 116, 44, 0.08) !important;
-            border: 1px solid rgba(166, 116, 44, 0.28) !important;
-            color: #1F1F1F !important;
-            font-weight: 600 !important;
-        }
-        .feature-badge-item i {
-            color: #A6742C !important;
-        }
 
         /* Menu Section Cards & Prices */
         .menu-block-one .inner-box {
@@ -259,10 +286,10 @@
             font-weight: 700 !important;
         }
         .menu-block-one .inner-box .single-item h4 a:hover {
-            color: #A6742C !important;
+            color: #D45500 !important;
         }
         .menu-block-one .inner-box .single-item .price {
-            color: #A6742C !important;
+            color: #D45500 !important;
             font-weight: 700 !important;
         }
         .menu-block-one .inner-box .single-item .text p {
@@ -285,7 +312,7 @@
         }
         .shop-block-one .inner-box:hover {
             transform: translateY(-6px) !important;
-            box-shadow: 0 20px 45px rgba(166, 116, 44, 0.16) !important;
+            box-shadow: 0 20px 45px rgba(255, 106, 0, 0.16) !important;
         }
         .shop-block-one .inner-box .image-box {
             height: 250px !important;
@@ -316,10 +343,10 @@
             line-height: 24px !important;
         }
         .shop-block-one .inner-box .lower-content h5 a:hover {
-            color: #A6742C !important;
+            color: #D45500 !important;
         }
         .shop-block-one .inner-box .lower-content .price {
-            color: #A6742C !important;
+            color: #D45500 !important;
             font-size: 18px !important;
             font-weight: 700 !important;
         }
@@ -347,7 +374,7 @@
         }
         .gallery-block-one .inner-box .content-box span {
             background: #FAF7F2 !important;
-            color: #A6742C !important;
+            color: #D45500 !important;
             font-weight: 600 !important;
             border-radius: 4px !important;
         }
@@ -372,10 +399,10 @@
             color: #141417 !important;
         }
         .promotion-block-one .inner-box .content-box h2 span {
-            color: #A6742C !important;
+            color: #D45500 !important;
         }
         .promotion-block-one .inner-box .content-box h4 {
-            color: #A6742C !important;
+            color: #D45500 !important;
             font-weight: 600 !important;
             margin-bottom: 15px !important;
         }
@@ -424,7 +451,7 @@
             font-weight: 700 !important;
         }
         .testimonial-block-one .inner-box .author-box .designation {
-            color: #A6742C !important;
+            color: #D45500 !important;
             font-weight: 600 !important;
         }
 
@@ -432,7 +459,7 @@
         .order-section .form-inner {
             border-radius: 12px !important;
             box-shadow: 0 15px 50px rgba(0,0,0,0.06) !important;
-            border: 1px solid rgba(166, 116, 44, 0.2) !important;
+            border: 1px solid rgba(255, 106, 0, 0.2) !important;
         }
         .order-section .form-inner .form-group input,
         .order-section .form-inner .form-group select,
@@ -457,8 +484,8 @@
         .order-section .form-inner .form-group textarea:focus,
         .nice-select:focus,
         .nice-select.open {
-            border-color: #A6742C !important;
-            box-shadow: 0 0 0 3px rgba(166, 116, 44, 0.15) !important;
+            border-color: #FF6A00 !important;
+            box-shadow: 0 0 0 3px rgba(255, 106, 0, 0.15) !important;
         }
         .nice-select .current {
             color: #1A1A1A !important;
@@ -474,13 +501,13 @@
         }
         .nice-select .option:hover,
         .nice-select .option.selected.focus {
-            background: #FAF5ED !important;
-            color: #A6742C !important;
+            background: #FFF4EC !important;
+            color: #D45500 !important;
         }
 
-        /* Gold Action Buttons */
+        /* Orange Action Buttons */
         .theme-btn-one {
-            background: #C59D5F !important;
+            background: #FF6A00 !important;
             color: #FFFFFF !important;
             font-family: 'DM Sans', sans-serif !important;
             font-weight: 700 !important;
@@ -491,81 +518,22 @@
             background: #141417 !important;
             color: #FFFFFF !important;
         }
-    
-    
-        /* Header Top Full-Height Gold Button with White Animation & Black Text on Hover */
-        .header-top .btn-box,
-        .header-top .btn-box a {
-            height: 100%;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
+
+        /* Contact & Info Cards */
+        .contact-info-section .info-box {
+            border-left: 4px solid #FF6A00 !important;
         }
-        .header-top .btn-box a {
-            position: relative;
-            padding: 0 45px !important;
-            font-size: 16px !important;
-            font-weight: 700 !important;
-            font-family: 'DM Sans', sans-serif !important;
-            background: #C59D5F !important;
-            color: #FFFFFF !important;
-            letter-spacing: 0.5px !important;
-            text-transform: capitalize !important;
-            border-radius: 0 !important;
-            z-index: 1;
-            overflow: hidden;
-            transition: color 300ms ease, background-color 300ms ease !important;
+
+        /* Smooth Anchor Scroll */
+        html {
+            scroll-behavior: smooth;
         }
-        .header-top .btn-box a:before {
-            position: absolute;
-            content: '';
-            background: #FFFFFF !important;
-            width: 0%;
-            height: 100%;
-            left: 0px;
-            top: 0px;
-            z-index: -1;
-            transition: all 400ms ease !important;
-        }
-        .header-top .btn-box a:hover:before {
-            width: 100% !important;
-        }
-        .header-top .btn-box a:hover {
-            background: #FFFFFF !important;
-            color: #000000 !important;
-        }
-    
     </style>
 </head>
 
 <body>
 
     <div class="boxed_wrapper">
-
-        <!-- Preloader Lettrage Animé C H E Z   B I J O U (Ticrou Pattern) -->
-        <div class="loader-wrap">
-            <div class="preloader">
-                <div class="preloader-close">x</div>
-                <div id="handle-preloader" class="handle-preloader">
-                    <div class="animation-preloader">
-                        <div class="spinner"></div>
-                        <div class="txt-loading">
-                            <span data-text-preloader="C" class="letters-loading">C</span>
-                            <span data-text-preloader="H" class="letters-loading">H</span>
-                            <span data-text-preloader="E" class="letters-loading">E</span>
-                            <span data-text-preloader="Z" class="letters-loading">Z</span>
-                            <span data-text-preloader="-" class="letters-loading">&nbsp;</span>
-                            <span data-text-preloader="B" class="letters-loading">B</span>
-                            <span data-text-preloader="I" class="letters-loading">I</span>
-                            <span data-text-preloader="J" class="letters-loading">J</span>
-                            <span data-text-preloader="O" class="letters-loading">O</span>
-                            <span data-text-preloader="U" class="letters-loading">U</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Preloader End -->
 
 
         <!-- Main Header (Strict Ticrou Architecture) -->
@@ -587,7 +555,7 @@
                         </div>
                         <div class="right-column">
                             <div class="btn-box">
-                                <a href="https://wa.me/2290197815555?text=Bonjour%20Chez%20Bijou,%20je%20souhaite%20passer%20une%20commande." target="_blank" rel="noopener noreferrer">Commander</a>
+                                <a href="https://wa.me/2290197815555?text=Bonjour%20Restaurant%20Chez%20Bijou%2C%20je%20souhaite%20passer%20une%20commande." target="_blank" rel="noopener noreferrer">Commander</a>
                             </div>
                         </div>
                     </div>
@@ -691,7 +659,7 @@
                             <p class="p_relative d_block" style="color: #EAEAEA;">Institution gastronomique sur la Route de Lomé à Cotonou.<br />Cuisine traditionnelle béninoise, grillades au feu de bois, terrasse rooftop & salon VIP.</p>
                             <div class="btn-box">
                                 <a href="https://wa.me/2290197815555?text=Bonjour%20Chez%20Bijou,%20je%20souhaite%20r%C3%A9server%20une%20table." target="_blank" class="theme-btn-one">Réserver sur WhatsApp</a>
-                                <a href="#menu" class="theme-btn-one" style="background: transparent; border: 2px solid var(--bijou-gold); margin-left: 15px;">Découvrir la Carte</a>
+                                <a href="#menu" class="theme-btn-one" style="background: transparent; border: 2px solid #FF6A00; margin-left: 15px;">Découvrir la Carte</a>
                             </div>
                         </div>
                     </div>
@@ -707,7 +675,7 @@
                             <p class="p_relative d_block" style="color: #EAEAEA;">Bar entier grillé, Thiéboudienne d'honneur, alloco doré & attiéké artisanal.<br />Une cuisson maîtrisée aux braises de charbon de bois.</p>
                             <div class="btn-box">
                                 <a href="#specialites" class="theme-btn-one">Nos Plats Signatures</a>
-                                <a href="https://wa.me/2290197815555?text=Bonjour%20Chez%20Bijou,%20pouvez-vous%20m'envoyer%20la%20carte%20compl%C3%A8te%20?\" target="_blank" class="theme-btn-one" style="background: transparent; border: 2px solid var(--bijou-gold); margin-left: 15px;">Commander</a>
+                                <a href="https://wa.me/2290197815555?text=Bonjour%20Chez%20Bijou,%20pouvez-vous%20m'envoyer%20la%20carte%20compl%C3%A8te%20?" target="_blank" class="theme-btn-one" style="background: transparent; border: 2px solid #FF6A00; margin-left: 15px;">Commander</a>
                             </div>
                         </div>
                     </div>
@@ -723,7 +691,7 @@
                             <p class="p_relative d_block" style="color: #EAEAEA;">Ouvert 7 jours sur 7 en service continu de 08h00 à 00h00.<br />Parking sécurisé gratuit, accès PMR et salons climatisés pour séminaires et déjeuners d'affaires.</p>
                             <div class="btn-box">
                                 <a href="#traiteur" class="theme-btn-one">Privatiser un Salon</a>
-                                <a href="https://www.google.com/maps/search/?api=1&query=Restaurant+Chez+Bijou&query_place_id=ChIJAdxWL8tVIxARqlrzG1F2m5Y" target="_blank" class="theme-btn-one" style="background: transparent; border: 2px solid var(--bijou-gold); margin-left: 15px;">Localiser sur Google Maps</a>
+                                <a href="https://www.google.com/maps/search/?api=1&query=Restaurant+Chez+Bijou&query_place_id=ChIJAdxWL8tVIxARqlrzG1F2m5Y" target="_blank" class="theme-btn-one" style="background: transparent; border: 2px solid #FF6A00; margin-left: 15px;">Localiser sur Google Maps</a>
                             </div>
                         </div>
                     </div>
@@ -799,7 +767,7 @@
                     <div class="sec-title light centred mb_100">
                         <span class="sub-title">Saveurs d'Exception</span>
                         <h2>La Carte du Jour & Traditions</h2>
-                        <p style="color: #C59D5F; margin-top: 10px;">Cuisine fraîche préparée à la commande aux aromates du terroir béninois</p>
+                        <p style="color: #D45500; margin-top: 10px;">Cuisine fraîche préparée à la commande aux aromates du terroir béninois</p>
                     </div>
                     <div class="row clearfix">
 
@@ -926,11 +894,11 @@
                             <div class="lower-content">
                                 <h5><a href="#reservation">Poisson Braisé Royal & Alloco</a></h5>
                                 <ul class="rating clearfix">
-                                    <li><i class="fas fa-star" style="color: #C59D5F;"></i></li>
-                                    <li><i class="fas fa-star" style="color: #C59D5F;"></i></li>
-                                    <li><i class="fas fa-star" style="color: #C59D5F;"></i></li>
-                                    <li><i class="fas fa-star" style="color: #C59D5F;"></i></li>
-                                    <li><i class="fas fa-star" style="color: #C59D5F;"></i></li>
+                                    <li><i class="fas fa-star" style="color: #FF6A00;"></i></li>
+                                    <li><i class="fas fa-star" style="color: #FF6A00;"></i></li>
+                                    <li><i class="fas fa-star" style="color: #FF6A00;"></i></li>
+                                    <li><i class="fas fa-star" style="color: #FF6A00;"></i></li>
+                                    <li><i class="fas fa-star" style="color: #FF6A00;"></i></li>
                                 </ul>
                                 <span class="price">5 500 FCFA</span>
                             </div>
@@ -949,11 +917,11 @@
                             <div class="lower-content">
                                 <h5><a href="#reservation">Thiéboudienne Sénégalaise</a></h5>
                                 <ul class="rating clearfix">
-                                    <li><i class="fas fa-star" style="color: #C59D5F;"></i></li>
-                                    <li><i class="fas fa-star" style="color: #C59D5F;"></i></li>
-                                    <li><i class="fas fa-star" style="color: #C59D5F;"></i></li>
-                                    <li><i class="fas fa-star" style="color: #C59D5F;"></i></li>
-                                    <li><i class="fas fa-star" style="color: #C59D5F;"></i></li>
+                                    <li><i class="fas fa-star" style="color: #FF6A00;"></i></li>
+                                    <li><i class="fas fa-star" style="color: #FF6A00;"></i></li>
+                                    <li><i class="fas fa-star" style="color: #FF6A00;"></i></li>
+                                    <li><i class="fas fa-star" style="color: #FF6A00;"></i></li>
+                                    <li><i class="fas fa-star" style="color: #FF6A00;"></i></li>
                                 </ul>
                                 <span class="price">4 500 FCFA</span>
                             </div>
@@ -972,11 +940,11 @@
                             <div class="lower-content">
                                 <h5><a href="#reservation">Bar Entier Braisé aux Aromates</a></h5>
                                 <ul class="rating clearfix">
-                                    <li><i class="fas fa-star" style="color: #C59D5F;"></i></li>
-                                    <li><i class="fas fa-star" style="color: #C59D5F;"></i></li>
-                                    <li><i class="fas fa-star" style="color: #C59D5F;"></i></li>
-                                    <li><i class="fas fa-star" style="color: #C59D5F;"></i></li>
-                                    <li><i class="fas fa-star" style="color: #C59D5F;"></i></li>
+                                    <li><i class="fas fa-star" style="color: #FF6A00;"></i></li>
+                                    <li><i class="fas fa-star" style="color: #FF6A00;"></i></li>
+                                    <li><i class="fas fa-star" style="color: #FF6A00;"></i></li>
+                                    <li><i class="fas fa-star" style="color: #FF6A00;"></i></li>
+                                    <li><i class="fas fa-star" style="color: #FF6A00;"></i></li>
                                 </ul>
                                 <span class="price">6 000 FCFA</span>
                             </div>
@@ -995,11 +963,11 @@
                             <div class="lower-content">
                                 <h5><a href="#reservation">Crème Caramel & Douceurs</a></h5>
                                 <ul class="rating clearfix">
-                                    <li><i class="fas fa-star" style="color: #C59D5F;"></i></li>
-                                    <li><i class="fas fa-star" style="color: #C59D5F;"></i></li>
-                                    <li><i class="fas fa-star" style="color: #C59D5F;"></i></li>
-                                    <li><i class="fas fa-star" style="color: #C59D5F;"></i></li>
-                                    <li><i class="fas fa-star" style="color: #C59D5F;"></i></li>
+                                    <li><i class="fas fa-star" style="color: #FF6A00;"></i></li>
+                                    <li><i class="fas fa-star" style="color: #FF6A00;"></i></li>
+                                    <li><i class="fas fa-star" style="color: #FF6A00;"></i></li>
+                                    <li><i class="fas fa-star" style="color: #FF6A00;"></i></li>
+                                    <li><i class="fas fa-star" style="color: #FF6A00;"></i></li>
                                 </ul>
                                 <span class="price">2 000 FCFA</span>
                             </div>
@@ -1164,11 +1132,11 @@
                                         <p>“Le meilleur poisson braisé de la Route de Lomé ! L'assaisonnement est parfait, le poisson est très frais et servi avec un alloco fondant. Le service est rapide et prévenant.”</p>
                                         <div class="author-box">
                                             <ul class="rating clearfix mb-2">
-                                                <li><i class="fas fa-star" style="color: #C59D5F;"></i></li>
-                                                <li><i class="fas fa-star" style="color: #C59D5F;"></i></li>
-                                                <li><i class="fas fa-star" style="color: #C59D5F;"></i></li>
-                                                <li><i class="fas fa-star" style="color: #C59D5F;"></i></li>
-                                                <li><i class="fas fa-star" style="color: #C59D5F;"></i></li>
+                                                <li><i class="fas fa-star" style="color: #FF6A00;"></i></li>
+                                                <li><i class="fas fa-star" style="color: #FF6A00;"></i></li>
+                                                <li><i class="fas fa-star" style="color: #FF6A00;"></i></li>
+                                                <li><i class="fas fa-star" style="color: #FF6A00;"></i></li>
+                                                <li><i class="fas fa-star" style="color: #FF6A00;"></i></li>
                                             </ul>
                                             <h4>Rodrigue K.</h4>
                                             <span class="designation">Guide Local Cotonou (Avis Google vérifié)</span>
@@ -1183,11 +1151,11 @@
                                         <p>“Cadre agréable et propre. Nous avons réservé le salon VIP pour un déjeuner d'affaires : la climatisation est impeccable, la discrétion assurée et les plats étaient excellents.”</p>
                                         <div class="author-box">
                                             <ul class="rating clearfix mb-2">
-                                                <li><i class="fas fa-star" style="color: #C59D5F;"></i></li>
-                                                <li><i class="fas fa-star" style="color: #C59D5F;"></i></li>
-                                                <li><i class="fas fa-star" style="color: #C59D5F;"></i></li>
-                                                <li><i class="fas fa-star" style="color: #C59D5F;"></i></li>
-                                                <li><i class="fas fa-star" style="color: #C59D5F;"></i></li>
+                                                <li><i class="fas fa-star" style="color: #FF6A00;"></i></li>
+                                                <li><i class="fas fa-star" style="color: #FF6A00;"></i></li>
+                                                <li><i class="fas fa-star" style="color: #FF6A00;"></i></li>
+                                                <li><i class="fas fa-star" style="color: #FF6A00;"></i></li>
+                                                <li><i class="fas fa-star" style="color: #FF6A00;"></i></li>
                                             </ul>
                                             <h4>Chantal M.</h4>
                                             <span class="designation">Cadre d'Entreprise (Avis Google vérifié)</span>
@@ -1202,11 +1170,11 @@
                                         <p>“Très pratique avec son service continu ouvert 7j/7 jusqu'à minuit. Le parking intérieur est sécurisé, ce qui est un vrai plus sur la Route de Lomé. Je recommande vivement le bar braisé !”</p>
                                         <div class="author-box">
                                             <ul class="rating clearfix mb-2">
-                                                <li><i class="fas fa-star" style="color: #C59D5F;"></i></li>
-                                                <li><i class="fas fa-star" style="color: #C59D5F;"></i></li>
-                                                <li><i class="fas fa-star" style="color: #C59D5F;"></i></li>
-                                                <li><i class="fas fa-star" style="color: #C59D5F;"></i></li>
-                                                <li><i class="fas fa-star" style="color: #C59D5F;"></i></li>
+                                                <li><i class="fas fa-star" style="color: #FF6A00;"></i></li>
+                                                <li><i class="fas fa-star" style="color: #FF6A00;"></i></li>
+                                                <li><i class="fas fa-star" style="color: #FF6A00;"></i></li>
+                                                <li><i class="fas fa-star" style="color: #FF6A00;"></i></li>
+                                                <li><i class="fas fa-star" style="color: #FF6A00;"></i></li>
                                             </ul>
                                             <h4>Armand D.</h4>
                                             <span class="designation">Client Habitué (Avis Google vérifié)</span>
@@ -1357,11 +1325,11 @@
                 <div class="row clearfix align-items-center">
 
                     <div class="col-lg-6 col-md-12 col-sm-12">
-                        <div style="background: #F8F9FA; padding: 40px; border-radius: 8px; border-left: 4px solid var(--bijou-gold);">
+                        <div style="background: #F8F9FA; padding: 40px; border-radius: 8px; border-left: 4px solid #FF6A00;">
                             <h3 style="font-size: 22px; margin-bottom: 20px;">Informations Pratiques</h3>
                             <ul style="list-style: none; padding: 0;">
                                 <li style="margin-bottom: 15px; display: flex; align-items: flex-start; gap: 12px;">
-                                    <i class="fas fa-map-marker-alt" style="color: var(--bijou-gold); font-size: 20px; margin-top: 3px;"></i>
+                                    <i class="fas fa-map-marker-alt" style="color: #FF6A00; font-size: 20px; margin-top: 3px;"></i>
                                     <div>
                                         <strong>Adresse :</strong><br>Route de Lomé, Cotonou, Bénin
                                     </div>
@@ -1374,13 +1342,13 @@
                                     </div>
                                 </li>
                                 <li style="margin-bottom: 15px; display: flex; align-items: flex-start; gap: 12px;">
-                                    <i class="fas fa-clock" style="color: var(--bijou-gold); font-size: 20px; margin-top: 3px;"></i>
+                                    <i class="fas fa-clock" style="color: #FF6A00; font-size: 20px; margin-top: 3px;"></i>
                                     <div>
                                         <strong>Horaires d'Ouverture :</strong><br>Ouvert 7 jours sur 7, de 08h00 à 00h00 (Service continu)
                                     </div>
                                 </li>
                                 <li style="margin-bottom: 15px; display: flex; align-items: flex-start; gap: 12px;">
-                                    <i class="fas fa-car" style="color: var(--bijou-gold); font-size: 20px; margin-top: 3px;"></i>
+                                    <i class="fas fa-car" style="color: #FF6A00; font-size: 20px; margin-top: 3px;"></i>
                                     <div>
                                         <strong>Parking :</strong><br>Parking gratuit et surveillé pour nos clients
                                     </div>
@@ -1398,7 +1366,7 @@
                         <div style="position: relative; overflow: hidden; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
                             <img src="assets/images/bijou-facade.jpg" alt="Façade Restaurant Chez Bijou Route de Lomé" style="width: 100%; height: 380px; object-fit: cover;">
                             <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.8) 100%); padding: 25px 20px; color: #FFFFFF;">
-                                <span style="color: var(--bijou-gold); text-transform: uppercase; font-size: 12px; letter-spacing: 1px;">Établissement Réel</span>
+                                <span style="color: #FF6A00; text-transform: uppercase; font-size: 12px; letter-spacing: 1px;">Établissement Réel</span>
                                 <h4 style="color: #FFFFFF; margin: 4px 0;">Chez Bijou — Route de Lomé</h4>
                                 <p style="margin: 0; font-size: 13px; color: #DDD;">Identifiant officiel Google Place : ChIJAdxWL8tVIxARqlrzG1F2m5Y</p>
                             </div>

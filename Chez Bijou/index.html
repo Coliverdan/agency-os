@@ -254,26 +254,70 @@
             color: #D45500 !important;
         }
 
-        /* About Section Images Harmonization */
-        .about-section .image_block_one .image-box .image-1 img {
-            max-width: 440px !important;
-            height: 440px !important;
-            object-fit: cover !important;
-            border-radius: 12px !important;
-            border: 4px solid #FFFFFF !important;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.12) !important;
-        }
-        .about-section .image_block_one .image-box .image-2 {
-            top: 180px !important;
-            right: -50px !important;
-        }
-        .about-section .image_block_one .image-box .image-2 img {
-            width: 220px !important;
-            height: 180px !important;
-            object-fit: cover !important;
-            border-radius: 10px !important;
-            border: 4px solid #FFFFFF !important;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.18) !important;
+        /* About Section Images - Raised, Enlarged & Filling Right Space */
+        @media only screen and (min-width: 992px) {
+            .about-section {
+                position: relative !important;
+                overflow: hidden !important;
+                min-height: 720px !important;
+            }
+            .about-section .image_block_one {
+                position: absolute !important;
+                right: 0 !important;
+                top: 0 !important;
+                bottom: 0 !important;
+                width: 50% !important;
+                pointer-events: none !important;
+            }
+            .about-section .image_block_one .image-box {
+                position: absolute !important;
+                top: 50% !important;
+                transform: translateY(-50%) !important;
+                bottom: auto !important;
+                right: max(20px, calc((100vw - 1320px) / 2 + 15px)) !important;
+                left: auto !important;
+                pointer-events: auto !important;
+            }
+            .about-section .image_block_one .image-box .image-1 img {
+                width: 500px !important;
+                max-width: 500px !important;
+                height: 500px !important;
+                object-fit: cover !important;
+                border-radius: 16px !important;
+                border: 6px solid #FFFFFF !important;
+                box-shadow: 0 20px 50px rgba(0,0,0,0.16) !important;
+            }
+            .about-section .image_block_one .image-box .image-2 {
+                position: absolute !important;
+                top: auto !important;
+                bottom: -35px !important;
+                right: -45px !important;
+                z-index: 2 !important;
+            }
+            .about-section .image_block_one .image-box .image-2 img {
+                width: 270px !important;
+                height: 210px !important;
+                object-fit: cover !important;
+                border-radius: 12px !important;
+                border: 5px solid #FFFFFF !important;
+                box-shadow: 0 15px 40px rgba(0,0,0,0.22) !important;
+            }
+            .about-section .image_block_one .image-box .shape .shape-1 {
+                width: 520px !important;
+                height: 520px !important;
+                left: 40px !important;
+                top: -20px !important;
+                background: #F3EBDF !important;
+                border-radius: 50% !important;
+                z-index: -1 !important;
+            }
+            .about-section .image_block_one .image-box .shape .shape-2 {
+                top: -30px !important;
+                right: -30px !important;
+                width: 200px !important;
+                height: 200px !important;
+                z-index: -1 !important;
+            }
         }
 
         /* Menu Section Cards & Prices */
@@ -524,6 +568,121 @@
             border-left: 4px solid #FF6A00 !important;
         }
 
+        /* Header Top Bar Mobile Presentation (Refined, Legible & Touch-Friendly) */
+        @media only screen and (max-width: 767px) {
+            .header-top {
+                height: auto !important;
+                min-height: 52px !important;
+                padding: 0 !important;
+            }
+            .header-top .auto-container {
+                padding: 0 !important;
+                height: auto !important;
+            }
+            .header-top .top-inner {
+                height: auto !important;
+                min-height: 52px !important;
+                display: flex !important;
+                flex-direction: row !important;
+                align-items: stretch !important;
+                justify-content: space-between !important;
+                padding: 0 !important;
+            }
+            .header-top .top-inner .left-column {
+                flex: 1 !important;
+                padding: 7px 12px !important;
+                display: flex !important;
+                flex-direction: column !important;
+                justify-content: center !important;
+                align-items: flex-start !important;
+                min-width: 0 !important;
+                height: auto !important;
+            }
+            .header-top .info {
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 2px !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                width: 100% !important;
+            }
+            .header-top .info li {
+                display: flex !important;
+                align-items: center !important;
+                font-size: 11.5px !important;
+                line-height: 14px !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                white-space: nowrap !important;
+                color: #C0C0C0 !important;
+                float: none !important;
+            }
+            .header-top .info li i {
+                position: static !important;
+                margin-right: 6px !important;
+                font-size: 12px !important;
+                color: #FF6A00 !important;
+            }
+            .header-top .info li a {
+                color: #FFFFFF !important;
+                font-weight: 700 !important;
+                font-size: 12.5px !important;
+                letter-spacing: 0.3px !important;
+            }
+            .header-top .social-links {
+                display: none !important;
+            }
+            .header-top .right-column,
+            .header-top .btn-box {
+                height: auto !important;
+                display: flex !important;
+                align-items: stretch !important;
+                flex-shrink: 0 !important;
+            }
+            .header-top .btn-box a {
+                min-height: 52px !important;
+                height: 100% !important;
+                padding: 0 18px !important;
+                font-size: 13.5px !important;
+                font-weight: 700 !important;
+                letter-spacing: 0.3px !important;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                white-space: nowrap !important;
+            }
+
+            /* Hero Banner Buttons Alignment Mobile - No Collision */
+            .banner-section .content-box .btn-box {
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                gap: 12px !important;
+                margin-top: 25px !important;
+            }
+            .banner-section .content-box .btn-box a.theme-btn-one {
+                margin: 0 !important;
+                width: 100% !important;
+                max-width: 290px !important;
+                text-align: center !important;
+                padding: 13px 20px !important;
+                font-size: 14px !important;
+            }
+        }
+
+        @media only screen and (max-width: 380px) {
+            .header-top .info li {
+                font-size: 10.5px !important;
+            }
+            .header-top .info li a {
+                font-size: 11px !important;
+            }
+            .header-top .btn-box a {
+                padding: 0 12px !important;
+                font-size: 12px !important;
+            }
+        }
+
         /* Smooth Anchor Scroll */
         html {
             scroll-behavior: smooth;
@@ -742,7 +901,10 @@
                                     <div class="feature-badge-item"><i class="fas fa-wheelchair"></i> Accessible PMR</div>
                                 </div>
 
-                                <figure class="signature"><img src="assets/images/icons/signature-1.png" alt="Signature Chef Chez Bijou"></figure>
+                                <div class="signature-box" style="margin: 20px 0 22px 0;">
+                                    <div style="font-family: 'Rouge Script', cursive; font-size: 46px; line-height: 48px; color: #1E1E24; font-weight: 400;">Chez Bijou</div>
+                                    <div style="font-family: 'DM Sans', sans-serif; font-size: 11.5px; color: #888888; text-transform: uppercase; letter-spacing: 2px; font-weight: 600; margin-top: 3px;">La Direction &bull; Restaurant Chez Bijou</div>
+                                </div>
                                 <div class="btn-box mt_20">
                                     <a href="#menu" class="theme-btn-one">Découvrir la Carte</a>
                                 </div>
